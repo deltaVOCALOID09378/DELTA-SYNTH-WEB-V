@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DELTA SYNTH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: "Inter", sans-serif; }</style>
+</head>
+<body class="bg-black text-gray-200 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider">DELTA SYNTH</a>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                <a href="about.html" class="hover:text-red-500 transition text-red-500">About Us</a>
+                <a href="#" class="hover:text-red-500 transition">Voicebanks</a>
+                <a href="#" class="hover:text-red-500 transition">Files</a>
+                <a href="#" class="hover:text-red-500 transition">Events</a>
+                <a href="#" class="hover:text-red-500 transition">Project</a>
+            </div>
+            
+            <!-- Hamburger button for mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md">About Us</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Voicebanks</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Files</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Events</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-16">
+        <!-- Header Section -->
+        <section class="container mx-auto px-4 mb-16 text-center max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Story</h1>
+            <p class="text-red-500 font-semibold text-xl mb-6">The 1st project - BL. student 2019</p>
+            <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-xl border border-gray-700 text-left space-y-4">
+                <p>ค่าย DELTA SYNTH เป็นค่ายเพลงมือใหม่ จัดทำขึ้นในประเทศไทย ก่อตั้งขึ้นในปี พ.ศ. 2562 หรือ ค.ศ. 2019 ณ ปัจจุบัน มีหลากหลายโปรเจกต์ที่ทำทิ้งไว้ในช่อง และทำการจับมือร่วมคอลแลปงาน กับครีเอเตอร์ท่านอื่น ๆ เพื่อเชื่อมความสัมพันธ์ ทั้งคนไทยและต่างชาติ คอนเทนต์ ต่างๆ นานา จนถึงทุกวันนี้ ผลงานอยู่ในยูทูปเป็นหลัก</p>
+                <p>เหล่าผู้ก่อตั้งร่วมอีกทั้ง 3ท่านที่ได้เข้าร่วมและช่วยกันสร้างเสมอมา กับคุณ SUN, Kochujang( Shu- chan) and guren kani</p>
+                <p>ขอบคุณที่ ให้การสนับสนุนทางเราเรื่อยมา</p>
+                <p class="text-lg font-bold text-white pt-4">ก่อตั้งด้วย สมาชิกทั้ง 4 คน ได้แก่</p>
+            </div>
+        </section>
+
+        <!-- Founders Grid -->
+        <section class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Ayanami Hikaru -->
+                <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+                    <div class="bg-red-900 p-4">
+                        <h3 class="text-2xl font-bold text-white">1. Ayanami Hikaru</h3>
+                        <p class="text-red-200 text-sm">เดิม เปิดตัวในสมัย 2019 มีชื่อว่า DELTA No.01</p>
+                    </div>
+                    <div class="p-6 space-y-4 text-sm text-gray-300">
+                        <p>ผู้ให้เสียง คือ DELTA SYNTH หรือในนามของคุณ Patiphat Wongyai ได้แรงบันดาลใจมาจาก เสื้อผ้าที่ตัวเองเคยมีในสมัยเรียนช่วงนั้น เริ่มแรกมาจากชุดนักเรียนไทย กางเกงสีดำ ที่ออกแบบรูปแรกให้โดย คุณ รัชพล พรมวงศ์ และคุณ Sutthiphong Seethan ในการอัพเดตดีไซน์ของฮิคารุ จึงได้คุณ ฐิติโชติ พิณพงศ์ มาช่วยออกแบบนักร้องคนอื่นๆ และ ชวนเขามาเป็นนักร้องของเราไปแล้ว เวลาผ่านไป จนดีไซน์ค่อยๆ เปลี่ยนแปลง และปรับเพิ่มรายละเอียดต่าง ๆ ที่ผู้สร้างชอบ จนเข้าที่เข้าทางได้จนถึง ยุคปัจจุบัน ในขณะเดียวกัน ก็ได้เพิ่มความสามารถ ในการร้องเพลงและใช้เสียงให้เชี่ยวชาญมากขึ้น เพื่อสั่งสมประสบการณ์ไว้ให้รุ่นหลัง ได้ศึกษาต่อ</p>
+                        <p>อายานามิ ฮิคารุ ชาย ที่มีเชื้อสายทั้ง มังกร พญานาค ยักษ์ และ มนุษย์ ชายผู้มีบุคลิก สุขุม เย็นชา และยากจะหวั่นไหวกับสิ่งเร้าใดๆ แต่ตัวเขาดัน มีพฤติกรรม ต่างๆ เช่น มีนิสัยที่ใจร้อน เจ้าระเบียบ และซุ่มซ่าม ที่ทำให้ตัวเขาเอง ดูเป็นคนเกรียน ๆ ชอบสร้างปัญหาให้คนรอบข้างในแต่ละวันอยู่เสมอ แต่เขาฉลาดพอที่จะแก้ปัญหาเหล่านั้น สำหรับเขาแค่ฝุ่น ที่แค่เป่าลมปากออกไป ฝุ่นมันก็หายวับไปหมดแล้ว</p>
+                        <p>เขาก็เป็นคนที่มีความเมตตาสูง เอาใจใส่ และรักพวกพ้องเช่นกัน เขาจึงได้เป็นที่รู้จัก ของผู้คนมากมาย ในฐานะผู้ประสานงาน ทั้งไทยและต่างชาติ</p>
+                    </div>
+                </div>
+
+                <!-- SUN No.02 -->
+                <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+                    <div class="bg-red-900 p-4">
+                        <h3 class="text-2xl font-bold text-white">2. SUN No.02</h3>
+                    </div>
+                    <div class="p-6 space-y-4 text-sm text-gray-300">
+                        <p>ผู้ให้เสียง คือ เป็นนักร้องที่มาจากเพื่อนสนิมสมัยมัธยมของตัวเดลต้าเอง เพื่อนคุย เพื่อนตาย ต่างคนต่างก็แบกกันและกัน สมัยเรียนมัธยม เพื่อนคนแรกที่สนใจมาทดลองให้เสียง มีความกล้าลองที่ไม่แพ้ใครเลย แม้จะผ่านสถานการณืแย่ๆ มาด้วยกัน จึงได้นักร้องชายตัวตึง ลำดับต้น ๆ ของค่ายเรา ที่ผู้คน ใครๆ ก็รู้จักตัวตนของเขา ในนามของค่ายเรา</p>
+                    </div>
+                </div>
+
+                <!-- Kochujang No.03 -->
+                <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+                    <div class="bg-red-900 p-4">
+                        <h3 class="text-2xl font-bold text-white">3. Shu-chan</h3>
+                        <p class="text-red-200 text-sm">ชื่อใหม่ Kochujang No.03</p>
+                    </div>
+                    <div class="p-6 space-y-4 text-sm text-gray-300">
+                        <p>ผู้ให้เสียง คือ TangmoThipawan เป็นนักร้องสาวคนแรกของค่าย ที่เปิดตัวพร้อมๆ กัน กับเพื่อนๆ ในปี 2019</p>
+                        <p>เธอมีเสียงที่ น่ารัก แบบสุขุมอย่างลงตัว แม้จะยุติการอัดการอัพเดตเสียงเพิ่มไปแล้ว เนื่องจากเจ้าของเสียงติดธุระการงาน จึงพลาดโอกาสการอัพเดตคุณภาพเสียงไปโดยสิ้นเชิง แต่ทางเราก็ยังคงหาวิธีการปรับสมดุลให้ดีที่สุด และสมกับเป็นแบบอย่างนักร้องรุ่นแรกๆ ของเราที่สำคัญเป็นอย่างยิ่ง</p>
+                        <p>เธอ คือ ต้นแบบ เสียงหญิงสาว ลำดับต้น ๆ ของค่ายไปโดยปริยาย</p>
+                    </div>
+                </div>
+
+                <!-- Guren Kani No.04 -->
+                <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+                    <div class="bg-red-900 p-4">
+                        <h3 class="text-2xl font-bold text-white">4. Guren Kani No.04</h3>
+                    </div>
+                    <div class="p-6 space-y-4 text-sm text-gray-300">
+                        <p>ผู้ให้เสียง คือ Miki Black Queen เป็น นักร้องชายคนที่ 4 จากด้านของเพศฝั่ง LGBTQ มีเสียงร้องที่ทรงพลัง และ มาดแมนเฉพาะตัว และร่างกายที่ใหญ่โต ถึงแม้เจ้าตัวจะเป็น LGBTQ ไปแล้วก็ตาม แต่ความกล้าหาญดั่งชายชาตรี กลับยังคงอยู่ เพื่อต่อกรกับผู้ประสงค์ร้ายทุกคน</p>
+                    </div>
+                </div>
+
+                <!-- Ayanami Kyoko No.00-05 -->
+                <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+                    <div class="bg-red-900 p-4">
+                        <h3 class="text-2xl font-bold text-white">5. Ayanami Kyoko No.00-05</h3>
+                    </div>
+                    <div class="p-6 space-y-4 text-sm text-gray-300">
+                        <p>ผู้ให้เสียง คือ DELTA SYNTH เป็น นักร้องชายคนที่ 4 จากด้านของเพศฝั่ง LGBTQ มีเสียงร้องที่ทรงพลัง และ มาดแมนเฉพาะตัว และร่างกายที่ใหญ่โต ถึงแม้เจ้าตัวจะเป็น LGBTQ ไปแล้วก็ตาม แต่ความกล้าหาญดั่งชายชาตรี กลับยังคงอยู่ เพื่อต่อกรกับผู้ประสงค์ร้ายทุกคน</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-xl border border-gray-700 text-gray-300">
+                <h3 class="text-2xl font-bold text-white mb-4">About Mr. Delta</h3>
+                <p class="mb-4">คุณ เดลต้า เป็นทั้งเจ้าของช่อง ทั้งวางแผนงาน และดำเนินการงานในค่าย ด้วยตัวเอง เพื่อสร้างสรรค์ ไปจนเผยแพร่ ผลงานเหล่านั้นมามากมาย จนถึงทุกวันนี้ ที่ผ่านมาก็ลองผิดลองถูก ทำการทดลองทฤษฎีของการจูน จากผู้ใช้ท่านอื่นๆ เช่น Printmov Toshio FerinaSynht และ Yuunarii อยู่เรื่อยมา จนมีประสบการณ์ มากพอที่ จะบริหาร และ สร้างนักร้องคนใหม่ ๆ ได้รวดเร็วแต่คุณภาพดีที่สุด ตามมาตรฐานนักร้องเสมือนสากล ที่คงคุณภาพที่ดี และ ใช้ได้ยั่งยืน อยู่เสมอมา</p>
+                <p class="mb-4">เพื่อการปรับปรุง การพัฒนา และการปรับแต่ง นำไปสู่ การขัดเกลา ทั้งประสบการณ์ และ ฝีมือของตนเอง ในด้านการสร้างคลังเสียง การจัดระเบียบขั้นตอนการทำงาน การจูน ที่มีเทคนิคเฉพาะตัว และขั้นตอนสุดท้าย การตัดต่อคลิป ลงสู่เหล่าสาธารณะชน จึงได้เป็นทั้งตัวต้นแบบ ไปจนตัวทดลอง ตัวหลักของผู้สร้างเองทั้งสิ้น จึงสามารถสร้างนักร้องดี ๆ คุณภาพตึง ๆ ได้จนถึงทุกวันนี้</p>
+                <p class="italic text-red-300">ฉายาราชา นักสร้าง นักร้องเสมือน ที่ฉลาด รวดเร็ว เปี่ยมด้วยความคิดสร้างสรรค์มากมาย มีไฟแรงกล้าโชติช่วงที่ยากจะดับลง และมีความขยัน หมั่นเพียร มากที่สุดแต่ก็ยังขาดทักษะอีกมาก จึงต้อง พึ่งพาอาศัย นักสร้างรายอื่น ๆ เพื่อมาขอ คำปรึกษาร่วมกัน อยู่เรื่อยมา</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
+                <p class="text-sm">We are the Professionall singing for you all your passion.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
+                <ul class="text-sm space-y-2">
+                    <li>Public: <a href="mailto:delta.vocaloid09378@gmail.com" class="hover:text-red-500">delta.vocaloid09378@gmail.com</a></li>
+                    <li>Emergency: <a href="mailto:patiphat.wongyai@gmail.com" class="hover:text-red-500">patiphat.wongyai@gmail.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
+                <ul class="text-sm space-y-2">
+                    <li>YouTube: <a href="#" class="hover:text-red-500">DELTA SYNTH Official</a></li>
+                    <li>TikTok: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+                    <li>X: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+            <p>&copy; 2025 DELTA SYNTH. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
