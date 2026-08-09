@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Collaboration Voicebanks - DELTA SYNTH Studio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>body { font-family: "Inter", sans-serif; }</style>
+
+<!-- Bilingual Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&amp;family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<style>
+        .font-th { font-family: 'Kanit', sans-serif; }
+        .font-en { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-gray-200 flex flex-col min-h-screen">
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" id="space-bg"></canvas>
+<!-- Navbar -->
+<nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a class="text-2xl font-bold tracking-wider" href="index.html"><img src="images/logo.png" alt="Logo" class="logo-image inline-block mr-2"><span class="space-glow">DELTA SYNTH</span></a>
+<!-- Desktop menu -->
+<div class="hidden md:flex space-x-6">
+<a class="hover:text-red-500 transition text-red-500" href="index.html">Home</a>
+<a class="hover:text-red-500 transition" href="about.html">About Us</a>
+<a class="hover:text-red-500 transition" href="voicebank.html">Voicebanks</a>
+<a class="hover:text-red-500 transition" href="#">Files</a>
+<a class="hover:text-red-500 transition" href="#">Events</a>
+<a class="hover:text-red-500 transition" href="project.html">Project</a>
+</div>
+<!-- Hamburger button for mobile -->
+<button class="md:hidden text-gray-300 hover:text-white focus:outline-none" id="mobile-menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Mobile menu container -->
+<div class="hidden md:hidden bg-black/95 backdrop-blur-md" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md" href="index.html">Home</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="about.html">About Us</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="voicebank.html">Voicebanks</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="#">Files</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="#">Events</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="project.html">Project</a>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-24 pb-16">
+<div class="max-w-7xl mx-auto px-4">
+<h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-4 text-center uppercase tracking-widest">DELTA SYNTH Projects</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-th">รวบรวมรายชื่อโปรเจกต์และกลุ่มศิลปินทั้งหมดในความดูแลของค่าย ทั้งนักร้องที่ขึ้นตรงกับค่าย และนักร้องที่เข้าร่วมโปรเจกต์คอลแลป</p><p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-en text-red-200/80">Compile a list of all projects and artist groups under the care of the label. Both singers who are directly involved with the label and singers who participated in the collab project</p></div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">01. The Singing group from the  B.L.Student 2019 Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">นักร้องที่ขึ้นตรงกับทางค่าย</p><p class="text-gray-400 text-lg font-en text-red-200/80">Singers who are directly involved with the label</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/ayanami_hikaru.html">
+<img alt="Ayanami Hikaru" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Ayanami Hikaru.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Ayanami Hikaru</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/ayanami_hikaru.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/guren_kani.html">
+<img alt="Guren Kani" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Guren Kani.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Guren Kani</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/guren_kani.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/kochujang.html">
+<img alt="Kochujang" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Kochujang.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Kochujang</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/kochujang.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/sun.html">
+<img alt="SUN" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/SUN.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">SUN</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/sun.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/thitiya_anantanetr.html">
+<img alt="Thitiya Anantanetr" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Thitiya Anantanetr.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Thitiya Anantanetr</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/thitiya_anantanetr.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">02. The Singing group from the Drawer Kingdom Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">นักร้องสายอาร์ตที่อยากร้องเพลง</p><p class="text-gray-400 text-lg font-en text-red-200/80">Artistic singer who wants to sing</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/ahctan.html">
+<img alt="Ahctan" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Ahctan.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Ahctan</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/ahctan.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/dokya.html">
+<img alt="Dokya" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Dokya.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Dokya</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/dokya.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/narisa.html">
+<img alt="Narisa" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Narisa.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Narisa</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/narisa.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/root.html">
+<img alt="Root" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Root.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Root</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/root.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/saphire_blue.html">
+<img alt="Saphire Blue" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Saphire Blue.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Saphire Blue</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/saphire_blue.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/savanna.html">
+<img alt="Savanna" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Savanna.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Savanna</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/savanna.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/tackpee.html">
+<img alt="Tackpee" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Tackpee.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Tackpee</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/tackpee.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">03. The Singing group from the Chrildren Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">เหล่านักร้องวัยเด็กประถม ที่อยากลองเก็บทุกๆ ความทรงจำใน วัยเด็ก เอาไว้ใน รูปแบบ ของเสียง ที่จะไม่มีวันได้กลับไปอีก  ก่อนที่จะได้เติบโตไปเรื่อยๆ ที่ได้ขึ้นตรงกับทางค่ายโดยตรง</p><p class="text-gray-400 text-lg font-en text-red-200/80">Elementary school singers I want to try to preserve every childhood memory in the form of sounds that will never be returned again.  Before it could continue to grow which is directly reported to the camp</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/yamada_kimada.html">
+<img alt="Yamada Kimada" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Yamada Kimada.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Yamada Kimada</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/yamada_kimada.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/yamada_satoru.html">
+<img alt="Yamada Satoru" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Yamada Satoru.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Yamada Satoru</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/yamada_satoru.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/yamada_takeshi.html">
+<img alt="Yamada Takeshi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Yamada Takeshi.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Yamada Takeshi</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/yamada_takeshi.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">04. The Singing group from the Older Singer  Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">เหล่านักร้องที่ให้เสียงโดยนักร้องวัยทอง ที่ขึ้นตรง กับ ทางค่ายอยู่แล้ว</p><p class="text-gray-400 text-lg font-en text-red-200/80">These singers are voiced by golden singers who are already under the company's label.</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/chansamorn.html">
+<img alt="Chansamorn" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Chansamorn.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Chansamorn</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/chansamorn.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/fangyu.html">
+<img alt="FangYu" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/FangYu.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">FangYu</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/fangyu.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/helen.html">
+<img alt="Helen" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Helen.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Helen</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/helen.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/mayuree.html">
+<img alt="Mayuree" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Mayuree.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Mayuree</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/mayuree.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/sriphan.html">
+<img alt="SRIPHAN" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/SRIPHAN.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">SRIPHAN</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/sriphan.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">05. The Singing group from the Partner Creator Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">นักร้องที่ขึ้นตรงกับทางค่าย</p><p class="text-gray-400 text-lg font-en text-red-200/80">Singers who are directly involved with the label</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/arzbtv.html">
+<img alt="ARZBTV" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/ARZBTV.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">ARZBTV</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/arzbtv.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/arun_kamonlanetr.html">
+<img alt="Arun Kamonlanetr" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Arun Kamonlanetr.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Arun Kamonlanetr</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/arun_kamonlanetr.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/azaya_aika.html">
+<img alt="Azaya Aika" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Azaya Aika.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Azaya Aika</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/azaya_aika.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/diwachi.html">
+<img alt="Diwachi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Diwachi.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Diwachi</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/diwachi.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/fellowwhite.html">
+<img alt="FellowWhite" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/FellowWhite.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">FellowWhite</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/fellowwhite.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/fuwari_bento.html">
+<img alt="Fuwari Bento" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Fuwari Bento.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Fuwari Bento</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/fuwari_bento.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/kira.html">
+<img alt="Kira" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Kira.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Kira</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/kira.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/mairu_maishi.html">
+<img alt="Mairu Maishi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Mairu Maishi.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Mairu Maishi</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/mairu_maishi.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/miro.html">
+<img alt="Miro" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Miro.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Miro</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/miro.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/relven.html">
+<img alt="RelVeN" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/RelVeN.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">RelVeN</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/relven.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/shiroino_mochi.html">
+<img alt="Shiroino Mochi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Shiroino Mochi.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Shiroino Mochi</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/shiroino_mochi.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/tenshi_saburo.html">
+<img alt="Tenshi Saburo" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Tenshi Saburo.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Tenshi Saburo</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/tenshi_saburo.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/uchu_sutori.html">
+<img alt="Uchu Sutori" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Uchu Sutori.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Uchu Sutori</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/uchu_sutori.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">06. The Callaboration With The Creator's Singer</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">ทีมคอลแลบ: ผู้ได้รับการสนับสนุนและคุ้มครองเพื่อพัฒนาความสามารถของนักร้องจากค่ายแบบถาวร</p><p class="text-gray-400 text-lg font-en text-red-200/80">Collab Team: Those who receive permanent support and protection to develop the talents of singers from the label.</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/ibara_kouya.html">
+<img alt="Ibara Kouya" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Ibara Kouya.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Ibara Kouya</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/ibara_kouya.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/jonu.html">
+<img alt="Jonu" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Jonu.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Jonu</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/jonu.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/kikakowa_usagi.html">
+<img alt="Kikakowa Usagi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Kikakowa Usagi.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Kikakowa Usagi</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/kikakowa_usagi.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/koizumi_satoru.html">
+<img alt="Koizumi Satoru" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Koizumi Satoru.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Koizumi Satoru</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/koizumi_satoru.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/mojine_sora.html">
+<img alt="Mojine Sora" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Mojine Sora.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Mojine Sora</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/mojine_sora.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/okaminari_tanda.html">
+<img alt="Okaminari Tanda" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Okaminari Tanda.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Okaminari Tanda</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/okaminari_tanda.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/onika.html">
+<img alt="Onika" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Onika.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Onika</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/onika.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/quint.html">
+<img alt="Quint" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Quint.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Quint</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/quint.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/utashi_nara.html">
+<img alt="Utashi Nara" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Utashi Nara.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Utashi Nara</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/utashi_nara.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/yokuatsu_takuto.html">
+<img alt="Yokuatsu Takuto" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Yokuatsu Takuto.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Yokuatsu Takuto</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/yokuatsu_takuto.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/yuuya_sato.html">
+<img alt="Yuuya Sato" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Yuuya Sato.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Yuuya Sato</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/yuuya_sato.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">07. The  Collaborating with creative singers from overseas</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">ทีมคอลแลบ: ครีเอเตอร์ระดับตำนานที่ตอบรับการช่วยเหลือ และชาวต่างชาติ (Felix, HaruHiko)</p><p class="text-gray-400 text-lg font-en text-red-200/80">Collab Team: Legendary Creators Accepting Help and foreigners (Felix, HaruHiko)</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/felix.html">
+<img alt="Felix" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Felix.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Felix</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/felix.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/haruhiko.html">
+<img alt="Haruhiko" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Haruhiko.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Haruhiko</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/haruhiko.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">08. The 7-11 Staff Singer Around My Studied</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">เพื่อนร่วมงานสมัยฝึกงาน 7-11 ทำงานเคียงบ่าเคียงไหล่ เป็นรุ่นพี่ของเราทุกคน</p><p class="text-gray-400 text-lg font-en text-red-200/80">Co-workers from 7-11 internships working side by side They are all our seniors.</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/kangfu.html">
+<img alt="KangFu" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/KangFu.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">KangFu</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/kangfu.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/namphueng.html">
+<img alt="Namphueng" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Namphueng.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Namphueng</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/namphueng.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/sakultala.html">
+<img alt="Sakultala" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Sakultala.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Sakultala</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/sakultala.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/tom.html">
+<img alt="Tom" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Tom.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Tom</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/tom.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<div class="border-b border-gray-700 pb-4 mb-8">
+<h2 class="text-3xl font-extrabold text-white mb-2">09. The Singing group from the Volunteer Upgrade charity project</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-gray-400 text-lg font-th">นักร้องที่ขึ้นตรงกับทางค่าย</p><p class="text-gray-400 text-lg font-en text-red-200/80">Singers who are directly involved with the label</p></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/ball_powerine.html">
+<img alt="Ball Powerine" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Ball Powerine.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Ball Powerine</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/ball_powerine.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/beem_powerine.html">
+<img alt="Beem Powerine" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Beem Powerine.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Beem Powerine</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/beem_powerine.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+<a href="singers/bew__powerine.html">
+<img alt="Bew  Powerine" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105" src="assets/images/voicebanks/Bew  Powerine.png"/>
+</a>
+<div class="p-6 flex-grow flex flex-col items-center text-center">
+<h3 class="text-2xl font-bold text-white mb-2">Bew  Powerine</h3>
+<ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+<li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
+<li><span class="font-semibold text-gray-300">Genre:</span> Unknown</li>
+</ul>
+<div class="space-y-2 mt-auto w-full">
+<a class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]" href="singers/bew__powerine.html">รายละเอียด</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
+<p class="text-sm">We are the Professionall singing for you all your passion.</p>
+</div>
+<div>
+<h4 class="text-white text-lg font-bold mb-4">Contact</h4>
+<ul class="text-sm space-y-2">
+<li>Public: <a class="hover:text-red-500" href="mailto:delta.vocaloid09378@gmail.com">delta.vocaloid09378@gmail.com</a></li>
+<li>Emergency: <a class="hover:text-red-500" href="mailto:patiphat.wongyai@gmail.com">patiphat.wongyai@gmail.com</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
+<ul class="text-sm space-y-2">
+<li>YouTube: <a class="hover:text-red-500" href="#">DELTA SYNTH Official</a></li>
+<li>TikTok: <a class="hover:text-red-500" href="#">DELTA SYNTH</a></li>
+<li>X: <a class="hover:text-red-500" href="#">DELTA SYNTH</a></li>
+</ul>
+</div>
+</div>
+<div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+<p>© 2025 DELTA SYNTH. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+<script src="js/starfield.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.open-next/
+.wrangler/
+artifacts/
+
+.env
+.env.local
+.env.*.local
+
+*.log
+
+.vercel
+.env*
