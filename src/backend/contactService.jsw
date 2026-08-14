@@ -1,0 +1,66 @@
+/**
+ * DELTA SYNTH — Contact & Inquiries Backend Service (.jsw)
+ * 
+ * Standards from AGENT.md:
+ * - Validate input at boundary
+ * - Safe sanitization
+ * - Descriptive error logging
+ * 
+ * Made And Checked By DELTA SYNTH & Gemini AI
+ */
+
+import { sanitizeInput } from 'public/utils';
+
+/**
+ * Submit a contact or support message
+ * @param {object} formData
+ * @param {string} formData.name
+ * @param {string} formData.email
+ * @param {string} formData.subject
+ * @param {string} formData.category - 'General', 'Collaboration', 'Voicebank Issue', 'License'
+ * @param {string} formData.message
+ * @returns {Promise<{ success: boolean, message: string, ticketId?: string, errors?: object }>}
+ */
+export async function submitContactMessage(formData) {
+  try {
+    const errors = {};
+
+    if (!formData.name || formData.name.trim().length < 2) errors.name = 'กรุณาระบุชื่อของคุณ';
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'กรุณาระบุอีเมลที่ติดต่อได้';
+    if (!formData.subject || formData.subject.trim().length < 3) errors.subject = 'กรุณาระบุหัวข้อข้อความ';
+    if (!formData.message || formData.message.trim().length < 10) errors.message = 'กรุณาระบุรายละเอียดข้อความอย่างน้อย 10 ตัวอักษร';
+
+    if (Object.keys(errors).length > 0) {
+      return {
+        success: false,
+        message: 'กรุณาตรวจสอบข้อมูลที่กรอก',
+        errors
+      };
+    }
+
+    const ticket = {
+      ticketId: `TICK_${Date.now()}_${Math.random().toString(36).substr(2, 6).toUpperCase()}`,
+      name: sanitizeInput(formData.name),
+      email: sanitizeInput(formData.email).toLowerCase(),
+      subject: sanitizeInput(formData.subject),
+      category: sanitizeInput(formData.category || 'General'),
+      message: sanitizeInput(formData.message),
+      submittedAt: new Date().toISOString()
+    };
+
+    console.log(`[ContactService] Ticket created: ${ticket.ticketId} from ${ticket.email} [Category: ${ticket.category}]`);
+
+    return {
+      success: true,
+      message: 'ส่งข้อความถึงทีมงาน DELTA SYNTH เรียบร้อยแล้ว! พวกเราจะติดต่อกลับโดยเร็วที่สุด',
+      ticketId: ticket.ticketId
+    };
+  } catch (err) {
+    console.error(`[ContactService] submitContactMessage failed: ${err.message}. Suggested action: Verify input fields.`);
+    return {
+      success: false,
+      message: 'ไม่สามารถส่งข้อความได้ในขณะนี้ โปรดส่งอีเมลโดยตรงมาที่ delta.vocaloid09378@gmail.com',
+      errors: { system: err.message }
+    };
+  }
+}

@@ -12,6 +12,54 @@
           "invoke": true
         }
       }
+    },
+    "backend/voicebankService.jsw": {
+      "getVoicebanksList": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      },
+      "getSingerDetails": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      },
+      "getVoicebankStats": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      }
+    },
+    "backend/fileService.jsw": {
+      "getMusicFiles": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      },
+      "trackFileDownload": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      }
+    },
+    "backend/registrationService.jsw": {
+      "registerForEvent": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      },
+      "applyBetaTester": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      }
+    },
+    "backend/contactService.jsw": {
+      "submitContactMessage": {
+        "siteOwner": { "invoke": true },
+        "siteMember": { "invoke": true },
+        "anonymous": { "invoke": true }
+      }
     }
   }
 }

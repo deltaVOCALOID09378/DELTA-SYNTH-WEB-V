@@ -1,0 +1,69 @@
+/**
+ * DELTA SYNTH — File Resources Backend Service (.jsw)
+ * 
+ * Standards from AGENT.md:
+ * - Query & filter music files (USTX, MIDI, SVP, VSQX)
+ * - Safe download tracking and category search
+ * - Descriptive error logging
+ * 
+ * Made And Checked By DELTA SYNTH & Gemini AI
+ */
+
+import { MUSIC_FILES } from 'public/projectData';
+
+/**
+ * Get music resource files with format and keyword filter
+ * @param {object} options
+ * @param {'All'|'USTX'|'MIDI'|'SVP'|'VSQX'} [options.format='All']
+ * @param {string} [options.query='']
+ * @returns {Promise<{ success: boolean, files: Array<object>, count: number }>}
+ */
+export async function getMusicFiles({ format = 'All', query = '' } = {}) {
+  try {
+    let results = [...MUSIC_FILES];
+
+    if (format && format !== 'All') {
+      results = results.filter(f => f.format.toUpperCase() === format.toUpperCase());
+    }
+
+    if (query && query.trim()) {
+      const q = query.toLowerCase().trim();
+      results = results.filter(f => 
+        f.title.toLowerCase().includes(q) ||
+        f.producer.toLowerCase().includes(q) ||
+        f.recommendedSinger.toLowerCase().includes(q) ||
+        f.format.toLowerCase().includes(q)
+      );
+    }
+
+    return {
+      success: true,
+      files: results,
+      count: results.length
+    };
+  } catch (err) {
+    console.error(`[FileService] getMusicFiles failed: ${err.message}. Suggested action: Check format parameter.`);
+    return {
+      success: false,
+      files: [],
+      count: 0,
+      error: err.message
+    };
+  }
+}
+
+/**
+ * Record a file download event (analytics / telemetry)
+ * @param {string} fileId 
+ * @returns {Promise<{ success: boolean }>}
+ */
+export async function trackFileDownload(fileId) {
+  try {
+    if (!fileId) return { success: false };
+    console.log(`[FileService] Download recorded for file: ${fileId} at ${new Date().toISOString()}`);
+    return { success: true };
+  } catch (err) {
+    console.error(`[FileService] trackFileDownload failed: ${err.message}. Suggested action: Retry log write.`);
+    return { success: false };
+  }
+}

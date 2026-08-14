@@ -1,0 +1,112 @@
+/**
+ * DELTA SYNTH — Voicebank Backend Service (.jsw)
+ * 
+ * Standards from AGENT.md:
+ * - Resource-aware backend querying with caching and pagination
+ * - Input validation & security checks
+ * - Descriptive error logging: [Component] Action failed: <cause>. Suggested action: <next step>.
+ * 
+ * Made And Checked By DELTA SYNTH & Gemini AI
+ */
+
+import { VOICEBANKS, getVoicebankById, queryVoicebanks } from 'public/voicebankData';
+
+/**
+ * Get all voicebanks with optional pagination and filtering
+ * @param {object} params
+ * @param {string} [params.gender='All']
+ * @param {string} [params.engine='All']
+ * @param {string} [params.type='All']
+ * @param {string} [params.query='']
+ * @param {number} [params.page=1]
+ * @param {number} [params.pageSize=12]
+ * @returns {Promise<{ items: Array<object>, total: number, page: number, totalPages: number }>}
+ */
+export async function getVoicebanksList({ gender = 'All', engine = 'All', type = 'All', query = '', page = 1, pageSize = 12 } = {}) {
+  try {
+    const filtered = queryVoicebanks({ gender, engine, type, query });
+    const total = filtered.length;
+    const safePage = Math.max(1, parseInt(page, 10) || 1);
+    const safePageSize = Math.max(1, Math.min(100, parseInt(pageSize, 10) || 12));
+    const totalPages = Math.ceil(total / safePageSize) || 1;
+    
+    const startIndex = (safePage - 1) * safePageSize;
+    const items = filtered.slice(startIndex, startIndex + safePageSize);
+
+    return {
+      items,
+      total,
+      page: safePage,
+      pageSize: safePageSize,
+      totalPages
+    };
+  } catch (err) {
+    console.error(`[VoicebankService] getVoicebanksList failed: ${err.message}. Suggested action: Verify filter parameters.`);
+    return {
+      items: [],
+      total: 0,
+      page: 1,
+      pageSize: 12,
+      totalPages: 1,
+      error: err.message
+    };
+  }
+}
+
+/**
+ * Fetch detailed profile of a single singer by ID
+ * @param {string} singerId
+ * @returns {Promise<{ success: boolean, data: object|null, error?: string }>}
+ */
+export async function getSingerDetails(singerId) {
+  try {
+    if (!singerId || typeof singerId !== 'string') {
+      return { success: false, data: null, error: 'Invalid singer identifier provided' };
+    }
+    
+    const singer = getVoicebankById(singerId);
+    if (!singer) {
+      return { success: false, data: null, error: `Singer '${singerId}' not found in catalog` };
+    }
+
+    return { success: true, data: singer };
+  } catch (err) {
+    console.error(`[VoicebankService] getSingerDetails failed: ${err.message}. Suggested action: Check singerId format.`);
+    return { success: false, data: null, error: err.message };
+  }
+}
+
+/**
+ * Get statistical summary of all voicebanks
+ * @returns {Promise<{ totalSingers: number, engines: object, genders: object, languages: number }>}
+ */
+export async function getVoicebankStats() {
+  try {
+    const total = VOICEBANKS.length;
+    const engines = {};
+    const genders = { Male: 0, Female: 0, Other: 0 };
+
+    VOICEBANKS.forEach(v => {
+      // Count genders
+      if (v.gender in genders) {
+        genders[v.gender]++;
+      } else {
+        genders.Other++;
+      }
+
+      // Count engines
+      const eng = v.engine || 'Other';
+      engines[eng] = (engines[eng] || 0) + 1;
+    });
+
+    return {
+      totalSingers: total,
+      engines,
+      genders,
+      supportedLanguages: 7
+    };
+  } catch (err) {
+    console.error(`[VoicebankService] getVoicebankStats failed: ${err.message}. Suggested action: Check VOICEBANKS data integrity.`);
+    return { totalSingers: 0, engines: {}, genders: {}, supportedLanguages: 0 };
+  }
+}

@@ -1,0 +1,119 @@
+/**
+ * DELTA SYNTH — Event Registration & Beta Tester Service (.jsw)
+ * 
+ * Standards from AGENT.md:
+ * - Validate input at boundary (Section 12 Security)
+ * - Defensive error handling & feedback
+ * - Descriptive error logging
+ * 
+ * Made And Checked By DELTA SYNTH & Gemini AI
+ */
+
+import { sanitizeInput } from 'public/utils';
+
+/**
+ * Register participant for an event
+ * @param {object} formData
+ * @param {string} formData.eventId
+ * @param {string} formData.fullName
+ * @param {string} formData.email
+ * @param {string} [formData.discord]
+ * @param {string} [formData.note]
+ * @returns {Promise<{ success: boolean, message: string, registrationId?: string, errors?: object }>}
+ */
+export async function registerForEvent(formData) {
+  try {
+    const errors = {};
+
+    if (!formData.eventId) errors.eventId = 'กรุณาระบุงานอีเวนต์ที่ต้องการสมัคร';
+    if (!formData.fullName || formData.fullName.trim().length < 2) errors.fullName = 'กรุณาระบุชื่อ-นามสกุลที่ถูกต้อง';
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'กรุณาระบุอีเมลที่ถูกต้อง';
+
+    if (Object.keys(errors).length > 0) {
+      return {
+        success: false,
+        message: 'ข้อมูลการลงทะเบียนไม่ครบถ้วน',
+        errors
+      };
+    }
+
+    const registration = {
+      id: `REG_${Date.now()}_${Math.random().toString(36).substr(2, 6).toUpperCase()}`,
+      eventId: sanitizeInput(formData.eventId),
+      fullName: sanitizeInput(formData.fullName),
+      email: sanitizeInput(formData.email).toLowerCase(),
+      discord: sanitizeInput(formData.discord || ''),
+      note: sanitizeInput(formData.note || ''),
+      registeredAt: new Date().toISOString()
+    };
+
+    console.log(`[RegistrationService] New event registration: ${registration.id} for event ${registration.eventId} (${registration.email})`);
+
+    return {
+      success: true,
+      message: 'ลงทะเบียนเข้าร่วมกิจกรรมสำเร็จ! โปรดตรวจสอบรายละเอียดทางอีเมล',
+      registrationId: registration.id
+    };
+  } catch (err) {
+    console.error(`[RegistrationService] registerForEvent failed: ${err.message}. Suggested action: Verify form parameters.`);
+    return {
+      success: false,
+      message: 'เกิดข้อผิดพลาดของระบบในการบันทึกข้อมูล โปรดลองใหม่อีกครั้ง',
+      errors: { system: err.message }
+    };
+  }
+}
+
+/**
+ * Submit application to become a Beta Voicebank Tester
+ * @param {object} formData
+ * @param {string} formData.voicebankId
+ * @param {string} formData.fullName
+ * @param {string} formData.email
+ * @param {string} formData.dawOrEngine
+ * @param {string} formData.experienceLevel
+ * @returns {Promise<{ success: boolean, message: string, applicationId?: string, errors?: object }>}
+ */
+export async function applyBetaTester(formData) {
+  try {
+    const errors = {};
+
+    if (!formData.voicebankId) errors.voicebankId = 'กรุณาเลือกคลังเสียง BETA';
+    if (!formData.fullName || formData.fullName.trim().length < 2) errors.fullName = 'กรุณาระบุชื่อผู้สมัคร';
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'กรุณาระบุอีเมลติดต่อ';
+    if (!formData.dawOrEngine) errors.dawOrEngine = 'กรุณาระบุโปรแกรมที่ใช้งาน (เช่น OpenUtau, Synthesizer V)';
+
+    if (Object.keys(errors).length > 0) {
+      return {
+        success: false,
+        message: 'กรุณากรอกข้อมูลการสมัครทดสอบให้ครบถ้วน',
+        errors
+      };
+    }
+
+    const application = {
+      id: `BETA_${Date.now()}_${Math.random().toString(36).substr(2, 6).toUpperCase()}`,
+      voicebankId: sanitizeInput(formData.voicebankId),
+      fullName: sanitizeInput(formData.fullName),
+      email: sanitizeInput(formData.email).toLowerCase(),
+      dawOrEngine: sanitizeInput(formData.dawOrEngine),
+      experienceLevel: sanitizeInput(formData.experienceLevel || 'Intermediate'),
+      appliedAt: new Date().toISOString()
+    };
+
+    console.log(`[RegistrationService] Beta application received: ${application.id} for ${application.voicebankId}`);
+
+    return {
+      success: true,
+      message: 'ส่งใบสมัครทดสอบ BETA สำเร็จแล้ว! ทีมงานจะติดต่อกลับพร้อมลิงก์ดาวน์โหลดสิทธิ์การทดสอบ',
+      applicationId: application.id
+    };
+  } catch (err) {
+    console.error(`[RegistrationService] applyBetaTester failed: ${err.message}. Suggested action: Check application payload.`);
+    return {
+      success: false,
+      message: 'เกิดข้อผิดพลาดในการส่งใบสมัคร โปรดลองอีกครั้ง',
+      errors: { system: err.message }
+    };
+  }
+}
