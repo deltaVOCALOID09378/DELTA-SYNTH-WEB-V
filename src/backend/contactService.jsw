@@ -2,14 +2,27 @@
  * DELTA SYNTH — Contact & Inquiries Backend Service (.jsw)
  * 
  * Standards from AGENT.md:
- * - Validate input at boundary
- * - Safe sanitization
- * - Descriptive error logging
+ * - Validate input at boundary (Section 12 Security)
+ * - Defensive design & type safety (Section 6)
+ * - Domain whitelisting for category
+ * - Structured error logging: [Component] Action failed: <cause>. Suggested action: <next step>.
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
 import { sanitizeInput } from 'public/utils';
+
+export const CONTACT_CATEGORIES = [
+  'General',
+  'Collaboration',
+  'Voicebank Issue',
+  'License',
+  'Support',
+  'Feedback',
+  'Inquiry',
+  'Bug Report',
+  'Partnership'
+];
 
 /**
  * Submit a contact or support message
@@ -17,18 +30,63 @@ import { sanitizeInput } from 'public/utils';
  * @param {string} formData.name
  * @param {string} formData.email
  * @param {string} formData.subject
- * @param {string} formData.category - 'General', 'Collaboration', 'Voicebank Issue', 'License'
+ * @param {string} [formData.category='General']
  * @param {string} formData.message
  * @returns {Promise<{ success: boolean, message: string, ticketId?: string, errors?: object }>}
  */
 export async function submitContactMessage(formData) {
   try {
+    if (!formData || typeof formData !== 'object' || Array.isArray(formData)) {
+      return {
+        success: false,
+        message: 'ข้อมูลที่ส่งมาไม่ถูกต้อง',
+        errors: { system: 'Invalid request payload: expected an object' }
+      };
+    }
+
     const errors = {};
 
-    if (!formData.name || formData.name.trim().length < 2) errors.name = 'กรุณาระบุชื่อของคุณ';
-    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'กรุณาระบุอีเมลที่ติดต่อได้';
-    if (!formData.subject || formData.subject.trim().length < 3) errors.subject = 'กรุณาระบุหัวข้อข้อความ';
-    if (!formData.message || formData.message.trim().length < 10) errors.message = 'กรุณาระบุรายละเอียดข้อความอย่างน้อย 10 ตัวอักษร';
+    // Validate name
+    const rawName = typeof formData.name === 'string' ? formData.name.trim() : '';
+    if (rawName.length < 2) {
+      errors.name = 'กรุณาระบุชื่อของคุณ';
+    } else if (rawName.length > 100) {
+      errors.name = 'ชื่อของคุณยาวเกินไป (ไม่เกิน 100 ตัวอักษร)';
+    }
+
+    // Validate email
+    const rawEmail = typeof formData.email === 'string' ? formData.email.trim() : '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!rawEmail || rawEmail.length > 254 || !emailRegex.test(rawEmail)) {
+      errors.email = 'กรุณาระบุอีเมลที่ติดต่อได้';
+    }
+
+    // Validate subject
+    const rawSubject = typeof formData.subject === 'string' ? formData.subject.trim() : '';
+    if (rawSubject.length < 3) {
+      errors.subject = 'กรุณาระบุหัวข้อข้อความ';
+    } else if (rawSubject.length > 200) {
+      errors.subject = 'หัวข้อข้อความยาวเกินไป (ไม่เกิน 200 ตัวอักษร)';
+    }
+
+    // Validate message
+    let rawMessage = typeof formData.message === 'string' ? formData.message.trim() : '';
+    if (rawMessage.length > 5000) {
+      rawMessage = rawMessage.slice(0, 5000);
+    }
+    if (rawMessage.length < 10) {
+      errors.message = 'กรุณาระบุรายละเอียดข้อความอย่างน้อย 10 ตัวอักษร';
+    }
+
+    // Validate category whitelist with safe fallback to 'General'
+    let category = 'General';
+    if (typeof formData.category === 'string') {
+      const trimmedCat = formData.category.trim();
+      const matched = CONTACT_CATEGORIES.find(c => c.toLowerCase() === trimmedCat.toLowerCase());
+      if (matched) {
+        category = matched;
+      }
+    }
 
     if (Object.keys(errors).length > 0) {
       return {
@@ -38,13 +96,14 @@ export async function submitContactMessage(formData) {
       };
     }
 
+    const randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
     const ticket = {
-      ticketId: `TICK_${Date.now()}_${Math.random().toString(36).substr(2, 6).toUpperCase()}`,
-      name: sanitizeInput(formData.name),
-      email: sanitizeInput(formData.email).toLowerCase(),
-      subject: sanitizeInput(formData.subject),
-      category: sanitizeInput(formData.category || 'General'),
-      message: sanitizeInput(formData.message),
+      ticketId: `TICK_${Date.now()}_${randomSuffix}`,
+      name: sanitizeInput(rawName),
+      email: sanitizeInput(rawEmail).toLowerCase(),
+      subject: sanitizeInput(rawSubject),
+      category: sanitizeInput(category),
+      message: sanitizeInput(rawMessage),
       submittedAt: new Date().toISOString()
     };
 
@@ -56,11 +115,17 @@ export async function submitContactMessage(formData) {
       ticketId: ticket.ticketId
     };
   } catch (err) {
-    console.error(`[ContactService] submitContactMessage failed: ${err.message}. Suggested action: Verify input fields.`);
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[ContactService] submitContactMessage failed: ${errorMsg}. Suggested action: Check database connection and contact payload.`);
     return {
       success: false,
       message: 'ไม่สามารถส่งข้อความได้ในขณะนี้ โปรดส่งอีเมลโดยตรงมาที่ delta.vocaloid09378@gmail.com',
-      errors: { system: err.message }
+      errors: { system: errorMsg }
     };
   }
 }
+
+export default {
+  CONTACT_CATEGORIES,
+  submitContactMessage
+};

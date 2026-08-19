@@ -1,4 +1,11 @@
 {
+  "name": "delta-synth",
+  "version": "2.4.0",
+  "type": "module",
+  "imports": {
+    "public/*": "./src/public/*",
+    "backend/*": "./src/backend/*"
+  },
   "devDependencies": {
     "@wix/cli": "^1.0.0",
     "@wix/eslint-plugin-cli": "^1.0.0",
@@ -8,6 +15,7 @@
   "scripts": {
     "postinstall": "wix sync-types",
     "dev": "wix dev",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node tests/run-all-tests.js"
   }
 }

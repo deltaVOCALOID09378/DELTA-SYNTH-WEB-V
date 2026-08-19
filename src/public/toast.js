@@ -7,34 +7,60 @@
  * - Corner radius: 6px
  * - Colors: #CC2200 (Primary/Error), #1A1A1A (Background), #F0F0F0 (Text)
  * - Concise, clear, and actionable message
+ * - Structured logging via logStandard (AGENT.md Section 11)
+ * - Zero swallowed exceptions (AGENT.md Section 6)
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
 import { THEME } from 'public/theme';
+import { $wSafely, logStandard } from 'public/utils';
 
 let activeToastTimeout = null;
 
 /**
  * Show a toast notification on the active page
- * @param {object} options
- * @param {string} options.message - Main message text
- * @param {string} [options.actionText] - Optional suggested action or subtitle
- * @param {'info'|'success'|'warning'|'error'} [options.type='info']
- * @param {number} [options.duration] - Custom duration in milliseconds
- * @param {Function} [options.onAction] - Optional click handler
+ * Supports options object or positional string arguments
+ * @param {object|string} optionsOrMessage - Main message or options object
+ * @param {string} [legacyActionOrType=''] - Action subtitle or type string
+ * @param {'info'|'success'|'warning'|'error'} [legacyType='info']
  */
-export function showToast({ message, actionText = '', type = 'info', duration = THEME.toast.durationMs, onAction = null }) {
+export function showToast(optionsOrMessage, legacyActionOrType = '', legacyType = 'info') {
   try {
+    let options = {};
+    if (typeof optionsOrMessage === 'string') {
+      const validTypes = ['info', 'success', 'warning', 'error'];
+      const isSecondArgType = validTypes.includes(legacyActionOrType);
+
+      options = {
+        message: optionsOrMessage,
+        actionText: isSecondArgType ? '' : legacyActionOrType,
+        type: isSecondArgType ? legacyActionOrType : legacyType
+      };
+    } else if (optionsOrMessage && typeof optionsOrMessage === 'object') {
+      options = optionsOrMessage;
+    } else {
+      logStandard('Toast', 'Show notification', 'Invalid arguments provided to showToast', 'Pass an options object or message string', 'warn');
+      return;
+    }
+
+    const {
+      message = '',
+      actionText = '',
+      type = 'info',
+      duration = THEME.toast.durationMs,
+      onAction = null
+    } = options;
+
     if (typeof $w === 'undefined') {
       console.log(`[Toast ${type.toUpperCase()}] ${message} ${actionText ? `— ${actionText}` : ''}`);
       return;
     }
 
-    const toastContainer = safeGetElement('#toastContainer');
-    const toastMessage = safeGetElement('#toastMessage');
-    const toastAction = safeGetElement('#toastAction');
-    const toastIcon = safeGetElement('#toastIcon');
+    const toastContainer = $wSafely('#toastContainer');
+    const toastMessage = $wSafely('#toastMessage');
+    const toastAction = $wSafely('#toastAction');
+    const toastIcon = $wSafely('#toastIcon');
 
     if (!toastContainer) {
       // Fallback: log to console if no toast container element is bound on the page
@@ -54,20 +80,17 @@ export function showToast({ message, actionText = '', type = 'info', duration = 
     if (toastAction) {
       if (actionText) {
         toastAction.text = actionText;
-        toastAction.show();
+        if (typeof toastAction.show === 'function') {
+          toastAction.show();
+        }
       } else {
-        toastAction.hide();
+        if (typeof toastAction.hide === 'function') {
+          toastAction.hide();
+        }
       }
     }
 
-    // Set badge / icon / style indicators based on type
-    const typeColors = {
-      success: THEME.colors.success,
-      warning: THEME.colors.warning,
-      error: THEME.colors.primary,
-      info: THEME.colors.info
-    };
-
+    // Set badge / icon indicators based on type
     const typeIcons = {
       success: '✓',
       warning: '⚠',
@@ -79,27 +102,32 @@ export function showToast({ message, actionText = '', type = 'info', duration = 
       toastIcon.text = typeIcons[type] || 'ℹ';
     }
 
-    // Handle action callback
+    // Handle action callback defensively
     if (toastAction && typeof onAction === 'function') {
-      toastAction.onClick(() => {
-        try {
-          onAction();
-          hideToast();
-        } catch (err) {
-          console.error('[Toast] Action callback error:', err);
-        }
-      });
+      if (typeof toastAction.onClick === 'function') {
+        toastAction.onClick(() => {
+          try {
+            onAction();
+          } catch (err) {
+            logStandard('Toast', 'Execute action callback', err?.message || String(err), 'Check onAction handler implementation', 'error');
+          } finally {
+            hideToast();
+          }
+        });
+      }
     }
 
     // Display container
-    toastContainer.show('fade', { duration: THEME.animation.durationFast });
+    if (typeof toastContainer.show === 'function') {
+      toastContainer.show('fade', { duration: THEME.animation.durationFast });
+    }
 
     activeToastTimeout = setTimeout(() => {
       hideToast();
     }, duration);
 
   } catch (err) {
-    console.error('[Toast] Failed to render toast:', err);
+    logStandard('Toast', 'Render toast notification', err?.message || String(err), 'Verify toast container elements and options', 'error');
   }
 }
 
@@ -109,16 +137,18 @@ export function showToast({ message, actionText = '', type = 'info', duration = 
 export function hideToast() {
   try {
     if (typeof $w === 'undefined') return;
-    const toastContainer = safeGetElement('#toastContainer');
+    const toastContainer = $wSafely('#toastContainer');
     if (toastContainer && toastContainer.isVisible) {
-      toastContainer.hide('fade', { duration: THEME.animation.durationFast });
+      if (typeof toastContainer.hide === 'function') {
+        toastContainer.hide('fade', { duration: THEME.animation.durationFast });
+      }
     }
     if (activeToastTimeout) {
       clearTimeout(activeToastTimeout);
       activeToastTimeout = null;
     }
   } catch (err) {
-    console.error('[Toast] Error hiding toast:', err);
+    logStandard('Toast', 'Hide toast notification', err?.message || String(err), 'Verify element visibility state', 'warn');
   }
 }
 
@@ -148,18 +178,6 @@ export function toastWarning(message, actionText = 'โปรดตรวจส�
  */
 export function toastInfo(message, actionText = '') {
   showToast({ message, actionText, type: 'info' });
-}
-
-function safeGetElement(selector) {
-  try {
-    if (typeof $w === 'function') {
-      const el = $w(selector);
-      return (el && el.uniqueId) ? el : null;
-    }
-    return null;
-  } catch (_) {
-    return null;
-  }
 }
 
 export default {

@@ -1,201 +1,154 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="th">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us - DELTA SYNTH</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="css/styles.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<style>body { font-family: "Inter", sans-serif; }</style>
-
-<!-- Bilingual Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&amp;family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<style>
-        .font-th { font-family: 'Kanit', sans-serif; }
-        .font-en { font-family: 'Inter', sans-serif; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us · DELTA SYNTH</title>
+<meta name="description" content="รู้จัก DELTA SYNTH ค่ายพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย และสมาชิกผู้ก่อตั้งทั้ง 5 เสียง">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="bg-black text-gray-200 flex flex-col min-h-screen">
-<canvas class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" id="space-bg"></canvas>
-<!-- Navbar -->
-<nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
-<a class="text-2xl font-bold tracking-wider" href="index.html"><img src="images/logo.png" alt="Logo" class="logo-image inline-block mr-2"><span class="space-glow">DELTA SYNTH</span></a>
-<!-- Desktop menu -->
-<div class="hidden md:flex space-x-6">
-<a class="hover:text-red-500 transition" href="index.html">Home</a>
-<a class="hover:text-red-500 transition text-red-500" href="about.html">About Us</a>
-<a class="hover:text-red-500 transition" href="voicebank.html">Voicebanks</a>
-<a class="hover:text-red-500 transition" href="#">Files</a>
-<a class="hover:text-red-500 transition" href="#">Events</a>
-<a class="hover:text-red-500 transition" href="project.html">Project</a>
-</div>
-<!-- Hamburger button for mobile -->
-<button class="md:hidden text-gray-300 hover:text-white focus:outline-none" id="mobile-menu-btn">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<!-- Mobile menu container -->
-<div class="hidden md:hidden bg-black/95 backdrop-blur-md" id="mobile-menu">
-<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="index.html">Home</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md" href="about.html">About Us</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="voicebank.html">Voicebanks</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="#">Files</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="#">Events</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700" href="project.html">Project</a>
-</div>
-</div>
-</nav>
-<!-- Main Content -->
-<main class="flex-grow pt-24 pb-16">
-<!-- Header Section -->
-<section class="container mx-auto px-4 mb-16 text-center max-w-4xl">
-<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Story</h1>
-<p class="text-red-500 font-semibold text-xl mb-6">The 1st project - BL. student 2019</p>
-<div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-xl border border-gray-700 text-left space-y-4">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ค่าย DELTA SYNTH เป็นค่ายเพลงเสมือนจริง จัดตั้งขึ้นในประเทศไทย ก่อตั้งขึ้นในปี ค.ศ. 2019 ณ ปัจจุบันมีหลากหลายโปรเจกต์ที่เราได้สร้างสรรค์และเผยแพร่บนช่องทางของเรา รวมถึงการร่วมคอลแลปส์ผลงานกับครีเอเตอร์ท่านอื่นๆ เพื่อเชื่อมความสัมพันธ์ทั้งกับคนไทยและต่างชาติ ผลงานทั้งหมดของเราเผยแพร่ผ่านทาง YouTube เป็นหลัก</p><p class="font-en text-red-200/80">DELTA SYNTH is a virtual music label based in Thailand, founded in 2019. We have created and published a wide variety of projects on our channel. We frequently collaborate with other creators to build strong relationships within both the Thai and international communities. Our main platform for releasing content is YouTube.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ขอขอบคุณผู้ก่อตั้งร่วมทั้ง 3 ท่าน ที่ได้เข้าร่วมและช่วยกันสร้างสรรค์ผลงานเสมอมา ได้แก่ SUN, Kochujang (Shu-chan) และ Guren Kani</p><p class="font-en text-red-200/80">A special thanks to our 3 co-founders who have always been a core part of our creative journey: SUN, Kochujang (Shu-chan), and Guren Kani.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ขอบคุณทุกท่านที่ให้การสนับสนุนเราเสมอมา</p><p class="font-en text-red-200/80">Thank you for your continued support.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-lg font-bold text-white pt-4 font-th">ก่อตั้งโดยสมาชิก 4 ท่าน ดังนี้:</p><p class="text-lg font-bold text-white pt-4 font-en text-red-200/80">Founded by our 4 core members:</p></div>
-</div>
-</section>
-<!-- Founders Grid -->
-<section class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Ayanami Hikaru -->
-<div class="relative bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300 group">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="Ayanami Hikaru" class="w-full h-full object-cover object-top opacity-40 group-hover:scale-105 transition-transform duration-700" src="assets/images/voicebanks/Ayanami Hikaru.png"/>
-</div>
-<div class="relative z-20 h-full flex flex-col">
-<div class="bg-red-900/80 backdrop-blur-sm p-4">
-<h3 class="text-2xl font-bold text-white drop-shadow-md">1. Ayanami Hikaru</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-red-200 text-sm drop-shadow-md font-th">เดิม เปิดตัวในสมัย 2019 มีชื่อว่า DELTA No.01</p><p class="text-red-200 text-sm drop-shadow-md font-en text-red-200/80">Originally launched in 2019 with the name DELTA No.01</p></div>
-</div>
-<div class="p-6 space-y-4 text-sm text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] flex-grow">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ผู้ให้เสียงคือ DELTA SYNTH (คุณ Patiphat Wongyai) ดีไซน์ได้รับแรงบันดาลใจมาจากเสื้อผ้าสมัยเรียน โดยเริ่มจากชุดนักเรียนกางเกงดำ ภาพร่างแรกออกแบบโดยคุณ Ratchaphon Promwong และคุณ Sutthiphong Seethan ต่อมาได้คุณ Thitichot Pinphong มาช่วยอัปเดตดีไซน์และออกแบบตัวละครอื่นๆ จนกลายมาเป็นส่วนหนึ่งของค่าย เมื่อเวลาผ่านไป ดีไซน์ค่อยๆ ถูกปรับปรุงให้มีรายละเอียดที่สมบูรณ์แบบจนถึงปัจจุบัน ในขณะเดียวกัน ความสามารถในการสังเคราะห์เสียงก็ได้รับการพัฒนาให้เชี่ยวชาญยิ่งขึ้น เพื่อเป็นต้นแบบและถ่ายทอดประสบการณ์ให้คนรุ่นหลัง</p><p class="font-en text-red-200/80">Voiced by DELTA SYNTH (Patiphat Wongyai), Hikaru's original design was inspired by his creator's high school uniform. The first concept art was designed by Ratchaphon Promwong and Sutthiphong Seethan. Later, Thitichot Pinphong helped update the design and create other singers, eventually joining the label as a voicer. Over time, the character design evolved into its current definitive form. Simultaneously, the voicebank's vocal capabilities and synthesis quality have been greatly improved to serve as a benchmark for future generations.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">อายานามิ ฮิคารุ เป็นชายที่มีเชื้อสายผสมระหว่างมังกร พญานาค ยักษ์ และมนุษย์ เขามีบุคลิกที่สุขุม เย็นชา และยากที่จะหวั่นไหวกับสิ่งใด อย่างไรก็ตาม เขามักจะมีพฤติกรรมที่ขัดแย้งกันในตัวเอง เช่น นิสัยใจร้อน เจ้าระเบียบ แต่ก็แอบซุ่มซ่าม ทำให้บางครั้งดูเหมือนเป็นตัวป่วนที่สร้างปัญหาให้คนรอบข้าง แต่ด้วยความฉลาดหลักแหลม เขาก็สามารถแก้ปัญหาทุกอย่างได้อย่างง่ายดายราวกับเป่าฝุ่นให้ปลิวไป</p><p class="font-en text-red-200/80">Ayanami Hikaru is a man with a mixed lineage of Dragon, Naga, Giant, and Human. He possesses a calm, cool, and unflappable personality. However, he often exhibits contradictory traits—he can be impatient, highly methodical, yet surprisingly clumsy, sometimes making him seem like a troublemaker. Despite this, he is incredibly intelligent and easily solves any problems that arise, treating them as nothing more than dust to be blown away.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ลึกๆ แล้ว เขาเป็นคนที่มีความเมตตา เอาใจใส่ และรักพวกพ้องเป็นอย่างมาก ทำให้เขาเป็นที่รู้จักและได้รับความเคารพจากผู้คนมากมายในฐานะผู้ประสานงานหลักของค่าย</p><p class="font-en text-red-200/80">Deep down, he is a highly compassionate, caring, and loyal individual. This has earned him recognition and respect from many as the primary coordinator for both domestic and international collaborations.</p></div>
-</div>
-</div>
-</div>
-<!-- SUN No.02 -->
-<div class="relative bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300 group">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="SUN" class="w-full h-full object-cover object-top opacity-40 group-hover:scale-105 transition-transform duration-700" src="assets/images/voicebanks/SUN.png"/>
-</div>
-<div class="relative z-20 h-full flex flex-col">
-<div class="bg-red-900/80 backdrop-blur-sm p-4">
-<h3 class="text-2xl font-bold text-white drop-shadow-md">2. SUN No.02</h3>
-</div>
-<div class="p-6 space-y-4 text-sm text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] flex-grow">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ผู้ให้เสียงคือเพื่อนสนิทสมัยมัธยมของ DELTA เอง เป็นเพื่อนตายที่คอยช่วยเหลือและแบกรับกันและกันมาตลอด ในสมัยเรียน เขาคือเพื่อนคนแรกที่กล้ามาทดลองให้เสียงร้องโดยไม่ลังเล แม้จะผ่านสถานการณ์ที่ยากลำบากมาด้วยกัน ด้วยความกล้าหาญนี้ เขาจึงกลายเป็นนักร้องชายตัวท็อปอันดับต้นๆ ของค่ายเรา ซึ่งเป็นที่รู้จักอย่างกว้างขวางในนามของค่าย DELTA SYNTH</p><p class="font-en text-red-200/80">Voiced by DELTA's close high school friend, a fiercely loyal companion who has always supported him through thick and thin. Back in school, he was the very first friend who courageously volunteered to record a voicebank without hesitation. Having weathered difficult times together, his voicebank emerged as the label's top-tier male singer, widely recognized by fans everywhere under the DELTA SYNTH banner.</p></div>
-</div>
-</div>
-</div>
-<!-- Kochujang No.03 -->
-<div class="relative bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300 group">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="Kochujang" class="w-full h-full object-cover object-top opacity-40 group-hover:scale-105 transition-transform duration-700" src="assets/images/voicebanks/Kochujang.png"/>
-</div>
-<div class="relative z-20 h-full flex flex-col">
-<div class="bg-red-900/80 backdrop-blur-sm p-4">
-<h3 class="text-2xl font-bold text-white drop-shadow-md">3. Shu-chan (Kochujang No.03)</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="text-red-200 text-sm drop-shadow-md font-th">ชื่อใหม่ Kochujang No.03</p><p class="text-red-200 text-sm drop-shadow-md font-en text-red-200/80">New name Kochujang No.03</p></div>
-</div>
-<div class="p-6 space-y-4 text-sm text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] flex-grow">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ผู้ให้เสียงคือ TangmoThipawan เธอเป็นนักร้องหญิงคนแรกของค่ายที่เปิดตัวพร้อมกับเพื่อนๆ ในปี 2019</p><p class="font-en text-red-200/80">Voiced by TangmoThipawan, she is the very first female singer of our label, making her debut alongside her friends in 2019.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">เธอมีน้ำเสียงที่น่ารักและสุขุมอย่างลงตัว แม้ว่าปัจจุบันจะยุติการอัปเดตเสียงเพิ่มเติมแล้วเนื่องจากผู้ให้เสียงมีภารกิจส่วนตัว ทำให้พลาดโอกาสในการอัปเกรดคุณภาพเสียงรูปแบบใหม่ แต่ทางเรายังคงพยายามปรับสมดุลเสียงให้ดีที่สุด เพื่อให้สมกับการเป็นต้นแบบนักร้องรุ่นแรกที่สำคัญยิ่งของเรา</p><p class="font-en text-red-200/80">She possesses a perfectly balanced, cute yet calm voice. Although her voicebank updates have been discontinued due to the voicer's personal commitments—meaning she missed out on recent vocal quality upgrades—we continue to optimize her existing voicebank to the best of our abilities. She remains a highly significant role model as one of our first-generation singers.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">เธอคือต้นแบบเสียงนักร้องหญิงลำดับต้นๆ ของค่ายอย่างแท้จริง</p><p class="font-en text-red-200/80">She is truly the foundational female voice model of our label.</p></div>
-</div>
-</div>
-</div>
-<!-- Guren Kani No.04 -->
-<div class="relative bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300 group">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="Guren Kani" class="w-full h-full object-cover object-top opacity-40 group-hover:scale-105 transition-transform duration-700" src="assets/images/voicebanks/Guren Kani.png"/>
-</div>
-<div class="relative z-20 h-full flex flex-col">
-<div class="bg-red-900/80 backdrop-blur-sm p-4">
-<h3 class="text-2xl font-bold text-white drop-shadow-md">4. Guren Kani No.04</h3>
-</div>
-<div class="p-6 space-y-4 text-sm text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] flex-grow">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ผู้ให้เสียงคือ Miki Black Queen นักร้องคนที่ 4 ซึ่งเป็นตัวแทนจากกลุ่ม LGBTQ เขามีพลังเสียงที่ดุดัน มาดแมนเป็นเอกลักษณ์ และมีรูปร่างที่สูงใหญ่ แม้ว่าตัวตนของเขาจะเป็น LGBTQ แต่เขาก็เปี่ยมไปด้วยความกล้าหาญเด็ดเดี่ยว พร้อมที่จะเผชิญหน้าและปกป้องทุกคนจากผู้ประสงค์ร้าย</p><p class="font-en text-red-200/80">Voiced by Miki Black Queen, our 4th singer proudly represents the LGBTQ community. He features a powerful, fierce vocal tone, a uniquely masculine demeanor, and a towering physical presence. Despite defying traditional gender norms, he embodies true courage and determination, always ready to stand up against any adversity and protect those around him.</p></div>
-</div>
-</div>
-</div>
-<!-- Thitiya Anantanetr No.05 -->
-<div class="relative bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500 transition hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300 group md:col-span-2 lg:col-span-1">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="Thitiya Anantanetr" class="w-full h-full object-cover object-top opacity-40 group-hover:scale-105 transition-transform duration-700" src="assets/images/voicebanks/Thitiya Anantanetr.png"/>
-</div>
-<div class="relative z-20 h-full flex flex-col">
-<div class="bg-red-900/80 backdrop-blur-sm p-4">
-<h3 class="text-2xl font-bold text-white drop-shadow-md">5. Thitiya Anantanetr No. 05</h3>
-</div>
-<div class="p-6 space-y-4 text-sm text-gray-100 font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] flex-grow">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="font-th">ผู้ให้เสียงคือ Thitiya Thai เป็นนักร้องชายคนที่ 5 เขามีเสียงร้องที่ทรงพลังและห้าวหาญ มีร่างกายที่แข็งแกร่งทนทาน รักความยุติธรรม และพร้อมปกป้องทุกคนที่ศรัทธาในตัวเขา เขาคือผู้ช่วยมือขวาในตำนาน เป็นเพื่อนสนิท และเป็นแกนนำหลักในด้านการออกแบบและความคิดสร้างสรรค์ที่โดดเด่นเหนือใคร</p><p class="font-en text-red-200/80">Voiced by Thitiya Thai, our 5th male singer boasts a powerful and bold vocal tone matched with a resilient physique. He is a staunch defender of justice who deeply loves and protects his followers. Behind the scenes, he serves as our legendary right-hand man, a close confidant, and the absolute creative backbone of our visual designs and character concepts.</p></div>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-12 bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-xl border border-gray-700 text-gray-300">
-<h3 class="text-2xl font-bold text-white mb-4">About DELTA</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="mb-4 font-th">คุณ DELTA คือเจ้าของช่อง ผู้วางแผนงาน และผู้ดำเนินการหลักของค่ายด้วยตนเอง เพื่อสร้างสรรค์และเผยแพร่ผลงานมากมายจนถึงทุกวันนี้ ตลอดระยะเวลาที่ผ่านมา เขาได้ลองผิดลองถูกและศึกษาทฤษฎีการจูนเสียงจากผู้ใช้งานท่านอื่นๆ เช่น Printmov, Toshio, FerinaSynht และ Yuunarii จนสั่งสมประสบการณ์มากพอที่จะบริหารจัดการและสร้างนักร้องเสียงสังเคราะห์คนใหม่ๆ ได้อย่างรวดเร็ว โดยยังคงรักษาคุณภาพระดับสูงสุดตามมาตรฐานนักร้องเสมือนระดับสากล</p><p class="mb-4 font-en text-red-200/80">DELTA is the channel owner, lead planner, and primary operator of the label. He personally creates and publishes the majority of our works. Over the years, through trial and error, he studied tuning theories from respected creators like Printmov, Toshio, FerinaSynht, and Yuunarii. He has now gathered enough expertise to efficiently manage and produce new virtual singers quickly, while maintaining the highest international standards of voicebank quality.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="mb-4 font-th">เขาไม่เคยหยุดที่จะปรับปรุง พัฒนา และขัดเกลาทักษะของตนเอง ทั้งในด้านการสร้างคลังเสียง การจัดระเบียบเวิร์กโฟลว์ การจูนเสียงด้วยเทคนิคเฉพาะตัว ไปจนถึงขั้นตอนสุดท้ายคือการตัดต่อวิดีโอเพื่อเผยแพร่สู่สาธารณะ ความทุ่มเทเหล่านี้ทำให้เขาสามารถสร้างนักร้องคุณภาพสูงและมีเอกลักษณ์ที่โดดเด่นมาจนถึงปัจจุบัน</p><p class="mb-4 font-en text-red-200/80">He never stops improving, developing, and refining his skills—whether it's voicebank creation, workflow optimization, specialized tuning techniques, or final video editing for public releases. This unwavering dedication allows him to consistently produce high-quality, uniquely captivating virtual singers.</p></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4"><p class="italic text-red-300 font-th">ฉายา "ราชาผู้สร้างนักร้องเสมือน" สื่อถึงความฉลาด รวดเร็ว และเปี่ยมไปด้วยความคิดสร้างสรรค์ เขามีไฟในการทำงานที่ลุกโชนและมีความขยันหมั่นเพียรอย่างยิ่ง อย่างไรก็ตาม เขายอมรับว่าตนเองยังมีสิ่งที่ต้องเรียนรู้อีกมาก จึงมักจะขอคำปรึกษาและแลกเปลี่ยนความรู้กับครีเอเตอร์ท่านอื่นๆ อยู่เสมอ</p><p class="italic text-red-300 font-en text-red-200/80">Nicknamed the "King of Virtual Singer Creators", he is known for being sharp, fast, and full of boundless creativity. He possesses a burning passion and relentless diligence. However, acknowledging that there is always more to learn, he frequently collaborates and seeks advice from fellow creators in the community.</p></div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
-<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-<div>
-<h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
-<p class="text-sm">We are the Professionall singing for you all your passion.</p>
-</div>
-<div>
-<h4 class="text-white text-lg font-bold mb-4">Contact</h4>
-<ul class="text-sm space-y-2">
-<li>Public: <a class="hover:text-red-500" href="mailto:delta.vocaloid09378@gmail.com">delta.vocaloid09378@gmail.com</a></li>
-<li>Emergency: <a class="hover:text-red-500" href="mailto:patiphat.wongyai@gmail.com">patiphat.wongyai@gmail.com</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
-<ul class="text-sm space-y-2">
-<li>YouTube: <a class="hover:text-red-500" href="#">DELTA SYNTH Official</a></li>
-<li>TikTok: <a class="hover:text-red-500" href="#">DELTA SYNTH</a></li>
-<li>X: <a class="hover:text-red-500" href="#">DELTA SYNTH</a></li>
-</ul>
-</div>
-</div>
-<div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
-<p>© 2025 DELTA SYNTH. All rights reserved.</p>
-</div>
-</footer>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">Δ</span>
+      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Main</a>
+<a href="about.html" class="active">About Us</a>
+<a href="voicebank.html">All Voicebank</a>
+<a href="files.html">USTX / MIDI / SVP / VSQX</a>
+<a href="collab.html">Collaboration</a>
+<a href="events.html">Events</a>
+    </nav>
+    <button class="nav-toggle" aria-label="เปิดเมนู">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
 
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
-<script src="js/starfield.js"></script>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">ก่อตั้งปี 2019 · The 1st Project — B.L. Student</span>
+    <h1>เรื่องราวของ<br><span class="accent" style="background:var(--grad-signal);-webkit-background-clip:text;background-clip:text;color:transparent;">DELTA SYNTH</span></h1>
+    <p class="lead" style="max-width:640px;">ค่ายเพลงมือใหม่สัญชาติไทย ก่อตั้งขึ้นในปี พ.ศ. 2562 ปัจจุบันดำเนินหลากหลายโปรเจกต์ผ่านการจับมือร่วมงานกับครีเอเตอร์ทั้งไทยและต่างชาติอย่างต่อเนื่อง</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="hero-visual" style="padding:0; border-radius: var(--radius-lg);">
+      <img src="https://static.wixstatic.com/media/2edbc6_a609ef69a17648379dcb46e02e7b7197~mv2.png/v1/fit/w_1600,h_850,al_c/2edbc6_a609ef69a17648379dcb46e02e7b7197~mv2.png" alt="สมาชิกผู้ก่อตั้ง DELTA SYNTH" style="width:100%; border-radius: var(--radius-lg); display:block;">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Story</span>
+      <h2>จุดเริ่มต้นของค่าย</h2>
+      <p>ก่อตั้งโดยสมาชิก 4 คนแรก ร่วมกับผู้สนับสนุนอีก 3 ท่าน — คุณ SUN, Kochujang (Shu-chan) และ Guren Kani — ที่ร่วมสร้างและสนับสนุนค่ายมาโดยตลอด ผลงานส่วนใหญ่เผยแพร่ผ่านช่อง YouTube ของค่ายจนถึงปัจจุบัน</p>
+    </div>
+    <div>
+      <div class="founder">
+      <div class="founder-portrait"><img src="https://static.wixstatic.com/media/2edbc6_911390846a9a414293a13f259da4468f~mv2.png/v1/fill/w_800,h_1200,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ayanami%20Hikaru_edited.png" alt="Ayanami Hikaru" loading="lazy"></div>
+      <div>
+        <span class="founder-index">NO. 01</span>
+        <h3>Ayanami Hikaru</h3>
+        <div class="role">ผู้ให้เสียง: DELTA SYNTH (Patiphat Wongyai)</div>
+        <p>เดิมเปิดตัวในปี 2019 ในนาม DELTA No.01 แรงบันดาลใจมาจากชุดนักเรียนไทยกางเกงสีดำที่ผู้สร้างเคยสวมใส่สมัยเรียน ออกแบบตัวละครครั้งแรกโดยคุณรัชพล พรมวงศ์ และคุณ Sutthiphong Seethan ก่อนที่คุณฐิติโชติ พิณพงศ์ จะเข้ามาช่วยปรับดีไซน์และออกแบบนักร้องคนอื่น ๆ ต่อมา
+         <br><br>
+         ฮิคารุมีเชื้อสายมังกร พญานาค ยักษ์ และมนุษย์ ปกติสุขุมเยือกเย็นและยากจะหวั่นไหว แต่ก็ใจร้อน เจ้าระเบียบ และมีความเมตตาสูง เป็นที่รู้จักในฐานะผู้ประสานงานทั้งไทยและต่างชาติ
+         <br><br>
+         คุณเดลต้าเป็นทั้งเจ้าของช่อง ผู้วางแผน และผู้ดำเนินงานของค่ายด้วยตัวเอง ผ่านการทดลองเทคนิคการจูนเสียงจากผู้ใช้ท่านอื่น เช่น Printmov, Toshio FerinaSynth และ Yuunarii จนสั่งสมประสบการณ์มากพอจะสร้างนักร้องคนใหม่ได้อย่างรวดเร็วโดยคงคุณภาพตามมาตรฐานนักร้องเสมือนสากล</p>
+      </div>
+    </div><div class="founder">
+      <div class="founder-portrait"><img src="https://static.wixstatic.com/media/2edbc6_8e0b51d6f8fa4e41b770cb576ceb5577~mv2.png/v1/fill/w_800,h_1200,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/SUN.png" alt="SUN" loading="lazy"></div>
+      <div>
+        <span class="founder-index">NO. 02</span>
+        <h3>SUN</h3>
+        <div class="role">ผู้ให้เสียง: SunZERO5</div>
+        <p>เพื่อนสนิทสมัยมัธยมของเดลต้าเอง เป็นคนแรกที่กล้าทดลองให้เสียงร่วมโปรเจกต์ ผ่านช่วงเวลาดี ๆ และแย่ ๆ มาด้วยกัน จนกลายเป็นนักร้องชายตัวตึงลำดับต้น ๆ ของค่าย ที่ผู้คนจดจำในนามของ DELTA SYNTH ได้เป็นอย่างดี</p>
+      </div>
+    </div><div class="founder">
+      <div class="founder-portrait"><img src="https://static.wixstatic.com/media/2edbc6_96de1101769f457ab05f71222056517d~mv2.png/v1/fill/w_800,h_1200,al_c,q_90,enc_avif,quality_auto/Kochujang.png" alt="Kochujang" loading="lazy"></div>
+      <div>
+        <span class="founder-index">NO. 03</span>
+        <h3>Kochujang</h3>
+        <div class="role">ผู้ให้เสียง: TangmoThipphawan (เดิมชื่อ Shu-chan)</div>
+        <p>นักร้องหญิงคนแรกของค่าย เปิดตัวพร้อมเพื่อนรุ่นก่อตั้งในปี 2019 เสียงน่ารักแบบสุขุมลงตัว แม้ปัจจุบันจะหยุดอัปเดตคลังเสียงชั่วคราวเนื่องจากภารกิจส่วนตัวของเจ้าของเสียง แต่ทางค่ายยังคงหาแนวทางปรับสมดุลให้ดีที่สุด เพื่อรักษาสถานะต้นแบบเสียงหญิงรุ่นแรกของค่ายไว้เสมอ</p>
+      </div>
+    </div><div class="founder">
+      <div class="founder-portrait"><img src="https://static.wixstatic.com/media/2edbc6_79a332df347f4994aba1856aec8ed196~mv2.png/v1/fill/w_800,h_1200,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Guren%20Kani.png" alt="Guren Kani" loading="lazy"></div>
+      <div>
+        <span class="founder-index">NO. 04</span>
+        <h3>Guren Kani</h3>
+        <div class="role">ผู้ให้เสียง: MikiBlackQueen</div>
+        <p>นักร้องชายคนที่สี่ของค่าย จากกลุ่มผู้ให้เสียง LGBTQ เสียงทรงพลังและมาดแมนเฉพาะตัว แม้จะมีความหลากหลายทางเพศ แต่ความกล้าหาญแบบชายชาตรียังคงเป็นจุดเด่นที่ไม่เปลี่ยนแปลง พร้อมยืนหยัดเคียงข้างทีมเสมอ</p>
+      </div>
+    </div><div class="founder">
+      <div class="founder-portrait"><img src="https://static.wixstatic.com/media/2edbc6_ebccbaecc689475e8552346f0caa8db3~mv2.png/v1/fill/w_800,h_1200,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ayanami%20Kyoko.png" alt="Ayanami Kyoko" loading="lazy"></div>
+      <div>
+        <span class="founder-index">NO. 00-05</span>
+        <h3>Ayanami Kyoko</h3>
+        <div class="role">ผู้ให้เสียง: DELTA SYNTH</div>
+        <p>นักร้องหญิงจากโปรเจกต์ All DELTA's Voice Acting เปิดตัวปี 2021 เสียงทรงพลังในช่วงสูง เป็นตัวละครแรกของค่ายที่ได้ทดลองใช้เทคโนโลยี Diffsinger AI ร่วมกับทีม Printmov ต่อยอดจากรากฐานเสียงที่วางไว้โดยฮิคารุ</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ติดต่อเรา</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card"><span class="k">Public Gmail</span><span class="v">delta.vocaloid09378@gmail.com</span></div>
+      <div class="contact-card"><span class="k">Emergency Gmail</span><span class="v">patiphat.wongyai@gmail.com</span></div>
+      <div class="contact-card"><span class="k">YouTube</span><span class="v">DELTA SYNTH Official</span></div>
+      <div class="contact-card"><span class="k">TikTok / X</span><span class="v">@DELTA SYNTH</span></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">Δ</span>
+          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+        </div>
+        <p style="max-width:340px; font-size:13.5px;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งปี 2019 ผลิตคลังเสียง UTAU และ Diffsinger AI มาแล้วกว่า 30 ตัวละคร</p>
+      </div>
+      <div class="footer-links">
+        <h4>Sitemap</h4>
+        <a href="index.html">Main</a>
+        <a href="about.html">About Us</a>
+        <a href="voicebank.html">All Voicebank</a>
+        <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html">Collaboration Voicebank</a>
+        <a href="events.html">Events</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
+        <a href="#">YouTube — DELTA SYNTH Official</a>
+        <a href="#">TikTok — DELTA SYNTH</a>
+        <a href="#">X — DELTA SYNTH</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Since 2019 — DELTA SYNTH's Team</span>
+      <span>Made in Thailand</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/script.js"></script>
 </body>
 </html>

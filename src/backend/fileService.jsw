@@ -4,36 +4,46 @@
  * Standards from AGENT.md:
  * - Query & filter music files (USTX, MIDI, SVP, VSQX)
  * - Safe download tracking and category search
- * - Descriptive error logging
+ * - Defensive error handling & structured logging
+ * - Structured logging: [Component] Action failed: <cause>. Suggested action: <next step>.
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
 import { MUSIC_FILES } from 'public/projectData';
 
+export const VALID_FILE_FORMATS = ['All', 'USTX', 'MIDI', 'SVP', 'VSQX'];
+
 /**
  * Get music resource files with format and keyword filter
- * @param {object} options
+ * @param {object} [options={}]
  * @param {'All'|'USTX'|'MIDI'|'SVP'|'VSQX'} [options.format='All']
  * @param {string} [options.query='']
- * @returns {Promise<{ success: boolean, files: Array<object>, count: number }>}
+ * @returns {Promise<{ success: boolean, files: Array<object>, count: number, error?: string }>}
  */
-export async function getMusicFiles({ format = 'All', query = '' } = {}) {
+export async function getMusicFiles(options = {}) {
   try {
-    let results = [...MUSIC_FILES];
+    const safeOpts = (options && typeof options === 'object' && !Array.isArray(options)) ? options : {};
+    const rawFormat = typeof safeOpts.format === 'string' ? safeOpts.format.trim() : 'All';
+    const rawQuery = typeof safeOpts.query === 'string' ? safeOpts.query.trim() : '';
 
-    if (format && format !== 'All') {
-      results = results.filter(f => f.format.toUpperCase() === format.toUpperCase());
+    let results = Array.isArray(MUSIC_FILES) ? [...MUSIC_FILES] : [];
+
+    if (rawFormat && rawFormat.toUpperCase() !== 'ALL') {
+      const targetFormat = rawFormat.toUpperCase();
+      results = results.filter(f => f && typeof f.format === 'string' && f.format.toUpperCase() === targetFormat);
     }
 
-    if (query && query.trim()) {
-      const q = query.toLowerCase().trim();
-      results = results.filter(f => 
-        f.title.toLowerCase().includes(q) ||
-        f.producer.toLowerCase().includes(q) ||
-        f.recommendedSinger.toLowerCase().includes(q) ||
-        f.format.toLowerCase().includes(q)
-      );
+    if (rawQuery) {
+      const q = rawQuery.toLowerCase();
+      results = results.filter(f => {
+        if (!f) return false;
+        const title = typeof f.title === 'string' ? f.title.toLowerCase() : '';
+        const producer = typeof f.producer === 'string' ? f.producer.toLowerCase() : '';
+        const recommendedSinger = typeof f.recommendedSinger === 'string' ? f.recommendedSinger.toLowerCase() : '';
+        const fmt = typeof f.format === 'string' ? f.format.toLowerCase() : '';
+        return title.includes(q) || producer.includes(q) || recommendedSinger.includes(q) || fmt.includes(q);
+      });
     }
 
     return {
@@ -42,12 +52,13 @@ export async function getMusicFiles({ format = 'All', query = '' } = {}) {
       count: results.length
     };
   } catch (err) {
-    console.error(`[FileService] getMusicFiles failed: ${err.message}. Suggested action: Check format parameter.`);
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[FileService] getMusicFiles failed: ${errorMsg}. Suggested action: Check format parameter.`);
     return {
       success: false,
       files: [],
       count: 0,
-      error: err.message
+      error: errorMsg
     };
   }
 }
@@ -55,15 +66,34 @@ export async function getMusicFiles({ format = 'All', query = '' } = {}) {
 /**
  * Record a file download event (analytics / telemetry)
  * @param {string} fileId 
- * @returns {Promise<{ success: boolean }>}
+ * @returns {Promise<{ success: boolean, message?: string }>}
  */
 export async function trackFileDownload(fileId) {
   try {
-    if (!fileId) return { success: false };
-    console.log(`[FileService] Download recorded for file: ${fileId} at ${new Date().toISOString()}`);
-    return { success: true };
+    if (!fileId || typeof fileId !== 'string' || !fileId.trim()) {
+      return { success: false, message: 'Invalid or missing file identifier' };
+    }
+
+    const safeId = fileId.trim();
+    const catalog = Array.isArray(MUSIC_FILES) ? MUSIC_FILES : [];
+    const fileExists = catalog.some(f => f && f.id === safeId);
+
+    if (!fileExists) {
+      console.warn(`[FileService] trackFileDownload warning: File '${safeId}' not found in catalog. Suggested action: Verify file ID.`);
+      return { success: false, message: `File '${safeId}' not found in catalog` };
+    }
+
+    console.log(`[FileService] Download recorded for file: ${safeId} at ${new Date().toISOString()}`);
+    return { success: true, message: `Download tracked for file ${safeId}` };
   } catch (err) {
-    console.error(`[FileService] trackFileDownload failed: ${err.message}. Suggested action: Retry log write.`);
-    return { success: false };
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[FileService] trackFileDownload failed: ${errorMsg}. Suggested action: Retry log write.`);
+    return { success: false, message: errorMsg };
   }
 }
+
+export default {
+  VALID_FILE_FORMATS,
+  getMusicFiles,
+  trackFileDownload
+};

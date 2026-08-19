@@ -2,9 +2,9 @@
  * DELTA SYNTH — Voicebank Backend Service (.jsw)
  * 
  * Standards from AGENT.md:
- * - Resource-aware backend querying with caching and pagination
- * - Input validation & security checks
- * - Descriptive error logging: [Component] Action failed: <cause>. Suggested action: <next step>.
+ * - Resource-aware backend querying with pagination and input safety
+ * - Defensive error handling & structured logging
+ * - Structured logging: [Component] Action failed: <cause>. Suggested action: <next step>.
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
@@ -13,22 +13,30 @@ import { VOICEBANKS, getVoicebankById, queryVoicebanks } from 'public/voicebankD
 
 /**
  * Get all voicebanks with optional pagination and filtering
- * @param {object} params
+ * @param {object} [params={}]
  * @param {string} [params.gender='All']
  * @param {string} [params.engine='All']
  * @param {string} [params.type='All']
  * @param {string} [params.query='']
  * @param {number} [params.page=1]
  * @param {number} [params.pageSize=12]
- * @returns {Promise<{ items: Array<object>, total: number, page: number, totalPages: number }>}
+ * @returns {Promise<{ items: Array<object>, total: number, page: number, pageSize: number, totalPages: number, error?: string }>}
  */
-export async function getVoicebanksList({ gender = 'All', engine = 'All', type = 'All', query = '', page = 1, pageSize = 12 } = {}) {
+export async function getVoicebanksList(params = {}) {
   try {
+    const safeParams = (params && typeof params === 'object' && !Array.isArray(params)) ? params : {};
+    const gender = typeof safeParams.gender === 'string' ? safeParams.gender.trim() : 'All';
+    const engine = typeof safeParams.engine === 'string' ? safeParams.engine.trim() : 'All';
+    const type = typeof safeParams.type === 'string' ? safeParams.type.trim() : 'All';
+    const query = typeof safeParams.query === 'string' ? safeParams.query.trim() : '';
+    const rawPage = safeParams.page !== undefined ? safeParams.page : 1;
+    const rawPageSize = safeParams.pageSize !== undefined ? safeParams.pageSize : 12;
+
     const filtered = queryVoicebanks({ gender, engine, type, query });
     const total = filtered.length;
-    const safePage = Math.max(1, parseInt(page, 10) || 1);
-    const safePageSize = Math.max(1, Math.min(100, parseInt(pageSize, 10) || 12));
-    const totalPages = Math.ceil(total / safePageSize) || 1;
+    const safePage = Math.max(1, parseInt(rawPage, 10) || 1);
+    const safePageSize = Math.max(1, Math.min(100, parseInt(rawPageSize, 10) || 12));
+    const totalPages = Math.max(1, Math.ceil(total / safePageSize));
     
     const startIndex = (safePage - 1) * safePageSize;
     const items = filtered.slice(startIndex, startIndex + safePageSize);
@@ -41,14 +49,15 @@ export async function getVoicebanksList({ gender = 'All', engine = 'All', type =
       totalPages
     };
   } catch (err) {
-    console.error(`[VoicebankService] getVoicebanksList failed: ${err.message}. Suggested action: Verify filter parameters.`);
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[VoicebankService] getVoicebanksList failed: ${errorMsg}. Suggested action: Verify filter parameters.`);
     return {
       items: [],
       total: 0,
       page: 1,
       pageSize: 12,
       totalPages: 1,
-      error: err.message
+      error: errorMsg
     };
   }
 }
@@ -60,53 +69,70 @@ export async function getVoicebanksList({ gender = 'All', engine = 'All', type =
  */
 export async function getSingerDetails(singerId) {
   try {
-    if (!singerId || typeof singerId !== 'string') {
+    if (!singerId || typeof singerId !== 'string' || !singerId.trim()) {
       return { success: false, data: null, error: 'Invalid singer identifier provided' };
     }
     
-    const singer = getVoicebankById(singerId);
+    const safeId = singerId.trim();
+    const singer = getVoicebankById(safeId);
     if (!singer) {
-      return { success: false, data: null, error: `Singer '${singerId}' not found in catalog` };
+      return { success: false, data: null, error: `Singer '${safeId}' not found in catalog` };
     }
 
     return { success: true, data: singer };
   } catch (err) {
-    console.error(`[VoicebankService] getSingerDetails failed: ${err.message}. Suggested action: Check singerId format.`);
-    return { success: false, data: null, error: err.message };
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[VoicebankService] getSingerDetails failed: ${errorMsg}. Suggested action: Check singerId format.`);
+    return { success: false, data: null, error: errorMsg };
   }
 }
 
 /**
  * Get statistical summary of all voicebanks
- * @returns {Promise<{ totalSingers: number, engines: object, genders: object, languages: number }>}
+ * @returns {Promise<{ success: boolean, totalSingers: number, engines: object, genders: object, supportedLanguages: number, error?: string }>}
  */
 export async function getVoicebankStats() {
   try {
-    const total = VOICEBANKS.length;
+    const catalog = Array.isArray(VOICEBANKS) ? VOICEBANKS : [];
+    const total = catalog.length;
     const engines = {};
     const genders = { Male: 0, Female: 0, Other: 0 };
 
-    VOICEBANKS.forEach(v => {
-      // Count genders
+    catalog.forEach(v => {
+      if (!v) return;
       if (v.gender in genders) {
         genders[v.gender]++;
       } else {
         genders.Other++;
       }
 
-      // Count engines
-      const eng = v.engine || 'Other';
+      const eng = (typeof v.engine === 'string' && v.engine) ? v.engine : 'Other';
       engines[eng] = (engines[eng] || 0) + 1;
     });
 
     return {
+      success: true,
       totalSingers: total,
       engines,
       genders,
       supportedLanguages: 7
     };
   } catch (err) {
-    console.error(`[VoicebankService] getVoicebankStats failed: ${err.message}. Suggested action: Check VOICEBANKS data integrity.`);
-    return { totalSingers: 0, engines: {}, genders: {}, supportedLanguages: 0 };
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[VoicebankService] getVoicebankStats failed: ${errorMsg}. Suggested action: Check VOICEBANKS data integrity.`);
+    return {
+      success: false,
+      totalSingers: 0,
+      engines: {},
+      genders: { Male: 0, Female: 0, Other: 0 },
+      supportedLanguages: 0,
+      error: errorMsg
+    };
   }
 }
+
+export default {
+  getVoicebanksList,
+  getSingerDetails,
+  getVoicebankStats
+};

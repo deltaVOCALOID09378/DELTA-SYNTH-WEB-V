@@ -429,26 +429,7 @@ export const VOICEBANKS = [
     description: 'เสียงร้องแบบอะนิซองที่ทรงพลัง มีพลังขับเคลื่อนในทุกจังหวะดนตรี',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Anisong']
   },
-  {
-    id: 'helen',
-    name: 'Helen',
-    nameTh: 'เฮเลน',
-    gender: 'Female',
-    age: 22,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Gothic / Symphonic Metal',
-    language: 'English, Thai',
-    status: 'Ready for Download',
-    image: 'assets/voicebanks/profile/helen.webp',
-    imageFull: 'assets/images/voicebanks/Helen.png',
-    audioSample: 'Voice/Helen.wav',
-    detailUrl: 'singers/helen.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_HELEN',
-    description: 'เสียงร้องทรงพลังและกังวานสไตล์ซิมโฟนิกเมทัลและโกธิก',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Gothic']
-  },
+
   {
     id: 'ibara_kouya',
     name: 'Ibara Kouya',
@@ -1092,38 +1073,102 @@ export const VOICEBANKS = [
 ];
 
 /**
- * Get singer by identifier
- * @param {string} id
- * @returns {object|null}
+ * Internal Pre-indexed Map for O(1) Voicebank Lookups
+ * Key: normalized lowercase id -> Value: Voicebank object reference
  */
-export function getVoicebankById(id) {
-  if (!id) return null;
-  const target = id.toLowerCase().trim();
-  return VOICEBANKS.find(v => v.id.toLowerCase() === target) || null;
+const VOICEBANK_MAP = new Map();
+for (let i = 0; i < VOICEBANKS.length; i++) {
+  const vb = VOICEBANKS[i];
+  if (vb && typeof vb.id === 'string') {
+    VOICEBANK_MAP.set(vb.id.toLowerCase().trim(), vb);
+  }
 }
 
 /**
- * Filter voicebanks by criteria
- * @param {object} filterOptions
- * @param {string} [filterOptions.gender]
- * @param {string} [filterOptions.engine]
- * @param {string} [filterOptions.type]
- * @param {string} [filterOptions.query]
- * @returns {Array<object>}
+ * Get singer by identifier in O(1) time
+ * @param {string} id - Unique voicebank identifier (case-insensitive)
+ * @returns {object|null} The voicebank object or null if not found
  */
-export function queryVoicebanks({ gender = 'All', engine = 'All', type = 'All', query = '' } = {}) {
+export function getVoicebankById(id) {
+  if (!id || typeof id !== 'string') return null;
+  const target = id.toLowerCase().trim();
+  if (!target) return null;
+  return VOICEBANK_MAP.get(target) || null;
+}
+
+/**
+ * Filter voicebanks by criteria with optimized single-pass pre-normalization
+ * @param {object} [options]
+ * @param {string} [options.gender='All'] - Gender filter ('Male', 'Female', 'All')
+ * @param {string} [options.engine='All'] - Engine filter ('UTAU', 'DiffSinger', 'VCV', 'CVVC', 'VCCV', 'All')
+ * @param {string} [options.type='All'] - Type filter ('Official DELTA', 'Collaboration', 'All')
+ * @param {string} [options.query=''] - Search term matching name, nameTh, genre, description, tags, id
+ * @returns {Array<object>} Filtered array of voicebank objects
+ */
+export function queryVoicebanks(options) {
+  const opts = options && typeof options === 'object' ? options : {};
+  const {
+    gender = 'All',
+    engine = 'All',
+    type = 'All',
+    query = ''
+  } = opts;
+
+  const normGender = typeof gender === 'string' ? gender.trim().toLowerCase() : 'all';
+  const normEngine = typeof engine === 'string' ? engine.trim().toLowerCase() : 'all';
+  const normType = typeof type === 'string' ? type.trim().toLowerCase() : 'all';
+  const normQuery = typeof query === 'string' ? query.trim().toLowerCase() : '';
+
+  const filterByGender = normGender !== '' && normGender !== 'all';
+  const filterByEngine = normEngine !== '' && normEngine !== 'all';
+  const filterByType = normType !== '' && normType !== 'all';
+  const filterByQuery = normQuery.length > 0;
+
+  if (!filterByGender && !filterByEngine && !filterByType && !filterByQuery) {
+    return VOICEBANKS.slice();
+  }
+
   return VOICEBANKS.filter(v => {
-    if (gender !== 'All' && v.gender.toLowerCase() !== gender.toLowerCase()) return false;
-    if (engine !== 'All' && !v.engine.toLowerCase().includes(engine.toLowerCase())) return false;
-    if (type !== 'All' && !v.type.toLowerCase().includes(type.toLowerCase())) return false;
-    if (query && query.trim()) {
-      const q = query.toLowerCase().trim();
-      const matchName = v.name.toLowerCase().includes(q) || v.nameTh.toLowerCase().includes(q);
-      const matchGenre = v.genre.toLowerCase().includes(q);
-      const matchDesc = v.description.toLowerCase().includes(q);
-      const matchTag = v.tags.some(t => t.toLowerCase().includes(q));
-      if (!matchName && !matchGenre && !matchDesc && !matchTag) return false;
+    if (!v) return false;
+
+    if (filterByGender) {
+      const vGender = typeof v.gender === 'string' ? v.gender.toLowerCase() : '';
+      if (vGender !== normGender) return false;
     }
+
+    if (filterByEngine) {
+      const vEngine = typeof v.engine === 'string' ? v.engine.toLowerCase() : '';
+      if (!vEngine.includes(normEngine)) return false;
+    }
+
+    if (filterByType) {
+      const vType = typeof v.type === 'string' ? v.type.toLowerCase() : '';
+      if (!vType.includes(normType)) return false;
+    }
+
+    if (filterByQuery) {
+      const name = typeof v.name === 'string' ? v.name.toLowerCase() : '';
+      const nameTh = typeof v.nameTh === 'string' ? v.nameTh.toLowerCase() : '';
+      const genre = typeof v.genre === 'string' ? v.genre.toLowerCase() : '';
+      const desc = typeof v.description === 'string' ? v.description.toLowerCase() : '';
+      const id = typeof v.id === 'string' ? v.id.toLowerCase() : '';
+
+      const matchText = name.includes(normQuery) ||
+                        nameTh.includes(normQuery) ||
+                        genre.includes(normQuery) ||
+                        desc.includes(normQuery) ||
+                        id.includes(normQuery);
+
+      if (matchText) return true;
+
+      if (Array.isArray(v.tags)) {
+        const matchTag = v.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(normQuery));
+        if (matchTag) return true;
+      }
+
+      return false;
+    }
+
     return true;
   });
 }
