@@ -16,6 +16,7 @@
     "postinstall": "wix sync-types",
     "dev": "wix dev",
     "lint": "eslint .",
-    "test": "node tests/run-all-tests.js"
+    "test": "node --loader ./tests/loader.js tests/run-all-tests.js",
+    "build": "echo Ready"
   }
 }

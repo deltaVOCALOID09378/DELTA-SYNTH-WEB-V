@@ -1,80 +1,85 @@
-# Project: DELTA SYNTH Velo Hardening & Optimization
+# Project: DELTA SYNTH Official Website — Architecture, Restoration & Hardening
 
 ## Architecture
-DELTA SYNTH is a bilingual (Thai/English) virtual singer ecosystem and catalog platform built on Wix Velo architecture, backed by custom JSW backend web modules and static web assets.
-- **Frontend Page Layer (`src/pages/`)**: 14 Velo page scripts managing UI interactions, repeaters, forms, and audio controls across the master layout and dedicated views.
-- **Public Core Layer (`src/public/`)**: Shared utilities (`utils.js`), toast notification engine (`toast.js`), design tokens (`theme.js`), global audio singleton (`audioPlayer.js`), static 54-voicebank catalog (`voicebankData.js`), and project catalogs (`projectData.js`).
-- **Backend Service Layer (`src/backend/`)**: Web modules (`contactService.jsw`, `registrationService.jsw`, `voicebankService.jsw`, `fileService.jsw`), REST API (`http-functions.js`), data hooks (`data.js`), and access control (`permissions.json`).
-- **Testing Layer (`tests/`)**: 4-Tier Opaque-box E2E test harness and unit test suites running under Node test environment.
+DELTA SYNTH is a bilingual (Thai/English) virtual singer ecosystem, music file archive, and catalog platform built on clean semantic HTML5, modern vanilla JavaScript, Tailwind/CSS design tokens, and Wix Velo integration.
+- **Static Portal Layer (`src/public/`)**: Core public pages (`index.html`, `about.html`, `voicebank.html`, `files.html`, `collab.html`, `events.html`, `project.html`), and 53 individual singer profiles (`singers/*.html`).
+- **Client Script & Interaction Layer (`src/public/`)**: Shared client engine (`script.js`), starfield animator (`js/starfield.js`), audio player (`audioPlayer.js`), toast notification engine (`toast.js`), and theme tokens (`theme.js`).
+- **Data & Lore Layer (`src/public/assets/data/`, `src/public/`)**: Authoritative founder lore & milestone history (`content.json`), 53-singer master catalog (`voicebankData.js`), and project catalogs (`projectData.js`).
+- **Asset Repositories (`src/public/assets/`, `src/public/Voice/`)**: High-res voicebank artworks (`assets/images/voicebanks/`), profile webp thumbnails (`assets/voicebanks/profile/`), and audio samples (`Voice/*.wav`).
+- **Backend Service Layer (`src/backend/`)**: Web modules (`contactService.jsw`, `registrationService.jsw`, `voicebankService.jsw`, `fileService.jsw`), REST API (`http-functions.js`), and access control (`permissions.json`).
+- **Automated Test Infrastructure (`tests/`)**: 4-Tier Opaque-box E2E test harness and unit test suites running under native Node test environment (`node tests/run-all-tests.js`).
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |
 |---|---------|-------------|-----------|--------|
-| F1 | Scoped Safe Element Access | Enhanced `$wSafely(selector, action, scope)` supporting canvas and repeater `$item` contexts | M1, M3 | Survey Explorer 1 & 3 |
-| F2 | Zero Swallowed Exceptions | Elimination of empty catch blocks (`catch (_) {}`) across all public, backend, and page scripts | M1, M2, M3 | Survey Explorer 1 & 2 |
-| F3 | Structured Logging Format | Standardization to `[Component] Action failed: <cause>. Suggested action: <next step>.` | M1, M2, M3 | Survey Explorer 1, 2, 3 |
-| F4 | Toast Engine & Geometry | Validation of max 280x80px, bottom-right (16,20), 6px radius, and Leelawadee UI theme | M1 | Survey Explorer 1 & 3 |
-| F5 | Toast Signature Fix | Correction of string argument signatures in `wixPageTemplate.js` | M1 | Survey Explorer 1 |
-| F6 | Audio Player Stability | Play promise token tracking, event listener detachment on stop, and clean disposal | M1 | Survey Explorer 3 |
-| F7 | 54-Voicebank Catalog Caching | O(1) in-memory Map lookup and efficient filtering for all 54 singers | M1 | Survey Explorer 3 |
-| F8 | Backend Input Defense & Whitelisting | Top-level object/string validation and domain whitelisting across all `.jsw` services | M2 | Survey Explorer 2 |
-| F9 | Permissions Access Control | Verification of all 8 web methods and least-privilege wildcard fallback in `permissions.json` | M2 | Survey Explorer 2 |
-| F10 | REST API CORS & HTTP Codes | CORS preflight OPTIONS handlers and accurate 400 Bad Request error status in `http-functions.js` | M2 | Survey Explorer 2 |
-| F11 | Wix Data Hooks Defense | Safe item validation and defensive normalization in `data.js` | M2 | Survey Explorer 2 |
-| F12 | ESLint & Unused Import Cleanup | Clean all unused imports across 11 page scripts for 100% clean ESLint checks | M3 | Survey Explorer 1 |
-| F13 | Repeater Error Boundaries | Scoped element lookups and try/catch boundaries across all 9 repeater pages | M3 | Survey Explorer 1 |
-| F14 | Form Submission & Array Bounds | `isSubmitting` debounce guards on forms and `array.length > 0` checks before modulo access | M3 | Survey Explorer 1 |
-| F15 | E2E 4-Tier Test Suite | Comprehensive opaque-box test runner covering Tiers 1-4 (>100 test cases) | E2E Track, M4 | Survey Explorer 3 |
-| F16 | Adversarial Hardening | White-box edge case testing and gap closure (Tier 5) | M4 | AGENT.md & Dual Track |
+| F1 | Navigation & Mobile Drawer System | Unified mobile drawer with outside click, Escape dismissal, ARIA expanded state, and focus management across all portal pages | M1 | Survey Nav Explorer |
+| F2 | Active Navbar Resolution | Clean URL normalization (handling `.html`, clean URLs, root) and single active link highlighting without double highlights | M1 | Survey Nav Explorer |
+| F3 | Singer Mobile Navigation Integration | Complete mobile drawer markup, hamburger button ID, and `script.js` integration across all 53 singer profile pages | M1 | Survey Nav Explorer |
+| F4 | Official Social & Media Link Routing | Replacement of 21 dead `#` footer links with verified official YouTube, TikTok, X, and Facebook channels | M1 | Survey Nav Explorer |
+| F5 | Song File Download Access | Actionable download links and `files.zip` integration for 9 project files in `files.html` | M1 | Survey Nav Explorer |
+| F6 | UTF-8 Mojibake Elimination | Total elimination of double-encoded UTF-8 mojibake (`à¸`, `à¹`, `Â·`, `â€”`, `Î”`, `ðŸ¤ `) across `index.html`, `about.html`, `files.html`, `collab.html`, `events.html` | M2 | Survey Encoding Explorer |
+| F7 | Numeric Hex Entity Cleanup | Elimination of raw `&#xE...` hex escapes in `voicebank.html` and `generate_voicebank.cjs` in favor of native UTF-8 Thai strings | M2 | Survey Encoding Explorer |
+| F8 | Founder Lore & Lore Integrity | Complete restoration and preservation of authentic biographies for all 6 founders (Hikaru, SUN, Kochujang, Guren Kani, Kyoko, Thitiya) and Mr. Delta milestone history in `about.html` | M2 | Survey Encoding Explorer |
+| F9 | 53-Singer Catalog Synchronization | 100% synchronization of metadata (Age, Gender, Voicer, Genre, Engine, Language, Description, Download URL, Audio Sample) between `voicebankData.js`, `voicebank.html`, and all 53 `singers/*.html` pages | M3 | Survey Voicebank Explorer |
+| F10 | Image & Audio Asset Remediation | Fix corrupted 0-byte `kangfu.webp`, provide fallback/remedies for `mochiai.webp`/`Mochiai.png`/`Mochiai.wav`, align double-spaced filenames (`Bew  Powerine.png`), and fix missing `Ball Powerine.wav` | M3 | Survey Voicebank Explorer |
+| F11 | Audio Sample Path Normalization | Align all audio sample references in code with exact disk filenames (`Kochujang1.wav`, `Charnsamorn.wav`, `Kikokawa Usagi.wav`, `Bew Powerine.wav`, `ARZBTV.wav`, `Thitiya.wav`, `Beem.wav`, `Sakultala1.wav`, `Yamada Kimada1.wav`, `Natsune Tanda.wav`) | M3 | Survey Voicebank Explorer |
+| F12 | Singer Lore & Biographies Upgrade | Eliminate `<li>Unknown</li>` placeholders in Projects across all 53 singer pages and inject authentic bilingual English/Thai descriptions | M3 | Survey Voicebank Explorer |
+| F13 | Accessibility (a11y) & WCAG AA Compliance | Implement ARIA tags, button labels, filter chip `aria-pressed`, keyboard navigation, and update low-contrast text colors (`#666666` -> `#9CA3AF`) | M4 | Survey Voicebank & Nav Explorers |
+| F14 | Automated Test Suite Expansion (144+ Tests) | Expand Node native test suite to ≥144 tests covering navigation routing, UTF-8 integrity, 53 singer catalog synchronization, asset existence, and a11y standards | M4 | E2E Track & AGENT.md |
+| F15 | Zero-Dependency Test Execution | Ensure `node tests/run-all-tests.js` executes seamlessly with zero runtime module resolution errors across all Node environments | M4 | E2E Track |
+| F16 | Deployment & Build Certification | Verify static packaging, clean builds, and deployment readiness for Vercel and GitHub Pages | M4 | AGENT.md & Project Spec |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| E2E | E2E Testing Track | Test harness (`tests/`) covering Tiers 1-4, `TEST_INFRA.md` & `TEST_READY.md` | Survey | IN_PROGRESS |
-| M1 | Public Core & Audio Hardening | `src/public/utils.js`, `audioPlayer.js`, `voicebankData.js`, `toast.js`, `theme.js`, `wixPageTemplate.js` | Survey | IN_PROGRESS |
-| M2 | Backend & Security Hardening | `src/backend/*.jsw`, `http-functions.js`, `data.js`, `permissions.json` | M1 contracts | IN_PROGRESS |
-| M3 | Page Scripts Quality & Defensiveness | All 14 page scripts in `src/pages/*.js` | M1, M2 | PLANNED |
-| M4 | Final E2E Pass & Adversarial Hardening | 100% E2E test pass (Tiers 1-4) and Tier 5 adversarial verification | E2E, M1, M2, M3 | PLANNED |
+| M1 | Website Access & Navigation System Repair | `src/public/script.js`, `index.html`, `about.html`, `voicebank.html`, `files.html`, `collab.html`, `events.html`, `project.html`, `generate_voicebank.cjs`, `generate.cjs` | Survey | IN_PROGRESS |
+| M2 | Character Encoding & Content Integrity Restoration | `index.html`, `about.html`, `files.html`, `collab.html`, `events.html`, `voicebank.html`, `generate_voicebank.cjs` | M1 | PLANNED |
+| M3 | Voicebank & Singer Catalog Synchronization (53 Singers) | `src/public/singers/*.html` (all 53 files), `src/public/voicebank.html`, `src/public/voicebankData.js`, assets, `Voice/*.wav`, `generate.cjs`, `generate_voicebank.cjs` | M1, M2 | PLANNED |
+| M4 | Accessibility, E2E Test Expansion (144+ Tests) & Deployment Readiness | `tests/*.js`, `tests/run-all-tests.js`, a11y ARIA in HTML/JS, color contrast tokens, `TEST_READY.md` | M1, M2, M3 | PLANNED |
 
 ## Interface Contracts
-### `src/public/utils.js` ↔ Consumers (Pages & Services)
-- `$wSafely(selector: string, action?: Function, scope?: Function): Element | null`
-  - Safe element lookup with optional `scope` (defaults to `$w` if undefined, or accepts `$item` in repeaters).
-  - Returns element or null without throwing exceptions.
-- `logStandard(component: string, action: string, cause: string, suggestedAction: string, level?: 'error'|'warn'|'info'): void`
-  - Outputs formatted `[Component] Action failed: <cause>. Suggested action: <next step>.`.
-- `sanitizeInput(input: string, maxLength?: number): string`
-  - Strips HTML tags/entities, trims whitespace, and clamps to maxLength.
-- `debounce(func: Function, wait?: number): Function`
-- `formatDateThai(dateInput: any, includeTime?: boolean): string`
+### Client Navigation Engine (`src/public/script.js`)
+- Initializes on `DOMContentLoaded`.
+- Active Link Handler:
+  - Normalizes `window.location.pathname` (strips `.html`, query strings, trailing slashes, maps `""`/`"/"` to `"index"`).
+  - Clears all previous `.active` classes and `aria-current="page"` attributes across `.nav-links a`, `#mobile-menu a`, `.mobile-drawer a`.
+  - Assigns `.active` and `aria-current="page"` to the single matching link (mapping `/singers/*` to `voicebank`).
+- Mobile Navigation Drawers:
+  - Portal Header (`.nav-toggle` ↔ `.nav-links`): Toggles `.open`, manages `aria-expanded`, auto-closes on outside click, on link click, and on `Escape` key press.
+  - Singer & Project Layouts (`#mobile-menu-btn` ↔ `#mobile-menu`): Toggles `.hidden`, manages `aria-expanded`, auto-closes on outside click, on link click, and on `Escape` key press.
 
-### `src/public/audioPlayer.js` ↔ Pages (`masterPage.js`, `All DELTA's Voicebank.acsro.js`, etc.)
-- `globalAudioPlayer.play(trackId: string, trackUrl: string): Promise<boolean>`
-- `globalAudioPlayer.pause(): void`
-- `globalAudioPlayer.stop(): void`
-- `globalAudioPlayer.subscribe(listener: Function): Function` (returns unsubscribe function)
-- `globalAudioPlayer.getState(): { isPlaying: boolean, currentTrackId: string|null, currentTrackUrl: string|null }`
-
-### `src/public/toast.js` ↔ Pages & Components
-- `showToast(options: { message: string, actionText?: string, type?: 'success'|'error'|'warning'|'info', duration?: number, onAction?: Function }): void`
-- `toastSuccess(message: string, actionText?: string): void`
-- `toastError(message: string, actionText?: string): void`
-- `toastWarning(message: string, actionText?: string): void`
-- `toastInfo(message: string, actionText?: string): void`
-
-### `src/backend/*.jsw` ↔ Pages & HTTP Functions
-- `submitContactMessage(formData: Object): Promise<{ success: boolean, message: string, ticketId?: string, errors?: Object }>`
-- `registerForEvent(formData: Object): Promise<{ success: boolean, message: string, registrationId?: string, errors?: Object }>`
-- `applyBetaTester(formData: Object): Promise<{ success: boolean, message: string, applicationId?: string, errors?: Object }>`
-- `getVoicebanksList(params?: Object): Promise<{ success: boolean, data: Array, total: number, page: number, pageSize: number, totalPages: number }>`
-- `getSingerDetails(singerId: string): Promise<{ success: boolean, data: Object|null, error?: string }>`
-- `getVoicebankStats(): Promise<{ success: boolean, data: Object, error?: string }>`
-- `getMusicFiles(options?: Object): Promise<{ success: boolean, data: Array, total: number }>`
-- `trackFileDownload(fileId: string): Promise<{ success: boolean, message?: string }>`
+### Voicebank Data Master Schema (`src/public/voicebankData.js` ↔ `singers/*.html`, `voicebank.html`)
+Each of the 53 singer objects MUST contain:
+```javascript
+{
+  id: string,               // e.g. 'ayanami_hikaru'
+  name: string,             // e.g. 'Ayanami Hikaru'
+  nameTh: string,           // e.g. 'อายานามิ ฮิคารุ'
+  gender: 'Male' | 'Female',
+  age: number,              // e.g. 20
+  voicer: string,           // e.g. 'DELTA SYNTH (Patiphat Wongyai)'
+  engine: string,           // e.g. 'UTAU / DiffSinger AI'
+  type: string,             // e.g. 'CVVC', 'VCV', 'VCCV', 'DiffSinger'
+  genre: string,            // e.g. 'Pop / Rock / EDM'
+  language: string,         // e.g. 'Thai / Japanese / English'
+  status: 'Ready' | 'Beta' | 'Developing' | 'Private',
+  image: string,            // 'assets/voicebanks/profile/<id>.webp'
+  imageFull: string,        // 'assets/images/voicebanks/<Name>.png'
+  audioSample: string,      // 'Voice/<ActualWavFileName>.wav'
+  detailUrl: string,        // 'singers/<id>.html'
+  downloadUrl: string,      // 'https://drive.google.com/...' or official download URL
+  description: string,      // Rich authentic Thai description
+  descriptionEn: string,    // Accurate authentic English description
+  tags: string[]
+}
+```
 
 ## Code Layout
-- `src/public/`: Public shared utilities, audio singleton, toast manager, data catalogs, styles, and static HTML portals.
-- `src/backend/`: Backend web methods (`.jsw`), REST routes (`http-functions.js`), data hooks (`data.js`), access permissions (`permissions.json`).
-- `src/pages/`: 14 Wix Velo page scripts for site views.
-- `tests/`: Automated unit & E2E test suites and runner harness.
+- `src/public/`: Static HTML entry points, shared CSS stylesheets, client scripts (`script.js`, `audioPlayer.js`, `toast.js`), data catalogs (`voicebankData.js`, `projectData.js`, `assets/data/content.json`).
+- `src/public/singers/`: 53 individual static HTML profiles for each virtual singer.
+- `src/public/assets/images/voicebanks/`: High-resolution character artwork PNGs.
+- `src/public/assets/voicebanks/profile/`: Character thumbnail WebP images.
+- `src/public/Voice/`: Audio sample WAV previews.
+- `src/backend/`: Wix Velo backend web methods (`.jsw`), REST routes (`http-functions.js`), access control (`permissions.json`).
+- `tests/`: 4-Tier test suites, test runner (`run-all-tests.js`), loader, and mocks.
 - `.agents/`: Agent orchestration state, plans, handoffs, and verification logs.
