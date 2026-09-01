@@ -5,7 +5,7 @@
  * - Native Wix Event App element: #eventList1 ($w.IFrame)
  * - Dynamic events repeater: #eventsRepeater
  * 
- * Complies with AGENT.md:
+ * Standards from AGENT.md:
  * - Red (#CC2200), Black (#1A1A1A), White (#F0F0F0) branding
  * - Defensive design with $wSafely
  * 
@@ -13,21 +13,22 @@
  */
 
 import { EVENTS } from 'public/projectData';
-import { showToast, toastSuccess } from 'public/toast';
+import { showToast, toastSuccess, toastInfo } from 'public/toast';
 import { $wSafely, logStandard } from 'public/utils';
+import wixLocation from 'wix-location-frontend';
 
 $w.onReady(function () {
-  logStandard('EventsPage', 'Events page initializing', '', '', 'info');
+  logStandard('EventsPage', 'Events list page initializing', '', '', 'info');
 
   initWixEventWidget();
   initEventsRepeater();
 
-  logStandard('EventsPage', 'Events page ready', '', '', 'info');
+  logStandard('EventsPage', 'Events list page ready', '', '', 'info');
 });
 
 function initWixEventWidget() {
   $wSafely('#eventList1', (widget) => {
-    // Native Wix Event App widget binding if active
+    // ผูกการทำงานร่วมกับ Widget กิจกรรมของ Wix
   });
 }
 
@@ -36,20 +37,34 @@ function initEventsRepeater() {
     repeater.data = EVENTS.map(e => ({ _id: e.id, ...e }));
 
     repeater.onItemReady(($item, itemData) => {
-      $item('#eventTitle').text = itemData.title;
-      $item('#eventTitleTh').text = itemData.titleTh || '';
-      $item('#eventDate').text = `📅 วันที่: ${itemData.date} (${itemData.time})`;
-      $item('#eventLocation').text = `📍 สถานที่: ${itemData.location}`;
-      $item('#eventType').text = itemData.type;
-      $item('#eventDesc').text = itemData.description;
-      $item('#eventParticipants').text = `ผู้ลงทะเบียนแล้ว: ${itemData.currentRegistered} / ${itemData.maxParticipants} คน`;
+      $wSafely($item('#eventTitle'), el => { el.text = itemData.title; });
+      $wSafely($item('#eventTitleTh'), el => { el.text = itemData.titleTh || ''; });
+      $wSafely($item('#eventDate'), el => { el.text = `📅 ${itemData.date} | เวลา ${itemData.time}`; });
+      $wSafely($item('#eventLocation'), el => { el.text = `📍 ${itemData.location}`; });
+      $wSafely($item('#eventType'), el => { el.text = itemData.type; });
+      $wSafely($item('#eventDesc'), el => { el.text = itemData.description; });
+      
+      $wSafely($item('#eventParticipants'), el => {
+        el.text = `ผู้ลงทะเบียน: ${itemData.currentRegistered} / ${itemData.maxParticipants} คน`;
+      });
 
-      $item('#eventRegisterBtn').onClick(() => {
-        if (itemData.registrationOpen) {
-          toastSuccess(`กำลังเปิดหน้าลงทะเบียน: ${itemData.titleTh || itemData.title}`);
-        } else {
-          showToast({ message: 'กิจกรรมนี้ปิดรับลงทะเบียนแล้ว', type: 'warning' });
+      $wSafely($item('#eventStatusBadge'), badge => {
+        badge.text = itemData.registrationOpen ? '● เปิดรับลงทะเบียน' : '✕ ปิดรับลงทะเบียน';
+      });
+
+      $wSafely($item('#eventRegisterBtn'), btn => {
+        btn.label = itemData.registrationOpen ? 'ลงทะเบียนเข้าร่วม' : 'เต็มแล้ว / ปิดรับ';
+        if (!itemData.registrationOpen) {
+          btn.disable();
         }
+
+        btn.onClick(() => {
+          if (itemData.registrationOpen) {
+            wixLocation.to(`/event-details-registration?eventId=${itemData.id}`);
+          } else {
+            showToast({ message: 'กิจกรรมนี้ปิดรับลงทะเบียนเรียบร้อยแล้ว', type: 'info' });
+          }
+        });
       });
     });
   });

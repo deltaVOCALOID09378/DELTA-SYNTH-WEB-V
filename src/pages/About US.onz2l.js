@@ -12,11 +12,12 @@
  * Complies with AGENT.md:
  * - Red (#CC2200), Black (#1A1A1A), White (#F0F0F0) branding
  * - Defensive design with $wSafely
+ * - Traceable logging with logStandard
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
-import { showToast, toastSuccess } from 'public/toast';
+import { showToast } from 'public/toast';
 import { $wSafely, logStandard } from 'public/utils';
 
 const FOUNDERS = [
@@ -24,7 +25,7 @@ const FOUNDERS = [
   { name: 'SUN (ซัน)', role: 'Acoustic Tuning & Envelope Specialist' },
   { name: 'Kochujang (โคชูจัง)', role: 'Visual Art & Creative Direction' },
   { name: 'Guren Kani (กุเร็น คานิ)', role: 'Phoneme Timing & Quality Assurance' },
-  { name: 'Thitiya Anantanetr (ธิติยา อนันตเนตร)', role: 'Linguistic & Phonemizer Consultant' }
+  { name: 'Thitiya Anantanetr (ทิติยา อนันตเนตร)', role: 'Linguistic & Phonemizer Consultant' }
 ];
 
 $w.onReady(function () {
@@ -70,19 +71,22 @@ function syncWixAboutElements() {
  */
 function syncWixFoundersImages() {
   const imageIds = ['#image1', '#image2', '#image3', '#image4', '#image5'];
+  
   imageIds.forEach((id, idx) => {
-    if (FOUNDERS[idx]) {
-      $wSafely(id, (img) => {
-        img.alt = FOUNDERS[idx].name;
-        img.tooltip = `${FOUNDERS[idx].name}\n${FOUNDERS[idx].role}`;
-        img.onClick(() => {
-          showToast({
-            message: FOUNDERS[idx].name,
-            actionText: FOUNDERS[idx].role,
-            type: 'info'
-          });
+    const founder = FOUNDERS[idx];
+    if (!founder) return;
+
+    $wSafely(id, (img) => {
+      img.alt = founder.name;
+      img.tooltip = `${founder.name}\n${founder.role}`;
+      
+      img.onClick(() => {
+        showToast({
+          message: founder.name,
+          actionText: founder.role,
+          type: 'info'
         });
       });
-    }
+    });
   });
 }

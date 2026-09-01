@@ -2,10 +2,11 @@
  * DELTA SYNTH — Event Details & Registration Script (Event Details & Registration.mi1hd.js)
  * 
  * Synchronized with Wix Canvas & mi1hd.d.ts:
- * - Native Wix Event Registration App: #events1 ($w.IFrame)
- * - Dynamic form fallback & backend registration web module
+ * - Native Event App: #events1 ($w.IFrame)
+ * - Event Selection & Live Card: #eventSelectDropdown, #selectedEventCard
+ * - Registration Form: #regFullNameInput, #regEmailInput, #regDiscordInput, #regNoteInput, #submitRegistrationBtn
  * 
- * Complies with AGENT.md:
+ * Standards from AGENT.md:
  * - Red (#CC2200), Black (#1A1A1A), White (#F0F0F0) branding
  * - Defensive design with $wSafely
  * 
@@ -14,22 +15,22 @@
 
 import { registerForEvent } from 'backend/registrationService.jsw';
 import { EVENTS } from 'public/projectData';
-import { showToast, toastSuccess, toastError } from 'public/toast';
+import { showToast, toastSuccess, toastError, toastInfo } from 'public/toast';
 import { $wSafely, logStandard } from 'public/utils';
 
 $w.onReady(function () {
-  logStandard('EventRegistrationPage', 'Registration page initializing', '', '', 'info');
+  logStandard('EventRegistrationPage', 'Event registration page initializing', '', '', 'info');
 
   initWixEventsApp();
   initEventSelector();
   initRegistrationForm();
 
-  logStandard('EventRegistrationPage', 'Registration page ready', '', '', 'info');
+  logStandard('EventRegistrationPage', 'Event registration page ready', '', '', 'info');
 });
 
 function initWixEventsApp() {
   $wSafely('#events1', (app) => {
-    // Native Wix Event Registration App integration
+    // ซิงโครไนซ์กับ Native Wix Event App
   });
 }
 
@@ -39,6 +40,30 @@ function initEventSelector() {
       label: `${e.titleTh || e.title} (${e.date})`,
       value: e.id
     }));
+
+    // อัปเดตรายละเอียดกิจกรรมเมื่อเลือก Dropdown
+    dropdown.onChange(() => {
+      const selected = EVENTS.find(e => e.id === dropdown.value);
+      updateSelectedEventCard(selected);
+    });
+
+    // กำหนดค่าเริ่มต้น
+    if (EVENTS.length > 0) {
+      dropdown.value = EVENTS[0].id;
+      updateSelectedEventCard(EVENTS[0]);
+    }
+  });
+}
+
+function updateSelectedEventCard(eventItem) {
+  if (!eventItem) return;
+
+  $wSafely('#eventDetailTitle', el => { el.text = eventItem.titleTh || eventItem.title; });
+  $wSafely('#eventDetailDate', el => { el.text = `📅 วันที่: ${eventItem.date} เวลา ${eventItem.time}`; });
+  $wSafely('#eventDetailLocation', el => { el.text = `📍 สถานที่: ${eventItem.location}`; });
+  $wSafely('#eventDetailDesc', el => { el.text = eventItem.description; });
+  $wSafely('#eventDetailSeats', el => {
+    el.text = `ที่นั่งว่าง: ${eventItem.maxParticipants - eventItem.currentRegistered} / ${eventItem.maxParticipants} ที่นั่ง`;
   });
 }
 
@@ -66,12 +91,13 @@ function initRegistrationForm() {
         return;
       }
       if (!email || !email.includes('@')) {
-        toastError('กรุณากรอกอีเมลที่ถูกต้อง', 'เช่น user@example.com');
+        toastError('กรุณากรอกอีเมลที่ถูกต้อง', 'สำหรับรับลิงก์เข้าร่วมกิจกรรม');
         return;
       }
 
       isSubmitting = true;
-      btn.label = 'กำลังบันทึกข้อมูล...';
+      btn.disable();
+      btn.label = 'กำลังลงทะเบียน...';
 
       try {
         const response = await registerForEvent({
@@ -82,20 +108,23 @@ function initRegistrationForm() {
           note
         });
 
-        if (response.success) {
-          toastSuccess(response.message, `รหัสลงทะเบียน: ${response.registrationId}`);
+        if (response && response.success) {
+          toastSuccess(response.message || 'ลงทะเบียนเข้าร่วมกิจกรรมสำเร็จ!', `รหัสลงทะเบียน: ${response.registrationId}`);
+          
+          // ล้างข้อมูลในฟอร์ม
           $wSafely('#regFullNameInput', el => { el.value = ''; });
           $wSafely('#regEmailInput', el => { el.value = ''; });
           $wSafely('#regDiscordInput', el => { el.value = ''; });
           $wSafely('#regNoteInput', el => { el.value = ''; });
         } else {
-          toastError(response.message);
+          toastError(response?.message || 'ไม่สามารถลงทะเบียนได้ในขณะนี้');
         }
       } catch (err) {
-        logStandard('EventRegistrationPage', 'Submit registration', err.message, 'Check network', 'error');
+        logStandard('EventRegistrationPage', 'Submit registration error', err.message, '', 'error');
         toastError('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
       } finally {
         isSubmitting = false;
+        btn.enable();
         btn.label = 'ยืนยันการลงทะเบียน (Register)';
       }
     });
