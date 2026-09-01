@@ -111,7 +111,7 @@ export const VOICEBANKS = [
   },
   {
     id: 'arun_kamonlanetr',
-    name: 'Arun Kamonlanert',
+    name: 'Arun Kamonlanetr', // แก้คำสะกด Kamonlanert -> Kamonlanetr
     nameTh: 'อรุณ กมลเนตร',
     gender: 'Male',
     age: 23,
@@ -121,7 +121,7 @@ export const VOICEBANKS = [
     genre: 'Traditional / Pop',
     language: 'Thai',
     status: 'Ready for Download',
-    image: 'assets/voicebanks/profile/arun-kamonlanert.webp',
+    image: 'assets/voicebanks/profile/arun-kamonlanetr.webp', // แก้คำสะกดให้ตรงกัน
     imageFull: 'assets/images/voicebanks/Arun Kamonlanetr.png',
     audioSample: 'Voice/Arun Kamonlanetr.wav',
     detailUrl: 'singers/arun_kamonlanetr.html',
@@ -142,8 +142,8 @@ export const VOICEBANKS = [
     language: 'Thai, English',
     status: 'Ready for Download',
     image: 'assets/voicebanks/profile/bew-powerine.webp',
-    imageFull: 'assets/images/voicebanks/Bew  Powerine.png',
-    audioSample: 'Voice/Bew  Powerine.wav',
+    imageFull: 'assets/images/voicebanks/Bew Powerine.png', // แก้เป็นวรรคเดี่ยว
+    audioSample: 'Voice/Bew Powerine.wav',                  // แก้เป็นวรรคเดี่ยว
     detailUrl: 'singers/bew__powerine.html',
     downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_BEW',
     description: 'น้ำเสียงสว่าง สดใส มีพลัง ให้ความรู้สึกล้ำสมัยสไตล์ Sci-Fi และ Cyberpunk',
@@ -189,11 +189,11 @@ export const VOICEBANKS = [
     description: 'เสียงใสน่ารัก มีลมหายใจในเสียงร้องที่เด่นชัด เหมาะกับเพลงฟังสบาย',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Acoustic']
   },
-  {
+{
     id: 'chansamorn',
     name: 'Chansamorn',
-    nameTh: 'จันทร์สมร',
-    gender: 'Female',
+    nameTh: 'ชาญสมร',
+    gender: 'Male',
     age: 24,
     voicer: 'DELTA SYNTH',
     engine: 'UTAU VCV / DiffSinger',
@@ -201,13 +201,13 @@ export const VOICEBANKS = [
     genre: 'Traditional / Thai Contemporary',
     language: 'Thai',
     status: 'Ready for Download',
-    image: 'assets/voicebanks/profile/charnsamorn.webp',
+    image: 'assets/voicebanks/profile/chansamorn.webp', // แก้ไขจาก charnsamorn
     imageFull: 'assets/images/voicebanks/Chansamorn.png',
     audioSample: 'Voice/Chansamorn.wav',
     detailUrl: 'singers/chansamorn.html',
     downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_CHANSAMORN',
     description: 'เสียงขับร้องไทยร่วมสมัย ความละเมียดละไมของวรรณยุกต์ไทยอย่างสมบูรณ์แบบ',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'ThaiContemporary']
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'ThaiContemporary'] // แก้ไข 'Female' -> 'Male'
   },
   {
     id: 'kikakowa_usagi',
@@ -591,26 +591,6 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'Official', 'Male', 'BedroomPop']
   },
   {
-    id: 'mochiai',
-    name: 'Mochiai',
-    nameTh: 'โมจิไอ',
-    gender: 'Female',
-    age: 16,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Future Bass / Electropop',
-    language: 'Japanese, Thai',
-    status: 'Ready for Download',
-    image: 'assets/voicebanks/profile/mochiai.webp',
-    imageFull: 'assets/images/voicebanks/Mochiai.png',
-    audioSample: 'Voice/Mochiai.wav',
-    detailUrl: 'singers/mochiai.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_MOCHIAI',
-    description: 'เสียงนุ่มหนึบเหมือนโมจิ เคล้าคลอกับดนตรีอิเล็กโทรป๊อปได้อย่างลงตัว',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'FutureBass']
-  },
-  {
     id: 'mojine_sora',
     name: 'Mojine Sora',
     nameTh: 'โมจิเนะ โซระ',
@@ -829,6 +809,26 @@ export const VOICEBANKS = [
     downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_SAVANNA',
     description: 'เสียงร้องเปี่ยมเสน่ห์และความอบอุ่นแนวทรอปิคอลและแอฟโฟรบีท',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Afrobeat']
+  },
+  {
+    id: 'mochiai',
+    name: 'Mochiai',
+    nameTh: 'โมชิไอ',
+    gender: 'Female',
+    age: 16,
+    voicer: 'DELTA SYNTH',
+    engine: 'UTAU / DiffSinger',
+    type: 'Official DELTA',
+    genre: 'Future Bass / Electropop',
+    language: 'Thai, Japanese',
+    status: 'Ready for Download',
+    image: 'assets/voicebanks/profile/mochiai.webp',
+    imageFull: 'assets/images/voicebanks/Mochiai.png',
+    audioSample: 'Voice/Mochiai.wav',
+    detailUrl: 'singers/mochiai.html',
+    downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_MOCHIAI',
+    description: 'เสียงนุ่มหนึบเหมือนโมจิ เคล้าคลอกับดนตรีอิเล็กโทรป๊อปได้อย่างลงตัว',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Future Bass']
   },
   {
     id: 'shiroino_mochi',
