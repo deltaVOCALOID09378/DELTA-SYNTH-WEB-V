@@ -2,26 +2,19 @@
  * DELTA SYNTH — Contact Page Script (Contact.kcdii.js)
  * 
  * Synchronized with Wix Canvas & kcdii.d.ts:
- * - #Section1RegularTitle1: $w.Text (Title)
- * - #Section1RegularLongtext1: $w.Text (Description)
- * - #form2: $w.Form (Contact Form Container)
- * - #input1: $w.TextInput (Full Name)
- * - #input2: $w.TextInput (Email Address)
- * - #input3: $w.TextInput (Subject)
- * - #textBox1: $w.TextBox (Message)
- * - #button1: $w.Button (Submit Button)
- * - #text7: $w.Text (Response / Status Label)
- * - #text1..#text6: $w.Text (Contact Info & FAQ)
+ * - Headings: #Section1RegularTitle1, #Section1RegularLongtext1
+ * - Information labels: #text1..#text6
+ * - Contact Form: #input1 (Name), #input2 (Email), #input3 (Subject), #textBox1 (Message), #button1 (Submit), #text7 (Status)
  * 
- * Complies with AGENT.md:
+ * Standards from AGENT.md:
  * - Red (#CC2200), Black (#1A1A1A), White (#F0F0F0) branding
- * - Defensive design with $wSafely
+ * - Defensive design with $wSafely & Server Web Module
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
 import { submitContactMessage } from 'backend/contactService.jsw';
-import { showToast, toastSuccess, toastError } from 'public/toast';
+import { showToast, toastSuccess, toastError, toastInfo } from 'public/toast';
 import { $wSafely, logStandard } from 'public/utils';
 
 $w.onReady(function () {
@@ -33,29 +26,23 @@ $w.onReady(function () {
   logStandard('ContactPage', 'Contact page ready', '', '', 'info');
 });
 
-/**
- * Synchronize Contact Page Headings and Info Labels
- */
 function syncWixContactHeadings() {
   $wSafely('#Section1RegularTitle1', (el) => {
-    el.text = 'CONTACT US — DELTA SYNTH';
+    el.text = 'CONTACT US — DELTA SYNTH STUDIO';
   });
 
   $wSafely('#Section1RegularLongtext1', (el) => {
-    el.text = 'ส่งข้อความถึงทีมงาน DELTA SYNTH สำหรับการสอบถามทั่วไป ความร่วมมือ หรือแจ้งปัญหาการใช้งาน';
+    el.text = 'ติดต่อสอบถามข้อมูลคลังเสียง ส่งข้อเสนอแนะ แจ้งปัญหาการใช้งาน หรือติดต่อความร่วมมือสร้างสรรค์ผลงานเพลง';
   });
 
-  $wSafely('#text1', (el) => { el.text = 'อีเมลติดต่อหลัก (Official Email):'; });
+  $wSafely('#text1', (el) => { el.text = 'อีเมลติดต่อหลัก (Official Gmail):'; });
   $wSafely('#text2', (el) => { el.text = 'delta.vocaloid09378@gmail.com'; });
-  $wSafely('#text3', (el) => { el.text = 'เวลาทำการและการตอบกลับ: ภายใน 24-48 ชั่วโมง'; });
-  $wSafely('#text4', (el) => { el.text = 'Official Discord & Social Media: DELTA SYNTH Studio'; });
-  $wSafely('#text5', (el) => { el.text = 'การนำไปใช้เชิงพาณิชย์: กรุณาใส่เครดิต DELTA SYNTH ในผลงานเสมอ'; });
-  $wSafely('#text6', (el) => { el.text = 'กรอกแบบฟอร์มด้านล่างเพื่อส่งข้อความถึงทีมงานโดยตรง'; });
+  $wSafely('#text3', (el) => { el.text = 'เวลาตอบกลับโดยประมาณ: ภายใน 24–48 ชั่วโมง'; });
+  $wSafely('#text4', (el) => { el.text = 'YouTube & Social: DELTA SYNTH Official (@deltaSYNTH0320)'; });
+  $wSafely('#text5', (el) => { el.text = 'การนำไปใช้ในผลงาน: กรุณาใส่เครดิต DELTA SYNTH และชื่อผู้ให้เสียงในคำอธิบายผลงานเสมอ'; });
+  $wSafely('#text6', (el) => { el.text = 'กรอกข้อมูลในแบบฟอร์มด้านล่างเพื่อส่งข้อความถึงทีมงานผู้พัฒนาโดยตรง'; });
 }
 
-/**
- * Initialize Native Wix Contact Form (#input1, #input2, #input3, #textBox1, #button1, #text7)
- */
 function initWixContactForm() {
   let isSending = false;
 
@@ -75,14 +62,14 @@ function initWixContactForm() {
       $wSafely('#input3', el => { subject = (el.value || '').trim(); });
       $wSafely('#textBox1', el => { message = (el.value || '').trim(); });
 
-      // Client-side validation
+      // ตรวจสอบข้อมูลนำเข้า
       if (!name || name.length < 2) {
         setStatusMessage('กรุณากรอกชื่อของคุณอย่างน้อย 2 ตัวอักษร', 'error');
         toastError('กรุณากรอกชื่อของคุณ');
         return;
       }
       if (!email || !email.includes('@')) {
-        setStatusMessage('กรุณากรอกอีเมลที่ถูกต้อง', 'error');
+        setStatusMessage('กรุณากรอกที่อยู่อีเมลที่ถูกต้อง', 'error');
         toastError('กรุณากรอกอีเมลที่ถูกต้อง');
         return;
       }
@@ -98,8 +85,9 @@ function initWixContactForm() {
       }
 
       isSending = true;
+      btn.disable();
       btn.label = 'กำลังส่งข้อความ...';
-      setStatusMessage('กำลังบันทึกและส่งข้อมูล...', 'info');
+      setStatusMessage('กำลังส่งข้อความถึงทีมงาน...', 'info');
 
       try {
         const result = await submitContactMessage({
@@ -110,25 +98,26 @@ function initWixContactForm() {
           message
         });
 
-        if (result.success) {
-          setStatusMessage(`ส่งข้อความสำเร็จ! (Ticket ID: ${result.ticketId})`, 'success');
-          toastSuccess(result.message, `Ticket ID: ${result.ticketId}`);
+        if (result && result.success) {
+          setStatusMessage(`ส่งข้อความสำเร็จเรียบร้อย! (Ticket ID: ${result.ticketId || 'CONTACT-OK'})`, 'success');
+          toastSuccess(result.message || 'ส่งข้อความสำเร็จ', `Ticket ID: ${result.ticketId}`);
 
-          // Reset inputs
+          // ล้างข้อมูลในฟอร์ม
           $wSafely('#input1', el => { el.value = ''; });
-          $wSafely('#input2', el => { email = ''; el.value = ''; });
+          $wSafely('#input2', el => { el.value = ''; });
           $wSafely('#input3', el => { el.value = ''; });
           $wSafely('#textBox1', el => { el.value = ''; });
         } else {
-          setStatusMessage(result.message, 'error');
-          toastError(result.message);
+          setStatusMessage(result?.message || 'เกิดข้อผิดพลาดในการส่งข้อความ', 'error');
+          toastError(result?.message || 'ไม่สามารถส่งข้อความได้');
         }
       } catch (err) {
-        logStandard('ContactPage', 'Submit contact form', err.message, 'Retry submission', 'error');
+        logStandard('ContactPage', 'Submit contact form error', err.message, '', 'error');
         setStatusMessage('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์', 'error');
         toastError('ไม่สามารถส่งข้อความได้ในขณะนี้');
       } finally {
         isSending = false;
+        btn.enable();
         btn.label = 'ส่งข้อความ (Submit Message)';
       }
     });
