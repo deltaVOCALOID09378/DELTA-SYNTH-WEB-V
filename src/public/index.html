@@ -1,181 +1,131 @@
-﻿<!DOCTYPE html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Main Â· DELTA SYNTH</title>
-<meta name="description" content="DELTA SYNTH â€” à¸„à¹ˆà¸²à¸¢à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¸›à¸µ 2019">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELTA SYNTH Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: "Inter", sans-serif; }</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="nav">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">Î”</span>
-      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
-    </a>
-    <nav class="nav-links">
-      <a href="index.html" class="active">หน้าหลัก</a>
-<a href="about.html">เกี่ยวกับเรา</a>
-<a href="voicebank.html">คลังเสียงทั้งหมด</a>
-<a href="files.html">ไฟล์เสียงโปรเจกต์ (USTX/MIDI)</a>
-<a href="collab.html">โปรเจกต์คอลแลปส์</a>
-<a href="events.html">กิจกรรม</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="à¹€à¸›à¸´à¸”à¹€à¸¡à¸™à¸¹">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Thai Vocal Synthesis Studio â€” Since 2019</span>
-        <h1>à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™<br>à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸ˆà¸²à¸<span class="accent">à¸„à¸§à¸²à¸¡à¸•à¸±à¹‰à¸‡à¹ƒà¸ˆà¸‚à¸­à¸‡à¸„à¸™à¹„à¸—à¸¢</span></h1>
-        <p class="lead">DELTA SYNTH à¸„à¸·à¸­à¸„à¹ˆà¸²à¸¢à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™ (UTAU / Diffsinger AI) à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸œà¸¥à¸´à¸•à¹à¸¥à¸°à¸”à¸¹à¹à¸¥à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸à¸§à¹ˆà¸² 34 à¹€à¸ªà¸µà¸¢à¸‡ à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡à¹„à¸”à¹‰à¸«à¸¥à¸²à¸¢à¸ à¸²à¸©à¸² à¸žà¸£à¹‰à¸­à¸¡à¸ªà¹ˆà¸‡à¸•à¹ˆà¸­à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œà¹€à¸žà¸¥à¸‡à¹ƒà¸«à¹‰à¸—à¸¸à¸à¸„à¸™à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸Ÿà¸£à¸µ</p>
-        <div class="hero-actions">
-          <a href="voicebank.html" class="btn btn-primary">à¸ªà¸³à¸£à¸§à¸ˆà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</a>
-          <a href="about.html" class="btn btn-ghost">à¸£à¸¹à¹‰à¸ˆà¸±à¸à¸„à¹ˆà¸²à¸¢à¸‚à¸­à¸‡à¹€à¸£à¸²</a>
+<body class="bg-black text-white flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider">DELTA SYNTH</a>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-red-500 transition text-red-500">Home</a>
+                <a href="about.html" class="hover:text-red-500 transition">About Us</a>
+                <a href="voicebank.html" class="hover:text-red-500 transition">Voicebanks</a>
+                <a href="#" class="hover:text-red-500 transition">Files</a>
+                <a href="#" class="hover:text-red-500 transition">Events</a>
+                <a href="project.html" class="hover:text-red-500 transition">Project</a>
+            </div>
+            
+            <!-- Hamburger button for mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="mono-row"><span>ENGINE</span><span>DIFFSINGER Â· UTAU</span></div>
-        <div class="mono-row"><span>LANGUAGES</span><span>TH Â· JP Â· EN Â· CN Â· KR Â· FR Â· ES</span></div>
-        <div class="mono-row"><span>STATUS</span><span>LIVE</span></div>
         
-<svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#9075ff"/>
-      <stop offset="50%" stop-color="#6f8dff"/>
-      <stop offset="100%" stop-color="#4fe3d0"/>
-    </linearGradient>
-  </defs>
-  <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
-           C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
-           C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
-</svg>
-
-        <div class="mono-row" style="margin-top:6px;"><span>PARTNER</span><span>PRINTMOV â€” DIFFSINGER AI</span></div>
-        <div class="mono-row"><span>FOUNDED</span><span>2019 Â· BANGKOK, TH</span></div>
-      </div>
-    </div>
-
-    <div class="stat-strip">
-      <div><div class="n">34<span>+</span></div><div class="l">à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸™à¹€à¸„à¸£à¸·à¸­</div></div>
-      <div><div class="n">19</div><div class="l">à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸µà¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸•à¸­à¸™à¸™à¸µà¹‰</div></div>
-      <div><div class="n">7</div><div class="l">à¸ à¸²à¸©à¸²à¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">à¸­à¸±à¸•à¸¥à¸±à¸à¸©à¸“à¹Œà¸‚à¸­à¸‡à¹€à¸£à¸²</span>
-      <h2>à¸„à¸³à¸‚à¸§à¸±à¸ à¸§à¸´à¸ªà¸±à¸¢à¸—à¸±à¸¨à¸™à¹Œ à¹à¸¥à¸°à¸ˆà¸¸à¸”à¸¢à¸·à¸™à¸‚à¸­à¸‡ DELTA SYNTH</h2>
-      <p>à¸ªà¸£à¸¸à¸›à¹à¸™à¸§à¸—à¸²à¸‡à¸à¸²à¸£à¸—à¸³à¸‡à¸²à¸™à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸›à¹‡à¸™à¸—à¸²à¸‡à¸à¸²à¸£ à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸«à¹‰à¸—à¸¸à¸à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¹à¸¥à¸°à¸—à¸¸à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸”à¸´à¸™à¹„à¸›à¹ƒà¸™à¸—à¸´à¸¨à¸—à¸²à¸‡à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <span class="tag">à¸„à¸³à¸‚à¸§à¸±à¸</span>
-        <h3>"à¸ªà¸£à¹‰à¸²à¸‡à¹€à¸ªà¸µà¸¢à¸‡ à¸ªà¸£à¹‰à¸²à¸‡à¸•à¸±à¸§à¸•à¸™ à¸ªà¸£à¹‰à¸²à¸‡à¸ªà¸£à¸£à¸„à¹Œà¹„à¸¡à¹ˆà¸ªà¸´à¹‰à¸™à¸ªà¸¸à¸”"</h3>
-        <p>à¸—à¸¸à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸‚à¸­à¸‡à¹€à¸£à¸²à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹à¸„à¹ˆà¹„à¸Ÿà¸¥à¹Œà¹€à¸ªà¸µà¸¢à¸‡ à¹à¸•à¹ˆà¸„à¸·à¸­à¸•à¸±à¸§à¸•à¸™à¸«à¸™à¸¶à¹ˆà¸‡à¸—à¸µà¹ˆà¸¡à¸µà¹€à¸£à¸·à¹ˆà¸­à¸‡à¸£à¸²à¸§ à¸¡à¸µà¸™à¸´à¸ªà¸±à¸¢ à¹à¸¥à¸°à¸¡à¸µà¸—à¸µà¹ˆà¸¡à¸²à¹€à¸‰à¸žà¸²à¸°à¸•à¸±à¸§ à¹€à¸£à¸²à¹€à¸Šà¸·à¹ˆà¸­à¸§à¹ˆà¸²à¸à¸²à¸£à¸žà¸±à¸’à¸™à¸²à¹€à¸ªà¸µà¸¢à¸‡à¸„à¸·à¸­à¸à¸²à¸£à¸žà¸±à¸’à¸™à¸²à¸•à¸±à¸§à¸¥à¸°à¸„à¸£à¹„à¸›à¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸™à¹€à¸ªà¸¡à¸­</p>
-      </div>
-      <div class="pillar">
-        <span class="tag">à¸§à¸´à¸ªà¸±à¸¢à¸—à¸±à¸¨à¸™à¹Œ</span>
-        <h3>à¸„à¹ˆà¸²à¸¢à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¹„à¸—à¸¢à¸—à¸µà¹ˆà¸¢à¸·à¸™à¸£à¸°à¸”à¸±à¸šà¸ªà¸²à¸à¸¥</h3>
-        <p>à¸¡à¸¸à¹ˆà¸‡à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¸ à¸²à¸©à¸²à¹„à¸—à¸¢à¹ƒà¸«à¹‰à¸à¹‰à¸²à¸§à¸—à¸±à¸™à¸¡à¸²à¸•à¸£à¸à¸²à¸™à¹€à¸—à¸„à¹‚à¸™à¹‚à¸¥à¸¢à¸µ AI à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¸£à¸°à¸”à¸±à¸šà¹‚à¸¥à¸ à¸œà¹ˆà¸²à¸™à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¸à¸±à¸šà¸—à¸µà¸¡à¸žà¸±à¸’à¸™à¸² Diffsinger à¹à¸¥à¸°à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸œà¸¹à¹‰à¸ªà¸£à¹‰à¸²à¸‡à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸—à¸±à¹‰à¸‡à¹„à¸—à¸¢à¹à¸¥à¸°à¸•à¹ˆà¸²à¸‡à¸›à¸£à¸°à¹€à¸—à¸¨</p>
-      </div>
-      <div class="pillar">
-        <span class="tag">à¹€à¸­à¸à¸¥à¸±à¸à¸©à¸“à¹Œ</span>
-        <h3>à¸«à¸¥à¸²à¸à¸•à¸±à¸§à¸•à¸™ à¸«à¸™à¸¶à¹ˆà¸‡à¸¡à¸²à¸•à¸£à¸à¸²à¸™à¸„à¸¸à¸“à¸ à¸²à¸ž</h3>
-        <p>à¸ˆà¸²à¸à¸™à¸±à¸à¹€à¸£à¸µà¸¢à¸™ B.L. à¸£à¸¸à¹ˆà¸™à¸à¹ˆà¸­à¸•à¸±à¹‰à¸‡à¸›à¸µ 2019 à¸ªà¸¹à¹ˆà¸•à¸£à¸°à¸à¸¹à¸¥ Wongyai à¹à¸¥à¸°à¸‹à¸µà¸£à¸µà¸ªà¹Œà¸žà¸™à¸±à¸à¸‡à¸²à¸™ CP All Learning à¸—à¸¸à¸à¸•à¸±à¸§à¸¥à¸°à¸„à¸£à¸–à¸¹à¸à¸”à¸¹à¹à¸¥à¸”à¹‰à¸§à¸¢à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸ˆà¸¹à¸™à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸‰à¸žà¸²à¸°à¸•à¸±à¸§ à¸£à¸±à¸à¸©à¸²à¸„à¸¸à¸“à¸ à¸²à¸žà¹ƒà¸«à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰à¸¢à¸±à¹ˆà¸‡à¸¢à¸·à¸™</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">à¸„à¸§à¸²à¸¡à¹€à¸„à¸¥à¸·à¹ˆà¸­à¸™à¹„à¸«à¸§à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</span>
-      <h2>à¸ªà¸£à¸¸à¸›à¸à¸´à¸ˆà¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢</h2>
-    </div>
-    <div class="feed">
-      <div class="feed-item">
-        <div class="date">2025</div>
-        <div>
-          <h4>à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¸à¸±à¸šà¸—à¸µà¸¡ Printmov â€” à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸ªà¸¹à¹ˆ Diffsinger AI</h4>
-          <p>DELTA SYNTH à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¹€à¸›à¹‡à¸™à¸žà¸²à¸£à¹Œà¸—à¹€à¸™à¸­à¸£à¹Œà¸—à¸”à¸ªà¸­à¸šà¸‚à¸­à¸‡à¸—à¸µà¸¡ Printmov à¹€à¸žà¸·à¹ˆà¸­à¸¢à¸à¸£à¸°à¸”à¸±à¸šà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸«à¸¥à¸±à¸à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢à¸ªà¸¹à¹ˆ Diffsinger AI Engine à¸„à¸¸à¸“à¸ à¸²à¸žà¸ªà¸¹à¸‡ à¸•à¹ˆà¸­à¸¢à¸­à¸”à¸ˆà¸²à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡ UTAU à¹€à¸”à¸´à¸¡</p>
+        <!-- Mobile menu container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About Us</a>
+                <a href="voicebank.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Voicebanks</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Files</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Events</a>
+                <a href="project.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Project</a>
+            </div>
         </div>
-      </div>
-      <div class="feed-item">
-        <div class="date">à¸¡à¸´.à¸¢. 2025</div>
-        <div>
-          <h4>à¹€à¸›à¸´à¸”à¸•à¸±à¸§à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¸£à¸¸à¹ˆà¸™à¹ƒà¸«à¸¡à¹ˆà¸›à¸£à¸°à¸ˆà¸³à¸¤à¸”à¸¹à¸à¸²à¸¥</h4>
-          <p>à¸•à¹‰à¸­à¸™à¸£à¸±à¸šà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆà¹à¸¥à¸°à¸à¸²à¸£à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸”à¸´à¸¡à¸«à¸¥à¸²à¸¢à¸•à¸±à¸§à¸¥à¸°à¸„à¸£ à¸„à¸£à¸­à¸šà¸„à¸¥à¸¸à¸¡à¸—à¸±à¹‰à¸‡à¸ à¸²à¸©à¸²à¹„à¸—à¸¢ à¸à¸µà¹ˆà¸›à¸¸à¹ˆà¸™ à¹à¸¥à¸°à¸­à¸±à¸‡à¸à¸¤à¸©</p>
-        </div>
-      </div>
-      <div class="feed-item">
-        <div class="date">à¸•à¹ˆà¸­à¹€à¸™à¸·à¹ˆà¸­à¸‡</div>
-        <div>
-          <h4>à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡à¹„à¸”à¹‰ 7 à¸ à¸²à¸©à¸²</h4>
-          <p>à¹„à¸—à¸¢ Â· à¸­à¸±à¸‡à¸à¸¤à¸© Â· à¸à¸µà¹ˆà¸›à¸¸à¹ˆà¸™ Â· à¸ˆà¸µà¸™ Â· à¹€à¸à¸²à¸«à¸¥à¸µ Â· à¸à¸£à¸±à¹ˆà¸‡à¹€à¸¨à¸ª Â· à¸ªà¹€à¸›à¸™ à¸œà¹ˆà¸²à¸™à¸Ÿà¸µà¹€à¸ˆà¸­à¸£à¹Œ Cross-Lingual Synthesis à¸‚à¸­à¸‡ Diffsinger</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<section>
-  <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2>à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œà¹€à¸žà¸¥à¸‡à¹„à¸”à¹‰à¹à¸¥à¹‰à¸§à¸§à¸±à¸™à¸™à¸µà¹‰</h2>
-        <p>à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¸«à¸²à¸ˆà¸²à¸à¹€à¸§à¹‡à¸šà¸­à¸·à¹ˆà¸™à¸­à¸µà¸à¸•à¹ˆà¸­à¹„à¸› â€” à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œ USTX / MIDI / SVP / VSQX à¸‚à¸­à¸‡ DELTA SYNTH à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹€à¸§à¹‡à¸šà¹„à¸‹à¸•à¹Œà¹€à¸”à¸µà¸¢à¸§à¸„à¸£à¸šà¸ˆà¸š</p>
-      </div>
-      <a href="voicebank.html" class="btn btn-primary">à¹„à¸›à¸—à¸µà¹ˆà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</a>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="brand" style="margin-bottom:14px;">
-          <span class="brand-mark">Î”</span>
-          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] flex flex-col justify-center items-center bg-gradient-to-br from-blue-900 to-gray-900 text-center px-4 py-20">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">WELCOME To our DELTA SYNTH's Studio Website</h1>
+            <p class="text-xl md:text-2xl text-red-200 mb-8 max-w-3xl">We are the Professionall singing for you all your passion</p>
+            <p class="text-lg text-gray-300 font-medium mb-10">DELTA SYNTH Th</p>
+            <a href="voicebank.html" class="bg-red-700 hover:bg-red-600 text-white text-xl font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105 active:scale-95 animate-pulse">
+                เข้าสู่หน้ารวมนักร้อง (Enter Voicebank Hub)
+            </a>
+        </section>
+
+        <!-- News Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-red-500">**NEWs activity andnew VOICEBANK forfix and UPgrade in 2025**</h2>
+                <p class="text-lg text-gray-300">New UTAU And Upgreade to Diffsingercoming soon, they will come back later</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold mb-4 text-red-300">New The Singer For The Professionall Singer</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">We have a Collabolation project with Printmov Team for Register in him partner to test for all new upgrade to Diffsinger AI Engine to the best Quallity voice.We can sing for 7 Language now, It's have a Thai English Japanese Chinese Korean French and Espnal for SpainishThank you for any Support. We're all glad for made our project together.They're new upgrade singer in this season June 2025</p>
+                    <p class="text-gray-300 leading-relaxed">โปรเจกต์ที่อยู่ ในระหว่างจัดสรรค์ เวลาทำงาน เพื่อให้แล้วเสร็จตามเป้าหมาย ตามที่ได้กำหนดไว้ จึงจะโฟกัสกับการแต่งเพลงได้อย่างเต็มที่ เพื่อเป้าหมายที่ดีที่สุดของเรา ในระยะยาว ต่อจากนี้</p>
+                </div>
+                
+                <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-lg border border-gray-700 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-red-300">More Projects & Downloads</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">We have more project so much. You can follow me to visit me now.พวกเราเองก็มีงานหลายๆ โปรเจกต์ให้ติดตามเรื่อยๆ อยู่นะ</p>
+                        <p class="text-gray-300 leading-relaxed">You can searching and dowload all our voicebank or All Midi Ust Vsqx and SVP's song in this website now, Please select for your needding.</p>
+                    </div>
+                    <div class="mt-8 text-right italic text-gray-400">
+                        <p>Thank you. By Mr. Delta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
+                <p class="text-sm">We are the Professionall singing for you all your passion.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
+                <ul class="text-sm space-y-2">
+                    <li>Public: <a href="mailto:delta.vocaloid09378@gmail.com" class="hover:text-red-500">delta.vocaloid09378@gmail.com</a></li>
+                    <li>Emergency: <a href="mailto:patiphat.wongyai@gmail.com" class="hover:text-red-500">patiphat.wongyai@gmail.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
+                <ul class="text-sm space-y-2">
+                    <li>YouTube: <a href="#" class="hover:text-red-500">DELTA SYNTH Official</a></li>
+                    <li>TikTok: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+                    <li>X: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+                </ul>
+            </div>
         </div>
-        <p style="max-width:340px; font-size:13.5px;">à¸ªà¸•à¸¹à¸”à¸´à¹‚à¸­à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸à¹ˆà¸­à¸•à¸±à¹‰à¸‡à¸›à¸µ 2019 à¸œà¸¥à¸´à¸•à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡ UTAU à¹à¸¥à¸° Diffsinger AI à¸¡à¸²à¹à¸¥à¹‰à¸§à¸à¸§à¹ˆà¸² 30 à¸•à¸±à¸§à¸¥à¸°à¸„à¸£</p>
-      </div>
-      <div class="footer-links">
-        <h4>แผนผังเว็บไซต์</h4>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="about.html">เกี่ยวกับเรา</a>
-        <a href="voicebank.html">คลังเสียงทั้งหมด</a>
-        <a href="files.html">ไฟล์เสียงโปรเจกต์ (USTX/MIDI)</a>
-        <a href="collab.html">โปรเจกต์คอลแลปส์</a>
-        <a href="events.html">กิจกรรม</a>
-      </div>
-      <div class="footer-links">
-        <h4>ติดต่อเรา</h4>
-        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
-        <a href="#">YouTube â€” DELTA SYNTH Official</a>
-        <a href="#">TikTok â€” DELTA SYNTH</a>
-        <a href="#">X â€” DELTA SYNTH</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>Â© Since 2019 â€” DELTA SYNTH's Team</span>
-      <span>ผลิตในประเทศไทย</span>
-    </div>
-  </div>
-</footer>
-<script src="script.js"></script>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+            <p>&copy; 2025 DELTA SYNTH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
