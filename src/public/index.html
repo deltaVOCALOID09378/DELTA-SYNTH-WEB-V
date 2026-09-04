@@ -1,181 +1,255 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Main Â· DELTA SYNTH</title>
-<meta name="description" content="DELTA SYNTH â€” à¸„à¹ˆà¸²à¸¢à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¸›à¸µ 2019">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DELTA SYNTH Studio - Official Home (TH/EN)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Prompt', 'Inter', sans-serif; }
+    .font-en { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body>
-<header class="site-header">
-  <div class="nav">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">Î”</span>
-      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
-    </a>
-    <nav class="nav-links">
-      <a href="index.html" class="active">หน้าหลัก</a>
-<a href="about.html">เกี่ยวกับเรา</a>
-<a href="voicebank.html">คลังเสียงทั้งหมด</a>
-<a href="files.html">ไฟล์เสียงโปรเจกต์ (USTX/MIDI)</a>
-<a href="collab.html">โปรเจกต์คอลแลปส์</a>
-<a href="events.html">กิจกรรม</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="à¹€à¸›à¸´à¸”à¹€à¸¡à¸™à¸¹">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
+<body class="bg-slate-950 text-gray-200 flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
 
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Thai Vocal Synthesis Studio â€” Since 2019</span>
-        <h1>à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™<br>à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸ˆà¸²à¸<span class="accent">à¸„à¸§à¸²à¸¡à¸•à¸±à¹‰à¸‡à¹ƒà¸ˆà¸‚à¸­à¸‡à¸„à¸™à¹„à¸—à¸¢</span></h1>
-        <p class="lead">DELTA SYNTH à¸„à¸·à¸­à¸„à¹ˆà¸²à¸¢à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™ (UTAU / Diffsinger AI) à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸œà¸¥à¸´à¸•à¹à¸¥à¸°à¸”à¸¹à¹à¸¥à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸à¸§à¹ˆà¸² 34 à¹€à¸ªà¸µà¸¢à¸‡ à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡à¹„à¸”à¹‰à¸«à¸¥à¸²à¸¢à¸ à¸²à¸©à¸² à¸žà¸£à¹‰à¸­à¸¡à¸ªà¹ˆà¸‡à¸•à¹ˆà¸­à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œà¹€à¸žà¸¥à¸‡à¹ƒà¸«à¹‰à¸—à¸¸à¸à¸„à¸™à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸Ÿà¸£à¸µ</p>
-        <div class="hero-actions">
-          <a href="voicebank.html" class="btn btn-primary">à¸ªà¸³à¸£à¸§à¸ˆà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</a>
-          <a href="about.html" class="btn btn-ghost">à¸£à¸¹à¹‰à¸ˆà¸±à¸à¸„à¹ˆà¸²à¸¢à¸‚à¸­à¸‡à¹€à¸£à¸²</a>
-        </div>
+  <!-- แถบเมนูนำทาง (Navbar) -->
+  <nav class="bg-slate-950/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-black tracking-wider bg-gradient-to-r from-red-500 via-rose-400 to-white bg-clip-text text-transparent">
+        DELTA SYNTH
+      </a>
+
+      <!-- เมนูบน Desktop -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-red-500 font-semibold transition hover:text-red-400">หน้าแรก <span class="text-xs text-gray-400 font-normal">/ Home</span></a>
+        <a href="about.html" class="text-gray-300 hover:text-red-400 transition">เกี่ยวกับเรา <span class="text-xs text-gray-400 font-normal">/ About</span></a>
+        <a href="voicebank.html" class="text-gray-300 hover:text-red-400 transition">คลังเสียง <span class="text-xs text-gray-400 font-normal">/ Voicebanks</span></a>
+        <a href="#" class="text-gray-300 hover:text-red-400 transition">ไฟล์โปรเจกต์ <span class="text-xs text-gray-400 font-normal">/ Files</span></a>
+        <a href="project.html" class="text-gray-300 hover:text-red-400 transition">โปรเจกต์ร่วม <span class="text-xs text-gray-400 font-normal">/ Collab</span></a>
       </div>
-      <div class="hero-visual">
-        <div class="mono-row"><span>ENGINE</span><span>DIFFSINGER Â· UTAU</span></div>
-        <div class="mono-row"><span>LANGUAGES</span><span>TH Â· JP Â· EN Â· CN Â· KR Â· FR Â· ES</span></div>
-        <div class="mono-row"><span>STATUS</span><span>LIVE</span></div>
+
+      <!-- ปุ่มเมนูบน Mobile -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ดรอปดาวน์เมนูบน Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-gray-800 px-4 pt-2 pb-4 space-y-2">
+      <a href="index.html" class="block py-2 text-red-500 font-medium">หน้าแรก / Home</a>
+      <a href="about.html" class="block py-2 text-gray-300 hover:text-white">เกี่ยวกับเรา / About</a>
+      <a href="voicebank.html" class="block py-2 text-gray-300 hover:text-white">คลังเสียง / Voicebanks</a>
+      <a href="#" class="block py-2 text-gray-300 hover:text-white">ไฟล์โปรเจกต์ / Files</a>
+      <a href="project.html" class="block py-2 text-gray-300 hover:text-white">โปรเจกต์ร่วม / Collab</a>
+    </div>
+  </nav>
+
+  <!-- ส่วนเนื้อหาหลัก (Main Content) -->
+  <main class="flex-grow pt-20">
+    <!-- ส่วนต้อนรับ (Hero Section) -->
+    <section class="relative overflow-hidden py-24 md:py-32 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-gray-800">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-transparent to-transparent"></div>
+      
+      <div class="container mx-auto px-4 relative z-10 max-w-5xl text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold uppercase tracking-wider mb-6">
+          <span>Official Studio Website</span> • <span>2019 – 2025</span>
+        </div>
         
-<svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#9075ff"/>
-      <stop offset="50%" stop-color="#6f8dff"/>
-      <stop offset="100%" stop-color="#4fe3d0"/>
-    </linearGradient>
-  </defs>
-  <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
-           C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
-           C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
-</svg>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+          WELCOME TO <span class="bg-gradient-to-r from-red-500 to-rose-400 bg-clip-text text-transparent">DELTA SYNTH</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-red-200/90 font-medium mb-10 max-w-2xl mx-auto">
+          We are the Professional singing for all your passion.
+        </p>
 
-        <div class="mono-row" style="margin-top:6px;"><span>PARTNER</span><span>PRINTMOV â€” DIFFSINGER AI</span></div>
-        <div class="mono-row"><span>FOUNDED</span><span>2019 Â· BANGKOK, TH</span></div>
-      </div>
-    </div>
+        <!-- การ์ดข้อความสองภาษาแบบวางควบคู่กัน (TH / EN Parallel Layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-10">
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-gray-800 shadow-xl backdrop-blur">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-0.5 text-xs font-bold bg-red-600/30 text-red-300 border border-red-500/40 rounded">TH</span>
+              <h2 class="text-base font-bold text-white">ยินดีต้อนรับสู่สตูดิโอ DELTA SYNTH</h2>
+            </div>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              ศูนย์รวมคลังเสียงสังเคราะห์เสมือนจริง (Voicebanks) และไฟล์โปรเจกต์ดนตรี (USTX, MIDI, VSQX, SVP) สำหรับนักแต่งเพลงและโปรดิวเซอร์เสียงสังเคราะห์ทุกท่าน เลือกค้นหาและดาวน์โหลดทรัพยากรที่ต้องการได้ทันที พร้อมอัปเดตโมเดลเสียงคุณภาพสูงอย่างต่อเนื่อง
+            </p>
+          </div>
 
-    <div class="stat-strip">
-      <div><div class="n">34<span>+</span></div><div class="l">à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸™à¹€à¸„à¸£à¸·à¸­</div></div>
-      <div><div class="n">19</div><div class="l">à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸µà¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸•à¸­à¸™à¸™à¸µà¹‰</div></div>
-      <div><div class="n">7</div><div class="l">à¸ à¸²à¸©à¸²à¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡</div></div>
-    </div>
-  </div>
-</section>
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-gray-800 shadow-xl backdrop-blur font-en">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-0.5 text-xs font-bold bg-blue-600/30 text-blue-300 border border-blue-500/40 rounded">EN</span>
+              <h2 class="text-base font-bold text-white">Welcome to DELTA SYNTH Studio</h2>
+            </div>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Your premier hub for virtual voicebanks and music production project files (USTX, MIDI, VSQX, and SVP). Built for music producers and vocal synth creators worldwide. Search and download the vocal assets you need for your creative works.
+            </p>
+          </div>
+        </div>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">à¸­à¸±à¸•à¸¥à¸±à¸à¸©à¸“à¹Œà¸‚à¸­à¸‡à¹€à¸£à¸²</span>
-      <h2>à¸„à¸³à¸‚à¸§à¸±à¸ à¸§à¸´à¸ªà¸±à¸¢à¸—à¸±à¸¨à¸™à¹Œ à¹à¸¥à¸°à¸ˆà¸¸à¸”à¸¢à¸·à¸™à¸‚à¸­à¸‡ DELTA SYNTH</h2>
-      <p>à¸ªà¸£à¸¸à¸›à¹à¸™à¸§à¸—à¸²à¸‡à¸à¸²à¸£à¸—à¸³à¸‡à¸²à¸™à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸›à¹‡à¸™à¸—à¸²à¸‡à¸à¸²à¸£ à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸«à¹‰à¸—à¸¸à¸à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¹à¸¥à¸°à¸—à¸¸à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸”à¸´à¸™à¹„à¸›à¹ƒà¸™à¸—à¸´à¸¨à¸—à¸²à¸‡à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <span class="tag">à¸„à¸³à¸‚à¸§à¸±à¸</span>
-        <h3>"à¸ªà¸£à¹‰à¸²à¸‡à¹€à¸ªà¸µà¸¢à¸‡ à¸ªà¸£à¹‰à¸²à¸‡à¸•à¸±à¸§à¸•à¸™ à¸ªà¸£à¹‰à¸²à¸‡à¸ªà¸£à¸£à¸„à¹Œà¹„à¸¡à¹ˆà¸ªà¸´à¹‰à¸™à¸ªà¸¸à¸”"</h3>
-        <p>à¸—à¸¸à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸‚à¸­à¸‡à¹€à¸£à¸²à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹à¸„à¹ˆà¹„à¸Ÿà¸¥à¹Œà¹€à¸ªà¸µà¸¢à¸‡ à¹à¸•à¹ˆà¸„à¸·à¸­à¸•à¸±à¸§à¸•à¸™à¸«à¸™à¸¶à¹ˆà¸‡à¸—à¸µà¹ˆà¸¡à¸µà¹€à¸£à¸·à¹ˆà¸­à¸‡à¸£à¸²à¸§ à¸¡à¸µà¸™à¸´à¸ªà¸±à¸¢ à¹à¸¥à¸°à¸¡à¸µà¸—à¸µà¹ˆà¸¡à¸²à¹€à¸‰à¸žà¸²à¸°à¸•à¸±à¸§ à¹€à¸£à¸²à¹€à¸Šà¸·à¹ˆà¸­à¸§à¹ˆà¸²à¸à¸²à¸£à¸žà¸±à¸’à¸™à¸²à¹€à¸ªà¸µà¸¢à¸‡à¸„à¸·à¸­à¸à¸²à¸£à¸žà¸±à¸’à¸™à¸²à¸•à¸±à¸§à¸¥à¸°à¸„à¸£à¹„à¸›à¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸™à¹€à¸ªà¸¡à¸­</p>
-      </div>
-      <div class="pillar">
-        <span class="tag">à¸§à¸´à¸ªà¸±à¸¢à¸—à¸±à¸¨à¸™à¹Œ</span>
-        <h3>à¸„à¹ˆà¸²à¸¢à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¹„à¸—à¸¢à¸—à¸µà¹ˆà¸¢à¸·à¸™à¸£à¸°à¸”à¸±à¸šà¸ªà¸²à¸à¸¥</h3>
-        <p>à¸¡à¸¸à¹ˆà¸‡à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¸ à¸²à¸©à¸²à¹„à¸—à¸¢à¹ƒà¸«à¹‰à¸à¹‰à¸²à¸§à¸—à¸±à¸™à¸¡à¸²à¸•à¸£à¸à¸²à¸™à¹€à¸—à¸„à¹‚à¸™à¹‚à¸¥à¸¢à¸µ AI à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¸£à¸°à¸”à¸±à¸šà¹‚à¸¥à¸ à¸œà¹ˆà¸²à¸™à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¸à¸±à¸šà¸—à¸µà¸¡à¸žà¸±à¸’à¸™à¸² Diffsinger à¹à¸¥à¸°à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸œà¸¹à¹‰à¸ªà¸£à¹‰à¸²à¸‡à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸—à¸±à¹‰à¸‡à¹„à¸—à¸¢à¹à¸¥à¸°à¸•à¹ˆà¸²à¸‡à¸›à¸£à¸°à¹€à¸—à¸¨</p>
-      </div>
-      <div class="pillar">
-        <span class="tag">à¹€à¸­à¸à¸¥à¸±à¸à¸©à¸“à¹Œ</span>
-        <h3>à¸«à¸¥à¸²à¸à¸•à¸±à¸§à¸•à¸™ à¸«à¸™à¸¶à¹ˆà¸‡à¸¡à¸²à¸•à¸£à¸à¸²à¸™à¸„à¸¸à¸“à¸ à¸²à¸ž</h3>
-        <p>à¸ˆà¸²à¸à¸™à¸±à¸à¹€à¸£à¸µà¸¢à¸™ B.L. à¸£à¸¸à¹ˆà¸™à¸à¹ˆà¸­à¸•à¸±à¹‰à¸‡à¸›à¸µ 2019 à¸ªà¸¹à¹ˆà¸•à¸£à¸°à¸à¸¹à¸¥ Wongyai à¹à¸¥à¸°à¸‹à¸µà¸£à¸µà¸ªà¹Œà¸žà¸™à¸±à¸à¸‡à¸²à¸™ CP All Learning à¸—à¸¸à¸à¸•à¸±à¸§à¸¥à¸°à¸„à¸£à¸–à¸¹à¸à¸”à¸¹à¹à¸¥à¸”à¹‰à¸§à¸¢à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸ˆà¸¹à¸™à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸‰à¸žà¸²à¸°à¸•à¸±à¸§ à¸£à¸±à¸à¸©à¸²à¸„à¸¸à¸“à¸ à¸²à¸žà¹ƒà¸«à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰à¸¢à¸±à¹ˆà¸‡à¸¢à¸·à¸™</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">à¸„à¸§à¸²à¸¡à¹€à¸„à¸¥à¸·à¹ˆà¸­à¸™à¹„à¸«à¸§à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</span>
-      <h2>à¸ªà¸£à¸¸à¸›à¸à¸´à¸ˆà¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢</h2>
-    </div>
-    <div class="feed">
-      <div class="feed-item">
-        <div class="date">2025</div>
-        <div>
-          <h4>à¸„à¸§à¸²à¸¡à¸£à¹ˆà¸§à¸¡à¸¡à¸·à¸­à¸à¸±à¸šà¸—à¸µà¸¡ Printmov â€” à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸ªà¸¹à¹ˆ Diffsinger AI</h4>
-          <p>DELTA SYNTH à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¹€à¸›à¹‡à¸™à¸žà¸²à¸£à¹Œà¸—à¹€à¸™à¸­à¸£à¹Œà¸—à¸”à¸ªà¸­à¸šà¸‚à¸­à¸‡à¸—à¸µà¸¡ Printmov à¹€à¸žà¸·à¹ˆà¸­à¸¢à¸à¸£à¸°à¸”à¸±à¸šà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸«à¸¥à¸±à¸à¸‚à¸­à¸‡à¸„à¹ˆà¸²à¸¢à¸ªà¸¹à¹ˆ Diffsinger AI Engine à¸„à¸¸à¸“à¸ à¸²à¸žà¸ªà¸¹à¸‡ à¸•à¹ˆà¸­à¸¢à¸­à¸”à¸ˆà¸²à¸à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡ UTAU à¹€à¸”à¸´à¸¡</p>
+        <!-- ปุ่ม Action -->
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="voicebank.html" class="px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-semibold shadow-lg shadow-red-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0 text-sm">
+            เข้าสู่คลังเสียง / Explore Voicebanks
+          </a>
+          <a href="about.html" class="px-8 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-gray-200 font-semibold border border-gray-700 transition text-sm">
+            เกี่ยวกับเรา / About Us
+          </a>
         </div>
       </div>
-      <div class="feed-item">
-        <div class="date">à¸¡à¸´.à¸¢. 2025</div>
-        <div>
-          <h4>à¹€à¸›à¸´à¸”à¸•à¸±à¸§à¸™à¸±à¸à¸£à¹‰à¸­à¸‡à¸£à¸¸à¹ˆà¸™à¹ƒà¸«à¸¡à¹ˆà¸›à¸£à¸°à¸ˆà¸³à¸¤à¸”à¸¹à¸à¸²à¸¥</h4>
-          <p>à¸•à¹‰à¸­à¸™à¸£à¸±à¸šà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆà¹à¸¥à¸°à¸à¸²à¸£à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸”à¸´à¸¡à¸«à¸¥à¸²à¸¢à¸•à¸±à¸§à¸¥à¸°à¸„à¸£ à¸„à¸£à¸­à¸šà¸„à¸¥à¸¸à¸¡à¸—à¸±à¹‰à¸‡à¸ à¸²à¸©à¸²à¹„à¸—à¸¢ à¸à¸µà¹ˆà¸›à¸¸à¹ˆà¸™ à¹à¸¥à¸°à¸­à¸±à¸‡à¸à¸¤à¸©</p>
-        </div>
-      </div>
-      <div class="feed-item">
-        <div class="date">à¸•à¹ˆà¸­à¹€à¸™à¸·à¹ˆà¸­à¸‡</div>
-        <div>
-          <h4>à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸£à¹‰à¸­à¸‡à¹„à¸”à¹‰ 7 à¸ à¸²à¸©à¸²</h4>
-          <p>à¹„à¸—à¸¢ Â· à¸­à¸±à¸‡à¸à¸¤à¸© Â· à¸à¸µà¹ˆà¸›à¸¸à¹ˆà¸™ Â· à¸ˆà¸µà¸™ Â· à¹€à¸à¸²à¸«à¸¥à¸µ Â· à¸à¸£à¸±à¹ˆà¸‡à¹€à¸¨à¸ª Â· à¸ªà¹€à¸›à¸™ à¸œà¹ˆà¸²à¸™à¸Ÿà¸µà¹€à¸ˆà¸­à¸£à¹Œ Cross-Lingual Synthesis à¸‚à¸­à¸‡ Diffsinger</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <div class="wrap">
-    <div class="cta-band">
+    <!-- ข่าวสารและแผนพัฒนาปี 2025 (News & Milestone 2025) -->
+    <section class="py-20 container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-red-500">Updates & Milestones</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-4">
+          แผนพัฒนาและอัปเกรดคลังเสียงปี 2025
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-sm font-en">
+          2025 Roadmap: Upgraded Vocal Engines, DiffSinger AI Integration & Multi-language Support
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- ฟีเจอร์ที่ 1: DiffSinger AI Engine -->
+        <div class="p-8 rounded-2xl bg-slate-900/60 border border-gray-800 hover:border-red-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-red-950/60 border border-red-700/40 flex items-center justify-center text-red-400 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-4">
+              ความร่วมมือพัฒนา DiffSinger AI Engine
+            </h3>
+            
+            <div class="space-y-4 text-sm text-gray-300 mb-6">
+              <div>
+                <p class="font-semibold text-red-400 mb-1">[ภาษาไทย]</p>
+                <p class="leading-relaxed">
+                  DELTA SYNTH จับมือร่วมกับทีม <strong>Printmov</strong> ในการร่วมทดสอบและอัปเกรดฐานข้อมูลเสียงสู่ระบบ <strong>DiffSinger AI Engine</strong> เพื่อเพิ่มความสมจริง ความคมชัด และการสื่ออารมณ์เพลงที่เป็นธรรมชาติยิ่งขึ้น
+                </p>
+              </div>
+              <div class="pt-2 border-t border-gray-800 font-en">
+                <p class="font-semibold text-blue-400 mb-1">[English]</p>
+                <p class="leading-relaxed">
+                  In collaboration with the <strong>Printmov Team</strong>, we are actively benchmarking and upgrading our voicebanks to the <strong>DiffSinger AI Engine</strong>, delivering pristine audio quality, realistic phrasing, and nuanced expressiveness.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950 border border-gray-800 text-xs text-gray-400">
+            <span class="text-gray-200 font-semibold">รองรับ 7 ภาษา (7 Supported Languages):</span><br>
+            ไทย (Thai), English, 日本語 (Japanese), 中文 (Chinese), 한국어 (Korean), Français (French), Español (Spanish)
+          </div>
+        </div>
+
+        <!-- ฟีเจอร์ที่ 2: นักร้องประจำซีซั่น & แผนงาน -->
+        <div class="p-8 rounded-2xl bg-slate-900/60 border border-gray-800 hover:border-red-500/50 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-red-950/60 border border-red-700/40 flex items-center justify-center text-red-400 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+              </svg>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-4">
+              นักร้องรุ่นอัปเกรดประจำซีซั่น & แผนงาน
+            </h3>
+            
+            <div class="space-y-4 text-sm text-gray-300 mb-6">
+              <div>
+                <p class="font-semibold text-red-400 mb-1">[ภาษาไทย]</p>
+                <p class="leading-relaxed">
+                  เปิดตัวโมเดลเสียงคุณภาพสูงประจำซีซั่นมิถุนายน 2025 ได้แก่ <strong>TomAI</strong>, <strong>SakultalaAI</strong> และ <strong>NamphuengAI</strong> ขณะนี้ทางทีมงานกำลังมุ่งมั่นจัดสรรเวลาพัฒนาเพื่อให้ทุกตัวละครแล้วเสร็จตามเป้าหมาย และเตรียมพร้อมสำหรับการสร้างสรรค์ผลงานเพลงเต็มรูปแบบต่อไป
+                </p>
+              </div>
+              <div class="pt-2 border-t border-gray-800 font-en">
+                <p class="font-semibold text-blue-400 mb-1">[English]</p>
+                <p class="leading-relaxed">
+                  Highlighting our upgraded AI vocalists for June 2025: <strong>TomAI</strong>, <strong>SakultalaAI</strong>, and <strong>NamphuengAI</strong>. Our team is methodically allocating production schedules to fulfill milestone targets, laying the groundwork for continuous original music creation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-4 rounded-xl bg-slate-950 border border-gray-800 text-xs">
+            <span class="text-gray-400">สถานะ: อยู่ในระหว่างการพัฒนาและจูนเสียง</span>
+            <span class="text-amber-400 font-semibold">Active In-Progress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ลิงก์ด่วน (CTA) -->
+    <section class="py-16 bg-slate-900 border-t border-gray-800 text-center">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h3 class="text-2xl font-bold text-white mb-2">ติดตามผลงานและดาวน์โหลดไฟล์โปรเจกต์</h3>
+        <p class="text-gray-400 text-sm mb-6 font-en">Discover our complete collection of OpenUtau voicebanks, USTX, and MIDI files.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://www.youtube.com/@deltasynthofficial" target="_blank" class="px-6 py-2.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-medium text-sm transition">
+            YouTube Official
+          </a>
+          <a href="voicebank.html" class="px-6 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition border border-gray-700">
+            ดูรายชื่อนักร้องทั้งหมด (All Voicebanks)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ส่วนท้ายเว็บ (Footer) -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-gray-800 text-sm">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
       <div>
-        <h2>à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œà¹€à¸žà¸¥à¸‡à¹„à¸”à¹‰à¹à¸¥à¹‰à¸§à¸§à¸±à¸™à¸™à¸µà¹‰</h2>
-        <p>à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¸«à¸²à¸ˆà¸²à¸à¹€à¸§à¹‡à¸šà¸­à¸·à¹ˆà¸™à¸­à¸µà¸à¸•à¹ˆà¸­à¹„à¸› â€” à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¹à¸¥à¸°à¹„à¸Ÿà¸¥à¹Œ USTX / MIDI / SVP / VSQX à¸‚à¸­à¸‡ DELTA SYNTH à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹€à¸§à¹‡à¸šà¹„à¸‹à¸•à¹Œà¹€à¸”à¸µà¸¢à¸§à¸„à¸£à¸šà¸ˆà¸š</p>
+        <h4 class="text-white text-base font-bold mb-3">DELTA SYNTH Studio</h4>
+        <p class="text-xs text-gray-400 leading-relaxed mb-2">
+          ผู้พัฒนาคลังเสียงสังเคราะห์เสมือนจริงและไฟล์โปรเจกต์ดนตรี<br>
+          Virtual Vocal Synthesis Developer & Music Production Hub.
+        </p>
+        <p class="text-xs text-gray-500 font-en">Made with passion in Thailand since 2019.</p>
       </div>
-      <a href="voicebank.html" class="btn btn-primary">à¹„à¸›à¸—à¸µà¹ˆà¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</a>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
+
       <div>
-        <div class="brand" style="margin-bottom:14px;">
-          <span class="brand-mark">Î”</span>
-          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
-        </div>
-        <p style="max-width:340px; font-size:13.5px;">à¸ªà¸•à¸¹à¸”à¸´à¹‚à¸­à¸žà¸±à¸’à¸™à¸²à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡à¸£à¹‰à¸­à¸‡à¹€à¸ªà¸¡à¸·à¸­à¸™à¸ªà¸±à¸à¸Šà¸²à¸•à¸´à¹„à¸—à¸¢ à¸à¹ˆà¸­à¸•à¸±à¹‰à¸‡à¸›à¸µ 2019 à¸œà¸¥à¸´à¸•à¸„à¸¥à¸±à¸‡à¹€à¸ªà¸µà¸¢à¸‡ UTAU à¹à¸¥à¸° Diffsinger AI à¸¡à¸²à¹à¸¥à¹‰à¸§à¸à¸§à¹ˆà¸² 30 à¸•à¸±à¸§à¸¥à¸°à¸„à¸£</p>
+        <h4 class="text-white text-base font-bold mb-3">การติดต่อ / Contact</h4>
+        <ul class="text-xs space-y-1.5">
+          <li><span class="text-gray-500">ติดต่องานทั่วไป:</span> <a href="mailto:delta.vocaloid09378@gmail.com" class="text-gray-300 hover:text-red-400">delta.vocaloid09378@gmail.com</a></li>
+          <li><span class="text-gray-500">ติดต่อส่วนตัว (ด่วน):</span> <a href="mailto:patiphat.wongyai@gmail.com" class="text-gray-300 hover:text-red-400">patiphat.wongyai@gmail.com</a></li>
+        </ul>
       </div>
-      <div class="footer-links">
-        <h4>แผนผังเว็บไซต์</h4>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="about.html">เกี่ยวกับเรา</a>
-        <a href="voicebank.html">คลังเสียงทั้งหมด</a>
-        <a href="files.html">ไฟล์เสียงโปรเจกต์ (USTX/MIDI)</a>
-        <a href="collab.html">โปรเจกต์คอลแลปส์</a>
-        <a href="events.html">กิจกรรม</a>
-      </div>
-      <div class="footer-links">
-        <h4>ติดต่อเรา</h4>
-        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
-        <a href="#">YouTube â€” DELTA SYNTH Official</a>
-        <a href="#">TikTok â€” DELTA SYNTH</a>
-        <a href="#">X â€” DELTA SYNTH</a>
+
+      <div>
+        <h4 class="text-white text-base font-bold mb-3">โซเชียลมีเดีย / Follow Us</h4>
+        <ul class="text-xs space-y-1.5">
+          <li>YouTube: <span class="text-gray-300">DELTA SYNTH Official</span></li>
+          <li>TikTok: <span class="text-gray-300">@deltavocaloid</span></li>
+          <li>Facebook: <span class="text-gray-300">DELTA SYNTH</span></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>Â© Since 2019 â€” DELTA SYNTH's Team</span>
-      <span>ผลิตในประเทศไทย</span>
+
+    <div class="container mx-auto px-4 mt-8 pt-6 border-t border-gray-900 text-center text-xs text-gray-500">
+      <p>© 2019–2025 DELTA SYNTH. สงวนลิขสิทธิ์ทั้งหมด (All Rights Reserved).</p>
     </div>
-  </div>
-</footer>
-<script src="script.js"></script>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
