@@ -1,131 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELTA SYNTH Studio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
-    
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: "Inter", sans-serif; }</style>
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Main · DELTA SYNTH</title>
+<meta name="description" content="DELTA SYNTH — สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งตั้งแต่ปี ค.ศ. 2019">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white flex flex-col min-h-screen">
-    <!-- Navbar -->
-    <nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-wider">DELTA SYNTH</a>
-            
-            <!-- Desktop menu -->
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="hover:text-red-500 transition text-red-500">Home</a>
-                <a href="about.html" class="hover:text-red-500 transition">About Us</a>
-                <a href="voicebank.html" class="hover:text-red-500 transition">Voicebanks</a>
-                <a href="#" class="hover:text-red-500 transition">Files</a>
-                <a href="#" class="hover:text-red-500 transition">Events</a>
-                <a href="project.html" class="hover:text-red-500 transition">Project</a>
-            </div>
-            
-            <!-- Hamburger button for mobile -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Mobile menu container -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md">Home</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About Us</a>
-                <a href="voicebank.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Voicebanks</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Files</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Events</a>
-                <a href="project.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Project</a>
-            </div>
-        </div>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">Δ</span>
+      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Main</a>
+      <a href="about.html">About Us</a>
+      <a href="voicebank.html">All Voicebank</a>
+      <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+      <a href="collab.html">Collaboration</a>
+      <a href="events.html">Events</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="เปิดเมนู">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
 
-    <!-- Main Content -->
-    <main class="flex-grow pt-20">
-        <!-- Hero Section -->
-        <section class="min-h-[80vh] flex flex-col justify-center items-center bg-gradient-to-br from-blue-900 to-gray-900 text-center px-4 py-20">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">WELCOME To our DELTA SYNTH's Studio Website</h1>
-            <p class="text-xl md:text-2xl text-red-200 mb-8 max-w-3xl">We are the Professionall singing for you all your passion</p>
-            <p class="text-lg text-gray-300 font-medium mb-10">DELTA SYNTH Th</p>
-            <a href="voicebank.html" class="bg-red-700 hover:bg-red-600 text-white text-xl font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105 active:scale-95 animate-pulse">
-                เข้าสู่หน้ารวมนักร้อง (Enter Voicebank Hub)
-            </a>
-        </section>
-
-        <!-- News Section -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-red-500">**NEWs activity andnew VOICEBANK forfix and UPgrade in 2025**</h2>
-                <p class="text-lg text-gray-300">New UTAU And Upgreade to Diffsingercoming soon, they will come back later</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-lg border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-red-300">New The Singer For The Professionall Singer</h3>
-                    <p class="text-gray-300 leading-relaxed mb-4">We have a Collabolation project with Printmov Team for Register in him partner to test for all new upgrade to Diffsinger AI Engine to the best Quallity voice.We can sing for 7 Language now, It's have a Thai English Japanese Chinese Korean French and Espnal for SpainishThank you for any Support. We're all glad for made our project together.They're new upgrade singer in this season June 2025</p>
-                    <p class="text-gray-300 leading-relaxed">โปรเจกต์ที่อยู่ ในระหว่างจัดสรรค์ เวลาทำงาน เพื่อให้แล้วเสร็จตามเป้าหมาย ตามที่ได้กำหนดไว้ จึงจะโฟกัสกับการแต่งเพลงได้อย่างเต็มที่ เพื่อเป้าหมายที่ดีที่สุดของเรา ในระยะยาว ต่อจากนี้</p>
-                </div>
-                
-                <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border-gray-800 hover:border-red-500 hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] transition shadow-lg border border-gray-700 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-red-300">More Projects & Downloads</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">We have more project so much. You can follow me to visit me now.พวกเราเองก็มีงานหลายๆ โปรเจกต์ให้ติดตามเรื่อยๆ อยู่นะ</p>
-                        <p class="text-gray-300 leading-relaxed">You can searching and dowload all our voicebank or All Midi Ust Vsqx and SVP's song in this website now, Please select for your needding.</p>
-                    </div>
-                    <div class="mt-8 text-right italic text-gray-400">
-                        <p>Thank you. By Mr. Delta</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
-                <p class="text-sm">We are the Professionall singing for you all your passion.</p>
-            </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
-                <ul class="text-sm space-y-2">
-                    <li>Public: <a href="mailto:delta.vocaloid09378@gmail.com" class="hover:text-red-500">delta.vocaloid09378@gmail.com</a></li>
-                    <li>Emergency: <a href="mailto:patiphat.wongyai@gmail.com" class="hover:text-red-500">patiphat.wongyai@gmail.com</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
-                <ul class="text-sm space-y-2">
-                    <li>YouTube: <a href="#" class="hover:text-red-500">DELTA SYNTH Official</a></li>
-                    <li>TikTok: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
-                    <li>X: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
-                </ul>
-            </div>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Thai Vocal Synthesis Studio — Since 2019</span>
+        <h1>เสียงร้องเสมือน<br>ที่เริ่มต้นจาก<span class="accent">ความตั้งใจของคนไทย</span></h1>
+        <p class="lead">DELTA SYNTH คือสตูดิโอพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ที่ดูแลและผลิตนักร้องเสมือนกว่า 34 เสียง รองรับการขับร้องหลากหลายภาษา พร้อมเปิดกว้างให้ทุกคนสามารถดาวน์โหลดคลังเสียงและโปรเจกต์เพลงไปใช้งานได้ฟรี</p>
+        <div class="hero-actions">
+          <a href="voicebank.html" class="btn btn-primary">สำรวจคลังเสียงทั้งหมด</a>
+          <a href="about.html" class="btn btn-ghost">รู้จักสตูดิโอของเรา</a>
         </div>
-        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
-            <p>&copy; 2025 DELTA SYNTH. All rights reserved.</p>
+      </div>
+      <div class="hero-visual">
+        <div class="mono-row"><span>ENGINE</span><span>DIFFSINGER · UTAU</span></div>
+        <div class="mono-row"><span>LANGUAGES</span><span>TH · JP · EN · CN · KR · FR · ES</span></div>
+        <div class="mono-row"><span>STATUS</span><span>LIVE</span></div>
+        
+<svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9075ff"/>
+      <stop offset="50%" stop-color="#6f8dff"/>
+      <stop offset="100%" stop-color="#4fe3d0"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
+           C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
+           C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
+</svg>
+
+        <div class="mono-row" style="margin-top:6px;"><span>PARTNER</span><span>PRINTMOV — DIFFSINGER AI</span></div>
+        <div class="mono-row"><span>FOUNDED</span><span>2019 · BANGKOK, TH</span></div>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div><div class="n">34<span>+</span></div><div class="l">คลังเสียงทั้งหมดในเครือข่าย</div></div>
+      <div><div class="n">19</div><div class="l">คลังเสียงที่พร้อมใช้งานตอนนี้</div></div>
+      <div><div class="n">7</div><div class="l">ภาษาที่รองรับการขับร้อง</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">อัตลักษณ์ของเรา</span>
+      <h2>คำขวัญ วิสัยทัศน์ และจุดยืนของ DELTA SYNTH</h2>
+      <p>สรุปแนวทางการดำเนินงานของสตูดิโออย่างเป็นทางการ เพื่อยกระดับมาตรฐานและให้ทุกความร่วมมือ รวมถึงทุกคลังเสียงก้าวไปในทิศทางเดียวกันอย่างมั่นคง</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="tag">คำขวัญ</span>
+        <h3>"สร้างเสียง สร้างตัวตน สร้างสรรค์ไม่สิ้นสุด"</h3>
+        <p>ทุกคลังเสียงของเราไม่ใช่เพียงแค่ไฟล์เสียง แต่คือ "ตัวตน" ที่มีเรื่องราว นิสัย และภูมิหลังเฉพาะตัว เราเชื่อมั่นว่าการพัฒนาเสียงที่ดี คือการมอบวิญญาณให้ตัวละครเติบโตไปพร้อมกัน</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">วิสัยทัศน์</span>
+        <h3>สตูดิโอเสียงเสมือนไทยที่ก้าวไกลสู่ระดับสากล</h3>
+        <p>มุ่งมั่นพัฒนาคลังเสียงร้องภาษาไทยให้ก้าวล้ำทันเทคโนโลยี AI ระดับโลก ผ่านความร่วมมือเชิงลึกกับทีม Printmov (DiffSinger) และเครือข่ายนักสร้างสรรค์ทั้งในและต่างประเทศ</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">เอกลักษณ์</span>
+        <h3>หลากหลายตัวตน ภายใต้หนึ่งมาตรฐานคุณภาพ</h3>
+        <p>จากจุดเริ่มต้นโปรเจกต์ B.L. Student ในปี ค.ศ. 2019 สู่ตระกูล Wongyai และซีรีส์ CP All Learning ทุกตัวละครล้วนผ่านกระบวนการปรับแต่งเสียงอย่างประณีต เพื่อรักษาคุณภาพให้พร้อมใช้งานในทุกยุคสมัย</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ความเคลื่อนไหวล่าสุด</span>
+      <h2>สรุปความเคลื่อนไหวและกิจกรรมของสตูดิโอ</h2>
+    </div>
+    <div class="feed">
+      <div class="feed-item">
+        <div class="date">2025</div>
+        <div>
+          <h4>ผนึกกำลังร่วมกับทีม Printmov — ก้าวสู่ยุค DiffSinger AI</h4>
+          <p>DELTA SYNTH ได้รับเกียรติเป็นพาร์ทเนอร์ร่วมทดสอบกับทีม Printmov เพื่อยกระดับคลังเสียงหลักสู่ระบบ DiffSinger AI คุณภาพสูง ซึ่งเป็นการต่อยอดความสำเร็จจากสถาปัตยกรรม UTAU เดิม</p>
         </div>
-    </footer>
+      </div>
+      <div class="feed-item">
+        <div class="date">มิ.ย. 2025</div>
+        <div>
+          <h4>เปิดตัวนักร้องรุ่นใหม่ประจำฤดูกาล</h4>
+          <p>ต้อนรับการมาถึงของคลังเสียงใหม่ พร้อมอัปเกรดประสิทธิภาพนักร้องรุ่นเดิม ครอบคลุมการใช้งานทั้งภาษาไทย ภาษาญี่ปุ่น และภาษาอังกฤษ</p>
+        </div>
+      </div>
+      <div class="feed-item">
+        <div class="date">ต่อเนื่อง</div>
+        <div>
+          <h4>รองรับการขับร้องสูงสุด 7 ภาษา</h4>
+          <p>รองรับภาษา ไทย · อังกฤษ · ญี่ปุ่น · จีน · เกาหลี · ฝรั่งเศส · สเปน ได้อย่างสมบูรณ์แบบ ผ่านฟีเจอร์ Cross-Lingual Synthesis อันทรงพลังของระบบ DiffSinger</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>ดาวน์โหลดคลังเสียงและไฟล์โปรเจกต์เพลงได้แล้ววันนี้</h2>
+        <p>รวบรวมทุกสิ่งที่คุณต้องการไว้ในที่เดียว ไม่ว่าจะเป็นคลังเสียงหรือไฟล์ USTX / MIDI / SVP / VSQX ของ DELTA SYNTH พร้อมให้ดาวน์โหลดนำไปใช้งานได้ทันที</p>
+      </div>
+      <a href="voicebank.html" class="btn btn-primary">เข้าสู่คลังเสียงทั้งหมด</a>
+    </div>
+  </div>
+</section>
 
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">Δ</span>
+          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+        </div>
+        <p style="max-width:340px; font-size:13.5px;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งขึ้นในปี ค.ศ. 2019 ผลิตและสรรค์สร้างคลังเสียงสำหรับ UTAU และ DiffSinger AI มาแล้วกว่า 30 ตัวละคร</p>
+      </div>
+      <div class="footer-links">
+        <h4>Sitemap</h4>
+        <a href="index.html">Main</a>
+        <a href="about.html">About Us</a>
+        <a href="voicebank.html">All Voicebank</a>
+        <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html">Collaboration Voicebank</a>
+        <a href="events.html">Events</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
+        <a href="#">YouTube — DELTA SYNTH Official</a>
+        <a href="#">TikTok — DELTA SYNTH</a>
+        <a href="#">X — DELTA SYNTH</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Since 2019 — DELTA SYNTH's Team</span>
+      <span>Made in Thailand</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
