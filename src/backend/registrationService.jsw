@@ -1,0 +1,211 @@
+/**
+ * DELTA SYNTH — Event Registration & Beta Tester Service (.jsw)
+ * 
+ * Standards from AGENT.md:
+ * - Validate input at boundary (Section 12 Security)
+ * - Domain whitelisting against projectData.js
+ * - Defensive error handling & type safety
+ * - Descriptive error logging: [Component] Action failed: <cause>. Suggested action: <next step>.
+ * 
+ * Made And Checked By DELTA SYNTH & Gemini AI
+ */
+
+import { sanitizeInput } from 'public/utils';
+import { EVENTS, BETA_VOICEBANKS } from 'public/projectData';
+
+export const VALID_EXPERIENCE_LEVELS = ['Beginner', 'Intermediate', 'Advanced', 'Professional'];
+
+/**
+ * Register participant for an event
+ * @param {object} formData
+ * @param {string} formData.eventId
+ * @param {string} formData.fullName
+ * @param {string} formData.email
+ * @param {string} [formData.discord]
+ * @param {string} [formData.note]
+ * @returns {Promise<{ success: boolean, message: string, registrationId?: string, errors?: object }>}
+ */
+export async function registerForEvent(formData) {
+  try {
+    if (!formData || typeof formData !== 'object' || Array.isArray(formData)) {
+      return {
+        success: false,
+        message: 'ข้อมูลการลงทะเบียนไม่ถูกต้อง',
+        errors: { system: 'Invalid request payload: expected an object' }
+      };
+    }
+
+    const errors = {};
+
+    // Validate eventId against EVENTS catalog whitelist
+    const rawEventId = typeof formData.eventId === 'string' ? formData.eventId.trim() : '';
+    const validEventIds = Array.isArray(EVENTS) ? EVENTS.map(e => e.id) : [];
+    if (!rawEventId) {
+      errors.eventId = 'กรุณาระบุงานอีเวนต์ที่ต้องการสมัคร';
+    } else if (validEventIds.length > 0 && !validEventIds.includes(rawEventId)) {
+      errors.eventId = 'ไม่พบรหัสกิจกรรมในระบบ';
+    }
+
+    // Validate fullName
+    let rawFullName = typeof formData.fullName === 'string' ? formData.fullName.trim() : '';
+    if (rawFullName.length > 100) {
+      rawFullName = rawFullName.slice(0, 100);
+    }
+    if (rawFullName.length < 2) {
+      errors.fullName = 'กรุณาระบุชื่อ-นามสกุลที่ถูกต้อง';
+    }
+
+    // Validate email
+    const rawEmail = typeof formData.email === 'string' ? formData.email.trim() : '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!rawEmail || rawEmail.length > 254 || !emailRegex.test(rawEmail)) {
+      errors.email = 'กรุณาระบุอีเมลที่ถูกต้อง';
+    }
+
+    // Validate optional fields with length bounding
+    const rawDiscord = typeof formData.discord === 'string' ? formData.discord.trim().slice(0, 50) : '';
+    const rawNote = typeof formData.note === 'string' ? formData.note.trim().slice(0, 500) : '';
+
+    if (Object.keys(errors).length > 0) {
+      return {
+        success: false,
+        message: 'ข้อมูลการลงทะเบียนไม่ครบถ้วน',
+        errors
+      };
+    }
+
+    const randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const registration = {
+      id: `REG_${Date.now()}_${randomSuffix}`,
+      eventId: sanitizeInput(rawEventId),
+      fullName: sanitizeInput(rawFullName),
+      email: sanitizeInput(rawEmail).toLowerCase(),
+      discord: sanitizeInput(rawDiscord),
+      note: sanitizeInput(rawNote),
+      registeredAt: new Date().toISOString()
+    };
+
+    console.log(`[RegistrationService] New event registration: ${registration.id} for event ${registration.eventId} (${registration.email})`);
+
+    return {
+      success: true,
+      message: 'ลงทะเบียนเข้าร่วมกิจกรรมสำเร็จ! โปรดตรวจสอบรายละเอียดทางอีเมล',
+      registrationId: registration.id
+    };
+  } catch (err) {
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[RegistrationService] registerForEvent failed: ${errorMsg}. Suggested action: Verify form parameters.`);
+    return {
+      success: false,
+      message: 'เกิดข้อผิดพลาดของระบบในการบันทึกข้อมูล โปรดลองใหม่อีกครั้ง',
+      errors: { system: errorMsg }
+    };
+  }
+}
+
+/**
+ * Submit application to become a Beta Voicebank Tester
+ * @param {object} formData
+ * @param {string} formData.voicebankId
+ * @param {string} formData.fullName
+ * @param {string} formData.email
+ * @param {string} formData.dawOrEngine
+ * @param {string} [formData.experienceLevel='Intermediate']
+ * @returns {Promise<{ success: boolean, message: string, applicationId?: string, errors?: object }>}
+ */
+export async function applyBetaTester(formData) {
+  try {
+    if (!formData || typeof formData !== 'object' || Array.isArray(formData)) {
+      return {
+        success: false,
+        message: 'ข้อมูลการสมัครทดสอบไม่ถูกต้อง',
+        errors: { system: 'Invalid request payload: expected an object' }
+      };
+    }
+
+    const errors = {};
+
+    // Validate voicebankId against BETA_VOICEBANKS whitelist
+    const rawVoicebankId = typeof formData.voicebankId === 'string' ? formData.voicebankId.trim() : '';
+    const validBetaIds = Array.isArray(BETA_VOICEBANKS) ? BETA_VOICEBANKS.map(b => b.id) : [];
+    if (!rawVoicebankId) {
+      errors.voicebankId = 'กรุณาเลือกคลังเสียง BETA';
+    } else if (validBetaIds.length > 0 && !validBetaIds.includes(rawVoicebankId)) {
+      errors.voicebankId = 'ไม่พบคลังเสียง BETA ในระบบ';
+    }
+
+    // Validate fullName
+    const rawFullName = typeof formData.fullName === 'string' ? formData.fullName.trim() : '';
+    if (rawFullName.length < 2) {
+      errors.fullName = 'กรุณาระบุชื่อผู้สมัคร';
+    } else if (rawFullName.length > 100) {
+      errors.fullName = 'ชื่อผู้สมัครยาวเกินไป (ไม่เกิน 100 ตัวอักษร)';
+    }
+
+    // Validate email
+    const rawEmail = typeof formData.email === 'string' ? formData.email.trim() : '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!rawEmail || rawEmail.length > 254 || !emailRegex.test(rawEmail)) {
+      errors.email = 'กรุณาระบุอีเมลติดต่อ';
+    }
+
+    // Validate dawOrEngine
+    const rawDaw = typeof formData.dawOrEngine === 'string' ? formData.dawOrEngine.trim() : '';
+    if (rawDaw.length < 2) {
+      errors.dawOrEngine = 'กรุณาระบุโปรแกรมที่ใช้งาน (เช่น OpenUtau, Synthesizer V)';
+    } else if (rawDaw.length > 100) {
+      errors.dawOrEngine = 'ชื่อโปรแกรมยาวเกินไป (ไม่เกิน 100 ตัวอักษร)';
+    }
+
+    // Validate experienceLevel whitelist with fallback to 'Intermediate'
+    let experienceLevel = 'Intermediate';
+    if (typeof formData.experienceLevel === 'string') {
+      const trimmedExp = formData.experienceLevel.trim();
+      const matched = VALID_EXPERIENCE_LEVELS.find(l => l.toLowerCase() === trimmedExp.toLowerCase());
+      if (matched) {
+        experienceLevel = matched;
+      }
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return {
+        success: false,
+        message: 'กรุณากรอกข้อมูลการสมัครทดสอบให้ครบถ้วน',
+        errors
+      };
+    }
+
+    const randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const application = {
+      id: `BETA_${Date.now()}_${randomSuffix}`,
+      voicebankId: sanitizeInput(rawVoicebankId),
+      fullName: sanitizeInput(rawFullName),
+      email: sanitizeInput(rawEmail).toLowerCase(),
+      dawOrEngine: sanitizeInput(rawDaw),
+      experienceLevel: sanitizeInput(experienceLevel),
+      appliedAt: new Date().toISOString()
+    };
+
+    console.log(`[RegistrationService] Beta application received: ${application.id} for ${application.voicebankId}`);
+
+    return {
+      success: true,
+      message: 'ส่งใบสมัครทดสอบ BETA สำเร็จแล้ว! ทีมงานจะติดต่อกลับพร้อมลิงก์ดาวน์โหลดสิทธิ์การทดสอบ',
+      applicationId: application.id
+    };
+  } catch (err) {
+    const errorMsg = (err && err.message) ? err.message : String(err);
+    console.error(`[RegistrationService] applyBetaTester failed: ${errorMsg}. Suggested action: Check application payload.`);
+    return {
+      success: false,
+      message: 'เกิดข้อผิดพลาดในการส่งใบสมัคร โปรดลองอีกครั้ง',
+      errors: { system: errorMsg }
+    };
+  }
+}
+
+export default {
+  VALID_EXPERIENCE_LEVELS,
+  registerForEvent,
+  applyBetaTester
+};

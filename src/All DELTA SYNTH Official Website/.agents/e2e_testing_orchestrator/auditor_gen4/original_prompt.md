@@ -1,0 +1,2 @@
+## 2026-06-08T00:33:16+07:00
+Your working directory is `e:\All DELTA SYNTH Official Website\.agents\e2e_testing_orchestrator\auditor_gen4`. Read `e:\All DELTA SYNTH Official Website\TEST_INFRA.md` and verify the integrity of the E2E test suite in `e2e_tests/`. Ensure that the tests are genuine, do not hardcode 'always pass' logic, and properly implement the required assertions without dummy/facade mechanisms. Run the tests and perform static analysis to detect cheating. Write your full evidence report to `handoff.md` in your working directory and notify me when done.
