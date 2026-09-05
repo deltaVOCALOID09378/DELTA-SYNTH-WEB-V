@@ -3,20 +3,26 @@ import wixData from 'wix-data';
 const WINDOW_MS = 15 * 60 * 1000;
 const MAX_SUBMISSIONS = 5;
 
-export async function checkSubmissionRateLimit(collectionName, email) {
+export async function checkSubmissionRateLimit(collectionName, email, clientKey = '') {
   const normalizedEmail = String(email || '').trim().toLowerCase();
+  const normalizedClientKey = String(clientKey || '').trim().slice(0, 128) || 'unknown';
   const since = new Date(Date.now() - WINDOW_MS);
-  const result = await wixData.query(collectionName)
-    .eq('email', normalizedEmail)
-    .ge('submittedAt', since)
-    .limit(MAX_SUBMISSIONS + 1)
-    .find();
+  const [emailResult, clientResult] = await Promise.all([
+    wixData.query(collectionName)
+      .eq('email', normalizedEmail)
+      .ge('submittedAt', since)
+      .limit(MAX_SUBMISSIONS + 1)
+      .find(),
+    wixData.query(collectionName)
+      .eq('clientKey', normalizedClientKey)
+      .ge('submittedAt', since)
+      .limit(MAX_SUBMISSIONS + 1)
+      .find()
+  ]);
 
-  if (result.items.length >= MAX_SUBMISSIONS) {
-    return { allowed: false };
-  }
-
-  return { allowed: true };
+  return {
+    allowed: emailResult.items.length < MAX_SUBMISSIONS && clientResult.items.length < MAX_SUBMISSIONS
+  };
 }
 
 export function publicFailure(message) {

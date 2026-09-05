@@ -13,6 +13,7 @@
 import { sanitizeInput } from 'public/utils';
 import wixData from 'wix-data';
 import { EVENTS, BETA_VOICEBANKS } from 'public/projectData';
+import { checkSubmissionRateLimit } from 'backend/securityService.jsw';
 
 export async function checkSubmissionRateLimit(collectionName, email) {
   const since = new Date(Date.now() - 15 * 60 * 1000);
@@ -43,6 +44,10 @@ export async function registerForEvent(formData) {
     }
 
     const errors = {};
+    const honeypot = typeof formData.website === 'string' ? formData.website.trim() : '';
+    if (honeypot) {
+      return { success: false, message: 'ไม่สามารถดำเนินการได้ในขณะนี้' };
+    }
 
     // Validate eventId against EVENTS catalog whitelist
     const rawEventId = typeof formData.eventId === 'string' ? formData.eventId.trim() : '';
@@ -92,7 +97,22 @@ export async function registerForEvent(formData) {
       registeredAt: new Date().toISOString()
     };
 
-    const rateLimit = await checkSubmissionRateLimit('EventRegistrations', registration.email);
+    const eventItem = EVENTS.find(event => event.id === registration.eventId);
+    if (eventItem && Number.isFinite(eventItem.maxParticipants) && Number.isFinite(eventItem.currentRegistered) && eventItem.currentRegistered >= eventItem.maxParticipants) {
+      return { success: false, message: 'กิจกรรมนี้เต็มแล้ว' };
+    }
+
+    const duplicate = await wixData.query('EventRegistrations')
+      .eq('eventId', registration.eventId)
+      .eq('email', registration.email)
+      .limit(1)
+      .find();
+    if (duplicate.items.length > 0) {
+      return { success: false, message: 'อีเมลนี้ลงทะเบียนกิจกรรมนี้แล้ว' };
+    }
+
+    const clientKey = typeof formData.clientKey === 'string' ? formData.clientKey.trim().slice(0, 128) : '';
+    const rateLimit = await checkSubmissionRateLimit('EventRegistrations', registration.email, clientKey);
     if (!rateLimit.allowed) {
       return { success: false, message: 'ส่งข้อมูลบ่อยเกินไป โปรดลองใหม่ภายหลัง' };
     }
@@ -104,6 +124,7 @@ export async function registerForEvent(formData) {
       email: registration.email,
       discord: registration.discord,
       note: registration.note,
+      clientKey: typeof formData.clientKey === 'string' ? formData.clientKey.trim().slice(0, 128) : 'unknown',
       submittedAt: new Date(registration.registeredAt)
     });
 
@@ -111,7 +132,7 @@ export async function registerForEvent(formData) {
 
     return {
       success: true,
-      message: 'ลงทะเบียนเข้าร่วมกิจกรรมสำเร็จ! โปรดตรวจสอบรายละเอียดทางอีเมล',
+      message: 'ลงทะเบียนเข้าร่วมกิจกรรมสำเร็จ! ทีมงานจะติดต่อกลับตามข้อมูลที่ส่งไว้',
       registrationId: registration.id
     };
   } catch (err) {

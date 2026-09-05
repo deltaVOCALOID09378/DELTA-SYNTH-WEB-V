@@ -164,7 +164,7 @@ export async function post_contact(request) {
   let body;
   try {
     if (!request || !request.body || typeof request.body.json !== 'function') {
-      return jsonResponse({ success: false, error: 'Malformed request: body.json() parser unavailable' }, 400);
+      return jsonResponse({ success: false, error: 'รูปแบบคำขอไม่ถูกต้อง' }, 400, request);
     }
     body = await request.body.json();
   } catch (parseErr) {
@@ -191,7 +191,7 @@ export async function post_register(request) {
   let body;
   try {
     if (!request || !request.body || typeof request.body.json !== 'function') {
-      return jsonResponse({ success: false, error: 'Malformed request: body.json() parser unavailable' }, 400);
+      return jsonResponse({ success: false, error: 'รูปแบบคำขอไม่ถูกต้อง' }, 400, request);
     }
     body = await request.body.json();
   } catch (parseErr) {

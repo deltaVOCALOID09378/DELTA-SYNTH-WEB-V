@@ -11,6 +11,7 @@
  */
 
 import { MUSIC_FILES } from 'public/projectData';
+import wixData from 'wix-data';
 
 export const VALID_FILE_FORMATS = ['All', 'USTX', 'MIDI', 'SVP', 'VSQX'];
 
@@ -83,8 +84,11 @@ export async function trackFileDownload(fileId) {
       return { success: false, message: `File '${safeId}' not found in catalog` };
     }
 
-    console.log(`[FileService] Download recorded for file: ${safeId} at ${new Date().toISOString()}`);
-    return { success: true, message: `Download tracked for file ${safeId}` };
+    await wixData.insert('FileDownloadTracking', {
+      fileId: safeId,
+      downloadedAt: new Date()
+    });
+    return { success: true, message: 'บันทึกการดาวน์โหลดแล้ว' };
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[FileService] trackFileDownload failed: ${errorMsg}. Suggested action: Retry log write.`);
