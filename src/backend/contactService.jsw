@@ -10,9 +10,16 @@
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
+import wixData from 'wix-data';
 import { sanitizeInput } from 'public/utils';
 
-export const CONTACT_CATEGORIES = [
+export async function checkSubmissionRateLimit(collectionName, email) {
+  const since = new Date(Date.now() - 15 * 60 * 1000);
+  const result = await wixData.query(collectionName).eq('email', String(email).trim().toLowerCase()).ge('submittedAt', since).limit(6).find();
+  return { allowed: result.items.length < 5 };
+}
+
+const CONTACT_CATEGORIES = [
   'General',
   'Collaboration',
   'Voicebank Issue',
@@ -40,7 +47,7 @@ export async function submitContactMessage(formData) {
       return {
         success: false,
         message: 'ข้อมูลที่ส่งมาไม่ถูกต้อง',
-        errors: { system: 'Invalid request payload: expected an object' }
+        errors: { system: 'Invalid request payload' }
       };
     }
 
@@ -107,7 +114,22 @@ export async function submitContactMessage(formData) {
       submittedAt: new Date().toISOString()
     };
 
-    console.log(`[ContactService] Ticket created: ${ticket.ticketId} from ${ticket.email} [Category: ${ticket.category}]`);
+    const rateLimit = await checkSubmissionRateLimit('ContactSubmissions', ticket.email);
+    if (!rateLimit.allowed) {
+      return { success: false, message: 'ส่งข้อมูลบ่อยเกินไป โปรดลองใหม่ภายหลัง' };
+    }
+
+    await wixData.insert('ContactSubmissions', {
+      ticketId: ticket.ticketId,
+      name: ticket.name,
+      email: ticket.email,
+      subject: ticket.subject,
+      category: ticket.category,
+      message: ticket.message,
+      submittedAt: new Date(ticket.submittedAt)
+    });
+
+    console.log(`[ContactService] Ticket created: ${ticket.ticketId} [Category: ${ticket.category}]`);
 
     return {
       success: true,
@@ -120,7 +142,7 @@ export async function submitContactMessage(formData) {
     return {
       success: false,
       message: 'ไม่สามารถส่งข้อความได้ในขณะนี้ โปรดส่งอีเมลโดยตรงมาที่ delta.vocaloid09378@gmail.com',
-      errors: { system: errorMsg }
+      errors: { system: 'Submission failed' }
     };
   }
 }
