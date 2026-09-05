@@ -1,0 +1,31 @@
+import wixData from 'wix-data';
+
+const WINDOW_MS = 15 * 60 * 1000;
+const MAX_SUBMISSIONS = 5;
+
+export async function checkSubmissionRateLimit(collectionName, email) {
+  const normalizedEmail = String(email || '').trim().toLowerCase();
+  const since = new Date(Date.now() - WINDOW_MS);
+  const result = await wixData.query(collectionName)
+    .eq('email', normalizedEmail)
+    .ge('submittedAt', since)
+    .limit(MAX_SUBMISSIONS + 1)
+    .find();
+
+  if (result.items.length >= MAX_SUBMISSIONS) {
+    return { allowed: false };
+  }
+
+  return { allowed: true };
+}
+
+export function publicFailure(message) {
+  return { success: false, message };
+}
+
+export function logFailure(component, action, error, suggestion) {
+  const cause = error && error.message ? error.message : 'Unknown error';
+  console.error(`[${component}] ${action} failed: ${cause}. Suggested action: ${suggestion}`);
+}
+
+export default { checkSubmissionRateLimit, publicFailure, logFailure };

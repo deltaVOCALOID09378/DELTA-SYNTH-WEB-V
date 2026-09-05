@@ -11,9 +11,16 @@
  */
 
 import { sanitizeInput } from 'public/utils';
+import wixData from 'wix-data';
 import { EVENTS, BETA_VOICEBANKS } from 'public/projectData';
 
-export const VALID_EXPERIENCE_LEVELS = ['Beginner', 'Intermediate', 'Advanced', 'Professional'];
+export async function checkSubmissionRateLimit(collectionName, email) {
+  const since = new Date(Date.now() - 15 * 60 * 1000);
+  const result = await wixData.query(collectionName).eq('email', String(email).trim().toLowerCase()).ge('submittedAt', since).limit(6).find();
+  return { allowed: result.items.length < 5 };
+}
+
+const VALID_EXPERIENCE_LEVELS = ['Beginner', 'Intermediate', 'Advanced', 'Professional'];
 
 /**
  * Register participant for an event
@@ -31,7 +38,7 @@ export async function registerForEvent(formData) {
       return {
         success: false,
         message: 'ข้อมูลการลงทะเบียนไม่ถูกต้อง',
-        errors: { system: 'Invalid request payload: expected an object' }
+        errors: { system: 'Invalid request payload' }
       };
     }
 
@@ -85,7 +92,22 @@ export async function registerForEvent(formData) {
       registeredAt: new Date().toISOString()
     };
 
-    console.log(`[RegistrationService] New event registration: ${registration.id} for event ${registration.eventId} (${registration.email})`);
+    const rateLimit = await checkSubmissionRateLimit('EventRegistrations', registration.email);
+    if (!rateLimit.allowed) {
+      return { success: false, message: 'ส่งข้อมูลบ่อยเกินไป โปรดลองใหม่ภายหลัง' };
+    }
+
+    await wixData.insert('EventRegistrations', {
+      registrationId: registration.id,
+      eventId: registration.eventId,
+      fullName: registration.fullName,
+      email: registration.email,
+      discord: registration.discord,
+      note: registration.note,
+      submittedAt: new Date(registration.registeredAt)
+    });
+
+    console.log(`[RegistrationService] New event registration: ${registration.id} for event ${registration.eventId}`);
 
     return {
       success: true,
@@ -98,7 +120,7 @@ export async function registerForEvent(formData) {
     return {
       success: false,
       message: 'เกิดข้อผิดพลาดของระบบในการบันทึกข้อมูล โปรดลองใหม่อีกครั้ง',
-      errors: { system: errorMsg }
+      errors: { system: 'Submission failed' }
     };
   }
 }
@@ -119,7 +141,7 @@ export async function applyBetaTester(formData) {
       return {
         success: false,
         message: 'ข้อมูลการสมัครทดสอบไม่ถูกต้อง',
-        errors: { system: 'Invalid request payload: expected an object' }
+        errors: { system: 'Invalid request payload' }
       };
     }
 
@@ -186,6 +208,21 @@ export async function applyBetaTester(formData) {
       appliedAt: new Date().toISOString()
     };
 
+    const rateLimit = await checkSubmissionRateLimit('BetaApplications', application.email);
+    if (!rateLimit.allowed) {
+      return { success: false, message: 'ส่งข้อมูลบ่อยเกินไป โปรดลองใหม่ภายหลัง' };
+    }
+
+    await wixData.insert('BetaApplications', {
+      applicationId: application.id,
+      voicebankId: application.voicebankId,
+      fullName: application.fullName,
+      email: application.email,
+      dawOrEngine: application.dawOrEngine,
+      experienceLevel: application.experienceLevel,
+      submittedAt: new Date(application.appliedAt)
+    });
+
     console.log(`[RegistrationService] Beta application received: ${application.id} for ${application.voicebankId}`);
 
     return {
@@ -199,7 +236,7 @@ export async function applyBetaTester(formData) {
     return {
       success: false,
       message: 'เกิดข้อผิดพลาดในการส่งใบสมัคร โปรดลองอีกครั้ง',
-      errors: { system: errorMsg }
+      errors: { system: 'Submission failed' }
     };
   }
 }

@@ -32,14 +32,25 @@ import { submitContactMessage } from 'backend/contactService.jsw';
  * @param {number} [status=200]
  * @returns {object}
  */
-function jsonResponse(data, status = 200) {
+const ALLOWED_ORIGINS = new Set([
+  'https://deltasynthth.co.th',
+  'https://www.deltasynthth.co.th',
+  'https://delta-synth-official-studio.vercel.app'
+]);
+
+function jsonResponse(data, status = 200, request) {
+  const origin = request && request.headers && request.headers.origin;
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
+  if (ALLOWED_ORIGINS.has(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
+    headers.Vary = 'Origin';
+  }
   return {
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    },
+    headers,
     status,
     body: JSON.stringify(data)
   };
@@ -95,7 +106,7 @@ export function get_voicebanks(request) {
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[HttpFunctions] get_voicebanks failed: ${errorMsg}. Suggested action: Verify query parameters.`);
-    return jsonResponse({ success: false, error: errorMsg }, 500);
+    return jsonResponse({ success: false, error: 'ไม่สามารถดำเนินการได้ในขณะนี้' }, 500, request);
   }
 }
 
@@ -120,7 +131,7 @@ export function get_singer(request) {
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[HttpFunctions] get_singer failed: ${errorMsg}. Suggested action: Check singerId parameter format.`);
-    return jsonResponse({ success: false, error: errorMsg }, 500);
+    return jsonResponse({ success: false, error: 'ไม่สามารถดำเนินการได้ในขณะนี้' }, 500, request);
   }
 }
 
@@ -141,7 +152,7 @@ export function get_files(request) {
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[HttpFunctions] get_files failed: ${errorMsg}. Suggested action: Check format parameter query.`);
-    return jsonResponse({ success: false, error: errorMsg }, 500);
+    return jsonResponse({ success: false, error: 'ไม่สามารถดำเนินการได้ในขณะนี้' }, 500, request);
   }
 }
 
@@ -159,16 +170,16 @@ export async function post_contact(request) {
   } catch (parseErr) {
     const parseMsg = (parseErr && parseErr.message) ? parseErr.message : String(parseErr);
     console.error(`[HttpFunctions] post_contact failed: Stream error or invalid payload (${parseMsg}). Suggested action: Verify JSON request body.`);
-    return jsonResponse({ success: false, error: `Stream error or invalid JSON payload: ${parseMsg}` }, 500);
+    return jsonResponse({ success: false, error: 'Invalid JSON payload' }, 400, request);
   }
 
   try {
     const result = await submitContactMessage(body);
-    return jsonResponse(result, result && result.success ? 200 : 400);
+    return jsonResponse(result, result && result.success ? 200 : 400, request);
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[HttpFunctions] post_contact failed: ${errorMsg}. Suggested action: Verify contact service.`);
-    return jsonResponse({ success: false, error: errorMsg }, 500);
+    return jsonResponse({ success: false, error: 'ไม่สามารถดำเนินการได้ในขณะนี้' }, 500, request);
   }
 }
 
@@ -186,16 +197,16 @@ export async function post_register(request) {
   } catch (parseErr) {
     const parseMsg = (parseErr && parseErr.message) ? parseErr.message : String(parseErr);
     console.error(`[HttpFunctions] post_register failed: Stream error or invalid payload (${parseMsg}). Suggested action: Verify JSON request body.`);
-    return jsonResponse({ success: false, error: `Stream error or invalid JSON payload: ${parseMsg}` }, 500);
+    return jsonResponse({ success: false, error: 'Invalid JSON payload' }, 400, request);
   }
 
   try {
     const result = await registerForEvent(body);
-    return jsonResponse(result, result && result.success ? 200 : 400);
+    return jsonResponse(result, result && result.success ? 200 : 400, request);
   } catch (err) {
     const errorMsg = (err && err.message) ? err.message : String(err);
     console.error(`[HttpFunctions] post_register failed: ${errorMsg}. Suggested action: Verify registration service.`);
-    return jsonResponse({ success: false, error: errorMsg }, 500);
+    return jsonResponse({ success: false, error: 'ไม่สามารถดำเนินการได้ในขณะนี้' }, 500, request);
   }
 }
 
