@@ -1,925 +1,1390 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Voicebanks | DELTA SYNTH - คลังเสียงนักร้องเสมือนจริงทั้งหมด</title>
-  <meta name="description" content="Official Voicebank Library of DELTA SYNTH Studio. Explore UTAU, OpenUtau, and DiffSinger voicebanks.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Prompt', 'Inter', sans-serif; }
-    .font-en { font-family: 'Inter', sans-serif; }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #020617; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
-  </style>
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Voicebank - DELTA SYNTH</title>
+<meta name="description" content="DELTA SYNTH Voicebank Repository - All UTAU and DiffSinger AI voice banks">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-950 text-slate-200 flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
-
-  <!-- แถบเมนูนำทาง (Sticky Navbar) -->
-  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 text-2xl font-black tracking-wider bg-gradient-to-r from-red-500 via-rose-400 to-white bg-clip-text text-transparent">
-        DELTA SYNTH
-      </a>
-      <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
-        <a href="index.html" class="text-slate-300 hover:text-red-400 transition">หน้าแรก <span class="text-xs text-slate-500 font-normal">/ Home</span></a>
-        <a href="about.html" class="text-slate-300 hover:text-red-400 transition">เกี่ยวกับเรา <span class="text-xs text-slate-500 font-normal">/ About</span></a>
-        <a href="voicebank.html" class="text-red-500 font-semibold border-b-2 border-red-500 pb-0.5 transition">คลังเสียงทั้งหมด <span class="text-xs text-red-400/80 font-normal">/ Voicebanks</span></a>
-        <a href="files.html" class="text-slate-300 hover:text-red-400 transition">ไฟล์โปรเจกต์ <span class="text-xs text-slate-500 font-normal">/ Files</span></a>
-        <a href="project.html" class="text-slate-300 hover:text-red-400 transition">โปรเจกต์ร่วม <span class="text-xs text-slate-500 font-normal">/ Collab</span></a>
-      </nav>
-      <div class="hidden sm:flex items-center space-x-3">
-        <a href="https://www.youtube.com/@deltaSYNTH0320" target="_blank" rel="noreferrer" title="YouTube Official" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-500/50 transition">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/delta.synth.2025/" target="_blank" rel="noreferrer" title="Facebook" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500/50 transition">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@deltavocaloid" target="_blank" rel="noreferrer" title="TikTok" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-pink-500 hover:border-pink-500/50 transition">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.71 1.25-.07 2.37-.81 2.87-1.95.27-.6.37-1.27.37-1.93l.02-13.88z"/></svg>
-        </a>
-      </div>
-      <button id="mobile-toggle" class="lg:hidden p-2 text-slate-400 hover:text-white" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-      </button>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">&#916;</span>
+      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Main</a>
+      <a href="about.html">About Us</a>
+      <a href="voicebank.html" class="active">All Voicebank</a>
+      <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+      <a href="collab.html">Collaboration</a>
+      <a href="events.html">Events</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="crumb">DELTA SYNTH / All Voicebank</span>
+    <h1>คลังเสียงทั้งหมด<br>ของ DELTA SYNTH</h1>
+    <p class="lead" style="max-width:640px;">Voicebank repository of all 53 characters. OpenUTAU and DiffSinger AI ready.</p>
+  </div>
+</section>
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="jp">JP</button>
+      <button class="filter-chip" data-filter="th">TH</button>
+      <button class="filter-chip" data-filter="en">EN</button>
+      <button class="filter-chip" data-filter="cn">CN</button>
+      <button class="filter-chip" data-filter="ai">DiffSinger AI</button>
     </div>
-    <div id="mobile-nav" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
-      <a href="index.html" class="block py-2 text-slate-300">หน้าแรก / Home</a>
-      <a href="about.html" class="block py-2 text-slate-300">เกี่ยวกับเรา / About</a>
-      <a href="voicebank.html" class="block py-2 text-red-500 font-semibold">คลังเสียงทั้งหมด / Voicebanks</a>
-      <a href="files.html" class="block py-2 text-slate-300">ไฟล์โปรเจกต์ / Files</a>
-      <a href="project.html" class="block py-2 text-slate-300">โปรเจกต์ร่วม / Collab</a>
+    <div class="roster">
+      <article class="vcard" data-tags="jp,th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Ayanami Hikaru.png" alt="Ayanami Hikaru" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">01</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Ayanami Hikaru</h3>
+    <div class="role">อายานามิ ฮิคารุ</div>
+    <p class="vcard-bio">เสียงหลักอันเป็นเอกลักษณ์ของ DELTA SYNTH ให้โทนเสียงอบอุ่น ทรงพลัง และยืดหยุ่นสูงในทุกย่านเสียง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop / Rock / Anisong</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, Japanese, English</span></div>
     </div>
-  </header>
-
-  <!-- Hero & Search Header -->
-  <section class="py-14 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800 text-center">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-800/40 text-red-400 text-xs font-semibold uppercase tracking-wider mb-3">
-        Official Vocal Synth Database • OpenUtau / DiffSinger / UTAU
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white mb-3">
-        All DELTA SYNTH <span class="bg-gradient-to-r from-red-500 to-rose-400 bg-clip-text text-transparent">Voicebanks</span>
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-8">
-        ศูนย์รวมคลังเสียงสังเคราะห์เสมือนจริงของค่ายและศิลปินร่วมพัฒนา พร้อมข้อมูลจำเพาะสองภาษาและลิงก์ดาวน์โหลด
-      </p>
-
-      <!-- Search & Filter Controls -->
-      <div class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-2.5">
-        <div class="relative flex-grow">
-          <input 
-            type="text" 
-            id="search-input" 
-            placeholder="ค้นหาชื่อตัวละคร / Search singer name (e.g. Hikaru, SUN, Miro, น้ำผึ้ง)..."
-            class="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition placeholder-slate-500"
-          >
-          <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_HIKARU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/ayanami_hikaru.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/SUN.png" alt="SUN" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">02</span>
+  </div>
+  <div class="vcard-body">
+    <h3>SUN</h3>
+    <div class="role">ซัน</div>
+    <p class="vcard-bio">เสียงใส คมชัด พุ่งตรง เหมาะกับแนวเพลงเร็วและท่อนฮุคที่ต้องการพลังเสียงหนักแน่น</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Rock / EDM / Synthwave</span></div>
+      <div><b>Engine</b><span>UTAU CVVC / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SUN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/sun.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Guren Kani.png" alt="Guren Kani" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">03</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Guren Kani</h3>
+    <div class="role">กุเร็น คานิ</div>
+    <p class="vcard-bio">น้ำเสียงดุดัน เข้มข้น มีเอกลักษณ์การออกเสียงที่ชัดเจนสำหรับแนวร็อกและเมทัล</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Metal / Heavy Rock</span></div>
+      <div><b>Engine</b><span>UTAU VCV / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, Japanese</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_GUREN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/guren_kani.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Kochujang.png" alt="Kochujang" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">04</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Kochujang</h3>
+    <div class="role">โคชูจัง</div>
+    <p class="vcard-bio">เสียงหวานใสผสมความเปรี้ยวซ่า เหมาะสำหรับเพลงป๊อปและแดนซ์สไตล์โมเดิร์น</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>K-Pop / Dance / Electro</span></div>
+      <div><b>Engine</b><span>UTAU CVVC / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, Korean, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_KOCHUJANG" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/kochujang.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Thitiya Anantanetr.png" alt="Thitiya Anantanetr" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">05</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Thitiya Anantanetr</h3>
+    <div class="role">ธิติยา อนันตเนตร</div>
+    <p class="vcard-bio">เสียงร้องนุ่มละมุน ถ่ายทอดอารมณ์เพลงช้าได้อย่างลึกซึ้งและมีความเป็นธรรมชาติสูง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Ballad / Acoustic / R&B</span></div>
+      <div><b>Engine</b><span>UTAU VCCV / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_THITIYA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/thitiya_anantanetr.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Arun Kamonlanetr.png" alt="Arun Kamonlanetr" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">06</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Arun Kamonlanetr</h3>
+    <div class="role">อรุณ กมลเนตร</div>
+    <p class="vcard-bio">เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>23</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Traditional / Pop</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_ARUN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/arun_kamonlanetr.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Bew  Powerine.png" alt="Bew Powerine" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">07</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Bew Powerine</h3>
+    <div class="role">บิว พาวเวอร์ไรน์</div>
+    <p class="vcard-bio">น้ำเสียงสว่าง สดใส มีพลัง ให้ความรู้สึกล้ำสมัยสไตล์ Sci-Fi และ Cyberpunk</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Electro / Cyberpunk / Pop</span></div>
+      <div><b>Engine</b><span>UTAU CVVC / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_BEW" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/bew__powerine.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Ball Powerine.png" alt="Ball Powerine" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">08</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Ball Powerine</h3>
+    <div class="role">บอล พาวเวอร์ไรน์</div>
+    <p class="vcard-bio">เสียงร้องโทนอบอุ่นและมีน้ำหนัก เข้ากันได้ดีกับดนตรีซินธ์และฟิวเจอร์เบส</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Future Bass / Rock</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_BALL" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/ball_powerine.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Beem Powerine.png" alt="Beem Powerine" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">09</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Beem Powerine</h3>
+    <div class="role">บีม พาวเวอร์ไรน์</div>
+    <p class="vcard-bio">เสียงใสน่ารัก มีลมหายใจในเสียงร้องที่เด่นชัด เหมาะกับเพลงฟังสบาย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop / Acoustic</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_BEEM" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/beem_powerine.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Chansamorn.png" alt="Chansamorn" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">10</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Chansamorn</h3>
+    <div class="role">จันทร์สมร</div>
+    <p class="vcard-bio">เสียงขับร้องไทยร่วมสมัย ความละเมียดละไมของวรรณยุกต์ไทยอย่างสมบูรณ์แบบ</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>24</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Traditional / Thai Contemporary</span></div>
+      <div><b>Engine</b><span>UTAU VCV / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_CHANSAMORN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/chansamorn.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Kikakowa Usagi.png" alt="Kikokawa Usagi" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">11</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Kikokawa Usagi</h3>
+    <div class="role">คิโคคาวะ อุซางิ</div>
+    <p class="vcard-bio">เสียงใสแหลมน่ารักสไตล์อะนิเมะญี่ปุ่น เหมาะกับเพลงแนว Denpa และ Kawaii Future Bass</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>16</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Denpa / Anime / Kawaii Future Bass</span></div>
+      <div><b>Engine</b><span>UTAU CV / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_USAGI" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/kikakowa_usagi.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Ahctan.png" alt="Ahctan" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">12</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Ahctan</h3>
+    <div class="role">แอคตัน</div>
+    <p class="vcard-bio">โทนเสียงทุ้มนุ่ม เหมาะสำหรับเพลงแนวอินดี้และโลไฟ</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Indie / Lo-Fi</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_AHCTAN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/ahctan.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/ARZBTV.png" alt="ARZB TV" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">13</span>
+  </div>
+  <div class="vcard-body">
+    <h3>ARZB TV</h3>
+    <div class="role">เออาร์แซดบี ทีวี</div>
+    <p class="vcard-bio">เสียงเร็ว คมชัด ชัดเจนในการแร็ปและการร้องแบบเมโลดิกแทร็ป</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>ARZB Studio & DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Hip-Hop / Trap</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_ARZB" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/arzbtv.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Azaya Aika.png" alt="Azaya Aika" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">14</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Azaya Aika</h3>
+    <div class="role">อาซายะ ไอิกะ</div>
+    <p class="vcard-bio">เสียงใส กังวาน ให้ความรู้สึกละมุนในเพลงบัลลาดและป๊อป</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>17</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH Partner</span></div>
+      <div><b>Genre</b><span>J-Pop / Ballad</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_AIKA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/azaya_aika.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Diwachi.png" alt="Diwachi" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">15</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Diwachi</h3>
+    <div class="role">ดิวาจิ</div>
+    <p class="vcard-bio">เสียง R&B นุ่มลึก มีลูกเอื้อนที่เป็นธรรมชาติ</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>R&B / Soul</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_DIWACHI" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/diwachi.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Dokya.png" alt="Dokya" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">16</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Dokya</h3>
+    <div class="role">ดอกหญ้า</div>
+    <p class="vcard-bio">เสียงหวานใสเป็นธรรมชาติ ดุจสายลมพัดผ่านทุ่งหญ้า เห���าะกับเพลงโฟล์ก</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Folk / Acoustic</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_DOKYA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/dokya.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,cn,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/FangYu.png" alt="Fangyu" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">17</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Fangyu</h3>
+    <div class="role">ฟางหยู</div>
+    <p class="vcard-bio">น้ำเสียงสไตล์กั๋วเฟิงอันสง่างามและทันสมัย รองรับภาษาจีนและไทยอย่างยอดเยี่ยม</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH & China Team</span></div>
+      <div><b>Genre</b><span>C-Pop / Guofeng</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Chinese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill cn">CN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_FANGYU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/fangyu.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Felix.png" alt="Felix" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">18</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Felix</h3>
+    <div class="role">ฟีลิกซ์</div>
+    <p class="vcard-bio">โทนเสียงอบอุ่นแนวซิตี้ป๊อปยุค 80s-90s</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Synthpop / City Pop</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_FELIX" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/felix.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/FellowWhite.png" alt="Fellowwhite" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">19</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Fellowwhite</h3>
+    <div class="role">เฟลโลว์ไวท์</div>
+    <p class="vcard-bio">พลังเสียงอัลเทอร์เนทีฟที่หนักแน่นและพุ่งไกล</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Alternative / Rock</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_FELLOWWHITE" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/fellowwhite.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Fuwari Bento.png" alt="Fuwari Bento" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">20</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Fuwari Bento</h3>
+    <div class="role">ฟุวาริ เบนโตะ</div>
+    <p class="vcard-bio">เสียงร้องสดใส เปล่งประกาย เหมาะสำหรับเพลงแนวน่ารักและเกมมิ่งชิปจูน</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>15</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Kawaii Pop / Chiptune</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_FUWARI" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/fuwari_bento.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Haruhiko.png" alt="Haruhiko" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">21</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Haruhiko</h3>
+    <div class="role">ฮารุฮิโกะ</div>
+    <p class="vcard-bio">เสียงร้องแบบอะนิซองที่ทรงพลัง มีพลังขับเคลื่อนในทุกจังหวะดนตรี</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>J-Rock / Anisong</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_HARUHIKO" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/haruhiko.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Ibara Kouya.png" alt="Ibara Kouya" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">22</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Ibara Kouya</h3>
+    <div class="role">อิบาระ โคยะ</div>
+    <p class="vcard-bio">เสียงทุ้มต่ำ ลึกลับ มีเอกลักษณ์เฉพาะตัวสูงมาก</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>24</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Darkwave / Industrial</span></div>
+      <div><b>Engine</b><span>UTAU VCV / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_IBARA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/ibara_kouya.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Jonu.png" alt="Jonu" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">23</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Jonu</h3>
+    <div class="role">โจนู</div>
+    <p class="vcard-bio">เสียงดิบ เท่ มีความเข้าถึงง่ายสำหรับเพลงป๊อปพังก์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop Punk / Emo</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_JONU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/jonu.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,cn,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/KangFu.png" alt="Kangfu" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">24</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Kangfu</h3>
+    <div class="role">กังฟู</div>
+    <p class="vcard-bio">พลังเสียงดุดันสไตล์กังฟูร็อก แข็งแกร่งและเด็ดขาด</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Martial Arts Rock / Chinese Trap</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Chinese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill cn">CN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_KANGFU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/kangfu.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Kira.png" alt="Kira" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">25</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Kira</h3>
+    <div class="role">คิระ</div>
+    <p class="vcard-bio">เสียงพุ่งเร็ว ทรงพลัง เข้ากับเพลงยูโรบีทและแดนซ์ความเร็วสูง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Eurobeat / Hi-NRG</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_KIRA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/kira.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Koizumi Satoru.png" alt="Koizumi Satoru" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">26</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Koizumi Satoru</h3>
+    <div class="role">โคอิซึมิ ซาโตรุ</div>
+    <p class="vcard-bio">น้ำเสียงสไตล์แจ๊ส นุ่มนวล ชวนหลงใหลในทุกท่วงทำนอง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>23</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Jazz / Bossa Nova</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SATORU_K" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/koizumi_satoru.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Mairu Maishi.png" alt="Mairu Maishi" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">27</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Mairu Maishi</h3>
+    <div class="role">ไมรุ ไมชิ</div>
+    <p class="vcard-bio">เสียงไอดอลน่ารักสดใส เต็มไปด้วยพลังบวกและความมีชีวิตชีวา</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>17</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>J-Pop / Idol Pop</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_MAIRU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/mairu_maishi.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Mayuree.png" alt="Mayuree" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">28</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Mayuree</h3>
+    <div class="role">มยุรี</div>
+    <p class="vcard-bio">เสียงร้องลูกกร��งไทยอันทรงเกียรติ ถ่ายทอดความงามของวรรณศิลป์ไทย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>25</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Thai Classic / Luk Krung</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_MAYUREE" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/mayuree.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Miro.png" alt="Miro" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">29</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Miro</h3>
+    <div class="role">มิโร่</div>
+    <p class="vcard-bio">เสียงร้องผ่อนคลาย สไตล์เบดรูมป๊อปที่ฟังสบาย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Bedroom Pop / Indie</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_MIRO" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/miro.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Mojine Sora.png" alt="Mojine Sora" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">31</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Mojine Sora</h3>
+    <div class="role">โมจิเนะ โซระ</div>
+    <p class="vcard-bio">เสียงร้องทะยานสู่ท้องฟ้า ทรงพลังและชัดเจนทุกตัวโน้ต</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Anisong / Power Metal</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SORA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/mojine_sora.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Namphueng.png" alt="Namphueng" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">32</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Namphueng</h3>
+    <div class="role">น้ำผึ้ง</div>
+    <p class="vcard-bio">เสียงหวานละมุนดุจน้ำผึ้งเดือนห้า ชวนฟังและเข้าถึงใจผู้ฟังได้ง่าย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Acoustic / Thai Pop</span></div>
+      <div><b>Engine</b><span>UTAU VCCV / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_NAMPHUENG" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/namphueng.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Narisa.png" alt="Narisa" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">33</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Narisa</h3>
+    <div class="role">นริศา</div>
+    <p class="vcard-bio">น้ำเสียงสากล ทรงพลัง รองรับทั้งแนวโซลและป๊อปร่วมสมัย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>23</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop / Soul</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_NARISA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/narisa.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Okaminari Tanda.png" alt="Okaminari Tanda" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">34</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Okaminari Tanda</h3>
+    <div class="role">โอกามินาริ ทันดะ</div>
+    <p class="vcard-bio">เสียงคำรามดั่งสายฟ้าฟาด หนักแน่นและมีพลังขับสูง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>25</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Heavy Metal / Hardcore</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_TANDA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/okaminari_tanda.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Onika.png" alt="Onika" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">35</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Onika</h3>
+    <div class="role">โอนิกะ</div>
+    <p class="vcard-bio">เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Trap / Phonk</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_ONIKA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/onika.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Quint.png" alt="Quint" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">36</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Quint</h3>
+    <div class="role">ควินท์</div>
+    <p class="vcard-bio">น้ำเสียงสไตล์เรโทรเวฟ ผสมความล้ำสมัยในแบบ DELTA SYNTH</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Synthwave / Retrowave</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_QUINT" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/quint.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/RelVeN.png" alt="Relven" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">37</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Relven</h3>
+    <div class="role">เรลเวน</div>
+    <p class="vcard-bio">เสียงร้องหม่นลึก แต่แฝงด้วยความหวังอันสว่างไสว</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Gothic Rock / Dark Pop</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_RELVEN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/relven.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Root.png" alt="Root" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">38</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Root</h3>
+    <div class="role">รูท</div>
+    <p class="vcard-bio">เสียงสังเคราะห์ดิจิทัลจัดจ้าน เหมาะกับไฮเปอร์ป๊อปและกลิตช์คอร์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Hyperpop / Glitch</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_ROOT" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/root.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Sakultala.png" alt="Sakultala" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">39</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Sakultala</h3>
+    <div class="role">สกุลทลา</div>
+    <p class="vcard-bio">เสียงขับเสภาและร้องไทยประยุกต์อันทรงเสน่ห์และเปี่ยมมนต์ขลัง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Thai Traditional / Epic</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SAKULTALA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/sakultala.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Saphire Blue.png" alt="Saphire Blue" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">40</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Saphire Blue</h3>
+    <div class="role">แซฟไฟร์ บลู</div>
+    <p class="vcard-bio">เสียงใส กังวาน ลอยเด่นในแทร็กเพลงแ���นซ์และแทรนซ์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Trance / Progressive House</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SAPHIRE" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/saphire_blue.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Savanna.png" alt="Savanna" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">41</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Savanna</h3>
+    <div class="role">ซาวันนา</div>
+    <p class="vcard-bio">เสียงร้องเปี่ยมเสน่ห์และความอบอุ่นแนวทรอปิคอลและแอฟโฟรบีท</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Afrobeat / Tropical House</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>English, French, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SAVANNA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/savanna.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Shiroino Mochi.png" alt="Shiroino Mochi" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">42</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Shiroino Mochi</h3>
+    <div class="role">ชิโรอิโนะ โมจิ</div>
+    <p class="vcard-bio">เสียงร้องนุ่มฟู น่ารัก ไร้เดียงสา</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>15</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Kawaii / Chiptune</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SHIROINO" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/shiroino_mochi.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/SRIPHAN.png" alt="Sriphan" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">43</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Sriphan</h3>
+    <div class="role">ศรีพรรณ</div>
+    <p class="vcard-bio">เสียงร้องไทยสากลร่วมสมัยที่อบอุ่นและมีพลังลึกซึ้ง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>26</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Thai Folk / Ballad</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SRIPHAN" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/sriphan.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Tackpee.png" alt="Tackpee" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">44</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Tackpee</h3>
+    <div class="role">แท็คพี</div>
+    <p class="vcard-bio">เสียงอินดี้ร็อกมีเอกลักษณ์เฉพาะตัว สื่ออารมณ์ได้ตรงไปตรงมา</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Indie Rock / Post Punk</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_TACKPEE" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/tackpee.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Tenshi Saburo.png" alt="Tenshi Saburo" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">45</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Tenshi Saburo</h3>
+    <div class="role">เทนชิ ซาบุโร่</div>
+    <p class="vcard-bio">เสียงร้องสไตล์วิชวลเคย์อันทรงเสน่ห์และเต็มไปด้วยพลังอารมณ์ดาร์ก</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>23</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Visual Kei / Gothic Rock</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SABURO" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/tenshi_saburo.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="th,en">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Tom.png" alt="Tom" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">46</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Tom</h3>
+    <div class="role">ทอม</div>
+    <p class="vcard-bio">เสียงร้องโทนธรรมชาติ เข้าถึงง่าย เหมา��กับเพลงอคูสติกและป๊อป</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop / Acoustic</span></div>
+      <div><b>Engine</b><span>UTAU CVVC</span></div>
+      <div><b>Language</b><span>Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_TOM" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/tom.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Uchu Sutori.png" alt="Uchu Sutori" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">47</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Uchu Sutori</h3>
+    <div class="role">อุจู สตอรี่</div>
+    <p class="vcard-bio">เสียงร้องท่องอวกาศ สดใส กว้างไกล ดั่งจักรวาลอันไร้ขอบเขต</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>18</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Space Pop / Synthwave</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_UCHU" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/uchu_sutori.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Utashi Nara.png" alt="Utashi Nara" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">48</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Utashi Nara</h3>
+    <div class="role">อุตะชิ นาระ</div>
+    <p class="vcard-bio">เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Female</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Anisong / J-Rock</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_NARA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/utashi_nara.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Yamada Kimada.png" alt="Yamada Kimada" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">49</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Yamada Kimada</h3>
+    <div class="role">ยามาดะ คิมาดะ</div>
+    <p class="vcard-bio">เสียงร็อกเข้ม ดุดัน ทรงพลัง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>22</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Rock / Metal</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_KIMADA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/yamada_kimada.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Yamada Satoru.png" alt="Yamada Satoru" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">50</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Yamada Satoru</h3>
+    <div class="role">ยามาดะ ซาโตรุ</div>
+    <p class="vcard-bio">น้ำเสียงทันสมัย มีสเน่ห์ ปรับใช้งานได้กับหลากหลายแนวเพลง</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>21</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Pop / RnB</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_SATORU_Y" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/yamada_satoru.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Yamada Takeshi.png" alt="Yamada Takeshi" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">51</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Yamada Takeshi</h3>
+    <div class="role">ยามาดะ ทาเคชิ</div>
+    <p class="vcard-bio">เสียงเอื้อนแบบเอ็นกะญี่ปุ่นที่ทรงคุณค่าและมีพลังเปี่ยมล้น</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>24</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Enka / Traditional Rock</span></div>
+      <div><b>Engine</b><span>UTAU VCV</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_TAKESHI" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/yamada_takeshi.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Yokuatsu Takuto.png" alt="Yokuatsu Takuto" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">52</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Yokuatsu Takuto</h3>
+    <div class="role">โยคุอัตสึ ทาคุโตะ</div>
+    <p class="vcard-bio">เสียงร้องอารมณ์ลึกซึ้ง เหมาะกับเพลงอารมณ์เหงาและดาร์กป๊อป</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>19</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>Alternative Pop / Emo Rock</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_TAKUTO" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/yokuatsu_takuto.html">Profile</a>
+    </div>
+  </div>
+</article>
+      <article class="vcard" data-tags="jp,th,en,ai">
+  <div class="vcard-media">
+    <img src="assets/images/voicebanks/Yuuya Sato.png" alt="Yuuya Sato" loading="lazy">
+    <span class="status status-active">ACTIVE</span>
+    <span class="num">53</span>
+  </div>
+  <div class="vcard-body">
+    <h3>Yuuya Sato</h3>
+    <div class="role">ยูยะ ซาโต้</div>
+    <p class="vcard-bio">เสียงใส มีพลัง เหมาะกับการร้องเมโลดี้หลักในเพลงอิเล็กทรอนิกส์</p>
+    <div class="vcard-stats">
+      <div><b>Age</b><span>20</span></div>
+      <div><b>Gender</b><span>Male</span></div>
+      <div><b>Voicer</b><span>DELTA SYNTH</span></div>
+      <div><b>Genre</b><span>J-Pop / Electronic</span></div>
+      <div><b>Engine</b><span>UTAU / DiffSinger</span></div>
+      <div><b>Language</b><span>Japanese, Thai, English</span></div>
+    </div>
+    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span><span class="tag-pill ai">AI</span></div>
+    <div class="vcard-links">
+      <a class="link-chip" href="https://drive.google.com/drive/folders/DELTA_SYNTH_YUUYA" target="_blank" rel="noopener">Download</a>
+      <a class="link-chip" href="singers/yuuya_sato.html">Profile</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">&#916;</span>
+          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
         </div>
-        <button id="reset-btn" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-medium border border-slate-700 transition">
-          รีเซ็ต (Reset)
-        </button>
+        <p style="max-width:340px; font-size:13.5px;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งขึ้นในปี ค.ศ. 2019 ผลิตและสรรค์สร้างคลังเสียงสำหรับ UTAU และ DiffSinger AI มาแล้วกว่า 30 ตัวละคร</p>
       </div>
-
-      <!-- สถิติ -->
-      <div class="mt-4 text-xs text-slate-400 flex justify-center items-center gap-4">
-        <span>แสดงผล <strong id="total-count" class="text-white">0</strong> ตัวละคร</span>
+      <div class="footer-links">
+        <h4>Sitemap</h4>
+        <a href="index.html">Main</a>
+        <a href="about.html">About Us</a>
+        <a href="voicebank.html">All Voicebank</a>
+        <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html">Collaboration</a>
+        <a href="events.html">Events</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Showcase Cards Container -->
-  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-12 w-full">
-    <div id="character-container" class="space-y-12"></div>
-  </main>
-
-  <!-- Floating Back to Top Button -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 bg-red-600/90 hover:bg-red-500 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none z-40" aria-label="Back to top">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-  </button>
-
-  <!-- Footer -->
-  <footer class="bg-black text-slate-400 py-10 border-t border-slate-800 text-sm mt-12">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-      <div>
-        <h4 class="text-white text-base font-bold mb-2">DELTA SYNTH Studio</h4>
-        <p class="text-xs text-slate-400 leading-relaxed mb-2">
-          ผู้พัฒนาคลังเสียงสังเคราะห์เสมือนจริงและไฟล์โปรเจกต์ดนตรี (OpenUtau, UTAU, DiffSinger AI)
-        </p>
-        <p class="text-xs text-slate-500">© 2019–2025 DELTA SYNTH. All Rights Reserved.</p>
-      </div>
-      <div>
-        <h4 class="text-white text-base font-bold mb-2">การติดต่อ / Contact</h4>
-        <ul class="text-xs space-y-1">
-          <li><span class="text-slate-500">ติดต่องาน:</span> <a href="mailto:delta.vocaloid09378@gmail.com" class="text-slate-300 hover:text-red-400">delta.vocaloid09378@gmail.com</a></li>
-          <li><span class="text-slate-500">ติดต่อด่วน:</span> <a href="mailto:patiphat.wongyai@gmail.com" class="text-slate-300 hover:text-red-400">patiphat.wongyai@gmail.com</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white text-base font-bold mb-2">โซเชียลมีเดีย / Socials</h4>
-        <ul class="text-xs space-y-1">
-          <li>YouTube: <a href="https://www.youtube.com/@deltaSYNTH0320" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-red-400">DELTA SYNTH Official</a></li>
-          <li>Facebook: <a href="https://www.facebook.com/delta.synth.2025/" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-red-400">DELTA SYNTH</a></li>
-          <li>TikTok: <a href="https://www.tiktok.com/@deltavocaloid" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-red-400">@deltavocaloid</a></li>
-        </ul>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">X / Twitter</a>
       </div>
     </div>
-  </footer>
-
-  <!-- Data & Script -->
-  <script>
-    const characters = [
-      {
-        "name": "Ayanami Hikaru",
-        "th_name": "อายานามิ ฮิคารุ",
-        "tag": "Official Mascot (No.01)",
-        "badge": "B.L. Student (2019)",
-        "image": "https://static.wixstatic.com/media/2edbc6_911390846a9a414293a13f259da4468f~mv2.png",
-        "age": "20",
-        "gender": "Male (ชาย)",
-        "voicer": "DELTA SYNTH (Patiphat Wongyai)",
-        "range": "Any (กว้างทุกย่านเสียง)",
-        "genre": "Pop, EDM, Rock",
-        "birthday": "1st August",
-        "items": "Katana (ดาบคาทานะ), Red Cloth (ผ้าพันคอสีแดง)",
-        "likes": "Desserts (ขนมหวาน)",
-        "dislikes": "Bad People",
-        "links": [
-          {"label": "UTAU JP VCV", "url": "https://drive.google.com/open?id=1Fk-DLDygaG6Y8RUFXeYcqY3xP-Z5MLUw&usp=drive_fs", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false},
-          {"label": "UTAU English Arpasing", "url": "https://drive.google.com/open?id=1db2Gfst7IykVKZGMexCZ08Qtz3IPZMN6&usp=drive_fs", "ready": true},
-          {"label": "DiffSinger AI 2025 (v1.03)", "url": "https://drive.google.com/open?id=1g_zL-sKERvn7J_JA-H5gfBfWMo_lgAoB&usp=drive_fs", "ready": true}
-        ],
-        "video_id": "IzPejPjdRnw"
-      },
-      {
-        "name": "SUN",
-        "th_name": "ซัน",
-        "tag": "Founding Member (No.02)",
-        "badge": "B.L. Student (2019)",
-        "image": "https://static.wixstatic.com/media/2edbc6_8e0b51d6f8fa4e41b770cb576ceb5577~mv2.png",
-        "age": "19",
-        "gender": "Male (ชาย)",
-        "voicer": "SunZERO5",
-        "range": "E2 - A3",
-        "genre": "Rock, Pop, Anthem",
-        "birthday": "28th July",
-        "items": "Smartphones, Red Headphones, Death Note",
-        "likes": "Cats, Green tea, Smartphones",
-        "dislikes": "Spicy food, Noisy places",
-        "links": [
-          {"label": "Thai VCCV", "url": "https://drive.google.com/file/d/1EhadPKlYH_5gOTOLy3m667Jb-crIQ2Tq/view?usp=sharing", "ready": true},
-          {"label": "ENG Arpasing", "url": "https://drive.google.com/file/d/1Jxceb_xAw9cl-qJcmbf1_r10rAnk0cU4/view?usp=drive_link", "ready": true},
-          {"label": "JP VCV EVO 2025 (v1.2)", "url": "https://drive.google.com/file/d/1GQFwWe5cZD2ulrUOekc7wHH8roSyPA8h/view?usp=drive_link", "ready": true},
-          {"label": "JP VCV 2.0", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Kochujang",
-        "th_name": "โคชูจัง (เดิม: Shu-chan)",
-        "tag": "1st Female Vocalist (No.03)",
-        "badge": "B.L. Student (2019)",
-        "image": "https://static.wixstatic.com/media/2edbc6_96de1101769f457ab05f71222056517d~mv2.png",
-        "age": "17",
-        "gender": "Female (หญิง)",
-        "voicer": "TangmoThipphawan",
-        "range": "B2 - F#4",
-        "genre": "Pop, Sweet Ballad",
-        "birthday": "16th June",
-        "items": "Watermelon, Dragon jar, Big sugar cane",
-        "likes": "Cute pets, Spicy Food, Smart people",
-        "dislikes": "Bullying, Mean words",
-        "links": [
-          {"label": "Japanese VCV", "url": "https://drive.google.com/file/d/1Y47Y9IIqiJ5idjLnvNu1M4ps5rlORTKG/view?usp=drive_link", "ready": true},
-          {"label": "Thai VCCV", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "English Arpasing", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Guren Kani",
-        "th_name": "กุเรน คานิ",
-        "tag": "Powerhouse Vocalist (No.04)",
-        "badge": "B.L. Student (2019)",
-        "image": "https://static.wixstatic.com/media/2edbc6_79a332df347f4994aba1856aec8ed196~mv2.png",
-        "age": "22",
-        "gender": "Male (ชาย)",
-        "voicer": "MikiBlackqueen",
-        "range": "G2 - F#4",
-        "genre": "Rock, Electronic, Metal",
-        "birthday": "20th April",
-        "items": "Katana, Spear, Purple Dragon Headphones",
-        "likes": "Fashion suits",
-        "dislikes": "Bad people",
-        "links": [
-          {"label": "EVO 6th JPN VCV 2.0", "url": "https://drive.google.com/file/d/1mbK0UIz2PhjvuZicmWgpyC3lpnafJf8x/view?usp=drive_link", "ready": true},
-          {"label": "EVO 6th English Arpasing 2.0", "url": "https://drive.google.com/file/d/1mbK0UIz2PhjvuZicmWgpyC3lpnafJf8x/view?usp=drive_link", "ready": true},
-          {"label": "EVO 6th Thai VCCV 2.0", "url": "https://drive.google.com/file/d/1mbK0UIz2PhjvuZicmWgpyC3lpnafJf8x/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Ayanami Kyoko",
-        "th_name": "อายานามิ เคียวโกะ",
-        "tag": "High-Register Vocalist (No.00-05)",
-        "badge": "DELTA Voice Acting 01 (2021)",
-        "image": "https://static.wixstatic.com/media/2edbc6_ebccbaecc689475e8552346f0caa8db3~mv2.png",
-        "age": "23 (Apparent) / 65 (Lore)",
-        "gender": "Female (หญิง)",
-        "voicer": "DELTA SYNTH",
-        "range": "B3 - G#5",
-        "genre": "Pop, Ballad, Harmony",
-        "birthday": "1st March",
-        "items": "Claw nails, Blue sky coat, Blue sky headphones",
-        "likes": "Cute and kind people",
-        "dislikes": "Foulness, Malice",
-        "links": [
-          {"label": "Japanese CV (First Release)", "url": "https://drive.google.com/file/d/1oRyU_Cd7NoY2cU2ym11YoMlZNMXuBe88/view?usp=drive_link", "ready": true},
-          {"label": "Thai VCCV (Official)", "url": "https://drive.google.com/file/d/1g2KzmKsfjn_78nEGJFlIklnfqggvcbA2/view?usp=drive_link", "ready": true},
-          {"label": "English Arpasing (Original)", "url": "https://drive.google.com/file/d/1wRLNwy6qY8Zrl7E7sLBpukAs7b4S6YYD/view?usp=drive_link", "ready": true},
-          {"label": "DiffSinger Beta (Printmov)", "url": "https://drive.google.com/file/d/1vtV8Hb2T8irjD8wlGnL3UShy2K17WLha/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Fangyu",
-        "th_name": "ฟางอวี่ (เดิม: Haru No Shonen)",
-        "tag": "Character Vocalist",
-        "badge": "Old People Voicer 02 (2021)",
-        "image": "https://static.wixstatic.com/media/2edbc6_22d08a9b27bd4de0acd6dff478bd9a3b~mv2.png",
-        "age": "25",
-        "gender": "Male (ชาย)",
-        "voicer": "Busthor1512 (Original: DELTA SYNTH)",
-        "range": "F4 - C#5",
-        "genre": "Pop, Folk, Upbeat",
-        "birthday": "1st May",
-        "items": "Tiger claw, Durian, Fresh Meat",
-        "likes": "Durian (ทุเรียน)",
-        "dislikes": "Dishonesty",
-        "links": [
-          {"label": "English Arpasing (2025 Update)", "url": "https://drive.google.com/file/d/1oPV67ysV3I_bmoLRlrfWYPWAeXG3jAv8/view?usp=drive_link", "ready": true},
-          {"label": "Japanese VCV (2025)", "url": "#", "ready": false},
-          {"label": "Thai VCCV (2025)", "url": "#", "ready": false},
-          {"label": "DiffSinger AI", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Thitiya Anantanetr",
-        "th_name": "ฐิติยา อนันตเนตร",
-        "tag": "Collaboration Character",
-        "badge": "Voice Of Drawer Kingdom (2021)",
-        "image": "https://static.wixstatic.com/media/2edbc6_cff1d2ccd2194aab8dcf654fbd54d3f7~mv2.png",
-        "age": "24",
-        "gender": "Male (ชาย)",
-        "voicer": "Thitiya Thai Pinpong",
-        "range": "G2 - F#4",
-        "genre": "Any, Dynamic Pop",
-        "birthday": "7th January",
-        "items": "Red sword and White sword, Katana",
-        "likes": "Nature, Bananas",
-        "dislikes": "Bad people",
-        "links": [
-          {"label": "Old JPN CV (2021)", "url": "https://drive.google.com/file/d/1s3Y2WYhOm151LUYbph3uTBNHdRIuG8Im/view?usp=share_link", "ready": true},
-          {"label": "Anantanetr Japanese VCV v1.0", "url": "https://drive.google.com/file/d/1SDte4ZAAyTWNaQNQFSAaYUl8KGOC1t6z/view?usp=drive_link", "ready": true},
-          {"label": "Anantanetr Thai VCCV", "url": "#", "ready": false},
-          {"label": "Anantanetr English Arpasing", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "KangFu",
-        "th_name": "กังฟู",
-        "tag": "Martial Character Vocal",
-        "badge": "Pakdee School (2022)",
-        "image": "https://static.wixstatic.com/media/2edbc6_26b8b031d0b648f2a0f7ad0f371af3e4~mv2.png",
-        "age": "20",
-        "gender": "Male (ชาย)",
-        "voicer": "KhaoSitthiphon",
-        "range": "G2 - F#4",
-        "genre": "Action, Pop, Energetic",
-        "birthday": "24th October",
-        "items": "Green sweater, Martial arts gloves",
-        "likes": "Apples, Training",
-        "dislikes": "Bad people",
-        "links": [
-          {"label": "UTAU JP VCV Full Type v2.0", "url": "https://drive.google.com/file/d/10oZTGXYy0hlbVbg86beC3EYYNcF9KpKg/view?usp=sharing", "ready": true},
-          {"label": "UTAU English Arpasing v2.0", "url": "https://drive.google.com/file/d/17vt1Z8RY2TeSFG_Ku98mqHFAwMW_lyMf/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV v2.0", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Yamada Takeshi",
-        "th_name": "ยามาดะ ทาเคชิ",
-        "tag": "Youth Character Vocal",
-        "badge": "Wongyai Family (2022)",
-        "image": "https://static.wixstatic.com/media/2edbc6_60c5c237b5a34ce78200260d4dbe052c~mv2.png",
-        "age": "10",
-        "gender": "Male (เด็กชาย)",
-        "voicer": "Seriku",
-        "range": "F3 - A#4",
-        "genre": "Children Songs, Pop, Cheerful",
-        "birthday": "4th June",
-        "items": "Slendrina T-shirt",
-        "likes": "Fruits, Ghost stories",
-        "dislikes": "Bad people",
-        "links": [
-          {"label": "Yamada Multi-Voice Pack (JP/TH/ENG)", "url": "https://drive.google.com/file/d/1ExnB2IUIzvwwV1UR7QdFrfFGO6VKwWYf/view?usp=sharing", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Sriphan",
-        "th_name": "ศรีพรรณ",
-        "tag": "Traditional Character Vocal",
-        "badge": "Wongyai Family (2022)",
-        "image": "https://static.wixstatic.com/media/2edbc6_05c7abceb29f49f9bc754d8bed826c64~mv2.png",
-        "age": "24",
-        "gender": "Female (หญิง)",
-        "voicer": "Miss Choi",
-        "range": "A#2 - E4",
-        "genre": "Traditional, Folk, Melodic",
-        "birthday": "8th April",
-        "items": "Royal Naga Throne, Wild sweet vegetables",
-        "likes": "Bamboo, Nature",
-        "dislikes": "Laziness",
-        "links": [
-          {"label": "Thai VCCV Fix 2022/2025", "url": "https://drive.google.com/file/d/1bymhCuJilEeQvguBdDvNQ11S4d7OSEVr/view?usp=drive_link", "ready": true},
-          {"label": "Upgrade Japanese VCV v1.0", "url": "https://drive.google.com/file/d/1R5Sep7uhiGNOwY5UQCZogZ9joByQuTvH/view?usp=sharing", "ready": true},
-          {"label": "Upgrade English Arpasing v1.0", "url": "https://drive.google.com/open?id=1RafkxzOi9YXAKHsEwodZlfXQk_RNW8oQ&usp=drive_fs", "ready": true},
-          {"label": "Upgrade Thai VCCV v1.0", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Diwachi",
-        "th_name": "ดิวาชิ",
-        "tag": "Collab Vocalist",
-        "badge": "Wachi CH x DELTA SYNTH (2022)",
-        "image": "https://static.wixstatic.com/media/2edbc6_064da4c844f348feb812d2f4afc61b01~mv2.png",
-        "age": "20",
-        "gender": "Male (ชาย)",
-        "voicer": "Wachi TH",
-        "range": "A2 - D#4",
-        "genre": "Pop, R&B, Lo-Fi",
-        "birthday": "25th January",
-        "items": "Nokia Phone, All kinds of fruits",
-        "likes": "Music, Small animals, Good food",
-        "dislikes": "Noise",
-        "links": [
-          {"label": "Full Type JP VCV v2.0", "url": "#", "ready": false},
-          {"label": "Full Type English Arpasing v2.0", "url": "#", "ready": false},
-          {"label": "Full Type Thai VCCV v2.0", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Mairu Maishi",
-        "th_name": "ไมรุ ไมชิ",
-        "tag": "Multi-Expressive Vocalist",
-        "badge": "Papermintty Collab (2023)",
-        "image": "https://static.wixstatic.com/media/2edbc6_d8e2e75b81c34543895123af8968e5df~mv2.png",
-        "age": "18",
-        "gender": "Female (หญิง)",
-        "voicer": "Papermintty YT CH",
-        "range": "C3 - A5",
-        "genre": "Pop, Cute, Power, Rock",
-        "birthday": "22nd November",
-        "items": "Star hair accessories, Rice chips",
-        "likes": "Rice Tangmo Thai chips",
-        "dislikes": "Snakes",
-        "links": [
-          {"label": "JP VCV Power v2.0", "url": "https://drive.google.com/file/d/1ctqLO2priuehCyYgMBa8SEzJgGgKM8W_/view?usp=drive_link", "ready": true},
-          {"label": "JP VCV Cute v2.0", "url": "https://drive.google.com/file/d/1BybpJN0C-0lF9dwwoIgPlaOGKjvfZo9o/view?usp=drive_link", "ready": true},
-          {"label": "ENG Arpasing Power v2.0", "url": "https://drive.google.com/file/d/1RQzm1ANmA_0NDkweicnm1gfBi9fwl-NQ/view?usp=drive_link", "ready": true},
-          {"label": "ENG Arpasing Cute v2.0", "url": "https://drive.google.com/file/d/1wbf29KodhM6mWKdcVWx3FM5LSRo2pW-q/view?usp=drive_link", "ready": true},
-          {"label": "Thai VCCV Power v2.0", "url": "https://drive.google.com/file/d/1LzP6bSTghgeZn8TmIj6iY3WfEDn_lExM/view?usp=drive_link", "ready": true},
-          {"label": "DiffSinger AI 2025 v2.0 (Printmov)", "url": "https://drive.google.com/file/d/140YUFb9UvNtC-WIHdOZXQIgRsDO8mf7p/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Arun Kamonlanert",
-        "th_name": "อรุณ กมลเนตร",
-        "tag": "Solar Vocalist",
-        "badge": "ArunP Collab (2022)",
-        "image": "https://static.wixstatic.com/media/2edbc6_9d946f5539d04c57bb4b6b3c7cb55c5a~mv2.png",
-        "age": "22",
-        "gender": "Male (ชาย)",
-        "voicer": "ArunP",
-        "range": "D2 - G4",
-        "genre": "Thai Classical, Pop, Sun God Hymn",
-        "birthday": "1st July",
-        "items": "Yellow Thai Sun God Suit",
-        "likes": "Sky, Sunflowers",
-        "dislikes": "Noisy places",
-        "links": [
-            {"label": "Japanese VCV Multi-Pitch", "url": "https://drive.google.com/file/d/15eM0Yj3dhbSY6a7yFz3NVVEBxEsYSd88/view?usp=sharing", "ready": true},
-            {"label": "Thai VCCV (Private)", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Miro AI",
-        "th_name": "มิโระ",
-        "tag": "Featured AI Partner",
-        "badge": "Zynthesiren x DELTA SYNTH",
-        "image": "https://static.wixstatic.com/media/2edbc6_4f38cfbe3d784dfa96921efb37d73a0e~mv2.png",
-        "age": "Ageless",
-        "gender": "Female (หญิง)",
-        "voicer": "Nashiamm (Zynthesiren)",
-        "range": "F3 - E5",
-        "genre": "Electro, Pop, Dramatic Ballad",
-        "birthday": "Unknown",
-        "items": "Digital Soundwaves",
-        "likes": "Acoustic exploration",
-        "dislikes": "Distortion",
-        "links": [
-          {"label": "UTAU JP VCV 2025 v1.0", "url": "https://drive.google.com/file/d/1RqiM18bBhDdLxh1wbZ7SYhBlrjpKk7iO/view?usp=drive_link", "ready": true},
-          {"label": "ENG Arpasing 2025", "url": "https://drive.google.com/file/d/1FfwhjENh-ltHrxq_oX7nGMSKoOCAt_-I/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Fuwari Bento",
-        "th_name": "ฟุวาริ เบนโตะ",
-        "tag": "Collab Vocalist",
-        "badge": "Fuwari Bento CH",
-        "image": "https://static.wixstatic.com/media/2edbc6_af0e584f9cf746e3964841033ea0585e~mv2.png",
-        "age": "Unknown",
-        "gender": "Male (ชาย)",
-        "voicer": "Fuwari Bento CH",
-        "range": "A2 - F4",
-        "genre": "Anime, Pop, Acoustic",
-        "birthday": "Unknown",
-        "items": "Bento box, Earphones",
-        "likes": "Cooking, Singing",
-        "dislikes": "Cold food",
-        "links": [
-          {"label": "JP VCV Fix 2025", "url": "https://drive.google.com/file/d/1yVXWhPM_xo8rAelKijXsrfjTNrp2Gyn4/view?usp=drive_link", "ready": true},
-          {"label": "DiffSinger AI 2025", "url": "https://drive.google.com/file/d/10seSdimfa5xXHasqSO16qXRA9PANFQyt/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Onika",
-        "th_name": "โอนิกะ มารุยามะ",
-        "tag": "Collab Vocalist",
-        "badge": "Ferina Synth & Namumi Synth",
-        "image": "https://static.wixstatic.com/media/2edbc6_31db24e18e7f451daca60d264994413d~mv2.png",
-        "age": "Unknown",
-        "gender": "Female (หญิง)",
-        "voicer": "Ferina Synth & Namumi Synth",
-        "range": "C3 - G5",
-        "genre": "Rock, Pop, Synthwave",
-        "birthday": "Unknown",
-        "items": "Devil horns, Dark ribbons",
-        "likes": "Rock music",
-        "dislikes": "Disharmony",
-        "links": [
-          {"label": "JP VCV 2025", "url": "https://drive.google.com/file/d/1yVXWhPM_xo8rAelKijXsrfjTNrp2Gyn4/view?usp=drive_link", "ready": true},
-          {"label": "Collab JPN VCV Update", "url": "https://drive.google.com/file/d/1eiGlCKhyllUHT4RxGfOgozjTBGmE8pv6/view?usp=drive_link", "ready": true},
-          {"label": "Collab English Arpasing Update", "url": "https://drive.google.com/file/d/1aPWx9jQLm5FTJPMYaGau9zUQAPeSXF7q/view?usp=drive_link", "ready": true},
-          {"label": "Visit FERINA SYNTH Channel", "url": "https://www.youtube.com/@Namumisynth", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "ARZBTV",
-        "th_name": "เออาร์ซีบีทีวี",
-        "tag": "Partner Vocalist",
-        "badge": "ARZBTV Project",
-        "image": "https://static.wixstatic.com/media/2edbc6_77d957c3e736404f8f0632611c938ab8~mv2.png",
-        "age": "Unknown",
-        "gender": "Male (ชาย)",
-        "voicer": "ARZBTV",
-        "range": "B2 - E4",
-        "genre": "Pop, Game OST",
-        "birthday": "Unknown",
-        "items": "Art tablet",
-        "likes": "Drawing, Singing",
-        "dislikes": "Boredom",
-        "links": [
-          {"label": "Japanese VCV", "url": "https://drive.google.com/file/d/1MoBxWeecvO-loHVGe8c9mwx4zfxs21cn/view?usp=drive_link", "ready": true},
-          {"label": "English Arpasing / Thai VCCV", "url": "https://drive.google.com/file/d/1U5JyYX4VlBc7sWdSzRNccA42kUyGLXr6/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "FellowWhite",
-        "th_name": "เฟลโลว์ไวท์",
-        "tag": "Official Partner",
-        "badge": "6th Official Partner (2025)",
-        "image": "https://static.wixstatic.com/media/2edbc6_ceea1fa7f0664d8396358b9b3099e9e0~mv2.png",
-        "age": "Unknown",
-        "gender": "Male (ชาย)",
-        "voicer": "FellowWhite",
-        "range": "C3 - F4",
-        "genre": "Pop, EDM",
-        "birthday": "12th September",
-        "items": "White headset",
-        "likes": "Modern sound",
-        "dislikes": "Lag",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025 v1.0", "url": "https://drive.google.com/file/d/1Y47Y9IIqiJ5idjLnvNu1M4ps5rlORTKG/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV EVO 2025 v1.0", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "English Arpasing", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Narisa",
-        "th_name": "นริศา",
-        "tag": "Multi-Tone Female Vocal",
-        "badge": "Voicebank Series",
-        "image": "https://static.wixstatic.com/media/2edbc6_2c41101e4bdb4261a065e453ca6b54e8~mv2.png",
-        "age": "Unknown",
-        "gender": "Female (หญิง)",
-        "voicer": "DELTA SYNTH",
-        "range": "A3 - F5",
-        "genre": "Soft Pop, Power Ballad, Acoustic",
-        "birthday": "Unknown",
-        "items": "Floral hairpin",
-        "likes": "Nature, Melodic tunes",
-        "dislikes": "Loud noise",
-        "links": [
-          {"label": "Adult JP VCV v1.0", "url": "https://drive.google.com/file/d/1fMpqhLdnRbh97Esv5dDxWrPSxMolGnla/view?usp=drive_link", "ready": true},
-          {"label": "Adult Thai VCCV v1.0", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "Soft JP VCV v1.0", "url": "https://drive.google.com/file/d/1-hLRPwXJ7U9tUoGmbVJt3PVKUYrw6aGN/view?usp=drive_link", "ready": true},
-          {"label": "Power JP VCV v1.0", "url": "https://drive.google.com/file/d/1Y47Y9IIqiJ5idjLnvNu1M4ps5rlORTKG/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Root",
-        "th_name": "รูท",
-        "tag": "Core Series Vocalist",
-        "badge": "DELTA Classic Series",
-        "image": "https://static.wixstatic.com/media/2edbc6_01da5efe21364315938aa57d4b9e9aaa~mv2.png",
-        "age": "Unknown",
-        "gender": "Unknown",
-        "voicer": "DELTA SYNTH",
-        "range": "C3 - E4",
-        "genre": "Pop, Electronic",
-        "birthday": "Unknown",
-        "items": "Headphones",
-        "likes": "Acoustics",
-        "dislikes": "Distortion",
-        "links": [
-          {"label": "Normal JPN VCV v1.0", "url": "https://drive.google.com/file/d/1AvU-5fGj8yH0i52mi6ktM0fM3XUODsb3/view?usp=drive_link", "ready": true},
-          {"label": "Normal Thai VCCV 1.0", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "Normal English Arpasing v1.0", "url": "https://drive.google.com/file/d/1P62kS_1qd4sWQKHteI-SA5mReU04e3cL/view?usp=drive_link", "ready": true}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "TomAI",
-        "th_name": "ทอมเอไอ",
-        "tag": "New Generation AI Singer",
-        "badge": "CP All Learning no. 01 (2025)",
-        "image": "https://static.wixstatic.com/media/2edbc6_18d5a6c9176b40be9f93749490737c29~mv2.png",
-        "age": "24",
-        "gender": "Male (ชาย)",
-        "voicer": "Tom Team",
-        "range": "B2 - F4",
-        "genre": "Pop, Modern Ballad, R&B",
-        "birthday": "Unknown",
-        "items": "Store apron, Coffee mug",
-        "likes": "Singing, Customer service",
-        "dislikes": "Delay",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025", "url": "https://drive.google.com/file/d/1Y47Y9IIqiJ5idjLnvNu1M4ps5rlORTKG/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV EVO 2025", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "DiffSinger AI 2025", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Dokya",
-        "th_name": "ดอกหญ้า",
-        "tag": "Natural Voicebank",
-        "badge": "DELTA Botanical Series",
-        "image": "https://static.wixstatic.com/media/2edbc6_32804102e96b4b3192a57960a8f958ab~mv2.png",
-        "age": "Unknown",
-        "gender": "Female (หญิง)",
-        "voicer": "DELTA SYNTH",
-        "range": "D3 - G5",
-        "genre": "Folk, Acoustic, Pop",
-        "birthday": "Unknown",
-        "items": "Flower wreath",
-        "likes": "Open meadows, Wind",
-        "dislikes": "Pollution",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025", "url": "https://drive.google.com/file/d/1Y47Y9IIqiJ5idjLnvNu1M4ps5rlORTKG/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV EVO 2025", "url": "https://drive.google.com/file/d/1xDflPL2kCLiqYka2kDOTL4VvjcLo-Xbo/view?usp=drive_link", "ready": true},
-          {"label": "English Arpasing", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "NamphuengAI",
-        "th_name": "น้ำผึ้ง",
-        "tag": "Upgraded AI Vocalist (June 2025)",
-        "badge": "CP All Learning no. 02 (2025)",
-        "image": "https://static.wixstatic.com/media/2edbc6_15545ce73b9040838bd98afde13a6efc~mv2.png",
-        "age": "23",
-        "gender": "Female (หญิง)",
-        "voicer": "FayChatchadaporn",
-        "range": "C3 - A5",
-        "genre": "K-Pop, Dance, High-Tempo Pop",
-        "birthday": "22nd November",
-        "items": "Honey Lemon Tea, Little Bee Bag",
-        "likes": "Cute customers, Sweet drinks",
-        "dislikes": "Rude customers",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025", "url": "https://drive.google.com/open?id=10G8ZemnnogWR02r8W9tHAW6txc-fvRlF&usp=drive_fs", "ready": true},
-          {"label": "UTAU English Arpasing 2.0", "url": "https://drive.google.com/open?id=1IGqp2KlZ_K4UAXz5sMd_Txf2h0Yhv2Jv&usp=drive_fs", "ready": true},
-          {"label": "UTAU Thai VCCV EVO 2025", "url": "#", "ready": false},
-          {"label": "DiffSinger AI 2025", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Charnsamorn",
-        "th_name": "ชาญสมร",
-        "tag": "Senior Character Vocal",
-        "badge": "Wongyai Family (2025)",
-        "image": "https://static.wixstatic.com/media/2edbc6_9ec2ad3a5e9749c4973a92246f551dab~mv2.png",
-        "age": "80",
-        "gender": "Male (ชายสูงวัย)",
-        "voicer": "Boonsree Wongyai",
-        "range": "F1 - C3",
-        "genre": "Vintage, Classic Thai, Narrative",
-        "birthday": "3rd June",
-        "items": "Walking cane, Thai traditional betel box",
-        "likes": "Old stories, Peace",
-        "dislikes": "Noise",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025 v1.0", "url": "https://drive.google.com/open?id=1fh38czb2X4avgBC2EYYewLHibmkES7Eg&usp=drive_fs", "ready": true},
-          {"label": "UTAU English Arpasing EVO", "url": "https://drive.google.com/open?id=1F-r0QtdCMpWZ48-UsWazB6NVx6L9I7YU&usp=drive_fs", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "SakultalaAI",
-        "th_name": "ศกุนตลา",
-        "tag": "Upgraded AI Vocalist (June 2025)",
-        "badge": "CP All Learning no. 03 (2025)",
-        "image": "https://static.wixstatic.com/media/2edbc6_af40100ec79241e49f6e669f1d1359b2~mv2.png",
-        "age": "27",
-        "gender": "Female (หญิง)",
-        "voicer": "Nookang",
-        "range": "B3 - F5",
-        "genre": "Contemporary Pop, R&B, Soul",
-        "birthday": "2nd December",
-        "items": "Cosmetic kit, Smart tablet",
-        "likes": "Fashion, Expressive ballads",
-        "dislikes": "Dishonesty",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025 v1.0", "url": "https://drive.google.com/open?id=1eeLnMiLxNKHJ_B9E8GbeA5omGyLp48iq&usp=drive_fs", "ready": true},
-          {"label": "UTAU English Arpasing EVO", "url": "https://drive.google.com/open?id=1dYdX0EYZg_ct-Mthrcbosiiz9TnmT71s&usp=drive_fs", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Savanna",
-        "th_name": "ซาวันน่า",
-        "tag": "Special Vocalist",
-        "badge": "Savanna Initiative",
-        "image": "https://static.wixstatic.com/media/2edbc6_88215044246b4511a97f4aa3a19b9438~mv2.png",
-        "age": "Unknown",
-        "gender": "LGBTQ",
-        "voicer": "Savanna",
-        "range": "A2 - E5",
-        "genre": "Pop, Diva, Dance",
-        "birthday": "Unknown",
-        "items": "Feather boa, Glamorous mic",
-        "likes": "Performing on stage",
-        "dislikes": "Boring routines",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025 v1.0", "url": "https://drive.google.com/file/d/1PoDKRQv_9lXExGrww7FCHfauuzOjRgoE/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV EVO", "url": "#", "ready": false},
-          {"label": "UTAU English Arpasing EVO", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Mayuree",
-        "th_name": "มยุรี",
-        "tag": "Legendary Vocalist",
-        "badge": "Mythical Heritage Series",
-        "image": "https://static.wixstatic.com/media/2edbc6_3593c620e4d242a4be70aedc55628a21~mv2.png",
-        "age": "400",
-        "gender": "Female (หญิง)",
-        "voicer": "DELTA SYNTH",
-        "range": "C3 - G5",
-        "genre": "Epic, Traditional Fusion, Pop",
-        "birthday": "Ancient Era",
-        "items": "Peacock fan, Silk robe",
-        "likes": "Moonlight, Classical songs",
-        "dislikes": "Chaos",
-        "links": [
-          {"label": "UTAU JP VCV EVO 2025 v1.0", "url": "https://drive.google.com/file/d/1ndWqLl6c8xUhCg4Zp34h7XwbkLi-pTjC/view?usp=drive_link", "ready": true},
-          {"label": "UTAU English Arpasing EVO", "url": "https://drive.google.com/file/d/1DXMqlvapm31ki0w5R9T2F8am7-g3npz_/view?usp=drive_link", "ready": true},
-          {"label": "UTAU Thai VCCV", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      },
-      {
-        "name": "Azaya Aika",
-        "th_name": "อาซายะ ไอิกะ",
-        "tag": "Coming Soon / กำลังพัฒนา",
-        "badge": "DiffSinger 2025 Milestone",
-        "image": "https://static.wixstatic.com/media/2edbc6_74b12f803fda470a98bf1ded498467f3~mv2.png",
-        "age": "400",
-        "gender": "Female (หญิง)",
-        "voicer": "DELTA SYNTH Team",
-        "range": "Upcoming",
-        "genre": "Symphonic, J-Rock, Anime Theme",
-        "birthday": "Unknown",
-        "items": "Cherry Blossom Ribbon",
-        "likes": "Melody",
-        "dislikes": "Discord",
-        "links": [
-          {"label": "DiffSinger AI Engine (เร็ว ๆ นี้)", "url": "#", "ready": false},
-          {"label": "UTAU Multi-pitch (เร็ว ๆ นี้)", "url": "#", "ready": false}
-        ],
-        "video_id": "yDfjzd8gdzI"
-      }
-    ];
-
-    const container = document.getElementById('character-container');
-    const searchInput = document.getElementById('search-input');
-    const resetBtn = document.getElementById('reset-btn');
-    const totalCount = document.getElementById('total-count');
-
-    function renderCharacters(items) {
-      totalCount.textContent = items.length;
-      if (items.length === 0) {
-        container.innerHTML = `
-          <div class="text-center py-16 bg-slate-900/40 rounded-2xl border border-slate-800">
-            <p class="text-slate-400 text-sm">ไม่พบคลังเสียงที่ค้นหา / No voicebanks found matching your query.</p>
-          </div>`;
-        return;
-      }
-
-      container.innerHTML = items.map(c => {
-        const downloadButtons = c.links.map(l => {
-          const isReady = l.ready && l.url && l.url !== '#';
-          if (isReady) {
-            return `
-              <a href="${l.url}" target="_blank" rel="noreferrer" class="inline-flex items-center justify-between gap-2 px-3.5 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-semibold rounded-lg shadow transition transform hover:-translate-y-0.5 active:translate-y-0">
-                <span>${l.label}</span>
-                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>`;
-          } else {
-            return `
-              <div class="inline-flex items-center justify-between gap-2 px-3.5 py-2 bg-slate-900 border border-slate-800 text-slate-500 text-xs rounded-lg cursor-not-allowed">
-                <span>${l.label}</span>
-                <span class="text-[10px] px-1.5 py-0.5 bg-slate-800 text-amber-400 rounded">เร็ว ๆ นี้</span>
-              </div>`;
-          }
-        }).join('');
-
-        const videoSection = c.video_id ? `
-          <div class="mt-5 pt-4 border-t border-slate-800/80">
-            <span class="text-xs font-bold text-slate-400 mb-2.5 flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> 
-              ตัวอย่างเสียงร้อง (Demo Video)
-            </span>
-            <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-900 border border-slate-800 shadow-md">
-              <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${c.video_id}" title="Demo for ${c.name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-          </div>` : '';
-
-        return `
-          <article class="character-card bg-slate-900/70 border border-slate-800/90 rounded-2xl p-5 sm:p-7 shadow-xl hover:border-slate-700 transition duration-300">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              
-              <!-- Illustration -->
-              <div class="md:col-span-4 flex flex-col items-center">
-                <div class="w-full max-w-[280px] aspect-[3/4] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 p-2 flex items-center justify-center relative group">
-                  <img src="${c.image}" alt="${c.name}" loading="lazy" class="w-full h-full object-contain object-bottom group-hover:scale-105 transition-transform duration-500">
-                  <div class="absolute top-2 left-2">
-                    <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-red-600/90 text-white shadow">${c.badge}</span>
-                  </div>
-                </div>
-                <span class="mt-2 text-xs text-slate-400 text-center">${c.tag}</span>
-              </div>
-
-              <!-- Details & Downloads -->
-              <div class="md:col-span-8 flex flex-col justify-between">
-                <div>
-                  <div class="flex flex-wrap items-baseline gap-2.5 mb-4 border-b border-slate-800 pb-3">
-                    <h2 class="text-2xl font-black text-white">${c.name}</h2>
-                    <span class="text-sm text-rose-400 font-semibold">${c.th_name}</span>
-                  </div>
-
-                  <!-- Spec Grid -->
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs mb-5">
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">ผู้ให้เสียง (Voicer):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.voicer}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">ช่วงเสียง (Vocal Range):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.range}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">แนวเพลง (Genre):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.genre}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">อายุ / เพศ (Age & Gender):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.age} • ${c.gender}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">วันเกิด (Birthday):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.birthday}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">ไอเทมประจำตัว (Items):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.items}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">สิ่งที่ชอบ (Likes):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.likes}</span>
-                    </div>
-                    <div class="flex justify-between py-1 border-b border-slate-800/50">
-                      <span class="text-slate-400">สิ่งที่ไม่ชอบ (Dislikes):</span>
-                      <span class="font-semibold text-slate-200 text-right">${c.dislikes}</span>
-                    </div>
-                  </div>
-
-                  <!-- Download Buttons -->
-                  <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5 block">ดาวน์โหลดคลังเสียง (Downloads)</span>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                      ${downloadButtons}
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Video -->
-                ${videoSection}
-              </div>
-            </div>
-          </article>`;
-      }).join('');
-    }
-
-    // Initial render
-    renderCharacters(characters);
-
-    // Live search
-    searchInput.addEventListener('input', e => {
-      const q = e.target.value.toLowerCase().trim();
-      const filtered = characters.filter(c => 
-        c.name.toLowerCase().includes(q) ||
-        (c.th_name && c.th_name.toLowerCase().includes(q)) ||
-        (c.voicer && c.voicer.toLowerCase().includes(q)) ||
-        (c.genre && c.genre.toLowerCase().includes(q))
-      );
-      renderCharacters(filtered);
-    });
-
-    resetBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      renderCharacters(characters);
-    });
-
-    // Mobile Navbar Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    mobileToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-    });
-
-    // Back to top
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTop.classList.remove('opacity-0', 'pointer-events-none');
-        backToTop.classList.add('opacity-100', 'pointer-events-auto');
-      } else {
-        backToTop.classList.add('opacity-0', 'pointer-events-none');
-        backToTop.classList.remove('opacity-100', 'pointer-events-auto');
-      }
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+    <div class="footer-bottom">
+      <span>&#169; Since 2019 &#8211; DELTA SYNTH Team</span>
+      <span>Made in Thailand</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
