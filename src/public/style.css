@@ -469,6 +469,54 @@ footer{
 .cta-band p{ margin:0; }
 
 
+/* ---------- Collaboration: redline vocal-synth theme ---------- */
+.collab-page{
+  --ink: #09090b;
+  --ink-2: #101012;
+  --panel: #151517;
+  --panel-2: #1d1d20;
+  --line: rgba(255, 255, 255, 0.11);
+  --line-strong: rgba(255, 62, 62, 0.48);
+  --violet: #ff3b3b;
+  --violet-soft: rgba(255, 59, 59, 0.16);
+  --cyan: #ff4b4b;
+  --cyan-soft: rgba(255, 75, 75, 0.14);
+  --coral: #ff7a5c;
+  --coral-soft: rgba(255, 122, 92, 0.14);
+  --gold: #ffb454;
+  --grad-signal: linear-gradient(120deg, #ff1f3d 0%, #c9152b 55%, #ff6248 100%);
+  --grad-panel: linear-gradient(145deg, rgba(255, 35, 55, 0.13), rgba(255, 92, 68, 0.035) 62%, transparent);
+}
+
+.collab-page::before{
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+    radial-gradient(900px 520px at 14% -8%, rgba(255, 25, 48, 0.18), transparent 62%),
+    radial-gradient(700px 420px at 100% 20%, rgba(130, 12, 24, 0.18), transparent 58%);
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.collab-page .site-header{ background: rgba(9, 9, 11, .86); border-bottom-color: rgba(255, 59, 59, .22); }
+.collab-page .nav-links a.active{ color: #fff; background: var(--violet); box-shadow: 0 0 22px rgba(255, 40, 55, .24); }
+.collab-page .page-hero{ padding-bottom: 28px; }
+.collab-page .page-hero h1{ text-shadow: 0 0 34px rgba(255, 35, 55, .18); }
+.collab-page .crumb, .collab-page .filter-chip, .collab-page .vcard-body .role{ color: #e26b73; }
+.collab-page .filter-chip.active{ color: #fff; background: var(--violet); box-shadow: 0 0 18px rgba(255, 35, 55, .2); }
+.collab-page .filter-chip:hover{ border-color: rgba(255, 59, 59, .56); }
+.collab-page .vcard{ background: rgba(21, 21, 23, .92); border-color: rgba(255,255,255,.10); box-shadow: 0 16px 38px rgba(0,0,0,.18); }
+.collab-page .vcard:hover{ border-color: rgba(255, 59, 59, .62); box-shadow: 0 18px 44px rgba(110, 0, 14, .23); }
+.collab-page .vcard-media{ background: linear-gradient(160deg, rgba(255, 30, 50, .26), rgba(9,9,11,.52)); }
+.collab-page .vcard-media::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(180deg, transparent 58%, rgba(8,8,10,.72));
+}
+.collab-page .status.status-active{ color: #ff7278; border-color: rgba(255, 75, 75, .45); }
+.collab-page .tag-pill.jp, .collab-page .tag-pill.th, .collab-page .tag-pill.en{ color: #ff8588; }
+.collab-page .tag-pill.ai{ color: #ffb0a0; background: var(--violet-soft); }
+.collab-page .link-chip{ border-color: rgba(255, 59, 59, .18); }
+.collab-page .footer-links a:hover{ color: #ff5b62; }
+
 /* ---------- Readiness and accessibility safeguards ---------- */
 [hidden]{ display:none !important; }
 
