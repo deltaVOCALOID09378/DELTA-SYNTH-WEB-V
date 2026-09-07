@@ -811,26 +811,6 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Afrobeat']
   },
   {
-    id: 'mochiai',
-    name: 'Mochiai',
-    nameTh: 'โมชิไอ',
-    gender: 'Female',
-    age: 16,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Future Bass / Electropop',
-    language: 'Thai, Japanese',
-    status: 'Ready for Download',
-    image: 'assets/images/voicebanks/profile/mochiai.webp',
-    imageFull: 'assets/images/voicebanks/Mochiai.png',
-    audioSample: 'Voice/Mochiai.wav',
-    detailUrl: 'singers/mochiai.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_MOCHIAI',
-    description: 'เสียงนุ่มหนึบเหมือนโมจิ เคล้าคลอกับดนตรีอิเล็กโทรป๊อปได้อย่างลงตัว',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Future Bass']
-  },
-  {
     id: 'shiroino_mochi',
     name: 'Shiroino Mochi',
     nameTh: 'ชิโรอิโนะ โมจิ',
