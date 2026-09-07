@@ -74,6 +74,29 @@ class Starfield {
   }
 }
 
+function enhanceSingerProfile() {
+  const profilePanel = document.querySelector('.glass-panel');
+  const voicebankLink = profilePanel?.querySelector('a[href*="drive.google.com"]');
+  const singerImage = document.querySelector('.singer-image');
+
+  if (!profilePanel || !voicebankLink || !singerImage) {
+    return;
+  }
+
+  voicebankLink.textContent = `ดาวน์โหลดคลังเสียง ${document.querySelector('h1')?.textContent?.trim() || 'Voicebank'}`;
+  voicebankLink.setAttribute('aria-label', 'ดาวน์โหลดคลังเสียงของนักร้อง');
+
+  const imageButton = document.createElement('a');
+  imageButton.href = singerImage.currentSrc || singerImage.src;
+  imageButton.target = '_blank';
+  imageButton.rel = 'noopener noreferrer';
+  imageButton.className = voicebankLink.className.replace('bg-red-700', 'bg-transparent').replace('hover:bg-red-600', 'hover:bg-red-950');
+  imageButton.textContent = 'แตะเพื่อแสดงรูป โปรไฟล์';
+  imageButton.setAttribute('aria-label', 'แตะเพื่อแสดงรูปโปรไฟล์');
+  imageButton.style.marginLeft = '0.75rem';
+  voicebankLink.parentElement?.append(imageButton);
+}
+
 function initSingerMobileMenu() {
   const nav = document.querySelector('nav');
   const toggle = nav?.querySelector('button');
@@ -122,4 +145,5 @@ function initSingerMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   new Starfield('space-bg');
   initSingerMobileMenu();
+  enhanceSingerProfile();
 });
