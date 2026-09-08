@@ -3,35 +3,35 @@
  * 
  * Complies with AGENT.md:
  * - Font: Leelawadee UI / Kanit / Inter
- * - Primary: #9075FF
- * - Dark: #0A0B16
- * - Light: #F4F2FB
- * - Hover: #4FE3D0
- * - Pressed: #6F8DFF
- * - Highlight: #4FE3D0
+ * - Primary: #CC2200
+ * - Dark: #1A1A1A
+ * - Light: #F0F0F0
+ * - Hover: #FF4422
+ * - Pressed: #991100
+ * - Highlight: #CC2200
  * 
  * Made And Checked By DELTA SYNTH & Gemini AI
  */
 
 export const THEME = {
   colors: {
-    primary: '#9075FF',
-    primaryHover: '#4FE3D0',
-    primaryPressed: '#6F8DFF',
-    primaryHighlight: '#4FE3D0',
-    bgDark: '#0A0B16',
-    bgDarker: '#10111F',
-    bgCard: 'rgba(21, 23, 42, 0.92)',
-    bgGlass: 'rgba(21, 23, 42, 0.72)',
-    borderDark: 'rgba(196, 190, 230, 0.14)',
-    borderGlow: 'rgba(79, 227, 208, 0.35)',
-    textLight: '#F4F2FB',
-    textMuted: '#9C97B8',
-    textDark: '#0A0B16',
-    success: '#4FE3D0',
-    warning: '#F4C364',
-    error: '#FF7A6B',
-    info: '#6F8DFF'
+    primary: '#CC2200',
+    primaryHover: '#FF4422',
+    primaryPressed: '#991100',
+    primaryHighlight: '#CC2200',
+    bgDark: '#1A1A1A',
+    bgDarker: '#0D0D0D',
+    bgCard: 'rgba(26, 26, 26, 0.85)',
+    bgGlass: 'rgba(26, 26, 26, 0.70)',
+    borderDark: '#2D2D2D',
+    borderGlow: 'rgba(204, 34, 0, 0.4)',
+    textLight: '#F0F0F0',
+    textMuted: '#A0A0A0',
+    textDark: '#1A1A1A',
+    success: '#00C853',
+    warning: '#FFD600',
+    error: '#D50000',
+    info: '#00B0FF'
   },
   fonts: {
     primary: 'Leelawadee UI, Kanit, Inter, sans-serif',
