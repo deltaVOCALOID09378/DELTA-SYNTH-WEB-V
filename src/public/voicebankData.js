@@ -1049,6 +1049,46 @@ export const VOICEBANKS = [
     downloadUrl: 'https://drive.google.com/drive/folders/DELTA_SYNTH_YUUYA',
     description: 'เสียงใส มีพลัง เหมาะกับการร้องเมโลดี้หลักในเพลงอิเล็กทรอนิกส์',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Electronic']
+  },
+  {
+    id: 'ayanami_kyoko',
+    name: 'Ayanami Kyoko',
+    nameTh: 'อายานามิ เคียวโกะ',
+    gender: 'Female',
+    age: null,
+    voicer: 'DELTA SYNTH',
+    engine: 'UTAU / DiffSinger',
+    type: 'Official DELTA',
+    genre: 'Pop / Electronic',
+    language: 'Thai, Japanese, English',
+    status: 'In Development',
+    image: 'assets/images/voicebanks/profile/Ayanami Kyoko.png',
+    imageFull: 'assets/images/voicebanks/Ayanami Kyoko.png',
+    audioSample: 'Voice/Ayanami Kyoko.wav',
+    detailUrl: 'singers/ayanami_kyoko.html',
+    downloadUrl: '',
+    description: 'โปรเจกต์เสียงของ Kyoko ในสาย Ayanami อยู่ระหว่างการพัฒนาและเตรียมข้อมูลสำหรับการเผยแพร่',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Development']
+  },
+  {
+    id: 'fuwari_bento',
+    name: 'Fuwari Bento',
+    nameTh: 'ฟุวาริ เบนโตะ',
+    gender: 'Male',
+    age: null,
+    voicer: 'Collaboration Project',
+    engine: 'UTAU / DiffSinger',
+    type: 'Collaboration',
+    genre: 'Pop / Character Song',
+    language: 'Japanese, Thai, English',
+    status: 'In Development',
+    image: 'assets/images/voicebanks/profile/Fuwari Bento.png',
+    imageFull: 'assets/images/voicebanks/Fuwari Bento.png',
+    audioSample: 'Voice/Fuwari Bento.wav',
+    detailUrl: 'singers/fuwari_bento.html',
+    downloadUrl: '',
+    description: 'โปรเจกต์ความร่วมมือสำหรับนักร้องเสมือนลำดับที่ 05 ข้อมูลเสียงอยู่ระหว่างการพัฒนา',
+    tags: ['UTAU', 'DiffSinger', 'Collaboration', 'Male', 'Development']
   }
 ];
 
