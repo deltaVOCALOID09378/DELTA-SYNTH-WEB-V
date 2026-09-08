@@ -1,0 +1,45 @@
+/* DELTA SYNTH shared profile theme: keeps every singer page on the same visual system. */
+:root {
+  --profile-bg: #0a0b16;
+  --profile-panel: #15172a;
+  --profile-line: rgba(196, 190, 230, .14);
+  --profile-text: #f4f2fb;
+  --profile-muted: #9c97b8;
+  --profile-cyan: #4fe3d0;
+  --profile-violet: #9075ff;
+}
+
+html, body { background: var(--profile-bg) !important; color: var(--profile-text) !important; }
+body {
+  background-image: radial-gradient(900px 500px at 12% -10%, rgba(144,117,255,.18), transparent 60%), radial-gradient(800px 500px at 100% 10%, rgba(79,227,208,.1), transparent 55%) !important;
+  font-family: 'IBM Plex Sans Thai', 'Chakra Petch', sans-serif !important;
+  min-height: 100vh;
+}
+body::before, #space-bg { display: none !important; }
+nav, .site-header {
+  position: sticky !important; top: 0 !important; z-index: 50 !important;
+  background: rgba(10,11,22,.82) !important; border-bottom: 1px solid var(--profile-line) !important;
+  backdrop-filter: blur(14px) saturate(140%) !important;
+}
+nav .container, .site-header .nav { max-width: 1180px; margin: 0 auto; }
+nav a, .site-header a { color: var(--profile-muted) !important; }
+nav a:hover, nav a.text-red-500, .site-header a:hover, .site-header a.active { color: var(--profile-cyan) !important; }
+main { padding-top: 42px !important; min-height: calc(100vh - 100px) !important; }
+main .container { max-width: 1180px !important; }
+.glass-panel {
+  background: linear-gradient(160deg, rgba(144,117,255,.1), rgba(79,227,208,.04) 60%, transparent), var(--profile-panel) !important;
+  border: 1px solid var(--profile-line) !important; box-shadow: 0 20px 60px -25px rgba(0,0,0,.6) !important;
+}
+.glow-text { text-shadow: none !important; }
+h1, h2, h3 { font-family: 'Chakra Petch', 'IBM Plex Sans Thai', sans-serif !important; }
+.text-red-500, .text-red-400, .text-red-200\/80 { color: var(--profile-cyan) !important; }
+.border-red-900\/30, .border-red-500, .border-gray-800\/50 { border-color: var(--profile-line) !important; }
+.bg-red-700 { background: linear-gradient(120deg, var(--profile-violet), var(--profile-cyan)) !important; color: var(--profile-bg) !important; }
+.hover\\:bg-red-600:hover { filter: brightness(1.08); }
+.text-white { color: var(--profile-text) !important; }
+.text-gray-300, .text-gray-400, .text-gray-500, .text-gray-600 { color: var(--profile-muted) !important; }
+footer { background: var(--profile-bg) !important; border-color: var(--profile-line) !important; }
+@media (max-width: 760px) {
+  main { padding-top: 28px !important; }
+  nav .container { padding: 12px 18px !important; }
+}
