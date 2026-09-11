@@ -33,11 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navToggle && navLinks) {
     navToggle.type = 'button';
     navToggle.setAttribute('aria-controls', 'site-navigation');
+    navToggle.setAttribute('aria-label', 'เปิดเมนูนำทาง');
     setExpanded(navToggle, false);
     navLinks.id = 'site-navigation';
-    navToggle.addEventListener('click', () => toggleMenu(navLinks, navToggle));
+    navLinks.setAttribute('aria-label', 'เมนูหลัก');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.contains('open');
+      toggleMenu(navLinks, navToggle);
+      navToggle.setAttribute('aria-label', isOpen ? 'เปิดเมนูนำทาง' : 'ปิดเมนูนำทาง');
+    });
     navLinks.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => closeMenu(navLinks, navToggle));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeMenu(navLinks, navToggle);
+        navToggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980 && navLinks.classList.contains('open')) {
+        closeMenu(navLinks, navToggle);
+      }
     });
   }
 
