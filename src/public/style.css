@@ -604,5 +604,33 @@ footer{
     transition-duration:0.01ms !important;
     animation-duration:0.01ms !important;
     animation-iteration-count:1 !important;
-  }
+}
+
+/* Legacy pages inherit the same DELTA SYNTH visual language. */
+body.bg-black,
+body.bg-gray-900 {
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+  font-family: var(--font-body) !important;
+}
+.bg-gray-900\/50 {
+  background: var(--panel) !important;
+  border-color: var(--line) !important;
+}
+.bg-red-900,
+.bg-red-700 {
+  background: var(--violet) !important;
+}
+.text-red-500,
+.text-red-300,
+.text-red-200 {
+  color: var(--cyan) !important;
+}
+.hover\\:text-red-500:hover,
+.hover\\:border-red-500:hover {
+  color: var(--cyan) !important;
+  border-color: var(--cyan) !important;
+}
+
+
 }
