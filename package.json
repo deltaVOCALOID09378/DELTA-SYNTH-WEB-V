@@ -13,11 +13,15 @@
     "react": "16.14.0"
   },
   "scripts": {
-    "dev": "node ./tools/static-server.mjs",
-    "start": "node ./tools/static-server.mjs",
-    "wix:dev": "wix dev",
+    "postinstall": "wix sync-types",
+    "dev": "wix dev",
     "lint": "eslint .",
-    "test": "node --loader ./tests/loader.js tests/run-all-tests.js",
-    "build": "node --check ./tools/static-server.mjs"
+    "test": "node tests/run-all-tests.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.3.0"
   }
 }

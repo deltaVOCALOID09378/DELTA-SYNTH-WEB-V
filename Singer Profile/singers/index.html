@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+  Revision: 2.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singer Profiles Directory (54 นักร้อง) · DELTA SYNTH Official</title>
+<meta name="description" content="ทำเนียบและสารบัญนักร้องเสมือนทั้งหมด 54 เสียงของ DELTA SYNTH พร้อมรูปเต็มตัว ข้อมูลเสียง และลิงก์ดาวน์โหลดคลังเสียง UTAU / DiffSinger">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230d0d0d%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23cc2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyber-red: #CC2200;
+    --cyber-red-hover: #FF4422;
+    --cyber-red-pressed: #991100;
+    --cyber-black: #1A1A1A;
+    --cyber-darker: #0D0D0D;
+    --cyber-white: #F0F0F0;
+  }
+  body {
+    background-color: var(--cyber-darker);
+    color: var(--cyber-white);
+    font-family: 'Leelawadee UI', 'Kanit', 'IBM Plex Sans Thai', sans-serif;
+  }
+  .cyber-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .cyber-singer-card {
+    background: rgba(26, 26, 26, 0.85);
+    border: 1px solid rgba(204, 34, 0, 0.28);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    backdrop-filter: blur(12px);
+  }
+  .cyber-singer-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyber-red-hover);
+    box-shadow: 0 15px 40px rgba(204, 34, 0, 0.35);
+  }
+  .card-visual {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    background: radial-gradient(circle at center, rgba(204, 34, 0, 0.22) 0%, rgba(13, 13, 13, 0.95) 80%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(204, 34, 0, 0.2);
+  }
+  .visual-glow {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: rgba(204, 34, 0, 0.28);
+    border-radius: 50%;
+    filter: blur(40px);
+    top: 30%;
+  }
+  .singer-portrait {
+    position: relative;
+    z-index: 2;
+    max-height: 94%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.9));
+  }
+  .cyber-singer-card:hover .singer-portrait {
+    transform: scale(1.05);
+  }
+  .card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge-ready {
+    background: rgba(204, 34, 0, 0.7);
+    color: #fff;
+    border: 1px solid #ff4422;
+    box-shadow: 0 0 8px rgba(204, 34, 0, 0.6);
+  }
+  .badge-dev {
+    background: rgba(40, 40, 40, 0.85);
+    color: #aaa;
+    border: 1px solid #555;
+  }
+  .card-num {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+  }
+  .card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .card-header {
+    margin-bottom: 8px;
+  }
+  .card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+  }
+  .card-nameth {
+    font-size: 13px;
+    color: #ff5533;
+  }
+  .card-desc {
+    font-size: 12.5px;
+    color: #a0a0a0;
+    line-height: 1.5;
+    margin: 0 0 14px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 38px;
+  }
+  .card-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    background: rgba(13, 13, 13, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+  .spec-label {
+    display: block;
+    color: #888;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    font-size: 9.5px;
+  }
+  .spec-val {
+    color: #eee;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .spec-val.highlight {
+    color: #ff7755;
+  }
+  .card-actions {
+    margin-top: auto;
+  }
+  .btn-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background: #CC2200;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 12px rgba(204, 34, 0, 0.4);
+  }
+  .btn-profile:hover {
+    background: #FF4422;
+    box-shadow: 0 0 20px rgba(255, 68, 34, 0.7);
+    color: #FFFFFF;
+  }
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(26, 26, 26, 0.7);
+    border: 1px solid rgba(204, 34, 0, 0.25);
+    border-radius: 12px;
+  }
+  .search-input {
+    flex: 1;
+    min-width: 240px;
+    background: #0D0D0D;
+    border: 1px solid rgba(204, 34, 0, 0.35);
+    border-radius: 999px;
+    padding: 10px 18px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-input:focus {
+    border-color: #ff4422;
+    box-shadow: 0 0 12px rgba(255, 68, 34, 0.5);
+  }
+  .filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ccc;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover {
+    border-color: #ff4422;
+    color: #fff;
+  }
+  .filter-btn.active {
+    background: #CC2200;
+    border-color: #CC2200;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(204, 34, 0, 0.6);
+  }
+  @media (max-width: 600px) {
+    .cyber-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-visual {
+      height: 280px;
+    }
+  }
+</style>
+</head>
+<body>
+<!-- Site Header -->
+<header class="site-header">
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">Δ</span>
+      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html">Main</a>
+      <a href="../about.html">About Us</a>
+      <a href="../voicebank.html">All Voicebank</a>
+      <a href="index.html" class="active">Singer Profiles</a>
+      <a href="../files.html">USTX / MIDI / SVP / VSQX</a>
+      <a href="../collab.html">Collaboration</a>
+      <a href="../events.html">Events</a>
+    </nav>
+  </div>
+</header>
+
+<main style="padding: 40px 0 80px;">
+  <div class="wrap">
+    <!-- Header Section -->
+    <div style="border-bottom: 1px solid rgba(204, 34, 0, 0.25); padding-bottom: 24px; margin-bottom: 16px;">
+      <span class="eyebrow">DELTA SYNTH · Complete Character Catalog</span>
+      <h1 style="margin: 8px 0; font-size: clamp(28px, 4vw, 44px);">ทำเนียบนักร้องเสมือนทั้งหมด <span style="color:#ff4422;">(54 เสียง)</span></h1>
+      <p style="margin:0; font-size: 15px; color: #a0a0a0; max-width: 820px;">
+        รวบรวมประวัติ ข้อมูลสเปกทางเทคนิค ภาพคาแรกเตอร์เต็มตัว และแพ็กเกจคลังเสียงพร้อมดาวน์โหลดครบทั้ง 54 นักร้องเสมือน สำหรับ OpenUtau, UTAU และ DiffSinger AI
+      </p>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 ค้นหาชื่อนักร้อง, ภาษา, แนวเพลง หรือเอนจิน..." />
+      <button class="filter-btn active" data-filter="all">ทั้งหมด (54)</button>
+      <button class="filter-btn" data-filter="official">Official DELTA</button>
+      <button class="filter-btn" data-filter="collaboration">Collaboration</button>
+      <button class="filter-btn" data-filter="diffsinger">DiffSinger AI</button>
+      <button class="filter-btn" data-filter="male">ชาย (Male)</button>
+      <button class="filter-btn" data-filter="female">หญิง (Female)</button>
+    </div>
+
+    <!-- 54 Singer Profile Grid -->
+    <div class="cyber-grid" id="singersGrid">
+      <article class="cyber-singer-card" 
+               data-id="ayanami_hikaru" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="ayanami hikaru อายานามิ ฮิคารุ pop / rock / anisong">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Ayanami Hikaru.png" 
+               alt="Ayanami Hikaru" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Ayanami Hikaru.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#01</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Ayanami Hikaru</h3>
+            <div class="card-nameth">อายานามิ ฮิคารุ</div>
+          </div>
+          <p class="card-desc">เสียงหลักอันเป็นเอกลักษณ์ของ DELTA SYNTH ให้โทนเสียงอบอุ่น ทรงพลัง และยืดหยุ่นสูงในทุกย่านเสียง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, Japanese, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">22 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="ayanami_hikaru.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cyber-singer-card" 
+               data-id="ayanami_kyoko" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="ayanami kyoko อายานามิ เคียวโกะ pop / rock / anisong / ballad">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Ayanami Kyoko.png" 
+               alt="Ayanami Kyoko" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Ayanami Kyoko.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">05</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Ayanami Kyoko</h3>
+            <div class="card-nameth">อายานามิ เคียวโกะ</div>
+          </div>
+          <p class="card-desc">นักร้องหญิงจากโปรเจกต์ All DELTA's Voice Acting เสียงทรงพลังในช่วงสูง รองรับทั้ง UTAU และ DiffSinger AI</p>
+          <div class="card-meta">
+            <div class="meta-item">
+              <span class="meta-label">Gender</span>
+              <span class="meta-val">Female</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Age</span>
+              <span class="meta-val">19</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Engine</span>
+              <span class="meta-val">UTAU / DiffSinger</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Languages</span>
+              <span class="meta-val">Thai, Japanese, English</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="ayanami_kyoko.html" class="btn-profile">
+              <span>ดูข้อมูลและดาวน์โหลดคลังเสียง (6 แพ็กเกจ) →</span>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="sun" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau cvvc / diffsinger" 
+               data-name="sun ซัน rock / edm / synthwave">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/SUN.png" 
+               alt="SUN" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/SUN.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#02</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">SUN</h3>
+            <div class="card-nameth">ซัน</div>
+          </div>
+          <p class="card-desc">เสียงใส คมชัด พุ่งตรง เหมาะกับแนวเพลงเร็วและท่อนฮุคที่ต้องการพลังเสียงหนักแน่น</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">5 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="sun.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="guren_kani" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv / diffsinger" 
+               data-name="guren kani กุเร็น คานิ metal / heavy rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Guren Kani.png" 
+               alt="Guren Kani" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Guren Kani.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#03</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Guren Kani</h3>
+            <div class="card-nameth">กุเร็น คานิ</div>
+          </div>
+          <p class="card-desc">น้ำเสียงดุดัน เข้มข้น มีเอกลักษณ์การออกเสียงที่ชัดเจนสำหรับแนวร็อกและเมทัล</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, Japanese</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">5 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="guren_kani.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="kochujang" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cvvc / diffsinger" 
+               data-name="kochujang โคชูจัง k-pop / dance / electro">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Kochujang.png" 
+               alt="Kochujang" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Kochujang.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Kochujang</h3>
+            <div class="card-nameth">โคชูจัง</div>
+          </div>
+          <p class="card-desc">เสียงหวานใสผสมความเปรี้ยวซ่า เหมาะสำหรับเพลงป๊อปและแดนซ์สไตล์โมเดิร์น</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, Korean, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="kochujang.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="thitiya_anantanetr" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vccv / diffsinger" 
+               data-name="thitiya anantanetr ธิติยา อนันตเนตร ballad / acoustic / r&b">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Thitiya Anantanetr.png" 
+               alt="Thitiya Anantanetr" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Thitiya Anantanetr.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#05</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Thitiya Anantanetr</h3>
+            <div class="card-nameth">ธิติยา อนันตเนตร</div>
+          </div>
+          <p class="card-desc">เสียงร้องนุ่มละมุน ถ่ายทอดอารมณ์เพลงช้าได้อย่างลึกซึ้งและมีความเป็นธรรมชาติสูง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCCV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="thitiya_anantanetr.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="arun_kamonlanetr" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="arun kamonlanert อรุณ กมลเนตร traditional / pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Arun Kamonlanetr.png" 
+               alt="Arun Kamonlanert" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Arun Kamonlanetr.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#06</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Arun Kamonlanert</h3>
+            <div class="card-nameth">อรุณ กมลเนตร</div>
+          </div>
+          <p class="card-desc">เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="arun_kamonlanetr.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="bew__powerine" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cvvc / diffsinger" 
+               data-name="bew powerine บิว พาวเวอร์ไรน์ electro / cyberpunk / pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Bew  Powerine.png" 
+               alt="Bew Powerine" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Bew  Powerine.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#07</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Bew Powerine</h3>
+            <div class="card-nameth">บิว พาวเวอร์ไรน์</div>
+          </div>
+          <p class="card-desc">น้ำเสียงสว่าง สดใส มีพลัง ให้ความรู้สึกล้ำสมัยสไตล์ Sci-Fi และ Cyberpunk</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="bew__powerine.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="ball_powerine" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="ball powerine บอล พาวเวอร์ไรน์ future bass / rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Ball Powerine.png" 
+               alt="Ball Powerine" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Ball Powerine.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#08</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Ball Powerine</h3>
+            <div class="card-nameth">บอล พาวเวอร์ไรน์</div>
+          </div>
+          <p class="card-desc">เสียงร้องโทนอบอุ่นและมีน้ำหนัก เข้ากันได้ดีกับดนตรีซินธ์และฟิวเจอร์เบส</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">ในขั้นตอนพัฒนา</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="ball_powerine.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="beem_powerine" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="beem powerine บีม พาวเวอร์ไรน์ pop / acoustic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Beem Powerine.png" 
+               alt="Beem Powerine" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Beem Powerine.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#09</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Beem Powerine</h3>
+            <div class="card-nameth">บีม พาวเวอร์ไรน์</div>
+          </div>
+          <p class="card-desc">เสียงใสน่ารัก มีลมหายใจในเสียงร้องที่เด่นชัด เหมาะกับเพลงฟังสบาย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="beem_powerine.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="chansamorn" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vcv / diffsinger" 
+               data-name="chansamorn จันทร์สมร traditional / thai contemporary">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Chansamorn.png" 
+               alt="Chansamorn" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Chansamorn.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#10</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Chansamorn</h3>
+            <div class="card-nameth">จันทร์สมร</div>
+          </div>
+          <p class="card-desc">เสียงขับร้องไทยร่วมสมัย ความละเมียดละไมของวรรณยุกต์ไทยอย่างสมบูรณ์แบบ</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="chansamorn.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="kikakowa_usagi" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cv / diffsinger" 
+               data-name="kikokawa usagi คิโคคาวะ อุซางิ denpa / anime / kawaii future bass">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Kikakowa Usagi.png" 
+               alt="Kikokawa Usagi" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Kikakowa Usagi.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#11</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Kikokawa Usagi</h3>
+            <div class="card-nameth">คิโคคาวะ อุซางิ</div>
+          </div>
+          <p class="card-desc">เสียงใสแหลมน่ารักสไตล์อะนิเมะญี่ปุ่น เหมาะกับเพลงแนว Denpa และ Kawaii Future Bass</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="kikakowa_usagi.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="ahctan" 
+               data-gender="male" 
+               data-type="collaboration" 
+               data-engine="utau / diffsinger" 
+               data-name="ahctan แอคตัน indie / lo-fi">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Ahctan.png" 
+               alt="Ahctan" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Ahctan.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#12</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Ahctan</h3>
+            <div class="card-nameth">แอคตัน</div>
+          </div>
+          <p class="card-desc">โทนเสียงทุ้มนุ่ม เหมาะสำหรับเพลงแนวอินดี้และโลไฟ</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Collaboration</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="ahctan.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="arzbtv" 
+               data-gender="male" 
+               data-type="collaboration" 
+               data-engine="utau / diffsinger" 
+               data-name="arzb tv เออาร์แซดบี ทีวี hip-hop / trap">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/ARZB TV.png" 
+               alt="ARZB TV" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/ARZB TV.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#13</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">ARZB TV</h3>
+            <div class="card-nameth">เออาร์แซดบี ทีวี</div>
+          </div>
+          <p class="card-desc">เสียงเร็ว คมชัด ชัดเจนในการแร็ปและการร้องแบบเมโลดิกแทร็ป</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Collaboration</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="arzbtv.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="azaya_aika" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="azaya aika อาซายะ ไอิกะ j-pop / ballad">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Azaya Aika.png" 
+               alt="Azaya Aika" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Azaya Aika.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#14</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Azaya Aika</h3>
+            <div class="card-nameth">อาซายะ ไอิกะ</div>
+          </div>
+          <p class="card-desc">เสียงใส กังวาน ให้ความรู้สึกละมุนในเพลงบัลลาดและป๊อป</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="azaya_aika.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="diwachi" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="diwachi ดิวาจิ r&b / soul">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Diwachi.png" 
+               alt="Diwachi" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Diwachi.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#15</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Diwachi</h3>
+            <div class="card-nameth">ดิวาจิ</div>
+          </div>
+          <p class="card-desc">เสียง R&B นุ่มลึก มีลูกเอื้อนที่เป็นธรรมชาติ</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="diwachi.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="dokya" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="dokya ดอกหญ้า folk / acoustic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Dokya.png" 
+               alt="Dokya" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Dokya.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#16</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Dokya</h3>
+            <div class="card-nameth">ดอกหญ้า</div>
+          </div>
+          <p class="card-desc">เสียงหวานใสเป็นธรรมชาติ ดุจสายลมพัดผ่านทุ่งหญ้า เหมาะกับเพลงโฟล์ก</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="dokya.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="fangyu" 
+               data-gender="female" 
+               data-type="collaboration" 
+               data-engine="utau / diffsinger" 
+               data-name="fangyu ฟางหยู c-pop / guofeng">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Fangyu.png" 
+               alt="Fangyu" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Fangyu.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#17</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Fangyu</h3>
+            <div class="card-nameth">ฟางหยู</div>
+          </div>
+          <p class="card-desc">น้ำเสียงสไตล์กั๋วเฟิงอันสง่างามและทันสมัย รองรับภาษาจีนและไทยอย่างยอดเยี่ยม</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Chinese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Collaboration</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="fangyu.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="felix" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="felix ฟีลิกซ์ synthpop / city pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Felix.png" 
+               alt="Felix" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Felix.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#18</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Felix</h3>
+            <div class="card-nameth">ฟีลิกซ์</div>
+          </div>
+          <p class="card-desc">โทนเสียงอบอุ่นแนวซิตี้ป๊อปยุค 80s-90s</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="felix.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="fellowwhite" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="fellowwhite เฟลโลว์ไวท์ alternative / rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Fellowwhite.png" 
+               alt="Fellowwhite" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Fellowwhite.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#19</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Fellowwhite</h3>
+            <div class="card-nameth">เฟลโลว์ไวท์</div>
+          </div>
+          <p class="card-desc">พลังเสียงอัลเทอร์เนทีฟที่หนักแน่นและพุ่งไกล</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="fellowwhite.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="fuwari_bento" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="fuwari bento ฟุวาริ เบนโตะ kawaii pop / chiptune">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Fuwari Bento.png" 
+               alt="Fuwari Bento" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Fuwari Bento.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#20</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Fuwari Bento</h3>
+            <div class="card-nameth">ฟุวาริ เบนโตะ</div>
+          </div>
+          <p class="card-desc">เสียงร้องสดใส เปล่งประกาย เหมาะสำหรับเพลงแนวน่ารักและเกมมิ่งชิปจูน</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="fuwari_bento.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="haruhiko" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="haruhiko ฮารุฮิโกะ j-rock / anisong">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Haruhiko.png" 
+               alt="Haruhiko" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Haruhiko.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#21</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Haruhiko</h3>
+            <div class="card-nameth">ฮารุฮิโกะ</div>
+          </div>
+          <p class="card-desc">เสียงร้องแบบอะนิซองที่ทรงพลัง มีพลังขับเคลื่อนในทุกจังหวะดนตรี</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="haruhiko.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="ibara_kouya" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv / diffsinger" 
+               data-name="ibara kouya อิบาระ โคยะ darkwave / industrial">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Ibara Kouya.png" 
+               alt="Ibara Kouya" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Ibara Kouya.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#22</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Ibara Kouya</h3>
+            <div class="card-nameth">อิบาระ โคยะ</div>
+          </div>
+          <p class="card-desc">เสียงทุ้มต่ำ ลึกลับ มีเอกลักษณ์เฉพาะตัวสูงมาก</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="ibara_kouya.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="jonu" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="jonu โจนู pop punk / emo">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Jonu.png" 
+               alt="Jonu" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Jonu.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#23</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Jonu</h3>
+            <div class="card-nameth">โจนู</div>
+          </div>
+          <p class="card-desc">เสียงดิบ เท่ มีความเข้าถึงง่ายสำหรับเพลงป๊อปพังก์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="jonu.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="kangfu" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="kangfu กังฟู martial arts rock / chinese trap">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Kangfu.png" 
+               alt="Kangfu" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Kangfu.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#24</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Kangfu</h3>
+            <div class="card-nameth">กังฟู</div>
+          </div>
+          <p class="card-desc">พลังเสียงดุดันสไตล์กังฟูร็อก แข็งแกร่งและเด็ดขาด</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Chinese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="kangfu.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="kira" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="kira คิระ eurobeat / hi-nrg">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Kira.png" 
+               alt="Kira" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Kira.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#25</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Kira</h3>
+            <div class="card-nameth">คิระ</div>
+          </div>
+          <p class="card-desc">เสียงพุ่งเร็ว ทรงพลัง เข้ากับเพลงยูโรบีทและแดนซ์ความเร็วสูง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="kira.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="koizumi_satoru" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="koizumi satoru โคอิซึมิ ซาโตรุ jazz / bossa nova">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Koizumi Satoru.png" 
+               alt="Koizumi Satoru" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Koizumi Satoru.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#26</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Koizumi Satoru</h3>
+            <div class="card-nameth">โคอิซึมิ ซาโตรุ</div>
+          </div>
+          <p class="card-desc">น้ำเสียงสไตล์แจ๊ส นุ่มนวล ชวนหลงใหลในทุกท่วงทำนอง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="koizumi_satoru.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="mairu_maishi" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="mairu maishi ไมรุ ไมชิ j-pop / idol pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Mairu Maishi.png" 
+               alt="Mairu Maishi" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Mairu Maishi.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#27</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Mairu Maishi</h3>
+            <div class="card-nameth">ไมรุ ไมชิ</div>
+          </div>
+          <p class="card-desc">เสียงไอดอลน่ารักสดใส เต็มไปด้วยพลังบวกและความมีชีวิตชีวา</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">9 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="mairu_maishi.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="mayuree" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="mayuree มยุรี thai classic / luk krung">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Mayuree.png" 
+               alt="Mayuree" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Mayuree.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#28</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Mayuree</h3>
+            <div class="card-nameth">มยุรี</div>
+          </div>
+          <p class="card-desc">เสียงร้องลูกกรุงไทยอันทรงเกียรติ ถ่ายทอดความงามของวรรณศิลป์ไทย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="mayuree.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="miro" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="miro มิโร่ bedroom pop / indie">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Miro.png" 
+               alt="Miro" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Miro.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#29</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Miro</h3>
+            <div class="card-nameth">มิโร่</div>
+          </div>
+          <p class="card-desc">เสียงร้องผ่อนคลาย สไตล์เบดรูมป๊อปที่ฟังสบาย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="miro.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="mochiai" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="mochiai โมจิไอ future bass / electropop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Mochiai.png" 
+               alt="Mochiai" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Mochiai.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#30</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Mochiai</h3>
+            <div class="card-nameth">โมจิไอ</div>
+          </div>
+          <p class="card-desc">เสียงนุ่มหนึบเหมือนโมจิ เคล้าคลอกับดนตรีอิเล็กโทรป๊อปได้อย่างลงตัว</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">ในขั้นตอนพัฒนา</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="mochiai.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="mojine_sora" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="mojine sora โมจิเนะ โซระ anisong / power metal">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Mojine Sora.png" 
+               alt="Mojine Sora" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Mojine Sora.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#31</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Mojine Sora</h3>
+            <div class="card-nameth">โมจิเนะ โซระ</div>
+          </div>
+          <p class="card-desc">เสียงร้องทะยานสู่ท้องฟ้า ทรงพลังและชัดเจนทุกตัวโน้ต</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="mojine_sora.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="namphueng" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vccv / diffsinger" 
+               data-name="namphueng น้ำผึ้ง acoustic / thai pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Namphueng.png" 
+               alt="Namphueng" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Namphueng.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#32</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Namphueng</h3>
+            <div class="card-nameth">น้ำผึ้ง</div>
+          </div>
+          <p class="card-desc">เสียงหวานละมุนดุจน้ำผึ้งเดือนห้า ชวนฟังและเข้าถึงใจผู้ฟังได้ง่าย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCCV / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="namphueng.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="narisa" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="narisa นริศา pop / soul">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Narisa.png" 
+               alt="Narisa" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Narisa.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#33</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Narisa</h3>
+            <div class="card-nameth">นริศา</div>
+          </div>
+          <p class="card-desc">น้ำเสียงสากล ทรงพลัง รองรับทั้งแนวโซลและป๊อปร่วมสมัย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">7 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="narisa.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="okaminari_tanda" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="okaminari tanda โอกามินาริ ทันดะ heavy metal / hardcore">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Okaminari Tanda.png" 
+               alt="Okaminari Tanda" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Okaminari Tanda.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#34</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Okaminari Tanda</h3>
+            <div class="card-nameth">โอกามินาริ ทันดะ</div>
+          </div>
+          <p class="card-desc">เสียงคำรามดั่งสายฟ้าฟาด หนักแน่นและมีพลังขับสูง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="okaminari_tanda.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="onika" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="onika โอนิกะ trap / phonk">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Onika.png" 
+               alt="Onika" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Onika.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#35</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Onika</h3>
+            <div class="card-nameth">โอนิกะ</div>
+          </div>
+          <p class="card-desc">เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="onika.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="quint" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="quint ควินท์ synthwave / retrowave">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Quint.png" 
+               alt="Quint" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Quint.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#36</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Quint</h3>
+            <div class="card-nameth">ควินท์</div>
+          </div>
+          <p class="card-desc">น้ำเสียงสไตล์เรโทรเวฟ ผสมความล้ำสมัยในแบบ DELTA SYNTH</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="quint.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="relven" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="relven เรลเวน gothic rock / dark pop">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Relven.png" 
+               alt="Relven" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Relven.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#37</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Relven</h3>
+            <div class="card-nameth">เรลเวน</div>
+          </div>
+          <p class="card-desc">เสียงร้องหม่นลึก แต่แฝงด้วยความหวังอันสว่างไสว</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="relven.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="root" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="root รูท hyperpop / glitch">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Root.png" 
+               alt="Root" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Root.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#38</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Root</h3>
+            <div class="card-nameth">รูท</div>
+          </div>
+          <p class="card-desc">เสียงสังเคราะห์ดิจิทัลจัดจ้าน เหมาะกับไฮเปอร์ป๊อปและกลิตช์คอร์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="root.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="sakultala" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="sakultala สกุลทลา thai traditional / epic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Sakultala.png" 
+               alt="Sakultala" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Sakultala.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#39</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Sakultala</h3>
+            <div class="card-nameth">สกุลทลา</div>
+          </div>
+          <p class="card-desc">เสียงขับเสภาและร้องไทยประยุกต์อันทรงเสน่ห์และเปี่ยมมนต์ขลัง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="sakultala.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="saphire_blue" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="saphire blue แซฟไฟร์ บลู trance / progressive house">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Saphire Blue.png" 
+               alt="Saphire Blue" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Saphire Blue.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#40</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Saphire Blue</h3>
+            <div class="card-nameth">แซฟไฟร์ บลู</div>
+          </div>
+          <p class="card-desc">เสียงใส กังวาน ลอยเด่นในแทร็กเพลงแดนซ์และแทรนซ์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">ในขั้นตอนพัฒนา</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="saphire_blue.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="savanna" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="savanna ซาวันนา afrobeat / tropical house">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Savanna.png" 
+               alt="Savanna" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Savanna.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#41</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Savanna</h3>
+            <div class="card-nameth">ซาวันนา</div>
+          </div>
+          <p class="card-desc">เสียงร้องเปี่ยมเสน่ห์และความอบอุ่นแนวทรอปิคอลและแอฟโฟรบีท</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">English, French, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="savanna.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="shiroino_mochi" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="shiroino mochi ชิโรอิโนะ โมจิ kawaii / chiptune">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Shiroino Mochi.png" 
+               alt="Shiroino Mochi" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Shiroino Mochi.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#42</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Shiroino Mochi</h3>
+            <div class="card-nameth">ชิโรอิโนะ โมจิ</div>
+          </div>
+          <p class="card-desc">เสียงร้องนุ่มฟู น่ารัก ไร้เดียงสา</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">2 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="shiroino_mochi.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="sriphan" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="sriphan ศรีพรรณ thai folk / ballad">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Sriphan.png" 
+               alt="Sriphan" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Sriphan.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#43</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Sriphan</h3>
+            <div class="card-nameth">ศรีพรรณ</div>
+          </div>
+          <p class="card-desc">เสียงร้องไทยสากลร่วมสมัยที่อบอุ่นและมีพลังลึกซึ้ง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="sriphan.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="tagpy" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="tagpy แท็กปี้ indie rock / post punk">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Tagpy.png" 
+               alt="Tagpy" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Tagpy.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#44</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Tagpy</h3>
+            <div class="card-nameth">แท็กปี้</div>
+          </div>
+          <p class="card-desc">เสียงอินดี้ร็อกมีเอกลักษณ์เฉพาะตัว สื่ออารมณ์ได้ตรงไปตรงมา</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="tagpy.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="tenshi_saburo" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="tenshi saburo เทนชิ ซาบุโร่ visual kei / gothic rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Tenshi Saburo.png" 
+               alt="Tenshi Saburo" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Tenshi Saburo.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#45</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Tenshi Saburo</h3>
+            <div class="card-nameth">เทนชิ ซาบุโร่</div>
+          </div>
+          <p class="card-desc">เสียงร้องสไตล์วิชวลเคย์อันทรงเสน่ห์และเต็มไปด้วยพลังอารมณ์ดาร์ก</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="tenshi_saburo.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="tom" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau cvvc" 
+               data-name="tom ทอม pop / acoustic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Tom.png" 
+               alt="Tom" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Tom.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#46</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Tom</h3>
+            <div class="card-nameth">ทอม</div>
+          </div>
+          <p class="card-desc">เสียงร้องโทนธรรมชาติ เข้าถึงง่าย เหมาะกับเพลงอคูสติกและป๊อป</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU CVVC</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="tom.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="uchu_sutori" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="uchu sutori อุจู สตอรี่ space pop / synthwave">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Uchu Sutori.png" 
+               alt="Uchu Sutori" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Uchu Sutori.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#47</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Uchu Sutori</h3>
+            <div class="card-nameth">อุจู สตอรี่</div>
+          </div>
+          <p class="card-desc">เสียงร้องท่องอวกาศ สดใส กว้างไกล ดั่งจักรวาลอันไร้ขอบเขต</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="uchu_sutori.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="utashi_nara" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="utashi nara อุตะชิ นาระ anisong / j-rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Utashi Nara.png" 
+               alt="Utashi Nara" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Utashi Nara.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#48</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Utashi Nara</h3>
+            <div class="card-nameth">อุตะชิ นาระ</div>
+          </div>
+          <p class="card-desc">เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="utashi_nara.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="yamada_kimada" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="yamada kimada ยามาดะ คิมาดะ rock / metal">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Yamada Kimada.png" 
+               alt="Yamada Kimada" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Yamada Kimada.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#49</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Yamada Kimada</h3>
+            <div class="card-nameth">ยามาดะ คิมาดะ</div>
+          </div>
+          <p class="card-desc">เสียงร็อกเข้ม ดุดัน ทรงพลัง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">ในขั้นตอนพัฒนา</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="yamada_kimada.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="yamada_satoru" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="yamada satoru ยามาดะ ซาโตรุ pop / rnb">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Yamada Satoru.png" 
+               alt="Yamada Satoru" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Yamada Satoru.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#50</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Yamada Satoru</h3>
+            <div class="card-nameth">ยามาดะ ซาโตรุ</div>
+          </div>
+          <p class="card-desc">น้ำเสียงทันสมัย มีสเน่ห์ ปรับใช้งานได้กับหลากหลายแนวเพลง</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="yamada_satoru.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="yamada_takeshi" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau vcv" 
+               data-name="yamada takeshi ยามาดะ ทาเคชิ enka / traditional rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Yamada Takeshi.png" 
+               alt="Yamada Takeshi" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Yamada Takeshi.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#51</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Yamada Takeshi</h3>
+            <div class="card-nameth">ยามาดะ ทาเคชิ</div>
+          </div>
+          <p class="card-desc">เสียงเอื้อนแบบเอ็นกะญี่ปุ่นที่ทรงคุณค่าและมีพลังเปี่ยมล้น</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU VCV</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="yamada_takeshi.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="yokuatsu_takuto" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="yokuatsu takuto โยคุอัตสึ ทาคุโตะ alternative pop / emo rock">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Yokuatsu Takuto.png" 
+               alt="Yokuatsu Takuto" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Yokuatsu Takuto.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#52</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Yokuatsu Takuto</h3>
+            <div class="card-nameth">โยคุอัตสึ ทาคุโตะ</div>
+          </div>
+          <p class="card-desc">เสียงร้องอารมณ์ลึกซึ้ง เหมาะกับเพลงอารมณ์เหงาและดาร์กป๊อป</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="yokuatsu_takuto.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="cyber-singer-card" 
+               data-id="yuuya_sato" 
+               data-gender="male" 
+               data-type="official delta" 
+               data-engine="utau / diffsinger" 
+               data-name="yuuya sato ยูยะ ซาโต้ j-pop / electronic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Yuuya Sato.png" 
+               alt="Yuuya Sato" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Yuuya Sato.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">#53</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Yuuya Sato</h3>
+            <div class="card-nameth">ยูยะ ซาโต้</div>
+          </div>
+          <p class="card-desc">เสียงใส มีพลัง เหมาะกับการร้องเมโลดี้หลักในเพลงอิเล็กทรอนิกส์</p>
+          <div class="card-specs">
+            <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
+            <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai, English</span></div>
+            <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">1 คลังเสียง</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="yuuya_sato.html" class="btn-profile">
+              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cyber-singer-card" 
+               data-id="helen" 
+               data-gender="female" 
+               data-type="official delta" 
+               data-engine="utau" 
+               data-name="helen เฮเลน pop / ballad / electronic">
+        <div class="card-visual">
+          <div class="visual-glow"></div>
+          <img src="../assets/images/voicebanks/full/Helen.png" 
+               alt="Helen" 
+               loading="lazy" 
+               class="singer-portrait" 
+               onerror="this.src='../assets/images/voicebanks/Helen.png'">
+          <span class="card-badge badge-ready">
+            ACTIVE
+          </span>
+          <span class="card-num">55</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-name">Helen</h3>
+            <div class="card-nameth">เฮเลน</div>
+          </div>
+          <p class="card-desc">นักร้องเสมือนรุ่นฉลองครบรอบ 7 ปีของค่าย DELTA SYNTH เสียงร้องหวานละมุน นุ่มนวล ชัดเจน</p>
+          <div class="card-meta">
+            <div class="meta-item">
+              <span class="meta-label">Gender</span>
+              <span class="meta-val">Female</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Age</span>
+              <span class="meta-val">18</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Engine</span>
+              <span class="meta-val">UTAU VCV / Arpasing</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Languages</span>
+              <span class="meta-val">English, Japanese</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="helen.html" class="btn-profile">
+              <span>ดูข้อมูลและดาวน์โหลดคลังเสียง (2 แพ็กเกจ) →</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" style="background: #05060c; border-top: 1px solid rgba(204,34,0,0.2); padding: 48px 0 24px; margin-top: 40px; text-align: center; color: #777; font-size: 13px;">
+  <div class="wrap">
+    <div style="margin-bottom: 12px;">
+      <span style="color: #cc2200; font-weight: 700;">Δ DELTA SYNTH</span> — Thai Vocal Synthesis Studio Since 2019
+    </div>
+    <div>Made And Checked By DELTA SYNTH & Gemini AI · Original by DELTA SYNTH</div>
+  </div>
+</footer>
+
+<script>
+  // Filter & Search Logic
+  const searchInput = document.getElementById('searchInput');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.cyber-singer-card');
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function applyFilters() {
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name') || '';
+      const type = card.getAttribute('data-type') || '';
+      const gender = card.getAttribute('data-gender') || '';
+      const engine = card.getAttribute('data-engine') || '';
+
+      const matchSearch = currentSearch === '' || name.includes(currentSearch);
+      let matchFilter = true;
+
+      if (currentFilter === 'official') {
+        matchFilter = type.includes('official');
+      } else if (currentFilter === 'collaboration') {
+        matchFilter = type.includes('collab');
+      } else if (currentFilter === 'diffsinger') {
+        matchFilter = engine.includes('diffsinger');
+      } else if (currentFilter === 'male') {
+        matchFilter = gender === 'male';
+      } else if (currentFilter === 'female') {
+        matchFilter = gender === 'female';
+      }
+
+      if (matchSearch && matchFilter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    currentSearch = e.target.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,181 +1,292 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Collaboration Voicebanks - DELTA SYNTH</title>
-  <meta name="description" content="คลังเสียง Collaboration ของ DELTA SYNTH จากทีมพันธมิตร">
-  <link rel="stylesheet" href="style.css">
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collaboration & Projects · DELTA SYNTH Official</title>
+<meta name="description" content="ศูนย์รวมโครงการความร่วมมือและคลังเสียงศิลปินร่วมสังกัด DELTA SYNTH สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-color: #070814;
+    color: #f4f2fb;
+    font-family: 'IBM Plex Sans Thai', 'Inter', sans-serif;
+  }
+  .glow-red {
+    text-shadow: 0 0 16px rgba(204, 34, 0, 0.7);
+  }
+  .collab-card {
+    background: rgba(14, 15, 26, 0.78);
+    border: 1px solid rgba(204, 34, 0, 0.22);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .collab-card:hover {
+    border-color: #ff4422;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(204, 34, 0, 0.25);
+  }
+</style>
 </head>
-<body class="collab-page">
-<header class="site-header">
-  <div class="nav">
-    <a href="index.html" class="brand"><span class="brand-mark">&#916;</span><span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span></a>
-    <nav class="nav-links">
-      <a href="index.html">Main</a><a href="about.html">About Us</a><a href="voicebank.html">All Voicebank</a><a href="files.html">USTX / MIDI / SVP / VSQX</a><a href="collab.html" class="active">Collaboration</a><a href="events.html">Events</a>
+<body class="flex flex-col min-h-screen selection:bg-red-900 selection:text-white relative">
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" id="space-bg"></canvas>
+
+<!-- Top Site Header & Navigation -->
+<header class="site-header" style="position: sticky; top:0; z-index: 50; background: rgba(10, 11, 22, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(204,34,0,0.22);">
+  <div class="nav" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;">
+    <a href="index.html" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;">
+      <span class="brand-mark" style="color: #cc2200; font-size: 26px; font-weight: 900; text-shadow: 0 0 14px rgba(204,34,0,0.8);">Δ</span>
+      <div>
+        <div style="font-weight: 700; font-size: 17px; letter-spacing: 0.05em;">DELTA SYNTH</div>
+        <small style="display: block; font-size: 9px; letter-spacing: 0.15em; color: #9c97b8;">VOCAL SYNTHESIS STUDIO</small>
+      </div>
+    </a>
+    <nav class="nav-links" id="site-navigation" style="display: flex; gap: 20px; font-size: 14px;">
+      <a href="index.html" style="color: #f4f2fb; text-decoration: none;">Main</a>
+      <a href="about.html" style="color: #f4f2fb; text-decoration: none;">About Us</a>
+      <a href="voicebank.html" style="color: #f4f2fb; text-decoration: none;">All Voicebank</a>
+      <a href="files.html" style="color: #f4f2fb; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
+      <a href="collab.html" style="color: #ff4422; font-weight: 600; text-decoration: none;">Collaboration</a>
+      <a href="events.html" style="color: #f4f2fb; text-decoration: none;">Events</a>
     </nav>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="เปิดเมนู"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
 </header>
-<section class="page-hero">
-  <div class="wrap"><span class="crumb">DELTA SYNTH / Collaboration</span><h1>คลังเสียงพันธมิตร<br>ของ DELTA SYNTH</h1><p class="lead" style="max-width:640px;">Voicebanks created with our creator partners, studios, and vocal synthesis communities.</p></div>
-</section>
-<section style="padding-top:0;"><div class="wrap"><div class="filter-bar"><button class="filter-chip active" data-filter="all">All</button><button class="filter-chip" data-filter="jp">JP</button><button class="filter-chip" data-filter="th">TH</button><button class="filter-chip" data-filter="en">EN</button><button class="filter-chip" data-filter="ai">DiffSinger AI</button></div><div class="roster">
 
-<!-- 01: Ibara Kouya -->
-<article class="vcard" data-tags="jp,th,ai">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Ibara Kouya.png" alt="Ibara Kouya" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">01</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Ibara Kouya</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>ชาย</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill ai">DIFFSINGER AI</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU JP / TH</span><span class="link-chip">Diffsinger AI</span></div>
-  </div>
-</article>
+<main class="flex-grow pt-12 pb-24 relative z-10">
+  <div class="container mx-auto px-4 max-w-6xl">
+    
+    <!-- Hero Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-950/40 text-red-300 text-xs font-mono uppercase tracking-widest mb-4">
+        <span>PARTNERSHIPS & SPECIAL PROJECTS</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight glow-red mb-4">
+        COLLABORATION VOICEBANKS
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+        โปรเจกต์ความร่วมมือสร้างสรรค์คลังเสียงร้องเสมือนจริง ระหว่าง <span class="text-red-400 font-medium">DELTA SYNTH</span> ร่วมกับผู้สร้างอิสระและศิลปินรับเชิญทั้งในและต่างประเทศ
+      </p>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="project.html" class="btn btn-primary" style="background:#cc2200; border-color:#cc2200;">
+          <span>ดูทำเนียบ 9 กลุ่มโปรเจกต์ทั้งหมด →</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <span>📂 คลังไดรฟ์รวม All Voicebanks</span>
+        </a>
+      </div>
+    </div>
 
-<!-- 02: Jonu -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Jonu.png" alt="Jonu" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">02</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Jonu</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>หญิง</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+    <!-- Featured Collaboration Highlights -->
+    <div class="mb-16">
+      <div class="border-b border-red-900/40 pb-4 mb-8 flex justify-between items-end flex-wrap gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-wide">Featured Collaboration Artists</h2>
+          <p class="text-sm text-gray-400">ศิลปินและคลังเสียงไฮไลต์จากโปรเจกต์ความร่วมมือพิเศษ</p>
+        </div>
+        <span class="text-xs font-mono text-red-400/80">DELTA CO-OP ROSTER</span>
+      </div>
 
-<!-- 03: Kikakowa Usagi -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Kikakowa Usagi.png" alt="Kikakowa Usagi" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">03</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Kikakowa Usagi</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>หญิง</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Shiroino Mochi -->
+        <div class="collab-card">
+          <div>
+            <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4 bg-black/40 border border-gray-800 flex items-center justify-center">
+              <img src="assets/images/voicebanks/full/Shiroino Mochi.png" alt="Shiroino Mochi" class="h-full object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(204,34,0,0.3)]">
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 bg-red-950 text-red-300 text-xs font-mono rounded border border-red-800/60">COLLAB</span>
+              <span class="text-xs text-gray-400 font-mono">UTAU VCV / DiffSinger</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Shiroino Mochi</h3>
+            <p class="text-xs text-red-400 font-mono mb-2">ชิโรอิโนะ โมจิ</p>
+            <p class="text-xs text-gray-300 leading-relaxed mb-4">คลังเสียงโมจิตัวแทนความนุ่มฟู เสียงใส น่ารัก ร้องได้ทั้งภาษาไทยและญี่ปุ่นอย่างเป็นธรรมชาติ</p>
+          </div>
+          <a href="singers/shiroino_mochi.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-red-900/50 hover:bg-red-700 text-white rounded-lg text-xs font-mono font-medium tracking-wide transition border border-red-600/40">
+            <span>เข้าสู่โปรไฟล์ & ดาวน์โหลด →</span>
+          </a>
+        </div>
 
-<!-- 04: Koizumi Satoru -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Koizumi Satoru.png" alt="Koizumi Satoru" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">04</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Koizumi Satoru</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>ชาย</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+        <!-- Quint -->
+        <div class="collab-card">
+          <div>
+            <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4 bg-black/40 border border-gray-800 flex items-center justify-center">
+              <img src="assets/images/voicebanks/full/Quint.png" alt="Quint" class="h-full object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(204,34,0,0.3)]">
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 bg-red-950 text-red-300 text-xs font-mono rounded border border-red-800/60">PARTNER</span>
+              <span class="text-xs text-gray-400 font-mono">UTAU VCV / CVVC</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Quint</h3>
+            <p class="text-xs text-red-400 font-mono mb-2">ควินต์</p>
+            <p class="text-xs text-gray-300 leading-relaxed mb-4">โทนเสียงทุ้มนุ่มทรงพลัง เหมาะกับเพลงร็อกและเพลงบรรเลงที่มีจังหวะหนักแน่น</p>
+          </div>
+          <a href="singers/quint.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-red-900/50 hover:bg-red-700 text-white rounded-lg text-xs font-mono font-medium tracking-wide transition border border-red-600/40">
+            <span>เข้าสู่โปรไฟล์ & ดาวน์โหลด →</span>
+          </a>
+        </div>
 
-<!-- 05: Okaminari Tanda -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Okaminari Tanda.png" alt="Okaminari Tanda" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">05</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Okaminari Tanda</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>ชาย</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+        <!-- Felix -->
+        <div class="collab-card">
+          <div>
+            <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4 bg-black/40 border border-gray-800 flex items-center justify-center">
+              <img src="assets/images/voicebanks/full/Felix.png" alt="Felix" class="h-full object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(204,34,0,0.3)]">
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 bg-red-950 text-red-300 text-xs font-mono rounded border border-red-800/60">COLLAB</span>
+              <span class="text-xs text-gray-400 font-mono">UTAU VCV / English</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Felix</h3>
+            <p class="text-xs text-red-400 font-mono mb-2">เฟลิกซ์</p>
+            <p class="text-xs text-gray-300 leading-relaxed mb-4">โทนเสียงสากลคมชัด รองรับการขับร้องหลากหลายสไตล์ทั้งป็อปและอิเล็กทรอนิกส์</p>
+          </div>
+          <a href="singers/felix.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-red-900/50 hover:bg-red-700 text-white rounded-lg text-xs font-mono font-medium tracking-wide transition border border-red-600/40">
+            <span>เข้าสู่โปรไฟล์ & ดาวน์โหลด →</span>
+          </a>
+        </div>
 
-<!-- 06: Onika -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Onika.png" alt="Onika" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">06</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Onika</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>หญิง</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+        <!-- Ibara Kouya -->
+        <div class="collab-card">
+          <div>
+            <div class="relative w-full h-56 rounded-xl overflow-hidden mb-4 bg-black/40 border border-gray-800 flex items-center justify-center">
+              <img src="assets/images/voicebanks/full/Ibara Kouya.png" alt="Ibara Kouya" class="h-full object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(204,34,0,0.3)]">
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 bg-red-950 text-red-300 text-xs font-mono rounded border border-red-800/60">OVERSEAS</span>
+              <span class="text-xs text-gray-400 font-mono">UTAU VCV / Japanese</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Ibara Kouya</h3>
+            <p class="text-xs text-red-400 font-mono mb-2">อิบาระ โควยะ</p>
+            <p class="text-xs text-gray-300 leading-relaxed mb-4">ศิลปินสายพันธุ์เดือด โทนเสียงแกร่งทรงพลัง โดดเด่นในเพลงอนิเมะและเพลงร็อกสไตล์ญี่ปุ่น</p>
+          </div>
+          <a href="singers/ibara_kouya.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-red-900/50 hover:bg-red-700 text-white rounded-lg text-xs font-mono font-medium tracking-wide transition border border-red-600/40">
+            <span>เข้าสู่โปรไฟล์ & ดาวน์โหลด →</span>
+          </a>
+        </div>
 
-<!-- 07: Quint -->
-<article class="vcard" data-tags="jp,th,en">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Quint.png" alt="Quint" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">07</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Quint</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">หนึ่งในคลังเสียงพันธมิตรที่เปี่ยมไปด้วยคุณภาพและมาตรฐาน ภายใต้เครือข่ายความร่วมมือของ DELTA SYNTH</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>หญิง</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span><span class="tag-pill en">EN</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU JP VCV</span><span class="link-chip">UTAU Thai VCCV</span></div>
-  </div>
-</article>
+      </div>
+    </div>
 
-<!-- 08: Yokuatsu Takuto -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Yokuatsu Takuto.png" alt="Yokuatsu Takuto" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">08</span>
-  </div>
-  <div class="vcard-body">
-    <h3>Yokuatsu Takuto</h3>
-    <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-    <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-    <div class="vcard-stats"><div><b>เพศ</b><span>ชาย</span></div></div>
-    <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-    <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
-  </div>
-</article>
+    <!-- 9 Project Teams Overview Grid -->
+    <div class="glass-panel p-8 md:p-10 rounded-2xl border border-red-900/30">
+      <div class="border-b border-gray-800 pb-4 mb-6 flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white">9 Collaboration & Project Roster Categories</h2>
+          <p class="text-xs text-gray-400 font-mono mt-1">ORGANIZED BY CREATION CONTEXT & AFFILIATION</p>
+        </div>
+        <a href="project.html" class="text-xs text-red-400 hover:text-red-300 font-mono underline">ดูแบบเต็มในหน้า Project →</a>
+      </div>
 
-<!-- 09: Yuuya Sato -->
-<article class="vcard" data-tags="jp,th">
-  <div class="vcard-media">
-    <img src="assets/images/voicebanks/Yuuya Sato.png" alt="Yuuya Sato" loading="lazy">
-    <span class="status status-active">ACTIVE</span>
-    <span class="num">09</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 01</span>
+          <h3 class="text-base font-bold text-white mt-1">B.L. Student 2019 Team</h3>
+          <p class="text-xs text-gray-400 mt-1">นักร้องรุ่นบุกเบิกตัวแทนความตั้งใจแรกเริ่มของทางค่าย</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 02</span>
+          <h3 class="text-base font-bold text-white mt-1">Drawer Kingdom Team</h3>
+          <p class="text-xs text-gray-400 mt-1">กลุ่มนักร้องที่มีเอกลักษณ์เฉพาะตัวจากจินตนาการลายเส้น</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 03</span>
+          <h3 class="text-base font-bold text-white mt-1">Children Team</h3>
+          <p class="text-xs text-gray-400 mt-1">กลุ่มเสียงร้องสดใส วัยเยาว์ มีชีวิตชีวา</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 04</span>
+          <h3 class="text-base font-bold text-white mt-1">Older Singer Team</h3>
+          <p class="text-xs text-gray-400 mt-1">กลุ่มเสียงร้องสุขุม ทุ้มลึก และเปี่ยมด้วยประสบการณ์</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 05</span>
+          <h3 class="text-base font-bold text-white mt-1">Partner Creator Team</h3>
+          <p class="text-xs text-gray-400 mt-1">ความร่วมมือกับครีเอเตอร์และสตูดิโอพันธมิตร</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 06</span>
+          <h3 class="text-base font-bold text-white mt-1">Creator Collaboration</h3>
+          <p class="text-xs text-gray-400 mt-1">การร่วมสร้างสรรค์กับนักร้องของนักแต่งเพลงและโปรดิวเซอร์</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 07</span>
+          <h3 class="text-base font-bold text-white mt-1">Overseas Collaboration</h3>
+          <p class="text-xs text-gray-400 mt-1">ความร่วมมือกับนักร้องและผู้สร้างสรรค์จากต่างประเทศ</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 08</span>
+          <h3 class="text-base font-bold text-white mt-1">7-11 Staff Singer Team</h3>
+          <p class="text-xs text-gray-400 mt-1">นักร้องจากสภาพแวดล้อมจริงและเรื่องราวรอบตัวอันคุ้นเคย</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-gray-800 hover:border-red-500/40 transition">
+          <span class="text-xs font-mono text-red-400">TEAM 09</span>
+          <h3 class="text-base font-bold text-white mt-1">Volunteer Upgrade Charity</h3>
+          <p class="text-xs text-gray-400 mt-1">โครงการจิตอาสาและพัฒนาเพื่อสาธารณประโยชน์</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div class="vcard-body">
-  <h3>Yuuya Sato</h3>
-  <div class="role">ความร่วมมือ · ทีมพันธมิตร</div>
-  <p class="vcard-bio">คลังเสียงพันธมิตรคุณภาพจากเครือข่ายความร่วมมือ DELTA SYNTH พร้อมรองรับการสร้างสรรค์ผลงานเพลง</p>
-  <div class="vcard-stats"><div><b>เพศ</b><span>ชาย</span></div></div>
-  <div class="vcard-tags"><span class="tag-pill jp">JP</span><span class="tag-pill th">TH</span></div>
-  <div class="vcard-links"><span class="link-chip">UTAU Voicebank</span></div>
+</main>
+
+<!-- Unified Site Footer -->
+<footer class="site-footer" style="background: #05060c; border-top: 1px solid rgba(204,34,0,0.2); padding: 48px 0 24px; margin-top: 40px;">
+  <div class="wrap" style="max-width: 1180px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 32px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <span style="color: #cc2200; font-size: 22px; font-weight: bold;">Δ</span>
+          <span style="font-weight: 700; color: #fff;">DELTA SYNTH</span>
+        </div>
+        <p style="font-size: 13.5px; color: #9c97b8; line-height: 1.6;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งขึ้นในปี ค.ศ. 2019 สรรค์สร้างคลังเสียง UTAU และ DiffSinger AI พร้อมแจกจ่ายไฟล์โปรเจกต์ดนตรีฟรีเพื่อทุกคน</p>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc2200; margin-bottom: 12px;">Sitemap</h4>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: #9c97b8;">
+          <a href="index.html" class="hover:text-white transition">Main (หน้าแรก)</a>
+          <a href="about.html" class="hover:text-white transition">About Us (เกี่ยวกับเรา)</a>
+          <a href="voicebank.html" class="hover:text-white transition">All Voicebank (คลังเสียงทั้งหมด)</a>
+          <a href="files.html" class="hover:text-white transition">USTX / MIDI / SVP / VSQX (ไฟล์เพลง)</a>
+          <a href="collab.html" class="hover:text-white transition text-red-400">Collaboration (โปรเจกต์ร่วม)</a>
+          <a href="events.html" class="hover:text-white transition">Events (กิจกรรม)</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc2200; margin-bottom: 12px;">Contact & Community</h4>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: #9c97b8;">
+          <a href="mailto:delta.vocaloid09378@gmail.com" class="hover:text-white transition">Gmail: delta.vocaloid09378@gmail.com</a>
+          <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener" class="text-red-400 hover:text-red-300 transition font-medium">Google Drive Voicebanks Hub</a>
+          <a href="#" class="hover:text-white transition">YouTube: DELTA SYNTH Official</a>
+          <a href="#" class="hover:text-white transition">TikTok: @deltasynth</a>
+          <a href="#" class="hover:text-white transition">X: @deltasynth</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 12.5px; color: #6f6b8c;">
+      <span>© Since 2019 — DELTA SYNTH Studio. All rights reserved.</span>
+      <span>Made And Checked By DELTA SYNTH & Gemini AI</span>
+    </div>
   </div>
-</article>
-</div></div></section>
-<footer><div class="wrap"><div class="footer-grid"><div><div class="brand" style="margin-bottom:14px;"><span class="brand-mark">&#916;</span><span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span></div><p style="max-width:340px;font-size:13.5px;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย สำหรับ UTAU และ DiffSinger AI</p></div><div class="footer-links"><h4>Sitemap</h4><a href="index.html">Main</a><a href="about.html">About Us</a><a href="voicebank.html">All Voicebank</a><a href="collab.html">Collaboration</a><a href="events.html">Events</a></div><div class="footer-links"><h4>Contact</h4><a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a></div></div><div class="footer-bottom"><span>&#169; Since 2019 &#8211; DELTA SYNTH Team</span><span>Made in Thailand</span></div></div></footer>
-<script src="script.js"></script>
+</footer>
+
+<script src="js/starfield.js"></script>
+<script>
+  if (typeof Starfield !== 'undefined') {
+    new Starfield('space-bg');
+  }
+</script>
 </body>
 </html>

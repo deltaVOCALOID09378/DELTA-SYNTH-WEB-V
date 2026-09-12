@@ -1,0 +1,127 @@
+{
+    "$schema":  "https://openapi.vercel.sh/vercel.json",
+    "framework":  null,
+    "buildCommand":  "",
+    "installCommand":  "",
+    "outputDirectory":  "src/public",
+    "cleanUrls":  true,
+    "trailingSlash":  false,
+    "headers":  [
+                    {
+                        "source":  "/style.css",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=0, must-revalidate"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/script.js",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=0, must-revalidate"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/css/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/js/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/assets/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/images/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/Voice/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/(.*).html",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=0, must-revalidate"
+                                        }
+                                    ]
+                    },
+                    {
+                        "source":  "/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "X-Content-Type-Options",
+                                            "value":  "nosniff"
+                                        },
+                                        {
+                                            "key":  "X-Frame-Options",
+                                            "value":  "DENY"
+                                        },
+                                        {
+                                            "key":  "X-XSS-Protection",
+                                            "value":  "1; mode=block"
+                                        },
+                                        {
+                                            "key":  "Referrer-Policy",
+                                            "value":  "strict-origin-when-cross-origin"
+                                        },
+                                        {
+                                            "key":  "Permissions-Policy",
+                                            "value":  "camera=(), microphone=(), geolocation=()"
+                                        }
+                                    ]
+                    }
+                ],
+    "rewrites":  [
+                     {
+                         "source":  "/singers/:name",
+                         "destination":  "/singers/:name.html"
+                     }
+                 ],
+    "redirects":  [
+                      {
+                          "source":  "/:path*",
+                          "destination":  "https://delta-synth-studio.com/:path*",
+                          "permanent":  true,
+                          "has":  [
+                                      {
+                                          "type":  "host",
+                                          "value":  "www.delta-synth-studio.com"
+                                      }
+                                  ]
+                      }
+                  ]
+}

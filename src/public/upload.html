@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>DELTA SYNTH — File Upload Center</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+    .upload-card { background: #1e1e1e; border: 1px solid #333; border-radius: 12px; padding: 30px; width: 420px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); text-align: center; }
+    h2 { color: #cc2200; margin-top: 0; }
+    .drop-zone { border: 2px dashed #444; border-radius: 8px; padding: 25px; cursor: pointer; margin: 20px 0; transition: border 0.3s; }
+    .drop-zone:hover { border-color: #cc2200; }
+    input[type="file"] { display: none; }
+    .btn-upload { background: #cc2200; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.2s; }
+    .btn-upload:hover { background: #e62800; }
+    .status-box { margin-top: 15px; font-size: 14px; word-break: break-all; }
+  </style>
+</head>
+<body>
+
+<div class="upload-card">
+  <h2>อัปโหลดไฟล์เข้าสู่ระบบ</h2>
+  <p style="font-size: 13px; color: #888;">รองรับไฟล์เสียง (.wav, .mp3), รูปภาพ, และ .zip</p>
+
+  <div class="drop-zone" onclick="document.getElementById('fileInput').click()">
+    <span id="dropText">คลิกเพื่อเลือกไฟล์ หรือลากไฟล์มาวางที่นี่</span>
+    <input type="file" id="fileInput" name="file" />
+  </div>
+
+  <button class="btn-upload" id="submitBtn" onclick="uploadFile()">เริ่มการอัปโหลด</button>
+  <div class="status-box" id="status"></div>
+</div>
+
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const dropText = document.getElementById('dropText');
+  const statusDiv = document.getElementById('status');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      dropText.innerText = `ไฟล์ที่เลือก: ${fileInput.files[0].name}`;
+    }
+  });
+
+  async function uploadFile() {
+    if (fileInput.files.length === 0) {
+      statusDiv.innerHTML = '<span style="color: #ffaa00;">กรุณาเลือกไฟล์ก่อนอัปโหลด</span>';
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+
+    statusDiv.innerHTML = '<span style="color: #aaa;">กำลังอัปโหลด...</span>';
+
+    try {
+      const response = await fetch('/api/upload/single', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        statusDiv.innerHTML = `<span style="color: #00ff66;">${result.message}</span><br><a href="${result.data.url}" target="_blank" style="color: #4da6ff;">เปิดดูไฟล์</a>`;
+      } else {
+        statusDiv.innerHTML = `<span style="color: #ff4444;">เกิดข้อผิดพลาด: ${result.message}</span>`;
+      }
+    } catch (err) {
+      statusDiv.innerHTML = `<span style="color: #ff4444;">ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้</span>`;
+    }
+  }
+</script>
+</body>
+</html>

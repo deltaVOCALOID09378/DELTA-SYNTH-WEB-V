@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+  Revision: 2.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayanami Kyoko (อายานามิ เคียวโกะ) · DELTA SYNTH Official Profile</title>
+<meta name="description" content="ประวัติและข้อมูลคลังเสียง Ayanami Kyoko สตูดิโอ DELTA SYNTH รองรับ UTAU / DiffSinger ดาวน์โหลดฟรี">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230d0d0d%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23cc2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="../style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;600;800&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Leelawadee UI', 'Kanit', 'IBM Plex Sans Thai', sans-serif;
+  }
+  .glow-red {
+    text-shadow: 0 0 18px rgba(204, 34, 0, 0.8), 0 0 30px rgba(255, 68, 34, 0.4);
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-red-900 selection:text-white relative">
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" id="space-bg"></canvas>
+
+<!-- Top Site Header & Navigation -->
+<header class="site-header" style="position: sticky; top:0; z-index: 50; background: rgba(13, 13, 13, 0.90); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(204,34,0,0.3);">
+  <div class="nav" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;">
+    <a href="../index.html" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;">
+      <span class="brand-mark" style="color: #cc2200; font-size: 26px; font-weight: 900; text-shadow: 0 0 14px rgba(204,34,0,0.8);">Δ</span>
+      <div>
+        <div style="font-weight: 700; font-size: 17px; letter-spacing: 0.05em;">DELTA SYNTH</div>
+        <small style="display: block; font-size: 9px; letter-spacing: 0.15em; color: #a0a0a0;">VOCAL SYNTHESIS STUDIO</small>
+      </div>
+    </a>
+    <nav class="nav-links" id="site-navigation" style="display: flex; gap: 20px; font-size: 14px;">
+      <a href="../index.html" style="color: #f0f0f0; text-decoration: none;">Main</a>
+      <a href="../about.html" style="color: #f0f0f0; text-decoration: none;">About Us</a>
+      <a href="../voicebank.html" style="color: #ff4422; font-weight: 600; text-decoration: none;">All Voicebank</a>
+      <a href="index.html" style="color: #f0f0f0; text-decoration: none;">Singer Profiles</a>
+      <a href="../files.html" style="color: #f0f0f0; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
+      <a href="../collab.html" style="color: #f0f0f0; text-decoration: none;">Collaboration</a>
+      <a href="../events.html" style="color: #f0f0f0; text-decoration: none;">Events</a>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow pt-10 pb-20 relative z-10">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Breadcrumb & Back -->
+    <div class="mb-8 flex items-center justify-between flex-wrap gap-4">
+      <a class="inline-flex items-center gap-2 text-gray-400 hover:text-red-400 transition text-sm uppercase tracking-wider border border-gray-800 hover:border-red-500/50 px-5 py-2 rounded-full bg-black/40 backdrop-blur-md" href="../voicebank.html">
+        <span>← กลับสู่คลังเสียงทั้งหมด</span>
+        <span class="text-xs text-gray-500">/ Return to Voicebanks</span>
+      </a>
+      <div class="text-xs tracking-widest text-red-400/80 uppercase font-mono">
+        Official Character Roster · DELTA SYNTH
+      </div>
+    </div>
+
+    <!-- Main Character Presentation (FULL BODY) -->
+    <div class="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+      <!-- Left: Full Body Character Visual -->
+      <div class="w-full lg:w-1/2 flex justify-center items-center">
+        <div class="relative w-full max-w-md lg:max-w-xl flex justify-center items-center">
+          <div class="absolute inset-0 bg-red-600/10 rounded-full blur-[90px] pointer-events-none"></div>
+          <img alt="Ayanami Kyoko" 
+               class="relative z-10 w-full h-auto object-contain singer-image hover:scale-[1.03] max-h-[85vh] transition-transform duration-500 drop-shadow-[0_0_35px_rgba(204,34,0,0.35)]" 
+               src="../assets/images/voicebanks/full/Ayanami Kyoko.png" 
+               onerror="this.src='../assets/images/voicebanks/Ayanami Kyoko.png'" />
+        </div>
+      </div>
+
+      <!-- Right: Detailed Info & Actions Panel -->
+      <div class="w-full lg:w-1/2 flex flex-col">
+        <div class="glass-panel">
+          <div class="border-b border-gray-800/80 pb-6 mb-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-3 py-1 bg-red-900/60 text-red-300 text-xs font-mono font-semibold rounded-full border border-red-700/50 uppercase tracking-wider">ACTIVE · READY</span>
+              <span class="text-xs text-gray-400 font-mono">Official DELTA</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight glow-red mb-1">Ayanami Kyoko</h1>
+            <h2 class="text-lg md:text-xl text-red-400 font-light tracking-wide">อายานามิ เคียวโกะ</h2>
+          </div>
+
+          <!-- Specs Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8 bg-black/30 p-5 rounded-xl border border-gray-800/50">
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Age / อายุ</p>
+              <p class="text-base text-white font-medium">19</p>
+            </div>
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Gender / เพศ</p>
+              <p class="text-base text-white font-medium">Female</p>
+            </div>
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Voicer / ผู้ให้เสียง</p>
+              <p class="text-base text-white font-medium">DELTA SYNTH</p>
+            </div>
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Genre / แนวเพลง</p>
+              <p class="text-base text-white font-medium">Pop / Rock / Anisong / Ballad</p>
+            </div>
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Engine / เอนจิน</p>
+              <p class="text-base text-white font-medium">UTAU / DiffSinger</p>
+            </div>
+            <div>
+              <p class="text-xs text-red-400 uppercase tracking-wider font-mono mb-1">Language / ภาษา</p>
+              <p class="text-base text-white font-medium">Thai, Japanese, English</p>
+            </div>
+          </div>
+
+          <!-- Biography Section -->
+          <div class="border-t border-gray-800/60 pt-6 mb-8">
+            <h3 class="text-xs text-red-400 uppercase tracking-widest font-mono mb-3">Biography / ประวัติและความเป็นมา</h3>
+            <p class="text-gray-200 font-light leading-relaxed text-base mb-3 font-th">นักร้องหญิงจากโปรเจกต์ All DELTA's Voice Acting เปิดตัวปี 2021 เสียงทรงพลังในช่วงสูง เป็นตัวละครแรกของค่ายที่ได้ทดลองใช้เทคโนโลยี Diffsinger AI ร่วมกับทีม Printmov ต่อยอดจากรากฐานเสียงที่วางไว้โดยฮิคารุ</p>
+            <p class="text-gray-400 font-light leading-relaxed text-sm font-en text-red-200/70">Ayanami Kyoko is a featured virtual singer in the DELTA SYNTH studio roster, delivering high fidelity virtual vocal performances with rich multi-lingual versatility.</p>
+          </div>
+
+          <!-- Audio Demo Player -->
+          <div class="border-t border-gray-800/60 pt-6 mb-8">
+            <h3 class="text-xs text-red-400 uppercase tracking-widest font-mono mb-3">Audio Sample / ตัวอย่างเสียงร้อง</h3>
+            <div class="bg-black/50 border border-gray-800/80 p-4 rounded-xl flex items-center justify-between gap-4">
+              <span class="text-sm text-gray-300 font-mono">Demo Preview: Ayanami Kyoko</span>
+              <div class="text-xs text-gray-400 font-mono italic">Audio sample in production · ตัวอย่างเสียงร้องกำลังจัดทำ</div>
+            </div>
+          </div>
+
+          <!-- Individual Voicebank Archives & Downloads -->
+          <div class="vb-archive-section">
+            <div class="vb-archive-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cc2200" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <span>คลังเสียงพร้อมดาวน์โหลด (6 รายการ) · VOICEBANK ARCHIVES</span>
+            </div>
+            
+            <div class="vb-archive-list">
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami Kyoko AI SN v.1.1.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-diffsinger">DiffSinger AI</span>
+                    <span class="vb-badge vb-badge-lang">Multi-lingual</span>
+                    <span class="vb-badge vb-badge-size">416.6 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami Kyoko AI SN v.1.1.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami Kyoko Thai VCCV v.2.0.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-engine">UTAU VCCV</span>
+                    <span class="vb-badge vb-badge-lang">Thai</span>
+                    <span class="vb-badge vb-badge-size">125.9 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami Kyoko Thai VCCV v.2.0.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami kyoko ENG Arpasing Beta v.1.0.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-engine">UTAU Arpasing</span>
+                    <span class="vb-badge vb-badge-lang">English</span>
+                    <span class="vb-badge vb-badge-size">140.4 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami kyoko ENG Arpasing Beta v.1.0.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami Kyoko JPN VCV v.1.0.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-engine">UTAU VCV</span>
+                    <span class="vb-badge vb-badge-lang">Japanese</span>
+                    <span class="vb-badge vb-badge-size">87.4 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami Kyoko JPN VCV v.1.0.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami Kyoko EVO ENG Arpasing 2024 v.1.0.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-engine">UTAU Arpasing</span>
+                    <span class="vb-badge vb-badge-lang">English</span>
+                    <span class="vb-badge vb-badge-size">55.3 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami Kyoko EVO ENG Arpasing 2024 v.1.0.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+
+              <div class="vb-archive-card">
+                <div class="vb-archive-info">
+                  <div class="vb-archive-name">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Ayanami Kyoko EVO 6th Japanese CV v.1.0.rar</span>
+                  </div>
+                  <div class="vb-archive-meta">
+                    <span class="vb-badge vb-badge-engine">UTAU CV</span>
+                    <span class="vb-badge vb-badge-lang">Japanese</span>
+                    <span class="vb-badge vb-badge-size">23.1 MB</span>
+                  </div>
+                </div>
+                <a class="vb-btn-download" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" title="ดาวน์โหลด Ayanami Kyoko EVO 6th Japanese CV v.1.0.rar">
+                  <span>⚡ ดาวน์โหลด</span>
+                </a>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; text-align: center;">
+              <a class="btn-drive" href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <span>📂 เข้าสู่คลังไดรฟ์หลัก DELTA SYNTH Voicebank Hub →</span>
+              </a>
+              <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
+                เข้าถึงโฟลเดอร์รวมทั้งหมดบน <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" style="color: #ff5533; text-decoration: underline;">Official Google Drive Voicebank Repository</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Unified Site Footer -->
+<footer class="site-footer" style="background: #05060c; border-top: 1px solid rgba(204,34,0,0.2); padding: 48px 0 24px; margin-top: 40px;">
+  <div class="wrap" style="max-width: 1180px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 32px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <span style="color: #cc2200; font-size: 22px; font-weight: bold;">Δ</span>
+          <span style="font-weight: 700; color: #fff;">DELTA SYNTH</span>
+        </div>
+        <p style="font-size: 13.5px; color: #a0a0a0; line-height: 1.6;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งขึ้นในปี ค.ศ. 2019 สรรค์สร้างคลังเสียง UTAU และ DiffSinger AI พร้อมแจกจ่ายไฟล์โปรเจกต์ดนตรีฟรีเพื่อทุกคน</p>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc2200; margin-bottom: 12px;">Sitemap</h4>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: #a0a0a0;">
+          <a href="../index.html" style="color: #a0a0a0; text-decoration: none;">Main</a>
+          <a href="../about.html" style="color: #a0a0a0; text-decoration: none;">About Us</a>
+          <a href="../voicebank.html" style="color: #a0a0a0; text-decoration: none;">All Voicebank</a>
+          <a href="index.html" style="color: #ff5533; text-decoration: none;">Singer Profiles (54)</a>
+          <a href="../files.html" style="color: #a0a0a0; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
+          <a href="../collab.html" style="color: #a0a0a0; text-decoration: none;">Collaboration</a>
+          <a href="../events.html" style="color: #a0a0a0; text-decoration: none;">Events</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #cc2200; margin-bottom: 12px;">Contact & Social</h4>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: #a0a0a0;">
+          <a href="mailto:delta.vocaloid09378@gmail.com" style="color: #a0a0a0; text-decoration: none;">Email: delta.vocaloid09378@gmail.com</a>
+          <a href="https://www.youtube.com/@DELTASYNTH" target="_blank" rel="noopener noreferrer" style="color: #a0a0a0; text-decoration: none;">YouTube: DELTA SYNTH Official</a>
+          <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" style="color: #ff5533; text-decoration: none;">Google Drive Repository</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: #707070;">
+      <div>© Since 2019 — DELTA SYNTH's Team. All rights reserved.</div>
+      <div>Cyberpunk Vocal Synthesis Design System · Ver 2.0</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
