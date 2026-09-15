@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "delta-synth-studio.co.th": {
+      "development": {
+        "fallback": "...loading.vercel.app"
+      }
+    }
+  }
+}
