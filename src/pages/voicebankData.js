@@ -74,7 +74,7 @@ export const VOICEBANKS = [
     name: 'Kochujang',
     nameTh: 'โคชูจัง',
     gender: 'Female',
-    age: 18,
+    age: 17,
     voicer: 'DELTA SYNTH',
     engine: 'UTAU CVVC / DiffSinger',
     type: 'Official DELTA',
@@ -93,8 +93,8 @@ export const VOICEBANKS = [
     id: 'thitiya_anantanetr',
     name: 'Thitiya Anantanetr',
     nameTh: 'ธิติยา อนันตเนตร',
-    gender: 'Female',
-    age: 21,
+    gender: 'Male',
+    age: 24,
     voicer: 'DELTA SYNTH',
     engine: 'UTAU VCCV / DiffSinger',
     type: 'Official DELTA',
@@ -114,7 +114,7 @@ export const VOICEBANKS = [
     name: 'Arun Kamonlanert',
     nameTh: 'อรุณ กมลเนตร',
     gender: 'Male',
-    age: 23,
+    age: 22,
     voicer: 'DELTA SYNTH',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
@@ -172,7 +172,7 @@ export const VOICEBANKS = [
   {
     id: 'beem_powerine',
     name: 'Beem Powerine',
-    nameTh: 'บีม พาวเวอร์ไรน์',
+    nameTh: 'บีม พา��เวอร์ไรน์',
     gender: 'Female',
     age: 18,
     voicer: 'DELTA SYNTH',
@@ -346,7 +346,7 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Fangyu.wav',
     detailUrl: 'singers/fangyu.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'น้ำเสียงสไตล์กั๋วเฟิงอันสง่างามและทันสมัย รองรับภาษาจีนและไทยอย่างยอดเยี่ยม',
+    description: 'น้ำเสียงสไตล์กั๋วเฟิงอันสง่างามและทันสมัย รองรับภาษาจีนแล���ไทยอย่างยอดเยี่ยม',
     tags: ['DiffSinger', 'Collaboration', 'Female', 'CPop']
   },
   {
@@ -547,7 +547,7 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Mairu Maishi.wav',
     detailUrl: 'singers/mairu_maishi.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงไอดอลน่ารักสดใส เต็มไปด้วยพลังบวกและความมีชีวิตชีวา',
+    description: '���สียงไอดอลน่ารักสดใส เต็มไปด้วยพลังบวกและความมีชีวิตชีวา',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Idol']
   },
   {
@@ -727,7 +727,7 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Quint.wav',
     detailUrl: 'singers/quint.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'น้ำเสียงสไตล์เรโทรเวฟ ผสมความล้ำสมัยในแบบ DELTA SYNTH',
+    description: 'น้ำเสียงสไตล์เรโทรเ���ฟ ผสมความล้ำสมัยในแบบ DELTA SYNTH',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Synthwave']
   },
   {
