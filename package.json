@@ -13,7 +13,10 @@
     "react": "16.14.0"
   },
   "scripts": {
-    "dev": "wix dev",
+    "dev": "node tools/static-server.mjs",
+    "start": "node tools/static-server.mjs",
+    "wix:dev": "wix dev",
+    "build": "node --check tools/static-server.mjs && node --check server.js",
     "lint": "eslint .",
     "test": "node tests/run-all-tests.js"
   },

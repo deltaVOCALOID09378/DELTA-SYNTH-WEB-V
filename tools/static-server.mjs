@@ -5,7 +5,10 @@ import { extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = fileURLToPath(new URL("..", import.meta.url));
-const publicRoot = join(projectRoot, "src", "public");
+const siteRoots = [
+  { prefix: "/", directory: join(projectRoot, "src", "public") },
+  { prefix: "/pages/", directory: join(projectRoot, "src", "pages") },
+];
 const port = Number(process.env.PORT || process.argv[2] || 3000);
 
 const mimeTypes = {
@@ -25,9 +28,12 @@ const mimeTypes = {
 
 function getSafePath(requestUrl) {
   const pathname = decodeURIComponent(new URL(requestUrl, "http://localhost").pathname);
-  const relativePath = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
-  const filePath = normalize(join(publicRoot, relativePath));
-  return filePath === publicRoot || filePath.startsWith(`${publicRoot}${sep}`) ? filePath : null;
+  const root = siteRoots.find(({ prefix }) => pathname === prefix.slice(0, -1) || pathname.startsWith(prefix));
+  if (!root) return null;
+
+  const relativePath = pathname === "/" ? "index.html" : pathname.slice(root.prefix.length);
+  const filePath = normalize(join(root.directory, relativePath || "index.html"));
+  return filePath === root.directory || filePath.startsWith(`${root.directory}${sep}`) ? filePath : null;
 }
 
 async function resolveFilePath(requestUrl) {
@@ -38,10 +44,21 @@ async function resolveFilePath(requestUrl) {
     const stats = await fs.stat(requestedPath);
     if (stats.isFile()) return requestedPath;
   } catch {
-    // Fall through to the static site's entry point for unknown routes.
+    // Fall through to shared assets or the site's entry point for unknown routes.
   }
 
-  const fallbackPath = join(publicRoot, "index.html");
+  const pathname = decodeURIComponent(new URL(requestUrl, "http://localhost").pathname);
+  if (pathname.startsWith("/pages/")) {
+    const sharedAssetPath = join(siteRoots[0].directory, pathname.slice("/pages/".length));
+    try {
+      const stats = await fs.stat(sharedAssetPath);
+      if (stats.isFile()) return sharedAssetPath;
+    } catch {
+      // Continue to the public entry point when the shared asset is unavailable.
+    }
+  }
+
+  const fallbackPath = join(siteRoots[0].directory, "index.html");
   try {
     await fs.access(fallbackPath);
     return fallbackPath;
