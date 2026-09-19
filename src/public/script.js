@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizePage = (value) => {
+    const path = String(value || '').split(/[?#]/)[0];
+    const segments = path.split('/').filter(Boolean);
+    const filename = segments[segments.length - 1] || 'index.html';
+    return filename.replace(/\.html$/i, '').toLowerCase() || 'index';
+  };
+  const currentPath = window.location.pathname.toLowerCase();
+  const currentPage = currentPath.includes('/singers/')
+    ? 'voicebank'
+    : normalizePage(currentPath);
 
   const setExpanded = (control, expanded) => {
     control.setAttribute('aria-expanded', String(expanded));
@@ -77,8 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) {
       return;
     }
-    const targetPage = href.split('/').pop()?.split('#')[0];
-    if (targetPage === currentPage) {
+    const targetPage = normalizePage(href);
+    const matchesCurrentPage = targetPage === currentPage
+      || (currentPage === 'voicebank' && targetPage === 'singers');
+
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (matchesCurrentPage) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }

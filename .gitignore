@@ -18,9 +18,15 @@ temp_curl.txt
 temp_curl2.txt
 DELTA_SYNTH/DELTA_SYNTH/
 .tmp.driveupload/
+.tmp.drivedownload/
+.venv/
+my-website/
 Published/
 src/pages/Voice/
-
+*.log
 
 scratch/
 *.gdoc
+
+.vercel
+.env*
