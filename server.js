@@ -78,7 +78,7 @@ const upload = multer({
 // ============================================================================
 
 // 1. Health check & system status
-app.get('/api/v1/health', (req, res) => {
+const healthHandler = (req, res) => {
   res.status(200).json({
     success: true,
     data: {
@@ -89,7 +89,9 @@ app.get('/api/v1/health', (req, res) => {
       timestamp: new Date().toISOString()
     }
   });
-});
+};
+app.get(['/api/v1/health', '/health', '/healthz'], healthHandler);
+app.head(['/health', '/healthz'], (_req, res) => res.status(200).end());
 
 // 2. Resource: Voicebanks Collection
 app.get('/api/v1/voicebanks', (req, res) => {
@@ -301,7 +303,24 @@ app.use((req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`[DELTA SYNTH] RESTful Server running on http://localhost:${PORT}`);
   console.log(`[DELTA SYNTH] Serving static content from: ${publicDir}`);
 });
+
+let isShuttingDown = false;
+function gracefulShutdown(signal) {
+  if (isShuttingDown) return;
+  isShuttingDown = true;
+  console.log(`[DELTA SYNTH] ${signal} received: closing server gracefully`);
+  server.close(() => {
+    console.log('[DELTA SYNTH] Server closed cleanly');
+    process.exit(0);
+  });
+  setTimeout(() => process.exit(1), 10000).unref();
+}
+
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+
+export { app, server };
