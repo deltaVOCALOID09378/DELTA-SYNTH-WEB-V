@@ -667,8 +667,10 @@
       return;
     }
 
+    const navLinks = document.querySelector('.site-header .nav-links') || document.querySelector('#site-navigation') || document.querySelector('.nav-links');
     const nav = document.querySelector('.site-header .nav') || document.querySelector('.nav') || document.querySelector('header');
-    if (!nav) return;
+    const container = navLinks || nav;
+    if (!container) return;
 
     const switcher = document.createElement('div');
     switcher.className = 'lang-switcher';
@@ -688,26 +690,28 @@
       <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Language">
         <span class="lang-current" id="lang-current">Language</span>
       </button>
-      <div class="lang-dropdown" id="lang-dropdown" role="menu" aria-label="Language selection">
+      <div class="lang-dropdown" id="lang-dropdown" style="display: none !important;" role="menu" aria-label="Language selection">
         ${langItemsHtml}
       </div>
     `;
 
-    // Insert before nav-toggle if present, otherwise append
-    const navToggle = nav.querySelector('.nav-toggle') || nav.querySelector('#mobile-menu-btn');
-    if (navToggle) {
-      nav.insertBefore(switcher, navToggle);
-    } else {
-      nav.appendChild(switcher);
-    }
+    container.appendChild(switcher);
 
     const btn = switcher.querySelector('#lang-btn');
     const dropdown = switcher.querySelector('#lang-dropdown');
 
     const toggleDropdown = (open) => {
-      const isOpen = open !== undefined ? open : !dropdown.classList.contains('show');
-      dropdown.classList.toggle('show', isOpen);
-      btn.setAttribute('aria-expanded', String(isOpen));
+      const isCurrentlyOpen = dropdown.classList.contains('show') && dropdown.style.display !== 'none';
+      const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+      if (shouldOpen) {
+        dropdown.style.setProperty('display', 'flex', 'important');
+        dropdown.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        dropdown.style.setProperty('display', 'none', 'important');
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     };
 
     btn.addEventListener('click', (e) => {
