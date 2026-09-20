@@ -1,252 +1,40 @@
 <!DOCTYPE html>
-<!-- Made And Checked By DELTA SYNTH & All Agentic AI -->
-<!-- Original by DELTA SYNTH -->
-<!-- Version: 0.1 -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collaboration Voicebanks - DELTA SYNTH Studio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>body { font-family: "Inter", sans-serif; }</style>
+<!-- 
+  Made And Checked By DELTA SYNTH & Gemini AI 
+  Original by Patiphat Wongyai (DELTA SYNTH)
+-->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects &amp; Voicebanks - DELTA SYNTH Studio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="profile-theme.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>body { font-family: "Inter", sans-serif; }</style>
+
+<!-- Bilingual Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&amp;family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<style>
+        .font-th { font-family: 'Kanit', sans-serif; }
+        .font-en { font-family: 'Inter', sans-serif; }
+</style>
 </head>
 <body class="bg-black text-gray-200 flex flex-col min-h-screen">
-  <!-- Navbar -->
-  <nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold tracking-wider">DELTA SYNTH</a>
-      <div class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-red-500 transition">Home</a>
-        <a href="about.html" class="hover:text-red-500 transition">About Us</a>
-        <a href="voicebank.html" class="hover:text-red-500 transition">Voicebanks</a>
-        <a href="#" class="hover:text-red-500 transition">Files</a>
-        <a href="#" class="hover:text-red-500 transition">Events</a>
-        <a href="project.html" class="hover:text-red-500 transition text-red-500">Project</a>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
-        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About Us</a>
-        <a href="voicebank.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Voicebanks</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Files</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Events</a>
-        <a href="project.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md">Project</a>
-      </div>
-    </div>
-  </nav>
-  
-  <main class="flex-grow pt-24 pb-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-4 text-center uppercase tracking-widest">DELTA SYNTH Projects</h1>
-      <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">รวบรวมรายชื่อโปรเจกต์และกลุ่มศิลปินทั้งหมดในความดูแลของค่าย ทั้งนักร้องที่ขึ้นตรงกับค่าย และนักร้องที่เข้าร่วมโปรเจกต์คอลแลป</p>
-      
-      <!-- Section 1 -->
-      <div class="mb-16">
-        <div class="border-b border-gray-700 pb-4 mb-8">
-          <h2 class="text-3xl font-extrabold text-white mb-2">01. The Singing Group from the B.L. Student 2019 Team</h2>
-          <p class="text-gray-400 text-lg">นักร้องที่ขึ้นตรงกับทางค่ายอย่างเป็นทางการ</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/ayanami_hikaru.html"><img src="assets/images/voicebanks/Ayanami Hikaru.png" alt="Ayanami Hikaru" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Ayanami Hikaru</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 20</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Male</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> DELTA SYNTH</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/ayanami_hikaru.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/ayanami_kyoko.html"><img src="assets/images/voicebanks/Ayanami Kyoko.png" alt="Ayanami Kyoko" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Ayanami Kyoko</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Female</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> DELTA SYNTH</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Any</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/ayanami_kyoko.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/guren_kani.html"><img src="assets/images/voicebanks/Guren Kani.png" alt="Guren Kani" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Guren Kani</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 22</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Male | <span class="font-semibold text-gray-300">Weight:</span> 65kg | <span class="font-semibold text-gray-300">Height:</span> 172cm</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> MikiBlackqueen</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Any</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/guren_kani.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/kochujang.html"><img src="assets/images/voicebanks/Kochujang.png" alt="Kochujang" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Kochujang</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 17</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Female | <span class="font-semibold text-gray-300">Weight:</span> 55kg | <span class="font-semibold text-gray-300">Height:</span> 167cm</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> TangmoThipphawan</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/kochujang.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/sun.html"><img src="assets/images/voicebanks/SUN.png" alt="SUN" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">SUN</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> DELTA SYNTH</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/sun.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Section 2 -->
-      <div class="mb-16">
-        <div class="border-b border-gray-700 pb-4 mb-8">
-          <h2 class="text-3xl font-extrabold text-white mb-2">02. The Singing Group from the Drawer Kingdom Team</h2>
-          <p class="text-gray-400 text-lg">กลุ่มนักร้องสายศิลป์ผู้หลงใหลในเสียงดนตรี</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/ahctan.html"><img src="assets/images/voicebanks/Ahctan.png" alt="Ahctan" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Ahctan</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> Unknown</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/ahctan.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-          <!-- Repeat structure for Dokya, Narisa, Root, Saphire Blue, Savanna, Tackpee, Thitiya -->
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/thitiya_anantanetr.html"><img src="assets/images/voicebanks/Thitiya Anantanetr.png" alt="Thitiya Anantanetr" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Thitiya Anantanetr</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 24</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Male | <span class="font-semibold text-gray-300">Weight:</span> ? | <span class="font-semibold text-gray-300">Height:</span> ?</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> Thitiya Thai Pinpong</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Any</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/thitiya_anantanetr.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 3 -->
-      <div class="mb-16">
-        <div class="border-b border-gray-700 pb-4 mb-8">
-          <h2 class="text-3xl font-extrabold text-white mb-2">03. The Singing Group from the Children Team</h2>
-          <p class="text-gray-400 text-lg">กลุ่มนักร้องรุ่นเยาว์ที่ขึ้นตรงกับทางค่าย</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/yamada_takeshi.html"><img src="assets/images/voicebanks/Yamada Takeshi.png" alt="Yamada Takeshi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Yamada Takeshi</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 10</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Male | <span class="font-semibold text-gray-300">Weight:</span> 42kg | <span class="font-semibold text-gray-300">Height:</span> 137cm</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> Seriku</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Any</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/yamada_takeshi.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 4 -->
-      <div class="mb-16">
-        <div class="border-b border-gray-700 pb-4 mb-8">
-          <h2 class="text-3xl font-extrabold text-white mb-2">04. The Singing Group from the Older Singer Team</h2>
-          <p class="text-gray-400 text-lg">กลุ่มนักร้องอาวุโสที่ขึ้นตรงกับทางค่าย</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/sriphan.html"><img src="assets/images/voicebanks/SRIPHAN.png" alt="SRIPHAN" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">SRIPHAN</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 24</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Female | <span class="font-semibold text-gray-300">Weight:</span> 55kg | <span class="font-semibold text-gray-300">Height:</span> 170cm</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> Miss Choi</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Any</li>
-              </ul>
-              <div class="space-y-2 mt-auto w-full">
-                <a href="singers/sriphan.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Section 5 -->
-      <div class="mb-16">
-        <div class="border-b border-gray-700 pb-4 mb-8">
-          <h2 class="text-3xl font-extrabold text-white mb-2">05. The Singing Group from the Partner Creator Team</h2>
-          <p class="text-gray-400 text-lg">ศิลปินพันธมิตรที่ร่วมสร้างสรรค์ผลงาน</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
-            <a href="singers/diwachi.html"><img src="assets/images/voicebanks/Diwachi.png" alt="Diwachi" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-            <div class="p-6 flex-grow flex flex-col items-center text-center">
-              <h3 class="text-2xl font-bold text-white mb-2">Diwachi</h3>
-              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
-                <li><span class="font-semibold text-gray-300">Age:</span> 20</li>
-                <li><span class="font-semibold text-gray-300">Gender:</span> Male</li>
-                <li><span class="font-semibold text-gray-300">Voicer:</span> Wachi TH</li>
-                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
-              </ul>
-              <div class="space-y-2 mt<a class="hover:text-red-500 transition" href="events.html">Events</a>
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" id="space-bg"></canvas>
+<!-- Navbar -->
+<nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a class="text-2xl font-bold tracking-wider" href="index.html"><img src="images/logo.png" alt="Logo" class="logo-image inline-block mr-2"><span class="space-glow">DELTA SYNTH</span></a>
+<!-- Desktop menu -->
+<div class="hidden md:flex space-x-6">
+<a class="hover:text-red-500 transition" href="index.html">Home</a>
+<a class="hover:text-red-500 transition" href="about.html">About Us</a>
+<a class="hover:text-red-500 transition" href="voicebank.html">Voicebanks</a>
+<a class="hover:text-red-500 transition" href="files.html">Files</a>
+<a class="hover:text-red-500 transition" href="events.html">Events</a>
 <a class="hover:text-red-500 transition text-red-500" href="project.html">Project</a>
 </div>
 <!-- Hamburger button for mobile -->
