@@ -9,10 +9,6 @@ const RAW_VOICEBANKS = [
   { file: "Ahctan ENG Arpasing v.1.0.rar", bytes: 118088326, singer: "ahctan" },
   { file: "Ahctan JPN VCV v1.0.rar", bytes: 97126881, singer: "ahctan" },
   { file: "Ahctan Thai VCCV v1.0.zip", bytes: 32516474, singer: "ahctan" },
-  { file: "Arun Kamonlanetr JP VCV Multipitch.rar", bytes: 54935317, singer: "arun_kamonlanetr" },
-  { file: "Arun Kamonlanetr Special 2026 JPN VCV v.1.0 (1).rar", bytes: 100801259, singer: "arun_kamonlanetr" },
-  { file: "Arun Kamonlanetr Special 2026 JPN VCV v.1.0.rar", bytes: 100801259, singer: "arun_kamonlanetr" },
-  { file: "Arun Kamonlanetr THAI VCCV 2025.rar", bytes: 85339886, singer: "arun_kamonlanetr" },
   { file: "Ayanami  Hikaru JP CV5 2020.rar", bytes: 57747016, singer: "ayanami_hikaru" },
   { file: "Ayanami Hikaru 2019 Voice Voicebank JPN VCV v.1.0.rar", bytes: 93934663, singer: "ayanami_hikaru" },
   { file: "Ayanami Hikaru 2021 ENG CZ VCCV1 v.1.5.rar", bytes: 228367470, singer: "ayanami_hikaru" },
@@ -117,10 +113,6 @@ const RAW_VOICEBANKS = [
   { file: "Natsune Tanda For Collaboration in 2026 JPN VCV v.1.0.rar", bytes: 54763361, singer: "okaminari_tanda" },
   { file: "Oborone Tsukihana ENG Arpasing v.1.0.rar", bytes: 91279970, singer: "yamada_satoru" },
   { file: "Oborone Tsukihana JPN CV V.1.0.rar", bytes: 25784659, singer: "yamada_satoru" },
-  { file: "Onika JPN VCV Collaboration v.1.0..rar", bytes: 64970935, singer: "onika" },
-  { file: "Onika New Full Type in 2026 English Arpasing v.1.0.rar", bytes: 91227571, singer: "onika" },
-  { file: "Onika New Type 2026 JPN VCV v.2.0.rar", bytes: 60130437, singer: "onika" },
-  { file: "Onika The First Type for ENG Arpasing v.1.0.rar", bytes: 232732230, singer: "onika" },
   { file: "Quint New Type For Collaboration in 2026 English Arpasing v.1.0.rar", bytes: 104580137, singer: "quint" },
   { file: "Quint New Type For Collaboration in 2026 JPN VCV v.1.6.rar", bytes: 91407454, singer: "quint" },
   { file: "RelVeN New For 2026 JPN VCV v.1.0.rar", bytes: 57872709, singer: "relven" },
@@ -161,9 +153,6 @@ const RAW_VOICEBANKS = [
   { file: "Uchu Sutori JPN VCV v.1.0.rar", bytes: 84278951, singer: "uchu_sutori" },
   { file: "Uchu Sutori JPN VCV v.2.0.rar", bytes: 59865009, singer: "uchu_sutori" },
   { file: "Uchu Sutori TH-EN-JP Pack v.2.0.rar", bytes: 207564133, singer: "uchu_sutori" },
-  { file: "Utashi Nara English Arpasing v.1.0.rar", bytes: 87880966, singer: "utashi_nara" },
-  { file: "Utashi Nara for The Callaboration in 2026 JPN VCV v.1.0 (1).rar", bytes: 83647735, singer: "utashi_nara" },
-  { file: "Utashi Nara for The Callaboration in 2026 JPN VCV v.1.0.rar", bytes: 83647735, singer: "utashi_nara" },
   { file: "Yamada Satoru English Arpasing v.1.0.rar", bytes: 93740113, singer: "yamada_satoru" },
   { file: "Yamada Takeshi Original Vocal in JPN CV v.1.0.rar", bytes: 16391599, singer: "yamada_takeshi" },
   { file: "Yokuatsu Takuto Beta The First Voice Collaboration 2025 ENG Arpasing v.1.0.rar", bytes: 113494550, singer: "yokuatsu_takuto" },
@@ -220,11 +209,48 @@ for (const s of Object.keys(voicebanksBySinger)) {
   });
 }
 
-// Save json
+// Explicitly set Private singers to empty arrays in the public catalog
+const PRIVATE_SINGERS = ['arun_kamonlanetr', 'onika', 'utashi_nara'];
+for (const priv of PRIVATE_SINGERS) {
+  voicebanksBySinger[priv] = [];
+}
+
+// Save json to both src/public and src/pages
 fs.writeFileSync('src/public/voicebanks_catalog.json', JSON.stringify(voicebanksBySinger, null, 2), 'utf8');
-console.log(`Saved src/public/voicebanks_catalog.json with ${RAW_VOICEBANKS.length} voicebanks mapped across ${Object.keys(voicebanksBySinger).length} singers.`);
+fs.writeFileSync('src/pages/voicebanks_catalog.json', JSON.stringify(voicebanksBySinger, null, 2), 'utf8');
+console.log(`Saved voicebanks_catalog.json with ${RAW_VOICEBANKS.length} voicebanks mapped across ${Object.keys(voicebanksBySinger).length} singers.`);
 
 function generateVoicebankHtml(singerId) {
+  if (PRIVATE_SINGERS.includes(singerId)) {
+    return `          <!-- Voicebank Status: Private -->
+          <div class="vb-archive-section">
+            <div class="vb-archive-title" style="color: #ff4422;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cc2200" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>สถานะคลังเสียง · VOICEBANK STATUS</span>
+            </div>
+            
+            <div class="vb-private-card">
+              <div class="vb-private-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4422" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="vb-private-title">
+                  คลังเสียงสถานะ: <span style="color: #ff4422;">ไพรเวท (Private Voicebank)</span>
+                </div>
+                <p class="vb-private-desc">
+                  คลังเสียงของตัวละครนี้เป็นคลังเสียงส่วนตัว (Private Voicebank) สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ DELTA SYNTH และโปรเจกต์พิเศษ ไม่เปิดให้ดาวน์โหลดไฟล์สาธารณะ
+                </p>
+              </div>
+              <div class="vb-private-badge">
+                🔒 PRIVATE ACCESS ONLY · สถานะคลังเสียงส่วนตัว
+              </div>
+            </div>
+          </div>`;
+  }
+
   const items = voicebanksBySinger[singerId] || [];
   
   let listHtml = '';
@@ -295,12 +321,19 @@ function updateSingerFile(filePath) {
 
   const newSection = generateVoicebankHtml(singerId);
 
-  const marker1 = '<!-- Master Voicebank Access & Download Buttons -->';
-  const marker2 = '<!-- Individual Voicebank Archives & Downloads -->';
+  const markers = [
+    '<!-- Voicebank Status: Private -->',
+    '<!-- Individual Voicebank Archives & Downloads -->',
+    '<!-- Master Voicebank Access & Download Buttons -->'
+  ];
 
-  let startIdx = content.indexOf(marker1);
-  if (startIdx === -1) {
-    startIdx = content.indexOf(marker2);
+  let startIdx = -1;
+  for (const m of markers) {
+    const idx = content.indexOf(m);
+    if (idx !== -1) {
+      startIdx = idx;
+      break;
+    }
   }
 
   const endIdx = content.indexOf('</main>');
@@ -326,6 +359,16 @@ for (const f of srcFiles) {
 }
 console.log(`Updated ${srcCount} singer files in src/public/singers.`);
 
+const pagesSingersDir = "src/pages/singers";
+if (fs.existsSync(pagesSingersDir)) {
+  const pagesFiles = fs.readdirSync(pagesSingersDir).filter(f => f.endsWith('.html'));
+  let pagesCount = 0;
+  for (const f of pagesFiles) {
+    if (updateSingerFile(path.join(pagesSingersDir, f))) pagesCount++;
+  }
+  console.log(`Updated ${pagesCount} singer files in src/pages/singers.`);
+}
+
 const rootSingersDir = "Singer Profile/singers";
 if (fs.existsSync(rootSingersDir)) {
   const rootFiles = fs.readdirSync(rootSingersDir).filter(f => f.endsWith('.html'));
@@ -336,4 +379,4 @@ if (fs.existsSync(rootSingersDir)) {
   console.log(`Updated ${rootCount} singer files in Singer Profile/singers.`);
 }
 
-console.log("SUCCESS: All singer profile pages now hang their voicebank archive files directly!");
+console.log("SUCCESS: Singer profile pages updated! (Only Arun, Onika, and Utashi Nara are Private; all other singers show archive downloads normally)");

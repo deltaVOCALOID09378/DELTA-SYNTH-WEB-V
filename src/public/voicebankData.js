@@ -120,14 +120,14 @@ export const VOICEBANKS = [
     type: 'Official DELTA',
     genre: 'Traditional / Pop',
     language: 'Thai',
-    status: 'Ready for Download',
+    status: 'Private Voicebank',
     image: 'assets/images/voicebanks/Arun Kamonlanetr.png',
     imageFull: 'assets/images/voicebanks/full/Arun Kamonlanetr.png',
     audioSample: 'Voice/Arun Kamonlanetr.wav',
     detailUrl: 'singers/arun_kamonlanetr.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Thai']
+    downloadUrl: '',
+    description: 'เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Thai', 'Private']
   },
   {
     id: 'bew__powerine',
@@ -701,14 +701,14 @@ export const VOICEBANKS = [
     type: 'Official DELTA',
     genre: 'Trap / Phonk',
     language: 'English, Thai',
-    status: 'Ready for Download',
+    status: 'Private Voicebank',
     image: 'assets/images/voicebanks/Onika.png',
     imageFull: 'assets/images/voicebanks/full/Onika.png',
     audioSample: 'Voice/Onika.wav',
     detailUrl: 'singers/onika.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Phonk']
+    downloadUrl: '',
+    description: 'เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Phonk', 'Private']
   },
   {
     id: 'quint',
@@ -961,14 +961,14 @@ export const VOICEBANKS = [
     type: 'Official DELTA',
     genre: 'Anisong / J-Rock',
     language: 'Japanese, Thai',
-    status: 'Ready for Download',
+    status: 'Private Voicebank',
     image: 'assets/images/voicebanks/Utashi Nara.png',
     imageFull: 'assets/images/voicebanks/full/Utashi Nara.png',
     audioSample: 'Voice/Utashi Nara.wav',
     detailUrl: 'singers/utashi_nara.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Anisong']
+    downloadUrl: '',
+    description: 'เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Anisong', 'Private']
   },
   {
     id: 'yamada_kimada',

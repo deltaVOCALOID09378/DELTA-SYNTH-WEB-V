@@ -11,7 +11,7 @@
 <title>Singer Profiles Directory (54 นักร้อง) · DELTA SYNTH Official</title>
 <meta name="description" content="ทำเนียบและสารบัญนักร้องเสมือนทั้งหมด 54 เสียงของ DELTA SYNTH พร้อมรูปเต็มตัว ข้อมูลเสียง และลิงก์ดาวน์โหลดคลังเสียง UTAU / DiffSinger">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230d0d0d%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23cc2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../../src/public/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -100,6 +100,12 @@
     color: #fff;
     border: 1px solid #ff4422;
     box-shadow: 0 0 8px rgba(204, 34, 0, 0.6);
+  }
+  .badge-private {
+    background: rgba(204, 34, 0, 0.4);
+    color: #ff7755;
+    border: 1px solid #ff4422;
+    box-shadow: 0 0 8px rgba(204, 34, 0, 0.5);
   }
   .badge-dev {
     background: rgba(40, 40, 40, 0.85);
@@ -262,18 +268,18 @@
 <!-- Site Header -->
 <header class="site-header">
   <div class="nav">
-    <a href="../index.html" class="brand">
+    <a href="../../src/public/index.html" class="brand">
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
     <nav class="nav-links">
-      <a href="../index.html">Main</a>
-      <a href="../about.html">About Us</a>
-      <a href="../voicebank.html">All Voicebank</a>
+      <a href="../../src/public/index.html">Main</a>
+      <a href="../../src/public/about.html">About Us</a>
+      <a href="../../src/public/voicebank.html">All Voicebank</a>
       <a href="index.html" class="active">Singer Profiles</a>
-      <a href="../files.html">USTX / MIDI / SVP / VSQX</a>
-      <a href="../collab.html">Collaboration</a>
-      <a href="../events.html">Events</a>
+      <a href="../../src/public/files.html">USTX / MIDI / SVP / VSQX</a>
+      <a href="../../src/public/collab.html">Collaboration</a>
+      <a href="../../src/public/events.html">Events</a>
     </nav>
   </div>
 </header>
@@ -310,11 +316,11 @@
                data-name="ayanami hikaru อายานามิ ฮิคารุ pop / rock / anisong">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Ayanami Hikaru.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Ayanami Hikaru.png" 
                alt="Ayanami Hikaru" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Ayanami Hikaru.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Ayanami Hikaru.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -340,56 +346,6 @@
           </div>
         </div>
       </article>
-
-      <article class="cyber-singer-card" 
-               data-id="ayanami_kyoko" 
-               data-gender="female" 
-               data-type="official delta" 
-               data-engine="utau / diffsinger" 
-               data-name="ayanami kyoko อายานามิ เคียวโกะ pop / rock / anisong / ballad">
-        <div class="card-visual">
-          <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Ayanami Kyoko.png" 
-               alt="Ayanami Kyoko" 
-               loading="lazy" 
-               class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Ayanami Kyoko.png'">
-          <span class="card-badge badge-ready">
-            ACTIVE
-          </span>
-          <span class="card-num">05</span>
-        </div>
-        <div class="card-body">
-          <div class="card-header">
-            <h3 class="card-name">Ayanami Kyoko</h3>
-            <div class="card-nameth">อายานามิ เคียวโกะ</div>
-          </div>
-          <p class="card-desc">นักร้องหญิงจากโปรเจกต์ All DELTA's Voice Acting เสียงทรงพลังในช่วงสูง รองรับทั้ง UTAU และ DiffSinger AI</p>
-          <div class="card-meta">
-            <div class="meta-item">
-              <span class="meta-label">Gender</span>
-              <span class="meta-val">Female</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Age</span>
-              <span class="meta-val">19</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Engine</span>
-              <span class="meta-val">UTAU / DiffSinger</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Languages</span>
-              <span class="meta-val">Thai, Japanese, English</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="ayanami_kyoko.html" class="btn-profile">
-              <span>ดูข้อมูลและดาวน์โหลดคลังเสียง (6 แพ็กเกจ) →</span>
-            </a>
-          </div>
-        </div>
-      </article>
       <article class="cyber-singer-card" 
                data-id="sun" 
                data-gender="male" 
@@ -398,11 +354,11 @@
                data-name="sun ซัน rock / edm / synthwave">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/SUN.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/SUN.png" 
                alt="SUN" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/SUN.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/SUN.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -436,11 +392,11 @@
                data-name="guren kani กุเร็น คานิ metal / heavy rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Guren Kani.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Guren Kani.png" 
                alt="Guren Kani" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Guren Kani.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Guren Kani.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -474,11 +430,11 @@
                data-name="kochujang โคชูจัง k-pop / dance / electro">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Kochujang.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Kochujang.png" 
                alt="Kochujang" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Kochujang.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Kochujang.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -512,11 +468,11 @@
                data-name="thitiya anantanetr ธิติยา อนันตเนตร ballad / acoustic / r&b">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Thitiya Anantanetr.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Thitiya Anantanetr.png" 
                alt="Thitiya Anantanetr" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Thitiya Anantanetr.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Thitiya Anantanetr.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -545,18 +501,18 @@
       <article class="cyber-singer-card" 
                data-id="arun_kamonlanetr" 
                data-gender="male" 
-               data-type="official delta" 
+               data-type="official delta private" 
                data-engine="utau / diffsinger" 
-               data-name="arun kamonlanert อรุณ กมลเนตร traditional / pop">
+               data-name="arun kamonlanert อรุณ กมลเนตร traditional / pop private ไพรเวท">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Arun Kamonlanetr.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Arun Kamonlanetr.png" 
                alt="Arun Kamonlanert" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Arun Kamonlanetr.png'">
-          <span class="card-badge badge-ready">
-            ACTIVE
+               onerror="this.src='../../src/public/assets/images/voicebanks/Arun Kamonlanetr.png'">
+          <span class="card-badge badge-private">
+            PRIVATE
           </span>
           <span class="card-num">#06</span>
         </div>
@@ -565,16 +521,16 @@
             <h3 class="card-name">Arun Kamonlanert</h3>
             <div class="card-nameth">อรุณ กมลเนตร</div>
           </div>
-          <p class="card-desc">เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์</p>
+          <p class="card-desc">เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)</p>
           <div class="card-specs">
             <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
             <div><span class="spec-label">Language</span><span class="spec-val">Thai</span></div>
             <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
-            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">🔒 ไพรเวท</span></div>
           </div>
           <div class="card-actions">
             <a href="arun_kamonlanetr.html" class="btn-profile">
-              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <span>ดูโปรไฟล์นักร้อง</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -588,11 +544,11 @@
                data-name="bew powerine บิว พาวเวอร์ไรน์ electro / cyberpunk / pop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Bew  Powerine.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Bew  Powerine.png" 
                alt="Bew Powerine" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Bew  Powerine.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Bew  Powerine.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -626,11 +582,11 @@
                data-name="ball powerine บอล พาวเวอร์ไรน์ future bass / rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Ball Powerine.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Ball Powerine.png" 
                alt="Ball Powerine" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Ball Powerine.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Ball Powerine.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -664,11 +620,11 @@
                data-name="beem powerine บีม พาวเวอร์ไรน์ pop / acoustic">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Beem Powerine.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Beem Powerine.png" 
                alt="Beem Powerine" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Beem Powerine.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Beem Powerine.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -702,11 +658,11 @@
                data-name="chansamorn จันทร์สมร traditional / thai contemporary">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Chansamorn.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Chansamorn.png" 
                alt="Chansamorn" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Chansamorn.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Chansamorn.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -740,11 +696,11 @@
                data-name="kikokawa usagi คิโคคาวะ อุซางิ denpa / anime / kawaii future bass">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Kikakowa Usagi.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Kikakowa Usagi.png" 
                alt="Kikokawa Usagi" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Kikakowa Usagi.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Kikakowa Usagi.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -778,11 +734,11 @@
                data-name="ahctan แอคตัน indie / lo-fi">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Ahctan.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Ahctan.png" 
                alt="Ahctan" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Ahctan.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Ahctan.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -816,11 +772,11 @@
                data-name="arzb tv เออาร์แซดบี ทีวี hip-hop / trap">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/ARZB TV.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/ARZB TV.png" 
                alt="ARZB TV" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/ARZB TV.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/ARZB TV.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -854,11 +810,11 @@
                data-name="azaya aika อาซายะ ไอิกะ j-pop / ballad">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Azaya Aika.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Azaya Aika.png" 
                alt="Azaya Aika" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Azaya Aika.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Azaya Aika.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -892,11 +848,11 @@
                data-name="diwachi ดิวาจิ r&b / soul">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Diwachi.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Diwachi.png" 
                alt="Diwachi" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Diwachi.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Diwachi.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -930,11 +886,11 @@
                data-name="dokya ดอกหญ้า folk / acoustic">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Dokya.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Dokya.png" 
                alt="Dokya" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Dokya.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Dokya.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -968,11 +924,11 @@
                data-name="fangyu ฟางหยู c-pop / guofeng">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Fangyu.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/FangYu.png" 
                alt="Fangyu" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Fangyu.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/FangYu.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1006,11 +962,11 @@
                data-name="felix ฟีลิกซ์ synthpop / city pop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Felix.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Felix.png" 
                alt="Felix" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Felix.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Felix.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1044,11 +1000,11 @@
                data-name="fellowwhite เฟลโลว์ไวท์ alternative / rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Fellowwhite.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/FellowWhite.png" 
                alt="Fellowwhite" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Fellowwhite.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/FellowWhite.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1082,11 +1038,11 @@
                data-name="fuwari bento ฟุวาริ เบนโตะ kawaii pop / chiptune">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Fuwari Bento.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Fuwari Bento.png" 
                alt="Fuwari Bento" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Fuwari Bento.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Fuwari Bento.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1120,11 +1076,11 @@
                data-name="haruhiko ฮารุฮิโกะ j-rock / anisong">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Haruhiko.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Haruhiko.png" 
                alt="Haruhiko" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Haruhiko.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Haruhiko.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1158,11 +1114,11 @@
                data-name="ibara kouya อิบาระ โคยะ darkwave / industrial">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Ibara Kouya.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Ibara Kouya.png" 
                alt="Ibara Kouya" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Ibara Kouya.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Ibara Kouya.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1196,11 +1152,11 @@
                data-name="jonu โจนู pop punk / emo">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Jonu.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Jonu.png" 
                alt="Jonu" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Jonu.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Jonu.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1234,11 +1190,11 @@
                data-name="kangfu กังฟู martial arts rock / chinese trap">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Kangfu.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/KangFu.png" 
                alt="Kangfu" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Kangfu.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/KangFu.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1272,11 +1228,11 @@
                data-name="kira คิระ eurobeat / hi-nrg">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Kira.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Kira.png" 
                alt="Kira" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Kira.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Kira.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1310,11 +1266,11 @@
                data-name="koizumi satoru โคอิซึมิ ซาโตรุ jazz / bossa nova">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Koizumi Satoru.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Koizumi Satoru.png" 
                alt="Koizumi Satoru" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Koizumi Satoru.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Koizumi Satoru.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1348,11 +1304,11 @@
                data-name="mairu maishi ไมรุ ไมชิ j-pop / idol pop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Mairu Maishi.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Mairu Maishi.png" 
                alt="Mairu Maishi" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Mairu Maishi.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Mairu Maishi.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1386,11 +1342,11 @@
                data-name="mayuree มยุรี thai classic / luk krung">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Mayuree.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Mayuree.png" 
                alt="Mayuree" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Mayuree.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Mayuree.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1424,11 +1380,11 @@
                data-name="miro มิโร่ bedroom pop / indie">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Miro.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Miro.png" 
                alt="Miro" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Miro.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Miro.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1462,11 +1418,11 @@
                data-name="mochiai โมจิไอ future bass / electropop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Mochiai.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Mochiai.png" 
                alt="Mochiai" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Mochiai.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Mochiai.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1500,11 +1456,11 @@
                data-name="mojine sora โมจิเนะ โซระ anisong / power metal">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Mojine Sora.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Mojine Sora.png" 
                alt="Mojine Sora" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Mojine Sora.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Mojine Sora.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1538,11 +1494,11 @@
                data-name="namphueng น้ำผึ้ง acoustic / thai pop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Namphueng.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Namphueng.png" 
                alt="Namphueng" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Namphueng.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Namphueng.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1576,11 +1532,11 @@
                data-name="narisa นริศา pop / soul">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Narisa.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Narisa.png" 
                alt="Narisa" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Narisa.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Narisa.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1614,11 +1570,11 @@
                data-name="okaminari tanda โอกามินาริ ทันดะ heavy metal / hardcore">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Okaminari Tanda.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Okaminari Tanda.png" 
                alt="Okaminari Tanda" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Okaminari Tanda.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Okaminari Tanda.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1647,18 +1603,18 @@
       <article class="cyber-singer-card" 
                data-id="onika" 
                data-gender="female" 
-               data-type="official delta" 
+               data-type="official delta private" 
                data-engine="utau / diffsinger" 
-               data-name="onika โอนิกะ trap / phonk">
+               data-name="onika โอนิกะ trap / phonk private ไพรเวท">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Onika.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Onika.png" 
                alt="Onika" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Onika.png'">
-          <span class="card-badge badge-ready">
-            ACTIVE
+               onerror="this.src='../../src/public/assets/images/voicebanks/Onika.png'">
+          <span class="card-badge badge-private">
+            PRIVATE
           </span>
           <span class="card-num">#35</span>
         </div>
@@ -1667,16 +1623,16 @@
             <h3 class="card-name">Onika</h3>
             <div class="card-nameth">โอนิกะ</div>
           </div>
-          <p class="card-desc">เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย</p>
+          <p class="card-desc">เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)</p>
           <div class="card-specs">
             <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
             <div><span class="spec-label">Language</span><span class="spec-val">English, Thai</span></div>
             <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
-            <div><span class="spec-label">Archives</span><span class="spec-val highlight">4 คลังเสียง</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">🔒 ไพรเวท</span></div>
           </div>
           <div class="card-actions">
             <a href="onika.html" class="btn-profile">
-              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <span>ดูโปรไฟล์นักร้อง</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -1690,11 +1646,11 @@
                data-name="quint ควินท์ synthwave / retrowave">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Quint.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Quint.png" 
                alt="Quint" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Quint.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Quint.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1728,11 +1684,11 @@
                data-name="relven เรลเวน gothic rock / dark pop">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Relven.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/RelVeN.png" 
                alt="Relven" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Relven.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/RelVeN.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1766,11 +1722,11 @@
                data-name="root รูท hyperpop / glitch">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Root.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Root.png" 
                alt="Root" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Root.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Root.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1804,11 +1760,11 @@
                data-name="sakultala สกุลทลา thai traditional / epic">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Sakultala.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Sakultala.png" 
                alt="Sakultala" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Sakultala.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Sakultala.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1842,11 +1798,11 @@
                data-name="saphire blue แซฟไฟร์ บลู trance / progressive house">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Saphire Blue.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Saphire Blue.png" 
                alt="Saphire Blue" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Saphire Blue.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Saphire Blue.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1880,11 +1836,11 @@
                data-name="savanna ซาวันนา afrobeat / tropical house">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Savanna.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Savanna.png" 
                alt="Savanna" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Savanna.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Savanna.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1918,11 +1874,11 @@
                data-name="shiroino mochi ชิโรอิโนะ โมจิ kawaii / chiptune">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Shiroino Mochi.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Shiroino Mochi.png" 
                alt="Shiroino Mochi" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Shiroino Mochi.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Shiroino Mochi.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1956,11 +1912,11 @@
                data-name="sriphan ศรีพรรณ thai folk / ballad">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Sriphan.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/SRIPHAN.png" 
                alt="Sriphan" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Sriphan.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/SRIPHAN.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -1994,11 +1950,11 @@
                data-name="tagpy แท็กปี้ indie rock / post punk">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Tagpy.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Tagpy.png" 
                alt="Tagpy" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Tagpy.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Tagpy.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2032,11 +1988,11 @@
                data-name="tenshi saburo เทนชิ ซาบุโร่ visual kei / gothic rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Tenshi Saburo.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Tenshi Saburo.png" 
                alt="Tenshi Saburo" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Tenshi Saburo.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Tenshi Saburo.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2070,11 +2026,11 @@
                data-name="tom ทอม pop / acoustic">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Tom.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Tom.png" 
                alt="Tom" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Tom.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Tom.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2108,11 +2064,11 @@
                data-name="uchu sutori อุจู สตอรี่ space pop / synthwave">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Uchu Sutori.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Uchu Sutori.png" 
                alt="Uchu Sutori" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Uchu Sutori.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Uchu Sutori.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2141,18 +2097,18 @@
       <article class="cyber-singer-card" 
                data-id="utashi_nara" 
                data-gender="female" 
-               data-type="official delta" 
+               data-type="official delta private" 
                data-engine="utau / diffsinger" 
-               data-name="utashi nara อุตะชิ นาระ anisong / j-rock">
+               data-name="utashi nara อุตะชิ นาระ anisong / j-rock private ไพรเวท">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Utashi Nara.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Utashi Nara.png" 
                alt="Utashi Nara" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Utashi Nara.png'">
-          <span class="card-badge badge-ready">
-            ACTIVE
+               onerror="this.src='../../src/public/assets/images/voicebanks/Utashi Nara.png'">
+          <span class="card-badge badge-private">
+            PRIVATE
           </span>
           <span class="card-num">#48</span>
         </div>
@@ -2161,16 +2117,16 @@
             <h3 class="card-name">Utashi Nara</h3>
             <div class="card-nameth">อุตะชิ นาระ</div>
           </div>
-          <p class="card-desc">เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์</p>
+          <p class="card-desc">เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)</p>
           <div class="card-specs">
             <div><span class="spec-label">Engine</span><span class="spec-val">UTAU / DiffSinger</span></div>
             <div><span class="spec-label">Language</span><span class="spec-val">Japanese, Thai</span></div>
             <div><span class="spec-label">Type</span><span class="spec-val">Official DELTA</span></div>
-            <div><span class="spec-label">Archives</span><span class="spec-val highlight">3 คลังเสียง</span></div>
+            <div><span class="spec-label">Archives</span><span class="spec-val highlight">🔒 ไพรเวท</span></div>
           </div>
           <div class="card-actions">
             <a href="utashi_nara.html" class="btn-profile">
-              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <span>ดูโปรไฟล์นักร้อง</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -2184,11 +2140,11 @@
                data-name="yamada kimada ยามาดะ คิมาดะ rock / metal">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Yamada Kimada.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Yamada Kimada.png" 
                alt="Yamada Kimada" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Yamada Kimada.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Yamada Kimada.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2222,11 +2178,11 @@
                data-name="yamada satoru ยามาดะ ซาโตรุ pop / rnb">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Yamada Satoru.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Yamada Satoru.png" 
                alt="Yamada Satoru" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Yamada Satoru.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Yamada Satoru.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2260,11 +2216,11 @@
                data-name="yamada takeshi ยามาดะ ทาเคชิ enka / traditional rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Yamada Takeshi.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Yamada Takeshi.png" 
                alt="Yamada Takeshi" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Yamada Takeshi.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Yamada Takeshi.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2298,11 +2254,11 @@
                data-name="yokuatsu takuto โยคุอัตสึ ทาคุโตะ alternative pop / emo rock">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Yokuatsu Takuto.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Yokuatsu Takuto.png" 
                alt="Yokuatsu Takuto" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Yokuatsu Takuto.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Yokuatsu Takuto.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2336,11 +2292,11 @@
                data-name="yuuya sato ยูยะ ซาโต้ j-pop / electronic">
         <div class="card-visual">
           <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Yuuya Sato.png" 
+          <img src="../../src/public/assets/images/voicebanks/full/Yuuya Sato.png" 
                alt="Yuuya Sato" 
                loading="lazy" 
                class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Yuuya Sato.png'">
+               onerror="this.src='../../src/public/assets/images/voicebanks/Yuuya Sato.png'">
           <span class="card-badge badge-ready">
             ACTIVE
           </span>
@@ -2362,56 +2318,6 @@
             <a href="yuuya_sato.html" class="btn-profile">
               <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <article class="cyber-singer-card" 
-               data-id="helen" 
-               data-gender="female" 
-               data-type="official delta" 
-               data-engine="utau" 
-               data-name="helen เฮเลน pop / ballad / electronic">
-        <div class="card-visual">
-          <div class="visual-glow"></div>
-          <img src="../assets/images/voicebanks/full/Helen.png" 
-               alt="Helen" 
-               loading="lazy" 
-               class="singer-portrait" 
-               onerror="this.src='../assets/images/voicebanks/Helen.png'">
-          <span class="card-badge badge-ready">
-            ACTIVE
-          </span>
-          <span class="card-num">55</span>
-        </div>
-        <div class="card-body">
-          <div class="card-header">
-            <h3 class="card-name">Helen</h3>
-            <div class="card-nameth">เฮเลน</div>
-          </div>
-          <p class="card-desc">นักร้องเสมือนรุ่นฉลองครบรอบ 7 ปีของค่าย DELTA SYNTH เสียงร้องหวานละมุน นุ่มนวล ชัดเจน</p>
-          <div class="card-meta">
-            <div class="meta-item">
-              <span class="meta-label">Gender</span>
-              <span class="meta-val">Female</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Age</span>
-              <span class="meta-val">18</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Engine</span>
-              <span class="meta-val">UTAU VCV / Arpasing</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Languages</span>
-              <span class="meta-val">English, Japanese</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="helen.html" class="btn-profile">
-              <span>ดูข้อมูลและดาวน์โหลดคลังเสียง (2 แพ็กเกจ) →</span>
             </a>
           </div>
         </div>
