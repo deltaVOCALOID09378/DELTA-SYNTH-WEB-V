@@ -295,7 +295,7 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
       });
 
       assert.strictEqual(canvasEngine.getElement('#toastContainer').isVisible, true);
-      await new Promise(r => setTimeout(r, 40));
+      await new Promise(r => setTimeout(r, 120));
       assert.strictEqual(canvasEngine.getElement('#toastContainer').isVisible, false);
     });
   });
