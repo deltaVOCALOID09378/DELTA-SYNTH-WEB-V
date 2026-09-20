@@ -1,39 +1,178 @@
 <!DOCTYPE html>
-<html lang="th">
+<!-- Made And Checked By DELTA SYNTH & All Agentic AI -->
+<!-- Original by DELTA SYNTH -->
+<!-- Version: 0.1 -->
+<html lang="en">
 <head>
-<!-- 
-  Made And Checked By DELTA SYNTH & Gemini AI 
-  Original by Patiphat Wongyai (DELTA SYNTH)
--->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>All Voicebank · DELTA SYNTH | คลังเสียงร้องเสมือนทั้งหมด</title>
-<meta name="description" content="DELTA SYNTH Voicebank Repository — รวมคลังเสียงร้องเสมือน 54 ตัวละคร สำหรับ OpenUtau, DiffSinger AI และ UTAU ดาวน์โหลดฟรี">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230d0d0d%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23cc2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Voicebanks - DELTA SYNTH Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: "Inter", sans-serif; }</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="nav">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">&#916;</span>
-      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
-    </a>
-    <nav class="nav-links" id="site-navigation">
-      <a href="index.html">Main</a>
-      <a href="about.html">About Us</a>
-      <a href="voicebank.html" class="active">All Voicebank</a>
-      <a href="files.html">USTX / MIDI / SVP / VSQX</a>
-      <a href="collab.html">Collaboration</a>
-      <a href="events.html">Events</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
-<main id="main-content">
-<section class="page-hero">
+<body class="bg-black text-gray-200 flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-black/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold tracking-wider">DELTA SYNTH</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-red-500 transition">Home</a>
+        <a href="about.html" class="hover:text-red-500 transition">About Us</a>
+        <a href="voicebank.html" class="hover:text-red-500 transition text-red-500">Voicebanks</a>
+        <a href="#" class="hover:text-red-500 transition">Files</a>
+        <a href="#" class="hover:text-red-500 transition">Events</a>
+        <a href="project.html" class="hover:text-red-500 transition">Project</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-black/90 backdrop-blur-md">Home</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About Us</a>
+        <a href="voicebank.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Voicebanks</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Files</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Events</a>
+        <a href="project.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Project</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="flex-grow pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-4 uppercase tracking-widest">Official Voicebanks</h1>
+        <p class="text-gray-400 text-lg">คลังเสียงนักร้องคุณภาพจาก DELTA SYNTH (เรียงลำดับตามโปรเจกต์และคลิปเปิดตัวนักร้อง)</p>
+      </div>
+      
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-700 pb-2">DELTA SYNTH Official Singers</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          
+          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+            <a href="singers/ayanami_hikaru.html"><img src="assets/images/voicebanks/Ayanami Hikaru.png" alt="Ayanami Hikaru" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
+            <div class="p-6 flex-grow flex flex-col items-center text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">Ayanami Hikaru</h3>
+              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+                <li><span class="font-semibold text-gray-300">Age:</span> 20</li>
+                <li><span class="font-semibold text-gray-300">Gender:</span> Male</li>
+                <li><span class="font-semibold text-gray-300">Voicer:</span> DELTA SYNTH</li>
+                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
+              </ul>
+              <div class="space-y-2 mt-auto w-full">
+                <a href="singers/ayanami_hikaru.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+            <a href="singers/kochujang.html"><img src="assets/images/voicebanks/Kochujang.png" alt="Kochujang" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
+            <div class="p-6 flex-grow flex flex-col items-center text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">Kochujang</h3>
+              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+                <li><span class="font-semibold text-gray-300">Age:</span> 17</li>
+                <li><span class="font-semibold text-gray-300">Gender:</span> Female | <span class="font-semibold text-gray-300">Weight:</span> 55kg | <span class="font-semibold text-gray-300">Height:</span> 167cm</li>
+                <li><span class="font-semibold text-gray-300">Voicer:</span> TangmoThipphawan</li>
+                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
+              </ul>
+              <div class="space-y-2 mt-auto w-full">
+                <a href="singers/kochujang.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+            <a href="singers/fangyu.html"><img src="assets/images/voicebanks/FangYu.png" alt="FangYu" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
+            <div class="p-6 flex-grow flex flex-col items-center text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">FangYu</h3>
+              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+                <li><span class="font-semibold text-gray-300">Age:</span> 25</li>
+                <li><span class="font-semibold text-gray-300">Gender:</span> Male | <span class="font-semibold text-gray-300">Weight:</span> 52kg | <span class="font-semibold text-gray-300">Height:</span> 160cm</li>
+                <li><span class="font-semibold text-gray-300">Voicer:</span> DELTA SYNTH</li>
+                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
+              </ul>
+              <div class="space-y-2 mt-auto w-full">
+                <a href="singers/fangyu.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-700 pb-2">Collaboration Voicebanks</h2>
+        <p class="text-gray-400 mb-6">ศิลปินคอลแลปที่ได้รับการสนับสนุนจากค่าย หรือศิลปินที่เข้าร่วมโปรเจกต์พิเศษ</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          
+          <div class="bg-gray-900/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col transition hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] duration-300">
+            <a href="singers/miro.html"><img src="assets/images/voicebanks/Miro.png" alt="Miro" class="w-full aspect-square object-cover object-top transition-transform duration-500 hover:scale-105"></a>
+            <div class="p-6 flex-grow flex flex-col items-center text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">Miro</h3>
+              <ul class="text-sm text-gray-400 space-y-1 mb-4 flex-grow">
+                <li><span class="font-semibold text-gray-300">Age:</span> Unknown</li>
+                <li><span class="font-semibold text-gray-300">Gender:</span> Female</li>
+                <li><span class="font-semibold text-gray-300">Voicer:</span> Nashiamm</li>
+                <li><span class="font-semibold text-gray-300">Genre:</span> Pop</li>
+              </ul>
+              <div class="space-y-2 mt-auto w-full">
+                <a href="singers/miro.html" class="block w-full text-center bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-[1.02] active:scale-[0.98]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-black/90 backdrop-blur-md text-gray-400 py-12 border-t border-gray-800">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h4 class="text-white text-lg font-bold mb-4">DELTA SYNTH</h4>
+        <p class="text-sm">We are the Professional singing for you all your passion.</p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
+        <ul class="text-sm space-y-2">
+          <li>Public: <a href="mailto:delta.vocaloid09378@gmail.com" class="hover:text-red-500">delta.vocaloid09378@gmail.com</a></li>
+          <li>Emergency: <a href="mailto:patiphat.wongyai@gmail.com" class="hover:text-red-500">patiphat.wongyai@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-bold mb-4">Social Media</h4>
+        <ul class="text-sm space-y-2">
+          <li>YouTube: <a href="#" class="hover:text-red-500">DELTA SYNTH Official</a></li>
+          <li>TikTok: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+          <li>X: <a href="#" class="hover:text-red-500">DELTA SYNTH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+      <p>&copy; 2025 DELTA SYNTH. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
   <div class="wrap">
     <span class="crumb">DELTA SYNTH / All Voicebank</span>
     <h1>คลังเสียงทั้งหมด<br>ของ DELTA SYNTH</h1>
