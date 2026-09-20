@@ -1,3 +1,8 @@
+/**
+ * Made And Checked By DELTA SYNTH & All Code Agentic AI Engine
+ * Original by DELTA SYNTH
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
   // Dynamically load i18n if not already loaded on the page
   if (!window.DeltaI18n && !document.querySelector('script[src*="i18n.js"]')) {
