@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Dynamically load i18n if not already loaded on the page
+  if (!window.DeltaI18n && !document.querySelector('script[src*="i18n.js"]')) {
+    const i18nScript = document.createElement('script');
+    const isSubdir = window.location.pathname.toLowerCase().includes('/singers/');
+    i18nScript.src = isSubdir ? '../js/i18n.js' : 'js/i18n.js';
+    i18nScript.defer = true;
+    document.head.appendChild(i18nScript);
+  }
+
   const root = document.documentElement;
   const normalizePage = (value) => {
     const path = String(value || '').split(/[?#]/)[0];
