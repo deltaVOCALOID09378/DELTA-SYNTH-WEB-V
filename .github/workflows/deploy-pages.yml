@@ -28,6 +28,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare GitHub Pages artifact (Exclude unconfigured CNAME)
+        run: |
+          # Remove CNAME so GitHub Pages serves directly on *.github.io without redirecting to an unconfigured domain
+          rm -f src/public/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

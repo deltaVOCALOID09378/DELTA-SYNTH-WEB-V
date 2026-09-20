@@ -331,9 +331,10 @@ flowchart TD
 
 ## 6. แนวทางการดำเนินงานขั้นถัดไป
 
-1. **การเผยแพร่ระบบ (Production Deployment):**
-   - ฝั่ง **Vercel Production:** สามารถรันสคริปต์ `Deploy_Vercel_Preview.bat` หรือ Push ขึ้นสู่ Branch หลักของ Repository ได้ทันทีเนื่องจากโครงสร้าง `src/public` และ `.vercel` พร้อมใช้งาน 100%
-   - ฝั่ง **Wix Studio / Wix Editor:** ทำการซิงค์ไฟล์ใน `src/pages/` และ `src/backend/` ผ่าน Git Integration ของ Wix Velo
+1. **การเผยแพร่ระบบสู่ Dual Hosting Platforms (GitHub Pages & Cloudflare Pages):**
+   - **Primary Platform (GitHub Pages):** ทำงานอัตโนมัติ 100% ผ่าน GitHub Actions (`deploy-pages.yml`) เผยแพร่ที่ `https://deltavocaloid09378.github.io/DELTA-SYNTH-WEB-V/` ฟรีตลอดชีพ ไม่ติดข้อจำกัดด้านค่าใช้จ่าย
+   - **Edge CDN Platform (Cloudflare Pages):** ทำงานผ่าน Cloudflare Direct Upload หรือ Wrangler Action เผยแพร่ที่ `https://delta-synth-studio.pages.dev` แบนด์วิดท์ไม่จำกัด พร้อมเซิร์ฟเวอร์ Edge กรุงเทพฯ
+   - **Standalone / Local Server:** รันผ่านสคริปต์ `Deploy_The_Website.bat` เมนู [4] หรือคำสั่ง `node server.js`
 2. **การบำรุงรักษาในระยะยาว (Long-Term Maintenance):**
    - เมื่อมีการเพิ่มนักร้องใหม่ ให้แก้ไขที่ `src/public/voicebankData.js` เพียงจุดเดียว จากนั้นรันตัวสร้างหน้าเว็บอัตโนมัติ เพื่อรักษาหลักการ Single Source of Truth
    - ตรวจสอบชุดทดสอบอัตโนมัติด้วยคำสั่ง `node tests/run-all-tests.js` ทุกครั้งที่มีการเปลี่ยนแปลงโค้ด เพื่อป้องกันปัญหา Regression
