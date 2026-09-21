@@ -667,101 +667,51 @@
       return;
     }
 
-    const nav = document.querySelector('.site-header .nav');
-    if (!nav) return;
+    const navLinks = document.querySelector('.site-header .nav-links') || document.querySelector('#site-navigation') || document.querySelector('.nav-links');
+    const nav = document.querySelector('.site-header .nav') || document.querySelector('.nav') || document.querySelector('header');
+    const container = navLinks || nav;
+    if (!container) return;
 
     const switcher = document.createElement('div');
     switcher.className = 'lang-switcher';
     switcher.id = 'lang-switcher';
 
-    const hasExplicitSelection = localStorage.getItem('delta_synth_lang_chosen') === 'true';
     const currentLang = getCurrentLang();
-    const currentMeta = LANGUAGES.find(l => l.code === currentLang) || LANGUAGES[0];
-    const initialButtonLabel = hasExplicitSelection ? currentMeta.label : 'Language';
+
+    const langItemsHtml = LANGUAGES.map(l => `
+      <button type="button" role="menuitem" data-lang="${l.code}" class="${currentLang === l.code ? 'active' : ''}">
+        <span class="lang-flag">${l.flag}</span>
+        <span class="lang-name">${l.label}</span>
+        <span class="lang-code-tag">${l.short}</span>
+      </button>
+    `).join('');
 
     switcher.innerHTML = `
       <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Language">
-        <span class="lang-current" id="lang-current">${initialButtonLabel}</span>
-        <svg class="lang-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <span class="lang-current" id="lang-current">Language</span>
       </button>
-      <div class="lang-dropdown" id="lang-dropdown" role="menu" aria-label="Language selection">
-        <div class="lang-tier">
-          <div class="lang-tier-header">Tier 1 · Primary / ภาษาหลัก</div>
-          <button type="button" role="menuitem" data-lang="th" class="${currentLang === 'th' ? 'active' : ''}">
-            <span class="lang-flag">🇹🇭</span>
-            <span class="lang-name">ภาษาไทย</span>
-            <span class="lang-code-tag">TH</span>
-          </button>
-        </div>
-        <div class="lang-tier">
-          <div class="lang-tier-header">Tier 2 · International / สากล</div>
-          <button type="button" role="menuitem" data-lang="en" class="${currentLang === 'en' ? 'active' : ''}">
-            <span class="lang-flag">🇬🇧</span>
-            <span class="lang-name">English</span>
-            <span class="lang-code-tag">EN</span>
-          </button>
-        </div>
-        <div class="lang-tier">
-          <div class="lang-tier-header">Tier 3 · European & Latin / ยุโรปและละติน</div>
-          <button type="button" role="menuitem" data-lang="fr" class="${currentLang === 'fr' ? 'active' : ''}">
-            <span class="lang-flag">🇫🇷</span>
-            <span class="lang-name">Français</span>
-            <span class="lang-code-tag">FR</span>
-          </button>
-          <button type="button" role="menuitem" data-lang="es" class="${currentLang === 'es' ? 'active' : ''}">
-            <span class="lang-flag">🇪🇸</span>
-            <span class="lang-name">Español</span>
-            <span class="lang-code-tag">ES</span>
-          </button>
-          <button type="button" role="menuitem" data-lang="es-cl" class="${currentLang === 'es-cl' ? 'active' : ''}">
-            <span class="lang-flag">🇨🇱</span>
-            <span class="lang-name">Español (Chile)</span>
-            <span class="lang-code-tag">CL</span>
-          </button>
-        </div>
-        <div class="lang-tier">
-          <div class="lang-tier-header">Tier 4 · Asian & Eurasian / เอเชียและยูเรเชีย</div>
-          <button type="button" role="menuitem" data-lang="zh" class="${currentLang === 'zh' ? 'active' : ''}">
-            <span class="lang-flag">🇨🇳</span>
-            <span class="lang-name">中文 (简体)</span>
-            <span class="lang-code-tag">ZH</span>
-          </button>
-          <button type="button" role="menuitem" data-lang="ja" class="${currentLang === 'ja' ? 'active' : ''}">
-            <span class="lang-flag">🇯🇵</span>
-            <span class="lang-name">日本語</span>
-            <span class="lang-code-tag">JA</span>
-          </button>
-          <button type="button" role="menuitem" data-lang="ru" class="${currentLang === 'ru' ? 'active' : ''}">
-            <span class="lang-flag">🇷🇺</span>
-            <span class="lang-name">Русский</span>
-            <span class="lang-code-tag">RU</span>
-          </button>
-          <button type="button" role="menuitem" data-lang="ko" class="${currentLang === 'ko' ? 'active' : ''}">
-            <span class="lang-flag">🇰🇷</span>
-            <span class="lang-name">한국어</span>
-            <span class="lang-code-tag">KO</span>
-          </button>
-        </div>
+      <div class="lang-dropdown" id="lang-dropdown" style="display: none !important;" role="menu" aria-label="Language selection">
+        ${langItemsHtml}
       </div>
     `;
 
-    // Insert before nav-toggle if present, otherwise append
-    const navToggle = nav.querySelector('.nav-toggle') || nav.querySelector('#mobile-menu-btn');
-    if (navToggle) {
-      nav.insertBefore(switcher, navToggle);
-    } else {
-      nav.appendChild(switcher);
-    }
+    container.appendChild(switcher);
 
     const btn = switcher.querySelector('#lang-btn');
     const dropdown = switcher.querySelector('#lang-dropdown');
 
     const toggleDropdown = (open) => {
-      const isOpen = open !== undefined ? open : !dropdown.classList.contains('show');
-      dropdown.classList.toggle('show', isOpen);
-      btn.setAttribute('aria-expanded', String(isOpen));
+      const isCurrentlyOpen = dropdown.classList.contains('show') && dropdown.style.display !== 'none';
+      const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+      if (shouldOpen) {
+        dropdown.style.setProperty('display', 'flex', 'important');
+        dropdown.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        dropdown.style.setProperty('display', 'none', 'important');
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     };
 
     btn.addEventListener('click', (e) => {
@@ -796,11 +746,9 @@
   }
 
   function updateSwitcherUI(langCode) {
-    const meta = LANGUAGES.find(l => l.code === langCode) || LANGUAGES[0];
     const currentLabel = document.getElementById('lang-current');
     if (currentLabel) {
-      const hasExplicitSelection = localStorage.getItem('delta_synth_lang_chosen') === 'true';
-      currentLabel.textContent = hasExplicitSelection ? meta.label : 'Language';
+      currentLabel.textContent = 'Language';
     }
     document.querySelectorAll('#lang-dropdown button[data-lang]').forEach(btn => {
       if (btn.getAttribute('data-lang') === langCode) {
