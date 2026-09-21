@@ -1,6 +1,29 @@
+/**
+ * Made And Checked By DELTA SYNTH & All Code Agentic AI Engine
+ * Original by DELTA SYNTH
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Dynamically load i18n if not already loaded on the page
+  if (!window.DeltaI18n && !document.querySelector('script[src*="i18n.js"]')) {
+    const i18nScript = document.createElement('script');
+    const isSubdir = window.location.pathname.toLowerCase().includes('/singers/');
+    i18nScript.src = isSubdir ? '../js/i18n.js' : 'js/i18n.js';
+    i18nScript.defer = true;
+    document.head.appendChild(i18nScript);
+  }
+
   const root = document.documentElement;
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizePage = (value) => {
+    const path = String(value || '').split(/[?#]/)[0];
+    const segments = path.split('/').filter(Boolean);
+    const filename = segments[segments.length - 1] || 'index.html';
+    return filename.replace(/\.html$/i, '').toLowerCase() || 'index';
+  };
+  const currentPath = window.location.pathname.toLowerCase();
+  const currentPage = currentPath.includes('/singers/')
+    ? 'voicebank'
+    : normalizePage(currentPath);
 
   const setExpanded = (control, expanded) => {
     control.setAttribute('aria-expanded', String(expanded));
@@ -77,8 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!href || href.startsWith('#') || href.startsWith('mailto:')) {
       return;
     }
-    const targetPage = href.split('/').pop()?.split('#')[0];
-    if (targetPage === currentPage) {
+    const targetPage = normalizePage(href);
+    const matchesCurrentPage = targetPage === currentPage
+      || (currentPage === 'voicebank' && targetPage === 'singers');
+
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (matchesCurrentPage) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }

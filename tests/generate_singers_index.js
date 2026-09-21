@@ -17,21 +17,33 @@ async function generateIndex() {
     const imgBasePath = isRootFolder ? '../../src/public/' : '../';
 
     const cardsHtml = VOICEBANKS.map((s, idx) => {
+      const isPrivate = s.status === 'Private Voicebank' || ['arun_kamonlanetr', 'onika', 'utashi_nara'].includes(s.id);
       const archives = catalog[s.id] || [];
       const archiveCount = archives.length;
-      const countLabel = archiveCount > 0 ? `${archiveCount} คลังเสียง` : 'ในขั้นตอนพัฒนา';
+      const countLabel = isPrivate ? '🔒 ไพรเวท' : (archiveCount > 0 ? `${archiveCount} คลังเสียง` : 'ในขั้นตอนพัฒนา');
       const isDiff = s.engine.includes('DiffSinger');
       const badgeClass = isDiff ? 'badge-ai' : 'badge-engine';
 
+      let badgeLabel = 'DEV';
+      let cardBadgeClass = 'badge-dev';
+      if (isPrivate) {
+        badgeLabel = 'PRIVATE';
+        cardBadgeClass = 'badge-private';
+      } else if (s.status === 'Ready for Download') {
+        badgeLabel = 'ACTIVE';
+        cardBadgeClass = 'badge-ready';
+      }
+
+      const btnLabel = isPrivate ? 'ดูโปรไฟล์นักร้อง' : 'ดูโปรไฟล์ & ดาวน์โหลด';
       const fullImg = `${imgBasePath}${s.imageFull}`;
       const thumbImg = `${imgBasePath}${s.image}`;
 
       return `      <article class="cyber-singer-card" 
                data-id="${s.id}" 
                data-gender="${(s.gender || '').toLowerCase()}" 
-               data-type="${(s.type || '').toLowerCase()}" 
+               data-type="${(s.type || '').toLowerCase()}${isPrivate ? ' private' : ''}" 
                data-engine="${(s.engine || '').toLowerCase()}" 
-               data-name="${s.name.toLowerCase()} ${(s.nameTh || '').toLowerCase()} ${(s.genre || '').toLowerCase()}">
+               data-name="${s.name.toLowerCase()} ${(s.nameTh || '').toLowerCase()} ${(s.genre || '').toLowerCase()}${isPrivate ? ' private ไพรเวท' : ''}">
         <div class="card-visual">
           <div class="visual-glow"></div>
           <img src="${fullImg}" 
@@ -39,8 +51,8 @@ async function generateIndex() {
                loading="lazy" 
                class="singer-portrait" 
                onerror="this.src='${thumbImg}'">
-          <span class="card-badge ${s.status === 'Ready for Download' ? 'badge-ready' : 'badge-dev'}">
-            ${s.status === 'Ready for Download' ? 'ACTIVE' : 'DEV'}
+          <span class="card-badge ${cardBadgeClass}">
+            ${badgeLabel}
           </span>
           <span class="card-num">#${String(idx + 1).padStart(2, '0')}</span>
         </div>
@@ -58,7 +70,7 @@ async function generateIndex() {
           </div>
           <div class="card-actions">
             <a href="${s.id}.html" class="btn-profile">
-              <span>ดูโปรไฟล์ & ดาวน์โหลด</span>
+              <span>${btnLabel}</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -168,6 +180,12 @@ async function generateIndex() {
     color: #fff;
     border: 1px solid #ff4422;
     box-shadow: 0 0 8px rgba(204, 34, 0, 0.6);
+  }
+  .badge-private {
+    background: rgba(204, 34, 0, 0.4);
+    color: #ff7755;
+    border: 1px solid #ff4422;
+    box-shadow: 0 0 8px rgba(204, 34, 0, 0.5);
   }
   .badge-dev {
     background: rgba(40, 40, 40, 0.85);
@@ -447,7 +465,13 @@ ${cardsHtml}
   fs.writeFileSync('src/public/singers/index.html', srcHtml, 'utf8');
   console.log('Successfully created src/public/singers/index.html with all 54 singers!');
 
-  // 2. Write Singer Profile/singers/index.html
+  // 2. Write src/pages/singers/index.html
+  if (fs.existsSync('src/pages/singers')) {
+    fs.writeFileSync('src/pages/singers/index.html', srcHtml, 'utf8');
+    console.log('Successfully created src/pages/singers/index.html with all 54 singers!');
+  }
+
+  // 3. Write Singer Profile/singers/index.html
   const rootHtml = buildHtml(true);
   fs.writeFileSync('Singer Profile/singers/index.html', rootHtml, 'utf8');
   console.log('Successfully updated Singer Profile/singers/index.html with all 54 singers!');

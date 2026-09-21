@@ -1,40 +1,168 @@
-// DELTA SYNTH — shared site behaviour
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * Made And Checked By DELTA SYNTH & All Code Agentic AI Engine
+ * Original by DELTA SYNTH
+ */
 
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
+document.addEventListener('DOMContentLoaded', () => {
+  // Dynamically load i18n if not already loaded on the page
+  if (!window.DeltaI18n && !document.querySelector('script[src*="i18n.js"]')) {
+    const i18nScript = document.createElement('script');
+    const isSubdir = window.location.pathname.toLowerCase().includes('/singers/');
+    i18nScript.src = isSubdir ? '../js/i18n.js' : 'js/i18n.js';
+    i18nScript.defer = true;
+    document.head.appendChild(i18nScript);
+  }
+
+  const root = document.documentElement;
+  const normalizePage = (value) => {
+    const path = String(value || '').split(/[?#]/)[0];
+    const segments = path.split('/').filter(Boolean);
+    const filename = segments[segments.length - 1] || 'index.html';
+    return filename.replace(/\.html$/i, '').toLowerCase() || 'index';
+  };
+  const currentPath = window.location.pathname.toLowerCase();
+  const currentPage = currentPath.includes('/singers/')
+    ? 'voicebank'
+    : normalizePage(currentPath);
+
+  const setExpanded = (control, expanded) => {
+    control.setAttribute('aria-expanded', String(expanded));
+  };
+
+  const closeMenu = (menu, control, usesHiddenClass = false) => {
+    menu.classList.remove('open');
+    if (usesHiddenClass) {
+      menu.classList.add('hidden');
+    } else {
+      menu.classList.remove('hidden');
+    }
+    setExpanded(control, false);
+  };
+
+  const toggleMenu = (menu, control, usesHiddenClass = false) => {
+    const isOpen = usesHiddenClass ? !menu.classList.contains('hidden') : menu.classList.contains('open');
+    if (isOpen) {
+      closeMenu(menu, control, usesHiddenClass);
+      return;
+    }
+    menu.classList.remove('hidden');
+    menu.classList.add('open');
+    setExpanded(control, true);
+  };
+
+  // Shared mobile navigation used by the simplified portal pages.
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.type = 'button';
+    navToggle.setAttribute('aria-controls', 'site-navigation');
+    navToggle.setAttribute('aria-label', 'เปิดเมนูนำทาง');
+    setExpanded(navToggle, false);
+    navLinks.id = 'site-navigation';
+    navLinks.setAttribute('aria-label', 'เมนูหลัก');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.contains('open');
+      toggleMenu(navLinks, navToggle);
+      navToggle.setAttribute('aria-label', isOpen ? 'เปิดเมนูนำทาง' : 'ปิดเมนูนำทาง');
     });
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => closeMenu(navLinks, navToggle));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeMenu(navLinks, navToggle);
+        navToggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980 && navLinks.classList.contains('open')) {
+        closeMenu(navLinks, navToggle);
+      }
     });
   }
 
-  // Active nav link based on current file
-  const path = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === path) a.classList.add('active');
+  // Legacy project/singer pages use a Tailwind-style mobile menu.
+  const legacyToggle = document.getElementById('mobile-menu-btn');
+  const legacyMenu = document.getElementById('mobile-menu');
+  if (legacyToggle && legacyMenu) {
+    legacyToggle.type = 'button';
+    legacyToggle.setAttribute('aria-controls', 'mobile-menu');
+    setExpanded(legacyToggle, false);
+    legacyToggle.addEventListener('click', () => toggleMenu(legacyMenu, legacyToggle, true));
+    legacyMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => closeMenu(legacyMenu, legacyToggle, true));
+    });
+  }
+
+  // Keep the active state correct for both navigation layouts.
+  document.querySelectorAll('.nav-links a[href], #mobile-menu a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:')) {
+      return;
+    }
+    const targetPage = normalizePage(href);
+    const matchesCurrentPage = targetPage === currentPage
+      || (currentPage === 'voicebank' && targetPage === 'singers');
+
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+    if (matchesCurrentPage) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 
-  // Roster filter chips
+  // Roster filter chips.
   const chips = document.querySelectorAll('.filter-chip');
   const cards = document.querySelectorAll('.vcard');
   if (chips.length && cards.length) {
-    chips.forEach(chip => {
+    const roster = document.querySelector('.roster');
+    let emptyState = document.querySelector('[data-filter-empty]');
+    if (!emptyState && roster) {
+      emptyState = document.createElement('div');
+      emptyState.className = 'empty-state roster-empty';
+      emptyState.dataset.filterEmpty = 'true';
+      emptyState.hidden = true;
+      emptyState.style.gridColumn = '1 / -1';
+      emptyState.innerHTML = '<h3>ไม่พบคลังเสียงที่ตรงกับตัวกรอง</h3><p>ลองเลือกภาษา หรือประเภทคลังเสียงรายการอื่น</p>';
+      roster.append(emptyState);
+    }
+
+    const applyFilter = (filter) => {
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || '').split(',').map((tag) => tag.trim());
+        const show = filter === 'all' || tags.includes(filter);
+        card.hidden = !show;
+        if (show) {
+          visibleCount += 1;
+        }
+      });
+      if (emptyState) {
+        emptyState.hidden = visibleCount > 0;
+      }
+    };
+
+    chips.forEach((chip) => {
+      chip.type = 'button';
+      chip.setAttribute('aria-pressed', chip.classList.contains('active') ? 'true' : 'false');
       chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const f = chip.dataset.filter;
-        cards.forEach(card => {
-          const tags = (card.dataset.tags || '').split(',');
-          const show = f === 'all' || tags.includes(f);
-          card.style.display = show ? '' : 'none';
+        chips.forEach((item) => {
+          item.classList.remove('active');
+          item.setAttribute('aria-pressed', 'false');
         });
+        chip.classList.add('active');
+        chip.setAttribute('aria-pressed', 'true');
+        applyFilter(chip.dataset.filter || 'all');
       });
     });
+
+    const activeChip = document.querySelector('.filter-chip.active');
+    applyFilter(activeChip?.dataset.filter || 'all');
   }
+
+  // Prevent the page from retaining an open mobile menu after history navigation.
+  window.addEventListener('pageshow', () => {
+    root.style.setProperty('--page-ready', '1');
+  });
 });

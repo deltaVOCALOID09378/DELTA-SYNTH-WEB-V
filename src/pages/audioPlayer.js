@@ -85,7 +85,11 @@ export class AudioPlayerManager {
     try {
       audio.pause();
       audio.currentTime = 0;
-      audio.removeAttribute('src');
+      if (typeof audio.removeAttribute === 'function') {
+        audio.removeAttribute('src');
+      } else {
+        audio.src = '';
+      }
       if (typeof audio.load === 'function') {
         audio.load();
       }

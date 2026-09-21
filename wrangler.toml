@@ -1,0 +1,7 @@
+name = "delta-synth-studio"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "src/public"
+
+[vars]
+ENVIRONMENT = "production"
+DOMAIN = "delta-synth-studio-th.com"

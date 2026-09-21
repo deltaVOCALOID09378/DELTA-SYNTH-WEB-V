@@ -13,8 +13,12 @@
     "react": "16.14.0"
   },
   "scripts": {
-    "postinstall": "wix sync-types",
-    "dev": "wix dev",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "portal": "node tools/static-server.mjs",
+    "wix:dev": "wix dev",
+    "wix:sync": "wix sync-types",
+    "build": "node --check server.js && node --check tools/static-server.mjs",
     "lint": "eslint .",
     "test": "node tests/run-all-tests.js"
   },

@@ -52,36 +52,6 @@
       "language": "Thai"
     }
   ],
-  "arun_kamonlanetr": [
-    {
-      "filename": "Arun Kamonlanetr Special 2026 JPN VCV v.1.0 (1).rar",
-      "size": "96.1 MB",
-      "bytes": 100801259,
-      "format": "UTAU VCV",
-      "language": "Japanese"
-    },
-    {
-      "filename": "Arun Kamonlanetr Special 2026 JPN VCV v.1.0.rar",
-      "size": "96.1 MB",
-      "bytes": 100801259,
-      "format": "UTAU VCV",
-      "language": "Japanese"
-    },
-    {
-      "filename": "Arun Kamonlanetr THAI VCCV 2025.rar",
-      "size": "81.4 MB",
-      "bytes": 85339886,
-      "format": "UTAU VCCV",
-      "language": "Thai"
-    },
-    {
-      "filename": "Arun Kamonlanetr JP VCV Multipitch.rar",
-      "size": "52.4 MB",
-      "bytes": 54935317,
-      "format": "UTAU VCV",
-      "language": "Japanese"
-    }
-  ],
   "ayanami_hikaru": [
     {
       "filename": "Ayanami Hikaru AI SN 6th v.1.3.rar",
@@ -873,36 +843,6 @@
       "language": "Japanese"
     }
   ],
-  "onika": [
-    {
-      "filename": "Onika The First Type for ENG Arpasing v.1.0.rar",
-      "size": "222.0 MB",
-      "bytes": 232732230,
-      "format": "UTAU Arpasing",
-      "language": "English"
-    },
-    {
-      "filename": "Onika New Full Type in 2026 English Arpasing v.1.0.rar",
-      "size": "87.0 MB",
-      "bytes": 91227571,
-      "format": "UTAU Arpasing",
-      "language": "English"
-    },
-    {
-      "filename": "Onika JPN VCV Collaboration v.1.0..rar",
-      "size": "62.0 MB",
-      "bytes": 64970935,
-      "format": "UTAU VCV",
-      "language": "Japanese"
-    },
-    {
-      "filename": "Onika New Type 2026 JPN VCV v.2.0.rar",
-      "size": "57.3 MB",
-      "bytes": 60130437,
-      "format": "UTAU VCV",
-      "language": "Japanese"
-    }
-  ],
   "quint": [
     {
       "filename": "Quint New Type For Collaboration in 2026 English Arpasing v.1.0.rar",
@@ -1211,29 +1151,6 @@
       "language": "Japanese"
     }
   ],
-  "utashi_nara": [
-    {
-      "filename": "Utashi Nara English Arpasing v.1.0.rar",
-      "size": "83.8 MB",
-      "bytes": 87880966,
-      "format": "UTAU Arpasing",
-      "language": "English"
-    },
-    {
-      "filename": "Utashi Nara for The Callaboration in 2026 JPN VCV v.1.0 (1).rar",
-      "size": "79.8 MB",
-      "bytes": 83647735,
-      "format": "UTAU VCV",
-      "language": "Multi-lingual"
-    },
-    {
-      "filename": "Utashi Nara for The Callaboration in 2026 JPN VCV v.1.0.rar",
-      "size": "79.8 MB",
-      "bytes": 83647735,
-      "format": "UTAU VCV",
-      "language": "Multi-lingual"
-    }
-  ],
   "yamada_takeshi": [
     {
       "filename": "Yamada Takeshi Original Vocal in JPN CV v.1.0.rar",
@@ -1265,5 +1182,8 @@
       "format": "UTAU VCV",
       "language": "Japanese"
     }
-  ]
+  ],
+  "arun_kamonlanetr": [],
+  "onika": [],
+  "utashi_nara": []
 }

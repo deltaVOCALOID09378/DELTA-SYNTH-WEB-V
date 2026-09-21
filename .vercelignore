@@ -1,0 +1,34 @@
+node_modules
+Published
+.git
+.wix
+.snapshots
+.venv
+.tmp.*
+Chat History
+Export The Project
+Export_For_Web
+delta-synth-web-
+my-website
+wix_model.json
+temp_curl*.txt
+All Editing.md
+All Editing File For Agent
+Picture File
+Singer Profile
+uploads
+scratch
+tests
+tools
+src/pages/Voice
+src/public/Voice
+History Editing
+History
+*.bat
+*.log
+*.zip
+*.ps1
+update_profiles.py
+generate.cjs
+generate_voicebank.cjs
+
