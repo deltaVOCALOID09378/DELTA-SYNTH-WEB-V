@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://delta-synth-studio-th.com/sitemap.xml

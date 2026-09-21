@@ -853,11 +853,15 @@ async function importViaDataUri(filePath, visited = new Map()) {
   async function processCode(srcPath) {
     let code = await fs.promises.readFile(srcPath, 'utf8');
 
-    // Replace public imports
-    code = code.replace(/from\s+['"]public\/([^'"]+)['"]/g, (m, p) => {
+    // Replace public imports recursively
+    const publicMatches = [...code.matchAll(/from\s+['"]public\/([^'"]+)['"]/g)];
+    for (const match of publicMatches) {
+      const p = match[1];
       const target = path.resolve(process.cwd(), 'src/public', (p.endsWith('.js') || p.endsWith('.json')) ? p : `${p}.js`);
-      return `from ${JSON.stringify(pathToFileURL(target).href)}`;
-    });
+      const depCode = await processCode(target);
+      const depDataUri = `data:text/javascript;charset=utf-8,${encodeURIComponent(depCode)}`;
+      code = code.replace(match[0], `from ${JSON.stringify(depDataUri)}`);
+    }
 
     // Replace backend imports
     const backendMatches = [...code.matchAll(/from\s+['"]backend\/([^'"]+)['"]/g)];
