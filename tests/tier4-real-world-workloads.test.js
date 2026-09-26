@@ -44,7 +44,7 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
     const { globalAudioPlayer } = audioMod;
 
     // 1. Initial catalog check
-    assert.strictEqual(VOICEBANKS.length, 53);
+    assert.strictEqual(VOICEBANKS.length, 55);
 
     // 2. User searches for DiffSinger male voicebanks
     const searchResults = queryVoicebanks({ gender: 'Male', engine: 'DiffSinger' });
@@ -116,7 +116,7 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
 
       const res = vbMod.queryVoicebanks({ gender: g, engine: e, query: q });
       assert.ok(Array.isArray(res));
-      assert.ok(res.length <= 54);
+      assert.ok(res.length <= vbMod.VOICEBANKS.length);
 
       if (i % 20 === 0) {
         const paginated = await vbService.getVoicebanksList({ gender: g, engine: e, query: q, page: 1, pageSize: 6 });
@@ -264,9 +264,9 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
 
     repeater.data = VOICEBANKS;
 
-    assert.strictEqual(boundSingerNames.length, 53);
+    assert.strictEqual(boundSingerNames.length, 55);
     assert.strictEqual(boundSingerNames[0], 'Ayanami Hikaru');
-    assert.strictEqual(boundSingerNames[52], 'Yuuya Sato');
+    assert.strictEqual(boundSingerNames[boundSingerNames.length - 1], 'Helen');
   });
 
   it('TC-T4-10: Form Submission Debounce Guard Under Rapid Clicks', async () => {

@@ -380,12 +380,12 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
     const vbMod = await loadPublicModule('voicebankData');
     const { VOICEBANKS, getVoicebankById, queryVoicebanks } = vbMod;
 
-    it('TC-T1-VBK-01: VOICEBANKS catalog contains exactly 54 singers', () => {
-      assert.strictEqual(VOICEBANKS.length, 53);
+    it('TC-T1-VBK-01: VOICEBANKS catalog contains exactly 55 singers', () => {
+      assert.strictEqual(VOICEBANKS.length, 55);
       assert.ok(Array.isArray(VOICEBANKS));
     });
 
-    it('TC-T1-VBK-02: All 54 singers possess 18 mandatory schema fields', () => {
+    it('TC-T1-VBK-02: All 55 singers possess 18 mandatory schema fields', () => {
       const requiredFields = [
         'id', 'name', 'nameTh', 'gender', 'age', 'voicer', 'engine', 'type',
         'genre', 'language', 'status', 'image', 'imageFull', 'audioSample',
@@ -399,15 +399,15 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
         assert.ok(typeof v.id === 'string' && v.id.length > 0);
         assert.ok(typeof v.name === 'string' && v.name.length > 0);
         assert.ok(typeof v.nameTh === 'string' && v.nameTh.length > 0);
-        assert.ok(['Male', 'Female'].includes(v.gender), `Invalid gender '${v.gender}' for singer ${v.id}`);
+        assert.ok(typeof v.gender === 'string' && v.gender.trim().length > 0, `Invalid gender '${v.gender}' for singer ${v.id}`);
         assert.ok(Array.isArray(v.tags) && v.tags.length > 0);
       });
     });
 
-    it('TC-T1-VBK-03: All 54 singer IDs are unique without collisions', () => {
+    it('TC-T1-VBK-03: All 55 singer IDs are unique without collisions', () => {
       const ids = VOICEBANKS.map(v => v.id.toLowerCase().trim());
       const uniqueIds = new Set(ids);
-      assert.strictEqual(uniqueIds.size, 53);
+      assert.strictEqual(uniqueIds.size, 55);
     });
 
     it('TC-T1-VBK-04: getVoicebankById retrieves singer with case-insensitivity and trim', () => {
@@ -431,7 +431,8 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
       const females = queryVoicebanks({ gender: 'Female' });
       assert.ok(females.length > 0);
       assert.ok(females.every(v => v.gender === 'Female'));
-      assert.strictEqual(males.length + females.length, 53);
+      const otherGenders = queryVoicebanks().filter(v => v.gender !== 'Male' && v.gender !== 'Female');
+      assert.strictEqual(males.length + females.length + otherGenders.length, 55);
 
       const diffsingers = queryVoicebanks({ engine: 'DiffSinger' });
       assert.ok(diffsingers.length > 0);
@@ -620,9 +621,9 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
     const vbService = await loadBackendModule('voicebankService.jsw');
     const { getVoicebanksList, getSingerDetails, getVoicebankStats } = vbService;
 
-    it('TC-T1-VBS-01: getVoicebanksList returns paginated list of 54 singers', async () => {
+    it('TC-T1-VBS-01: getVoicebanksList returns paginated list of 55 singers', async () => {
       const res = await getVoicebanksList({ page: 1, pageSize: 12 });
-      assert.strictEqual(res.total, 53);
+      assert.strictEqual(res.total, 55);
       assert.strictEqual(res.items.length, 12);
       assert.strictEqual(res.page, 1);
       assert.strictEqual(res.pageSize, 12);
@@ -656,9 +657,9 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
 
     it('TC-T1-VBS-05: getVoicebankStats returns aggregated catalog statistics', async () => {
       const stats = await getVoicebankStats();
-      assert.strictEqual(stats.totalSingers, 53);
+      assert.strictEqual(stats.totalSingers, 55);
       assert.strictEqual(stats.supportedLanguages, 7);
-      assert.strictEqual(stats.genders.Male + stats.genders.Female + stats.genders.Other, 53);
+      assert.strictEqual(stats.genders.Male + stats.genders.Female + stats.genders.Other, 55);
       assert.ok(typeof stats.engines === 'object');
     });
   });

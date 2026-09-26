@@ -75,7 +75,7 @@ describe('Tier 2: Boundary & Corner Cases (Boundary Value Analysis)', () => {
 
     it('TC-T2-BND-04: getVoicebanksList handles null and empty parameters safely', async () => {
       const res = await vbService.getVoicebanksList(null);
-      assert.strictEqual(res.total, 53);
+      assert.strictEqual(res.total, 55);
       assert.strictEqual(res.items.length, 12);
     });
 
@@ -327,13 +327,13 @@ describe('Tier 2: Boundary & Corner Cases (Boundary Value Analysis)', () => {
       const res = await vbService.getVoicebanksList({ page: 9999, pageSize: 12 });
       assert.strictEqual(res.page, 9999);
       assert.strictEqual(res.items.length, 0);
-      assert.strictEqual(res.total, 53);
+      assert.strictEqual(res.total, 55);
     });
 
     it('TC-T2-PAG-03: getVoicebanksList clamps gigantic pageSize to maximum 100 limit', async () => {
       const res = await vbService.getVoicebanksList({ page: 1, pageSize: 5000 });
       assert.strictEqual(res.pageSize, 100);
-      assert.strictEqual(res.items.length, 53);
+      assert.strictEqual(res.items.length, 55);
     });
 
     it('TC-T2-PAG-04: getVoicebanksList handles non-numeric and NaN pagination strings', async () => {
