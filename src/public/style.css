@@ -1,123 +1,146 @@
-/**
- * DELTA SYNTH — Theme & Design System Constants (SPACE EDITION)
- * 
- * Theme: Outer Space / Cosmic
- * Palette: Deep Space Black · Starfield White · Nebula Red · Cosmic Blue
- * Background: Vast starfield / nebula sky
- * 
- * Complies with AGENT.md:
- * - Font: Leelawadee UI / Kanit / Inter
- * - Primary: #CC2200 (Nebula Red)
- * - Dark: #1A1A1A (Deep Space)
- * - Light: #F0F0F0 (Starlight White)
- * - Hover: #FF4422 (Solar Flare)
- * - Pressed: #991100 (Dying Star)
- * - Highlight: #CC2200 (Supernova Core)
- * 
- * Made And Checked By DELTA SYNTH & Gemini AI
- */
+/* ==============================================================================
+# File Name: style.css
+# Version: 1.2 — SPACE THEME
+# Target Location: /public/css/style.css
+# Purpose: การตั้งค่า Typography พื้นฐานสำหรับฝั่ง Web Platform / HTML UI
+# Theme: Outer Space / Cosmic — Deep Space Black · Starlight White · Nebula Red
+# Made And Checked By DELTA SYNTH & Gemini AI
+# Original by ผู้ใช้งาน
+============================================================================== */
 
-export const THEME = {
-  colors: {
-    // --- Core Palette ---
-    primary: '#CC2200',            // Nebula Red — signature accent
-    primaryHover: '#FF4422',       // Solar Flare — hover state
-    primaryPressed: '#991100',     // Dying Star — pressed/active
-    primaryHighlight: '#CC2200',   // Supernova Core — glow/highlight
+/* --- Inject Cosmic Keyframes --- */
+@keyframes cosmicTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
 
-    // --- Backgrounds (Space / Starfield) ---
-    bgDark: '#0A0A12',             // Deep Space — near-black with hint of indigo
-    bgDarker: '#050508',           // Event Horizon — deepest void
-    bgCard: 'rgba(10, 10, 18, 0.85)',     // Glassmorphism card over stars
-    bgGlass: 'rgba(10, 10, 18, 0.70)',    // Semi-transparent space glass
-    bgSpace: 'linear-gradient(180deg, #0A0A1F 0%, #1A0B2E 50%, #2D1B4E 100%)', // Cosmic sky gradient
-    bgNebula: 'radial-gradient(ellipse at 30% 20%, rgba(204,34,0,0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0,176,255,0.10) 0%, transparent 50%)', // Nebula glow overlay
+@keyframes cosmicFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
 
-    // --- Borders ---
-    borderDark: '#1E1E2A',         // Subtle space station panel seam
-    borderGlow: 'rgba(204, 34, 0, 0.4)',   // Red-rimmed nebula glow
-    borderStar: 'rgba(240, 240, 240, 0.15)', // Faint starlight border
+@keyframes cosmicGlowPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(204, 34, 0, 0.3); }
+    50% { box-shadow: 0 0 24px rgba(204, 34, 0, 0.6); }
+}
 
-    // --- Text ---
-    textLight: '#F0F0F0',          // Starlight White
-    textMuted: '#8A8AA0',          // Distant Galaxy Grey
-    textDark: '#0A0A12',           // Void Black
-    textCosmic: '#E0E0FF',         // Soft Cosmic Lavender
+/* --- Root Variables (Space Theme) --- */
+:root {
+    --primary: #CC2200;
+    --primary-hover: #FF4422;
+    --primary-pressed: #991100;
+    --bg-dark: #0A0A12;
+    --bg-darker: #050508;
+    --bg-card: rgba(10, 10, 18, 0.85);
+    --text-light: #F0F0F0;
+    --text-muted: #8A8AA0;
+    --text-dark: #0A0A12;
+    --border-glow: rgba(204, 34, 0, 0.4);
+    --star-white: #FFFFFF;
+    --nebula-purple: #B388FF;
+}
 
-    // --- Status ---
-    success: '#00E676',            // Green Nebula
-    warning: '#FFD600',            // Yellow Dwarf Star
-    error: '#FF1744',              // Red Giant
-    info: '#00B0FF',               // Blue Supergiant
+/* --- Body: Cosmic Starfield Background --- */
+body {
+    font-family: "Leelawadee UI", "Leelawadee", sans-serif;
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(ellipse at 30% 20%, rgba(204, 34, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 176, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(179, 136, 255, 0.06) 0%, transparent 60%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
 
-    // --- Cosmic Accents ---
-    starWhite: '#FFFFFF',          // Bright Star
-    starYellow: '#FFF9C4',         // Warm Star
-    starBlue: '#B3E5FC',           // Blue Giant
-    nebulaPurple: '#B388FF',       // Purple Nebula
-    nebulaPink: '#FF4081',         // Pink Nebula
-    dustCloud: 'rgba(255,255,255,0.05)', // Cosmic Dust
-    galaxyCore: 'rgba(204, 34, 0, 0.6)',  // Red Galactic Core
-    eventHorizon: '#000000'        // True Black Void
-  },
+/* --- Headings: Nebula Red with Starlight Glow --- */
+h1, h2, h3 {
+    font-family: "Leelawadee UI", "Leelawadee", sans-serif;
+    color: var(--primary);
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(204, 34, 0, 0.3);
+    letter-spacing: 0.5px;
+}
 
-  // --- Space Effect Tokens (for CSS / canvas rendering) ---
-  effects: {
-    starfield: {
-      count: 120,
-      minSize: 0.5,
-      maxSize: 2.5,
-      twinkleSpeed: 2000
-    },
-    nebulaGlow: '0 0 20px rgba(204, 34, 0, 0.3)',
-    starGlow: '0 0 6px rgba(255, 255, 255, 0.8)',
-    cosmicDropShadow: '0 4px 24px rgba(0, 0, 0, 0.7)',
-    textGlow: '0 0 8px rgba(240, 240, 240, 0.4)'
-  },
+/* --- Heading Size Variants --- */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 
-  fonts: {
-    primary: 'Leelawadee UI, Kanit, Inter, sans-serif',
-    heading: 'Leelawadee UI, Kanit, sans-serif',
-    monospace: 'Consolas, "Courier New", monospace',
-    cosmic: '"Orbitron", "Exo 2", Leelawadee UI, Kanit, sans-serif'  // Sci-fi font for space labels
-  },
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
 
-  toast: {
-    maxWidth: 280,
-    maxHeight: 80,
-    offsetRight: 16,
-    offsetBottom: 20,
-    borderRadius: 6,
-    durationMs: 3500,
-    bg: 'rgba(10, 10, 18, 0.92)',     // Space-glass toast
-    borderColor: 'rgba(204, 34, 0, 0.4)'
-  },
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
-  animation: {
-    durationFast: 200,
-    durationNormal: 350,
-    durationSlow: 500,
-    easing: 'ease-in-out',
-    twinkle: 'cosmicTwinkle 2s ease-in-out infinite',
-    float: 'cosmicFloat 6s ease-in-out infinite',
-    glowPulse: 'cosmicGlowPulse 3s ease-in-out infinite'
-  },
+/* --- Paragraphs & Text --- */
+p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
 
-  // --- CSS Keyframes (inject into stylesheet) ---
-  keyframes: `
-    @keyframes cosmicTwinkle {
-      0%, 100% { opacity: 0.3; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-    @keyframes cosmicFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    @keyframes cosmicGlowPulse {
-      0%, 100% { box-shadow: 0 0 8px rgba(204, 34, 0, 0.3); }
-      50% { box-shadow: 0 0 24px rgba(204, 34, 0, 0.6); }
-    }
-  `
-};
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
 
-export default THEME;
+a:hover {
+    color: var(--primary-hover);
+    text-shadow: 0 0 8px rgba(255, 68, 34, 0.4);
+}
+
+/* --- Utility: Starlight Text --- */
+.text-starlight {
+    color: var(--star-white);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.text-cosmic {
+    color: var(--nebula-purple);
+    text-shadow: 0 0 8px rgba(179, 136, 255, 0.3);
+}
+
+/* --- Utility: Glass Card --- */
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Utility: Nebula Glow Button --- */
+.btn-nebula {
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(204, 34, 0, 0.3);
+}
+
+.btn-nebula:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 0 20px rgba(255, 68, 34, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-nebula:active {
+    background: var(--primary-pressed);
+    transform: translateY(0);
+}
