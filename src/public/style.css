@@ -1,25 +1,146 @@
 /* ==============================================================================
 # File Name: style.css
-# Version: 1.1
+# Version: 1.2 — SPACE THEME
 # Target Location: /public/css/style.css
 # Purpose: การตั้งค่า Typography พื้นฐานสำหรับฝั่ง Web Platform / HTML UI
+# Theme: Outer Space / Cosmic — Deep Space Black · Starlight White · Nebula Red
 # Made And Checked By DELTA SYNTH & Gemini AI
 # Original by ผู้ใช้งาน
 ============================================================================== */
 
+/* --- Inject Cosmic Keyframes --- */
+@keyframes cosmicTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes cosmicFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes cosmicGlowPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(204, 34, 0, 0.3); }
+    50% { box-shadow: 0 0 24px rgba(204, 34, 0, 0.6); }
+}
+
+/* --- Root Variables (Space Theme) --- */
+:root {
+    --primary: #CC2200;
+    --primary-hover: #FF4422;
+    --primary-pressed: #991100;
+    --bg-dark: #0A0A12;
+    --bg-darker: #050508;
+    --bg-card: rgba(10, 10, 18, 0.85);
+    --text-light: #F0F0F0;
+    --text-muted: #8A8AA0;
+    --text-dark: #0A0A12;
+    --border-glow: rgba(204, 34, 0, 0.4);
+    --star-white: #FFFFFF;
+    --nebula-purple: #B388FF;
+}
+
+/* --- Body: Cosmic Starfield Background --- */
 body {
-    /* กำหนดให้ Leelawadee เป็นฟอนต์หลัก และถอด Angsana New ออกจาก Fallback */
     font-family: "Leelawadee UI", "Leelawadee", sans-serif;
-    background-color: #F0F0F0;
-    color: #1A1A1A;
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(ellipse at 30% 20%, rgba(204, 34, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 176, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(179, 136, 255, 0.06) 0%, transparent 60%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-light);
     font-size: 16px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
 }
 
+/* --- Headings: Nebula Red with Starlight Glow --- */
 h1, h2, h3 {
     font-family: "Leelawadee UI", "Leelawadee", sans-serif;
-    color: #CC2200;
+    color: var(--primary);
     font-weight: 700;
+    text-shadow: 0 0 8px rgba(204, 34, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* --- Heading Size Variants --- */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Paragraphs & Text --- */
+p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-shadow: 0 0 8px rgba(255, 68, 34, 0.4);
+}
+
+/* --- Utility: Starlight Text --- */
+.text-starlight {
+    color: var(--star-white);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.text-cosmic {
+    color: var(--nebula-purple);
+    text-shadow: 0 0 8px rgba(179, 136, 255, 0.3);
+}
+
+/* --- Utility: Glass Card --- */
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Utility: Nebula Glow Button --- */
+.btn-nebula {
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(204, 34, 0, 0.3);
+}
+
+.btn-nebula:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 0 20px rgba(255, 68, 34, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-nebula:active {
+    background: var(--primary-pressed);
+    transform: translateY(0);
 }
