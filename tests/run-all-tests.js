@@ -1,14 +1,17 @@
 /**
  * DELTA SYNTH — Master Test Runner & Suite Orchestrator
  * 
- * Executes 4-Tier Test Suites with Native Node.js Test Runner:
+ * Executes 5-Tier Test Suites with Native Node.js Test Runner:
  * - Tier 1: Feature Coverage (Category-Partition Testing)
  * - Tier 2: Boundary & Corner Cases (Boundary Value Analysis)
  * - Tier 3: Cross-Feature Combinations (Pairwise Interaction)
  * - Tier 4: Real-World Workloads & Concurrency Stress
+ * - Tier 5: DELTA SYNTH Theme Verification & Integrity
  * 
  * Standards Compliance: AGENT.md (Sections 1-20), PROJECT.md
- * Made And Checked By DELTA SYNTH & Gemini AI
+ * Made And Checked By DELTA SYNTH & All Code Agentic AI Engine
+ * Original by DELTA SYNTH
+ * Version: 1.1
  */
 
 import { run } from 'node:test';
@@ -54,6 +57,11 @@ const SUITES = [
     tier: 4,
     name: 'Tier 4: Real-World Workloads & Concurrency',
     file: path.join(__dirname, 'tier4-real-world-workloads.test.js')
+  },
+  {
+    tier: 5,
+    name: 'Tier 5: DELTA SYNTH Theme Verification & Integrity',
+    file: path.join(__dirname, 'theme_delta_synth.test.js')
   }
 ];
 
@@ -66,7 +74,7 @@ async function main() {
 
   console.log(`${C.bright}${C.cyan}╔═══════════════════════════════════════════════════════════════════════╗${C.reset}`);
   console.log(`${C.bright}${C.cyan}║                   DELTA SYNTH — E2E TEST RUNNER                       ║${C.reset}`);
-  console.log(`${C.bright}${C.cyan}║       4-Tier Opaque-Box Automated Verification (AGENT.md)             ║${C.reset}`);
+  console.log(`${C.bright}${C.cyan}║       5-Tier Opaque-Box Automated Verification (AGENT.md)             ║${C.reset}`);
   console.log(`${C.bright}${C.cyan}╚═══════════════════════════════════════════════════════════════════════╝${C.reset}\n`);
 
   const suitesToRun = targetTier ? SUITES.filter(s => s.tier === targetTier) : SUITES;
