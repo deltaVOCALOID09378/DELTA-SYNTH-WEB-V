@@ -1,6 +1,6 @@
 /* ==============================================================================
 # File Name: style.css
-# Version: 2.1
+# Version: 2.2
 # Target Location: src/public/style.css
 # Purpose: DELTA SYNTH — Cyberpunk Vocal Synth Master Design System
 # Red (#CC2200), Black (#1A1A1A), White (#F0F0F0), Hover (#FF4422), Pressed (#991100)
@@ -335,17 +335,50 @@ section{ padding: 64px 0; position: relative; z-index:1; }
 }
 
 .vcard{
-  background: var(--panel);
+  position: relative;
+  background: var(--panel-glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   overflow:hidden;
   display:flex; flex-direction:column;
-  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255, 68, 34, 0.18);
+  transition: border-color .25s ease, transform .25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .25s ease;
+}
+.vcard::before,
+.vcard::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 3;
+  transition: all 0.25s ease;
+}
+.vcard::before {
+  top: 0; left: 0;
+  border-top: 2px solid var(--primary-hover);
+  border-left: 2px solid var(--primary-hover);
+  border-top-left-radius: 4px;
+  opacity: 0.6;
+}
+.vcard::after {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--primary-hover);
+  border-right: 2px solid var(--primary-hover);
+  border-bottom-right-radius: 4px;
+  opacity: 0.6;
 }
 .vcard:hover{ 
-  border-color: var(--line-strong); 
-  transform: translateY(-4px); 
-  box-shadow: 0 14px 35px -10px rgba(204, 34, 0, 0.35); 
+  border-color: rgba(255, 68, 34, 0.65); 
+  transform: translateY(-5px); 
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 26px rgba(204, 34, 0, 0.35), inset 0 1px 0 rgba(255, 68, 34, 0.4); 
+}
+.vcard:hover::before,
+.vcard:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--primary-hover);
 }
 
 .vcard-media{
@@ -1029,5 +1062,140 @@ footer{
     margin-top: 4px;
     box-sizing: border-box;
   }
+}
+
+/* ==============================================================================
+   DELTA SYNTH — Ultra-Futuristic Cyberpunk Studio System & HUD Enhancements
+   Made And Checked By DELTA SYNTH & All Code Agentic AI Engine
+   ============================================================================== */
+
+/* Futuristic Glassmorphic HUD Card with Specular Rim & Cyber-Corners */
+.hud-panel, .glass-hud {
+  position: relative;
+  background: var(--panel-glass);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 68, 34, 0.28);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.hud-panel::before,
+.hud-panel::after,
+.hud-corners::before,
+.hud-corners::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 3;
+  transition: all 0.25s ease;
+}
+
+.hud-panel::before,
+.hud-corners::before {
+  top: 0; left: 0;
+  border-top: 2px solid var(--primary-hover);
+  border-left: 2px solid var(--primary-hover);
+  border-top-left-radius: 6px;
+  opacity: 0.7;
+}
+
+.hud-panel::after,
+.hud-corners::after {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--primary-hover);
+  border-right: 2px solid var(--primary-hover);
+  border-bottom-right-radius: 6px;
+  opacity: 0.7;
+}
+
+.hud-panel:hover,
+.hud-corners:hover {
+  border-color: rgba(255, 68, 34, 0.65);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(204, 34, 0, 0.35), inset 0 1px 0 rgba(255, 68, 34, 0.45);
+}
+
+.hud-panel:hover::before,
+.hud-panel:hover::after,
+.hud-corners:hover::before,
+.hud-corners:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--primary-hover);
+}
+
+/* Audio Waveform Pulse Indicator */
+.waveform-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+.waveform-accent span {
+  width: 2.5px;
+  background: var(--primary-hover);
+  border-radius: 999px;
+  animation: wavePulse 1.2s infinite ease-in-out alternate;
+}
+.waveform-accent span:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.waveform-accent span:nth-child(2) { height: 14px; animation-delay: 0.3s; }
+.waveform-accent span:nth-child(3) { height: 9px; animation-delay: 0.5s; }
+
+@keyframes wavePulse {
+  0% { transform: scaleY(0.4); opacity: 0.5; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* Cyberpunk Telemetry Tag & Live Pulse */
+.telemetry-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-hover);
+  background: rgba(204, 34, 0, 0.12);
+  border: 1px solid rgba(204, 34, 0, 0.35);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.neon-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00E676;
+  box-shadow: 0 0 8px #00E676;
+  animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Futuristic Magnetic Shimmer for Action Buttons */
+.btn-shimmer, .btn-primary {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+.btn-shimmer::before, .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+.btn-shimmer:hover::before, .btn-primary:hover::before {
+  left: 140%;
 }
 

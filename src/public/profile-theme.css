@@ -1,6 +1,6 @@
 /* ==============================================================================
 # File Name: profile-theme.css
-# Version: 2.1
+# Version: 2.2
 # Target Location: src/public/profile-theme.css
 # Purpose: DELTA SYNTH Shared Profile Theme — Cyberpunk Vocal Synth Design System
 # Red (#CC2200), Black (#1A1A1A), White (#F0F0F0), Hover (#FF4422), Pressed (#991100)
@@ -81,18 +81,58 @@ main .container {
   max-width: 1180px !important;
 }
 
+/* Futuristic Cyber HUD Glassmorphism */
 .glass-panel {
+  position: relative;
   background: var(--profile-panel) !important;
-  backdrop-filter: blur(16px) saturate(140%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  backdrop-filter: blur(18px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
   border: 1px solid var(--profile-line) !important;
   border-radius: 20px !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 25px rgba(204, 34, 0, 0.18) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 25px rgba(204, 34, 0, 0.18), inset 0 1px 0 rgba(255, 68, 34, 0.25) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease !important;
+  overflow: hidden;
+}
+
+/* Cyber Corner L-Brackets */
+.glass-panel::before,
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.28s ease;
+}
+
+.glass-panel::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--profile-hover);
+  border-left: 2px solid var(--profile-hover);
+  border-top-left-radius: 6px;
+  opacity: 0.7;
+}
+
+.glass-panel::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--profile-hover);
+  border-right: 2px solid var(--profile-hover);
+  border-bottom-right-radius: 6px;
+  opacity: 0.7;
 }
 
 .glass-panel:hover {
   border-color: var(--profile-hover) !important;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(204, 34, 0, 0.28) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(204, 34, 0, 0.35), inset 0 1px 0 rgba(255, 68, 34, 0.45) !important;
+}
+
+.glass-panel:hover::before,
+.glass-panel:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--profile-hover);
 }
 
 .glow-text, .glow-red {
@@ -112,16 +152,39 @@ h1, h2, h3, h4 {
   border-color: var(--profile-line) !important;
 }
 
+/* Cyberpunk Button with Magnetic Shimmer */
 .bg-red-700, .bg-red-600 {
+  position: relative !important;
+  overflow: hidden !important;
   background: linear-gradient(135deg, #CC2200 0%, #FF4422 50%, #991100 100%) !important;
   color: #FFFFFF !important;
   box-shadow: 0 0 16px var(--profile-glow) !important;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease !important;
+  will-change: transform;
 }
 
-.bg-red-700:hover, .bg-red-600:hover, .hover\\:bg-red-600:hover {
+.bg-red-700::before, .bg-red-600::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+
+.bg-red-700:hover, .bg-red-600:hover, .hover\:bg-red-600:hover {
+  transform: translateY(-2px);
   background: #FF4422 !important;
-  box-shadow: 0 0 24px rgba(255, 68, 34, 0.75) !important;
+  box-shadow: 0 0 26px rgba(255, 68, 34, 0.85) !important;
   color: #FFFFFF !important;
+}
+
+.bg-red-700:hover::before, .bg-red-600:hover::before {
+  left: 140%;
 }
 
 .text-white {
@@ -135,6 +198,28 @@ h1, h2, h3, h4 {
 footer {
   background: #090909 !important;
   border-top: 1px solid var(--profile-line) !important;
+}
+
+/* Audio Waveform Accent Indicator */
+.waveform-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+.waveform-accent span {
+  width: 2.5px;
+  background: var(--profile-hover);
+  border-radius: 999px;
+  animation: wavePulse 1.2s infinite ease-in-out alternate;
+}
+.waveform-accent span:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.waveform-accent span:nth-child(2) { height: 14px; animation-delay: 0.3s; }
+.waveform-accent span:nth-child(3) { height: 9px; animation-delay: 0.5s; }
+
+@keyframes wavePulse {
+  0% { transform: scaleY(0.4); opacity: 0.5; }
+  100% { transform: scaleY(1.2); opacity: 1; }
 }
 
 @media (max-width: 760px) {

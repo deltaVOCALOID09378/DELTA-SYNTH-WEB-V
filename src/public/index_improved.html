@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Main · DELTA SYNTH | ค่ายพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย</title>
+<meta name="description" content="DELTA SYNTH — สตูดิโอพัฒนาคลังเสียงร้องสังเคราะห์เสมือนจริง (OpenUtau / DiffSinger AI / UTAU) สัญชาติไทย ตั้งแต่ปี 2019 พร้อมไฟล์ USTX, MIDI, SVP, VSQX ให้ใช้งานฟรี">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Supplementary bilingual & badge styles matching DELTA SYNTH design tokens */
+  .lang-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+  .lang-tag-th {
+    background: rgba(255, 122, 107, 0.18);
+    color: var(--coral, #ff7a6b);
+    border: 1px solid rgba(255, 122, 107, 0.35);
+  }
+  .lang-tag-en {
+    background: rgba(79, 227, 208, 0.16);
+    color: var(--cyan, #4fe3d0);
+    border: 1px solid rgba(79, 227, 208, 0.35);
+  }
+  .sub-en {
+    display: block;
+    font-size: 0.9em;
+    color: var(--muted, #9c97b8);
+    margin-top: 4px;
+    font-family: var(--font-body, sans-serif);
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  .desc-block {
+    margin-bottom: 0.85em;
+  }
+  .desc-block:last-child {
+    margin-bottom: 0;
+  }
+  .desc-th {
+    color: var(--paper, #f4f2fb);
+    opacity: 0.92;
+    margin-bottom: 6px;
+    line-height: 1.65;
+  }
+  .desc-en {
+    color: var(--muted, #9c97b8);
+    font-size: 0.93em;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">Δ</span>
+      <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+    </a>
+    <nav class="nav-links" id="site-navigation">
+      <a href="index.html" class="active">หน้าแรก <span class="sub-nav">/ Main</span></a>
+      <a href="about.html">เกี่ยวกับเรา <span class="sub-nav">/ About</span></a>
+      <a href="voicebank.html">คลังเสียงทั้งหมด <span class="sub-nav">/ Voicebanks</span></a>
+      <a href="files.html">ไฟล์โปรเจกต์ <span class="sub-nav">/ USTX & MIDI</span></a>
+      <a href="collab.html">โปรเจกต์ร่วม <span class="sub-nav">/ Collab</span></a>
+      <a href="events.html">กิจกรรม <span class="sub-nav">/ Events</span></a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Thai Vocal Synthesis Studio — Since 2019</span>
+        <h1>เสียงร้องเสมือน<br>ที่เริ่มต้นจาก <span class="accent">ความตั้งใจของคนไทย</span></h1>
+        <div class="sub-en" style="font-size: 1.15em; color: var(--cyan); margin-bottom: 16px; font-weight: 500;">
+          Authentic Virtual Vocals Engineered with Thai Passion, Designed for Creators Worldwide
+        </div>
+
+        <div class="desc-block">
+          <p class="lead" style="margin-bottom: 8px;">
+            <strong>DELTA SYNTH</strong> คือค่ายและสตูดิโอพัฒนาคลังเสียงร้องสังเคราะห์เสมือนจริง (OpenUtau / DiffSinger AI / UTAU) สัญชาติไทย ผลิตและดูแลนักร้องเสมือนมากกว่า 34 เสียง รองรับการขับร้องได้ถึง 7 ภาษา พร้อมเปิดคลังเสียงและไฟล์โปรเจกต์ดนตรีให้ทุกคนดาวน์โหลดไปสร้างสรรค์ผลงานได้ฟรี
+          </p>
+          <p class="desc-en">
+            DELTA SYNTH is an independent Thai vocal synthesis studio founded in 2019. We specialize in voicebank production and acoustic modeling for OpenUtau, DiffSinger AI, and UTAU across 34+ virtual vocalists. Supporting up to 7 languages with completely free access to voicebanks and music project files.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="voicebank.html" class="btn btn-primary">
+            <span>สำรวจคลังเสียงทั้งหมด</span>
+            <span style="font-size: 11px; opacity: 0.85; font-weight: normal;">/ Voicebanks</span>
+          </a>
+          <a href="about.html" class="btn btn-ghost">
+            <span>รู้จักค่ายของเรา</span>
+            <span style="font-size: 11px; opacity: 0.85; font-weight: normal;">/ About Us</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mono-row"><span>ENGINE</span><span>DIFFSINGER AI · OPENUTAU · UTAU</span></div>
+        <div class="mono-row"><span>LANGUAGES</span><span>TH · JP · EN · CN · KR · FR · ES (7 Langs)</span></div>
+        <div class="mono-row"><span>STATUS</span><span>ACTIVE · EXPANDING ROSTER</span></div>
+        
+        <svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#9075ff"/>
+              <stop offset="50%" stop-color="#6f8dff"/>
+              <stop offset="100%" stop-color="#4fe3d0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
+                   C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
+                   C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
+        </svg>
+
+        <div class="mono-row" style="margin-top:6px;"><span>AI PARTNER</span><span>PRINTMOV TEAM — DIFFSINGER ENGINE</span></div>
+        <div class="mono-row"><span>FOUNDED</span><span>2019 · BANGKOK, THAILAND</span></div>
+        <div class="mono-row"><span>LICENSE</span><span>FREE FOR CREATORS & PRODUCERS</span></div>
+      </div>
+    </div>
+
+    <!-- แถบสถิติข้อมูลค่าย -->
+    <div class="stat-strip">
+      <div>
+        <div class="n">34<span>+</span></div>
+        <div class="l">
+          <strong>คลังเสียงทั้งหมดในเครือ</strong>
+          <span class="sub-en" style="font-size: 11px; margin-top: 2px;">Total Voicebanks in Roster</span>
+        </div>
+      </div>
+      <div>
+        <div class="n">19<span>+</span></div>
+        <div class="l">
+          <strong>พร้อมดาวน์โหลดใช้งานทันที</strong>
+          <span class="sub-en" style="font-size: 11px; margin-top: 2px;">Ready-to-Download Libraries</span>
+        </div>
+      </div>
+      <div>
+        <div class="n">7</div>
+        <div class="l">
+          <strong>ภาษาที่รองรับการขับร้อง</strong>
+          <span class="sub-en" style="font-size: 11px; margin-top: 2px;">Cross-Lingual Languages</span>
+        </div>
+      </div>
+      <div>
+        <div class="n">2019</div>
+        <div class="l">
+          <strong>ปีที่ก่อตั้งสตูดิโอ</strong>
+          <span class="sub-en" style="font-size: 11px; margin-top: 2px;">Pioneering Since 2019</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- หมวดอัตลักษณ์ วิสัยทัศน์ และจุดยืน -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">อัตลักษณ์และวิสัยทัศน์ · Brand Identity</span>
+      <h2>คำขวัญ วิสัยทัศน์ และจุดยืนของ DELTA SYNTH</h2>
+      <p>
+        สรุปแนวทางการสร้างสรรค์ของค่ายอย่างเป็นทางการ เพื่อมุ่งเน้นการสร้างสรรค์เสียงดนตรีและพัฒนาเทคโนโลยีเสียงสังเคราะห์อย่างยั่งยืน
+        <span class="sub-en">Our core philosophy, international vision, and standards guiding every voicebank we craft.</span>
+      </p>
+    </div>
+    
+    <div class="pillars">
+      <div class="pillar">
+        <span class="tag">คำขวัญ · Studio Motto</span>
+        <h3>"สร้างเสียง สร้างตัวตน สร้างสรรค์ไม่สิ้นสุด"</h3>
+        <div class="sub-en" style="color: var(--coral); font-weight: 500; margin-bottom: 12px;">
+          "Crafting Voices, Giving Identity, Creating Without Limits."
+        </div>
+        <p class="desc-th">
+          ทุกคลังเสียงของ DELTA SYNTH ไม่ใช่แค่ไฟล์เสียงสังเคราะห์ แต่คือตัวละครที่มีเรื่องราว มีเอกลักษณ์ทางอารมณ์ และมีที่มาเฉพาะตัว เราเชื่อว่าการพัฒนาเสียงร้องที่มีคุณภาพ คือการมอบชีวิตและตัวตนให้ตัวละครเติบโตไปพร้อมกับบทเพลงของผู้ใช้งาน
+        </p>
+        <p class="desc-en">
+          Every voicebank at DELTA SYNTH is more than acoustic data; it embodies a living character with distinct personality, narrative depth, and musical resonance. We believe that voice development goes hand-in-hand with character growth.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <span class="tag">วิสัยทัศน์ · Our Vision</span>
+        <h3>ค่ายเสียงเสมือนไทยที่ยืนหยัดบนมาตรฐานสากล</h3>
+        <div class="sub-en" style="color: var(--cyan); font-weight: 500; margin-bottom: 12px;">
+          "Advancing Thai Virtual Vocals to Global Synthesis Standards."
+        </div>
+        <p class="desc-th">
+          มุ่งมั่นวิจัยและยกระดับคลังเสียงสังเคราะห์ภาษาไทยให้ก้าวทันเทคโนโลยี AI เสียงร้องยุคใหม่ ผ่านความร่วมมือกับทีมพัฒนา DiffSinger และเครือข่ายครีเอเตอร์ทั้งในไทยและต่างประเทศ เพื่อให้เสียงร้องภาษาไทยก้องกังวานในระดับสากล
+        </p>
+        <p class="desc-en">
+          Dedicated to benchmarking Thai vocal synthesis against state-of-the-art AI neural architectures. Through global collaboration with DiffSinger developers and international creators, we bring Thai virtual singing to the worldwide stage.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <span class="tag">เอกลักษณ์ · Signature Quality</span>
+        <h3>หลากตัวตน หนึ่งมาตรฐานคุณภาพที่ยั่งยืน</h3>
+        <div class="sub-en" style="color: var(--violet); font-weight: 500; margin-bottom: 12px;">
+          "Diverse Characters, One Enduring Benchmark of Quality."
+        </div>
+        <p class="desc-th">
+          ตั้งแต่สมาชิกรุ่นบุกเบิก B.L. Student (2019) สู่ตระกูล Wongyai Family และซีรีส์ CP All Learning ทุกตัวละครได้รับการดูแลด้วยกระบวนการจูนและตั้งค่า oto เฉพาะตัว เพื่อให้ได้คุณภาพเสียงที่ชัดเจน ยืดหยุ่น และนำไปมิกซ์เพลงได้อย่างกลมกลืน
+        </p>
+        <p class="desc-en">
+          From our founding 2019 B.L. Student lineup to the Wongyai Family and CP All Learning series, every vocalist receives meticulous oto configuration and tuning, ensuring durable audio fidelity and effortless mixing for music producers.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ความเคลื่อนไหวและแผนงาน 2025 -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ความเคลื่อนไหวล่าสุด · Latest Milestones</span>
+      <h2>สรุปกิจกรรมและแผนงานของค่าย</h2>
+      <p>
+        ก้าวสำคัญในการยกระดับเอนจินเสียงและการขยายเครือข่ายนักร้องสังเคราะห์
+        <span class="sub-en">Key breakthroughs in AI engine integration, seasonal voicebank rollouts, and multilingual synthesis.</span>
+      </p>
+    </div>
+
+    <div class="feed">
+      <div class="feed-item">
+        <div class="date">2025 Milestone</div>
+        <div>
+          <h4>ความร่วมมือกับทีม Printmov — อัปเกรดสู่ DiffSinger AI</h4>
+          <div class="sub-en" style="color: var(--cyan); margin-bottom: 8px;">
+            Strategic Partnership with Printmov — DiffSinger AI Engine Integration
+          </div>
+          <p class="desc-th">
+            DELTA SYNTH เข้าร่วมเป็นพาร์ตเนอร์อย่างเป็นทางการกับทีม <strong>Printmov</strong> เพื่อร่วมทดสอบและยกระดับคลังเสียงหลักสู่ <strong>DiffSinger AI Engine</strong> เพิ่มความสมจริงของเสียงลมหายใจ ไดนามิกของพิตช์ และความเป็นธรรมชาติขั้นสูงสุด
+          </p>
+          <p class="desc-en">
+            DELTA SYNTH officially joined hands with the Printmov team to test and upgrade flagship voicebanks to the DiffSinger AI Engine, achieving remarkable pitch dynamics, lifelike vocal articulation, and expressive nuances.
+          </p>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <div class="date">มิ.ย. 2025</div>
+        <div>
+          <h4>เปิดตัวนักร้องรุ่นอัปเกรดประจำซีซั่น (TomAI, SakultalaAI, NamphuengAI)</h4>
+          <div class="sub-en" style="color: var(--coral); margin-bottom: 8px;">
+            Season Showcase: New AI Generation Vocalists
+          </div>
+          <p class="desc-th">
+            เปิดตัวและอัปเกรดโมเดลเสียงรุ่นล่าสุดสำหรับแนวดนตรีสมัยใหม่ ได้แก่ <strong>TomAI</strong>, <strong>SakultalaAI</strong> และ <strong>NamphuengAI</strong> ครอบคลุมการใช้งานทั้งภาษาไทย ญี่ปุ่น และอังกฤษ รองรับงานเพลงหลากหลายสไตล์
+          </p>
+          <p class="desc-en">
+            Introducing our upgraded seasonal vocalists: TomAI, SakultalaAI, and NamphuengAI. Engineered to excel across modern pop, ballads, and dynamic K-Pop/EDM arrangements in Thai, Japanese, and English.
+          </p>
+        </div>
+      </div>
+
+      <div class="feed-item">
+        <div class="date">ต่อเนื่อง</div>
+        <div>
+          <h4>ระบบเสียงร้องข้ามภาษา รองรับสูงสุดถึง 7 ภาษา</h4>
+          <div class="sub-en" style="color: var(--violet); margin-bottom: 8px;">
+            Cross-Lingual Synthesis in 7 Languages
+          </div>
+          <p class="desc-th">
+            รองรับการขับร้องภาษาไทย, อังกฤษ, ญี่ปุ่น, จีน, เกาหลี, ฝรั่งเศส และสเปน ผ่านฟีเจอร์ Cross-Lingual Synthesis ของ DiffSinger ช่วยให้นักแต่งเพลงสามารถแต่งเพลงหลายภาษาได้ด้วยเสียงนักร้องคนเดิม
+          </p>
+          <p class="desc-en">
+            Full vocal support across Thai, English, Japanese, Chinese, Korean, French, and Spanish via DiffSinger's cross-lingual synthesis capabilities, giving composers freedom to produce multilingual songs effortlessly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- แบนเนอร์เรียกร้องการดำเนินการ (Call to Action) -->
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>ดาวน์โหลดคลังเสียงและไฟล์เพลงได้แล้ววันนี้</h2>
+        <div class="sub-en" style="color: rgba(10, 11, 22, 0.8); font-size: 1.05em; font-weight: 600; margin-bottom: 10px;">
+          Download Virtual Voicebanks & Project Files (USTX / MIDI / SVP / VSQX) Free
+        </div>
+        <p style="color: rgba(10, 11, 22, 0.85); font-size: 15px; margin: 0;">
+          คลังเสียงและทรัพยากรการผลิตเพลงทั้งหมดของ DELTA SYNTH รวบรวมไว้ในเว็บไซต์ทางการที่นี่ครบจบในที่เดียว ไม่ต้องค้นหาจากที่อื่น
+        </p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="voicebank.html" class="btn btn-primary" style="background: #0a0b16; color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+          <span>ไปยังคลังเสียงทั้งหมด</span>
+          <span style="font-size: 11px; opacity: 0.8;">/ Voicebanks</span>
+        </a>
+        <a href="files.html" class="btn btn-ghost" style="border-color: rgba(10,11,22,0.35); color: #0a0b16;">
+          <span>ไฟล์เพลง USTX & MIDI</span>
+          <span style="font-size: 11px; opacity: 0.8;">/ Files</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ส่วนท้ายเว็บไซต์ (Footer) -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">Δ</span>
+          <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
+        </div>
+        <p style="max-width:340px; font-size:13.5px; line-height:1.6; color: var(--muted);">
+          สตูดิโอพัฒนาคลังเสียงร้องสังเคราะห์เสมือนจริงสัญชาติไทย ก่อตั้งเมื่อปี 2019 มุ่งมั่นวิจัยและพัฒนาคลังเสียง OpenUtau, UTAU และ DiffSinger AI พร้อมดูแลนักร้องเสียงสังเคราะห์มากกว่า 34 ตัวละคร<br>
+          <span class="sub-en" style="font-size: 12px; margin-top: 6px;">Independent Thai Vocal Synthesis Studio since 2019. Dedicated to voicebank engineering and community music production.</span>
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>แผนผังเว็บไซต์ · Sitemap</h4>
+        <a href="index.html">หน้าแรก (Main)</a>
+        <a href="about.html">เกี่ยวกับเรา (About Us)</a>
+        <a href="voicebank.html">คลังเสียงทั้งหมด (All Voicebanks)</a>
+        <a href="files.html">ไฟล์เพลง (USTX / MIDI / SVP / VSQX)</a>
+        <a href="collab.html">โปรเจกต์ร่วม (Collaborations)</a>
+        <a href="events.html">กิจกรรมและข่าวสาร (Events)</a>
+      </div>
+      <div class="footer-links">
+        <h4>ช่องทางติดต่อ · Contact</h4>
+        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail: delta.vocaloid09378@gmail.com</a>
+        <a href="mailto:patiphat.wongyai@gmail.com">Emergency: patiphat.wongyai@gmail.com</a>
+        <a href="https://www.youtube.com/@deltaSYNTH0320" target="_blank" rel="noreferrer">YouTube: DELTA SYNTH Official</a>
+        <a href="https://www.facebook.com/delta.synth.2025/" target="_blank" rel="noreferrer">Facebook: DELTA SYNTH</a>
+        <a href="https://www.tiktok.com/@deltavocaloid" target="_blank" rel="noreferrer">TikTok: @deltavocaloid</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Since 2019 — DELTA SYNTH's Team. สงวนลิขสิทธิ์ทั้งหมด</span>
+      <span>Made with passion in Bangkok, Thailand</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
