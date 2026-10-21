@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - DELTA SYNTH Studio (TH/EN)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Prompt', 'Inter', sans-serif; }
+    .font-en { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-200 flex flex-col min-h-screen selection:bg-red-500 selection:text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-slate-950/90 backdrop-blur-md text-white fixed w-full z-50 border-b border-gray-800">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-black tracking-wider bg-gradient-to-r from-red-500 via-rose-400 to-white bg-clip-text text-transparent">
+        DELTA SYNTH
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-red-400 transition">หน้าแรก <span class="text-xs text-gray-400 font-normal">/ Home</span></a>
+        <a href="about.html" class="text-red-500 font-semibold transition hover:text-red-400">เกี่ยวกับเรา <span class="text-xs text-gray-400 font-normal">/ About</span></a>
+        <a href="voicebank.html" class="text-gray-300 hover:text-red-400 transition">คลังเสียง <span class="text-xs text-gray-400 font-normal">/ Voicebanks</span></a>
+        <a href="#" class="text-gray-300 hover:text-red-400 transition">ไฟล์โปรเจกต์ <span class="text-xs text-gray-400 font-normal">/ Files</span></a>
+        <a href="project.html" class="text-gray-300 hover:text-red-400 transition">โปรเจกต์ร่วม <span class="text-xs text-gray-400 font-normal">/ Collab</span></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2" aria-label="Toggle Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-gray-800 px-4 pt-2 pb-4 space-y-2">
+      <a href="index.html" class="block py-2 text-gray-300 hover:text-white">หน้าแรก / Home</a>
+      <a href="about.html" class="block py-2 text-red-500 font-medium">เกี่ยวกับเรา / About</a>
+      <a href="voicebank.html" class="block py-2 text-gray-300 hover:text-white">คลังเสียง / Voicebanks</a>
+      <a href="#" class="block py-2 text-gray-300 hover:text-white">ไฟล์โปรเจกต์ / Files</a>
+      <a href="project.html" class="block py-2 text-gray-300 hover:text-white">โปรเจกต์ร่วม / Collab</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow pt-24 pb-20">
+    
+    <!-- Header Section -->
+    <section class="container mx-auto px-4 mb-16 text-center max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        Our Journey & Team
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+        เรื่องราวของเรา <span class="text-red-500">/ Our Story</span>
+      </h1>
+      <p class="text-gray-400 text-sm md:text-base mb-8">
+        The 1st Project: BL. Student (Since 2019)
+      </p>
+
+      <!-- Bilingual Story Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div class="bg-slate-900/80 backdrop-blur p-6 md:p-8 rounded-2xl border border-gray-800 shadow-xl">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-0.5 text-xs font-bold bg-red-600/30 text-red-300 border border-red-500/40 rounded">TH</span>
+            <h2 class="text-base font-bold text-white">จุดเริ่มต้นของ DELTA SYNTH</h2>
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            ค่าย <strong>DELTA SYNTH</strong> ก่อตั้งขึ้นในประเทศไทยเมื่อปี พ.ศ. 2562 (ค.ศ. 2019) โดยเริ่มต้นจากการเป็นโปรเจกต์สร้างสรรค์เสียงสังเคราะห์เสมือนจริงอิสระ ตลอดระยะเวลาที่ผ่านมา ทางค่ายได้ร่วมมือกับครีเอเตอร์หลากหลายท่านทั้งในไทยและต่างประเทศ เพื่อสร้างสรรค์ผลงานเพลง พัฒนาการตั้งค่า oto และสร้างโมเดลเสียงสังเคราะห์ในระบบ UTAU, OpenUtau และ DiffSinger โดยเผยแพร่ผลงานหลักผ่านช่องทาง YouTube
+          </p>
+        </div>
+
+        <div class="bg-slate-900/80 backdrop-blur p-6 md:p-8 rounded-2xl border border-gray-800 shadow-xl font-en">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-0.5 text-xs font-bold bg-blue-600/30 text-blue-300 border border-blue-500/40 rounded">EN</span>
+            <h2 class="text-base font-bold text-white">Genesis of DELTA SYNTH</h2>
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Founded in Thailand in 2019, <strong>DELTA SYNTH</strong> originated as an independent virtual vocal synthesis initiative. Over the years, we have collaborated with diverse domestic and international creators, continuously refining oto configurations and developing acoustic models across UTAU, OpenUtau, and DiffSinger, with YouTube as our primary showcase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders & Core Characters Section -->
+    <section class="container mx-auto px-4 max-w-6xl mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">
+          สมาชิกรุ่นแรกและผู้ให้เสียง (Founding Lineup & Voice Talents)
+        </h2>
+        <p class="text-gray-400 text-xs md:text-sm font-en">
+          The original founding team and flagship vocalists established in 2019.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Ayanami Hikaru -->
+        <div class="bg-slate-900/70 border border-gray-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col justify-between">
+          <div class="bg-gradient-to-r from-red-900/80 to-slate-900 p-5 border-b border-gray-800">
+            <span class="text-xs font-bold text-red-300 uppercase tracking-widest">DELTA No.01</span>
+            <h3 class="text-xl font-bold text-white mt-1">1. Ayanami Hikaru</h3>
+            <p class="text-xs text-gray-300">อายานามิ ฮิคารุ (เปิดตัว: กรกฎาคม 2019)</p>
+          </div>
+          <div class="p-5 space-y-4 text-xs leading-relaxed flex-grow">
+            <div>
+              <span class="font-bold text-red-400">[TH]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>ผู้ให้เสียง:</strong> Patiphat Wongyai (DELTA SYNTH)<br>
+                ตัวละครหลักและตัวแทนของค่าย บุคลิกสุขุม เย็นชา เปี่ยมด้วยความมุ่งมั่น เริ่มต้นจากดีไซน์ชุดนักเรียนไทยกางเกงดำ และได้รับการพัฒนาขัดเกลาทั้งภาพลักษณ์และเทคนิคการออกเสียงมาอย่างต่อเนื่อง เป็นต้นแบบมาตรฐานของค่าย
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 font-en">
+              <span class="font-bold text-blue-400">[EN]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>Voice Provider:</strong> Patiphat Wongyai (DELTA SYNTH)<br>
+                The flagship vocalist and mascot of DELTA SYNTH. Calm, focused, and steadfast. Starting with a classic Thai uniform motif, Hikaru has been continuously refined in acoustics and tuning, serving as our core synthesis benchmark.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SUN -->
+        <div class="bg-slate-900/70 border border-gray-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col justify-between">
+          <div class="bg-gradient-to-r from-amber-900/80 to-slate-900 p-5 border-b border-gray-800">
+            <span class="text-xs font-bold text-amber-300 uppercase tracking-widest">DELTA No.02</span>
+            <h3 class="text-xl font-bold text-white mt-1">2. SUN</h3>
+            <p class="text-xs text-gray-300">ซัน (เปิดตัว: กันยายน 2019)</p>
+          </div>
+          <div class="p-5 space-y-4 text-xs leading-relaxed flex-grow">
+            <div>
+              <span class="font-bold text-red-400">[TH]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>ผู้ให้เสียง:</strong> SunZERO5<br>
+                นักร้องชายรุ่นบุกเบิกลำดับต้น ๆ ของค่าย ให้เสียงโดยเพื่อนสนิทสมัยมัธยมของผู้ก่อตั้ง โดดเด่นด้วยเนื้อเสียงหนักแน่น ทรงพลัง และมีเอกลักษณ์เฉพาะตัวที่ผู้ฟังคุ้นเคย
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 font-en">
+              <span class="font-bold text-blue-400">[EN]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>Voice Provider:</strong> SunZERO5<br>
+                A pioneering male vocalist voiced by a longtime school friend of the founder. SUN brings a punchy, resonant tone and bold character that anchored our classic library.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Kochujang -->
+        <div class="bg-slate-900/70 border border-gray-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col justify-between">
+          <div class="bg-gradient-to-r from-rose-900/80 to-slate-900 p-5 border-b border-gray-800">
+            <span class="text-xs font-bold text-rose-300 uppercase tracking-widest">DELTA No.03</span>
+            <h3 class="text-xl font-bold text-white mt-1">3. Kochujang</h3>
+            <p class="text-xs text-gray-300">โคชูจัง (เดิม: Shu-chan / กันยายน 2019)</p>
+          </div>
+          <div class="p-5 space-y-4 text-xs leading-relaxed flex-grow">
+            <div>
+              <span class="font-bold text-red-400">[TH]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>ผู้ให้เสียง:</strong> TangmoThipphawan<br>
+                นักร้องหญิงคนแรกของค่าย โดดเด่นด้วยโทนเสียงนุ่มละมุน สดใส และฟังเพลิน ถือเป็นแม่แบบคนสำคัญในการสร้างและปรับสมดุลมาตรฐานคลังเสียงหญิงของ DELTA SYNTH
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 font-en">
+              <span class="font-bold text-blue-400">[EN]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>Voice Provider:</strong> TangmoThipphawan<br>
+                The studio's premier female vocalist. Featuring a gentle, sweet, and melodic tone, she established the standard baseline for all subsequent female voicebanks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Guren Kani -->
+        <div class="bg-slate-900/70 border border-gray-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col justify-between">
+          <div class="bg-gradient-to-r from-orange-900/80 to-slate-900 p-5 border-b border-gray-800">
+            <span class="text-xs font-bold text-orange-300 uppercase tracking-widest">DELTA No.04</span>
+            <h3 class="text-xl font-bold text-white mt-1">4. Guren Kani</h3>
+            <p class="text-xs text-gray-300">กุเรน คานิ (เปิดตัว: ตุลาคม 2019)</p>
+          </div>
+          <div class="p-5 space-y-4 text-xs leading-relaxed flex-grow">
+            <div>
+              <span class="font-bold text-red-400">[TH]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>ผู้ให้เสียง:</strong> MikiBlackqueen<br>
+                นักร้องเสียงหนักแน่นและมีพลังขับร้องสูง บุคลิกกล้าหาญ โดดเด่นเป็นพิเศษในบทเพลงแนวร็อก อิเล็กทรอนิกส์ และเพลงที่มีจังหวะหนักแน่นเร้าใจ
+              </p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 font-en">
+              <span class="font-bold text-blue-400">[EN]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>Voice Provider:</strong> MikiBlackqueen<br>
+                A powerhouse vocalist with dynamic acoustic presence and bold delivery. Perfectly engineered for rock, electronic tracks, and high-energy anthems.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Ayanami Kyoko (Corrected Lore) -->
+        <div class="bg-slate-900/70 border border-gray-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-lg transition duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+          <div class="bg-gradient-to-r from-purple-900/80 to-slate-900 p-5 border-b border-gray-800">
+            <span class="text-xs font-bold text-purple-300 uppercase tracking-widest">DELTA No.00-05</span>
+            <h3 class="text-xl font-bold text-white mt-1">5. Ayanami Kyoko</h3>
+            <p class="text-xs text-gray-300">อายานามิ เคียวโกะ (เปิดตัว: เมษายน 2021)</p>
+          </div>
+          <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed flex-grow">
+            <div>
+              <span class="font-bold text-red-400">[TH]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>ผู้ให้เสียง:</strong> DELTA SYNTH<br>
+                คลังเสียงหญิงที่พัฒนาขึ้นเพื่อรองรับช่วงเสียงสูง (High Register) โดยเฉพาะ มีความกว้างของช่วงเสียงและความคมชัดเป็นเลิศ สามารถขับร้องเพลงป็อป เพลงบัลลาด และการประสานเสียงได้อย่างกลมกลืน
+              </p>
+            </div>
+            <div class="font-en md:border-l md:border-gray-800 md:pl-4">
+              <span class="font-bold text-blue-400">[EN]</span>
+              <p class="text-gray-300 mt-1">
+                <strong>Voice Provider:</strong> DELTA SYNTH<br>
+                Engineered specifically for high-register flexibility and clear tonal articulation. Kyoko features an extensive dynamic range, making her ideal for versatile pop, ballads, and melodic harmonies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Mr. Delta Section -->
+    <section class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-slate-900/90 border border-gray-800 p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-white mb-2">
+          เกี่ยวกับผู้อำนวยการสร้าง (About Mr. Delta)
+        </h3>
+        <p class="text-xs text-red-400 uppercase tracking-widest font-semibold mb-6">
+          Founder, Lead Sound Designer & Production Coordinator
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300 leading-relaxed">
+          <div>
+            <span class="font-bold text-red-400 block mb-1">[ภาษาไทย]</span>
+            <p class="mb-3">
+              <strong>Patiphat Wongyai (Mr. Delta / Ayanami Hikaru)</strong> รับหน้าที่วางแผนงาน ผลิตเสียง และพัฒนาคลังเสียงทั้งหมดของ DELTA SYNTH ผ่านการค้นคว้า ทดลองทฤษฎีการจูน และแลกเปลี่ยนเทคนิคกับครีเอเตอร์ชั้นนำ อาทิ Printmov, Toshio, FerinaSynth และ Yuunarii
+            </p>
+            <p>
+              ด้วยประสบการณ์ที่สั่งสมมาอย่างต่อเนื่อง จึงทำให้สามารถสร้างและบริหารคลังเสียงได้อย่างรวดเร็ว มีคุณภาพตามมาตรฐานสากล และพร้อมแบ่งปันองค์ความรู้สู่คอมมูนิตี้เสมอ
+            </p>
+          </div>
+
+          <div class="font-en md:border-l md:border-gray-800 md:pl-6">
+            <span class="font-bold text-blue-400 block mb-1">[English]</span>
+            <p class="mb-3">
+              <strong>Patiphat Wongyai (Mr. Delta / Ayanami Hikaru)</strong> oversees production planning, sound engineering, and voicebank architecture at DELTA SYNTH. Through years of hands-on acoustic tuning research and benchmarking with respected peers like Printmov, Toshio, FerinaSynth, and Yuunarii.
+            </p>
+            <p>
+              He has established robust workflows for creating enduring, high-fidelity virtual singers while fostering open collaboration within the vocal synthesis community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-gray-800 text-sm">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h4 class="text-white text-base font-bold mb-3">DELTA SYNTH Studio</h4>
+        <p class="text-xs text-gray-400 leading-relaxed mb-2">
+          Virtual Vocal Synthesis Developer & Music Production Hub.<br>
+          Made with passion in Thailand since 2019.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-bold mb-3">การติดต่อ / Contact</h4>
+        <ul class="text-xs space-y-1.5">
+          <li><span class="text-gray-500">Public:</span> <a href="mailto:delta.vocaloid09378@gmail.com" class="text-gray-300 hover:text-red-400">delta.vocaloid09378@gmail.com</a></li>
+          <li><span class="text-gray-500">Urgent:</span> <a href="mailto:patiphat.wongyai@gmail.com" class="text-gray-300 hover:text-red-400">patiphat.wongyai@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white text-base font-bold mb-3">โซเชียลมีเดีย / Follow Us</h4>
+        <ul class="text-xs space-y-1.5">
+          <li>YouTube: <span class="text-gray-300">DELTA SYNTH Official</span></li>
+          <li>TikTok: <span class="text-gray-300">@deltavocaloid</span></li>
+          <li>Facebook: <span class="text-gray-300">DELTA SYNTH</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 mt-8 pt-6 border-t border-gray-900 text-center text-xs text-gray-500">
+      <p>© 2019–2025 DELTA SYNTH. สงวนลิขสิทธิ์ทั้งหมด (All Rights Reserved).</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

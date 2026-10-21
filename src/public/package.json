@@ -1,0 +1,13 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "This folder contains the public code files for your site. These files correspond to the ones found in the [**Public**](https://support.wix.com/en/article/velo-working-with-the-velo-sidebar#public) section of the  **Public & Backend** ![image](https://user-images.githubusercontent.com/89579857/184873215-d6042ace-4d20-40f2-ad37-1b1911302f96.png) tab in the Velo sidebar. You can import code from these files into any other file on your site.",
+  "main": "audioPlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
