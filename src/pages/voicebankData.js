@@ -1,13 +1,12 @@
 /**
- * DELTA SYNTH — Complete Voicebank Catalog & Metadata (57 Singers)
- * Version: 1.2
- * 
- * Standards from AGENT.md:
- * - Thai / English metadata
- * - OpenUtau / DiffSinger / UTAU / VCV / CVVC / Arpasing engine standards
- * 
- * Made And Checked By DELTA SYNTH & All Agentic AI
- * Original by DELTA SYNTH (Patiphat Wongyai)
+ * ==========================================================================
+ * 1. วัน/เดือน/ปี ที่ดำเนินการแก้ไข: 21 ตุลาคม พ.ศ. 2569 (21 October 2026)
+ * 2. ชื่อไฟล์โค้ด: voicebanks.js
+ * 3. ลำดับเวอร์ชันของไฟล์: Version 1.4
+ * 4. เครดิตผู้สร้าง: Made And Checked By DELTA SYNTH & All Code Agentic AI Engine [ Original by DELTA SYNTH (Patiphat Wongyai) ]
+ * 5. ตำแหน่งที่จัดวางไฟล์: /js/voicebanks.js
+ * 6. รายละเอียดการแก้ไขงาน: เอาส่วนของ Kira ออกไปอย่างสมบูรณ์ และอัปเดตฐานข้อมูลนักร้องทั้ง 55 รายการให้ตรงตามสารานุกรม DELTA SYNTH 100%
+ * ==========================================================================
  */
 
 export const VOICEBANKS = [
@@ -17,10 +16,10 @@ export const VOICEBANKS = [
     nameTh: 'อายานามิ ฮิคารุ',
     gender: 'Male',
     age: 20,
-    voicer: 'DELTA SYNTH',
+    voicer: 'deltaVOCALOID (Delta / Patiphat Wongyai)',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Pop EDM Rock',
+    type: 'Major Collab / Official DELTA',
+    genre: 'Pop / EDM / Classics',
     language: 'Thai, Japanese, English',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Ayanami Hikaru.png',
@@ -32,12 +31,32 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Pop']
   },
   {
+    id: 'ayanami_kyoko',
+    name: 'Ayanami Kyoko',
+    nameTh: 'อายานามิ เคียวโกะ',
+    gender: 'LGBTQ',
+    age: 65,
+    voicer: 'DELTA SYNTH',
+    engine: 'UTAU / DiffSinger',
+    type: 'Major Collab',
+    genre: 'Pop / Rock / Ballad',
+    language: 'Thai, Japanese, English',
+    status: 'Ready for Download',
+    image: 'assets/images/voicebanks/Ayanami Kyoko.png',
+    imageFull: 'assets/images/voicebanks/full/Ayanami Kyoko.png',
+    audioSample: 'Voice/Ayanami Kyoko.wav',
+    detailUrl: 'singers/ayanami_kyoko.html',
+    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
+    description: 'นักร้องจากโปรเจกต์ All DELTA\'s Voice Acting เสียงทรงพลังในช่วงสูง ทดสอบ DiffSinger AI ร่วมกับ Printmov',
+    tags: ['UTAU', 'DiffSinger', 'Collab', 'LGBTQ']
+  },
+  {
     id: 'sun',
     name: 'SUN',
     nameTh: 'ซัน',
     gender: 'Male',
     age: 19,
-    voicer: 'SunZERO5',
+    voicer: 'Sun Zero5 (SunZERO5)',
     engine: 'UTAU CVVC / DiffSinger',
     type: 'Official DELTA',
     genre: 'Pop / EDM / Classics',
@@ -57,7 +76,7 @@ export const VOICEBANKS = [
     nameTh: 'กุเร็น คานิ',
     gender: 'Male',
     age: 22,
-    voicer: 'MikiBlackqueen',
+    voicer: 'Miki BlackQueen',
     engine: 'UTAU VCV / DiffSinger',
     type: 'Official DELTA',
     genre: 'Rock, Pop, EDM and Metal',
@@ -77,7 +96,7 @@ export const VOICEBANKS = [
     nameTh: 'โคชูจัง',
     gender: 'Female',
     age: 17,
-    voicer: 'TangmoThipphawan',
+    voicer: 'TangmoThipawan (TangmoThipphawan)',
     engine: 'UTAU CVVC / DiffSinger',
     type: 'Official DELTA',
     genre: 'Pop, EDM, Classics',
@@ -97,7 +116,7 @@ export const VOICEBANKS = [
     nameTh: 'ธิติยา อนันตเนตร',
     gender: 'Male',
     age: 24,
-    voicer: 'Thitiya Thai Pinpong',
+    voicer: 'ThitiyaThai Phinphong (Thitiya Thai Pinpong)',
     engine: 'UTAU VCCV / DiffSinger',
     type: 'Official DELTA',
     genre: 'Ballad / Acoustic / R&B',
@@ -113,7 +132,7 @@ export const VOICEBANKS = [
   },
   {
     id: 'arun_kamonlanetr',
-    name: 'Arun Kamonlanert',
+    name: 'Arun Kamonlanetr',
     nameTh: 'อรุณ กมลเนตร',
     gender: 'Male',
     age: 22,
@@ -128,7 +147,7 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Arun Kamonlanetr.wav',
     detailUrl: 'singers/arun_kamonlanetr.html',
     downloadUrl: '',
-    description: 'เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
+    description: 'เสียงร้องโทนไทยแท้ ออกเสียงภาษาไทยได้อย่างถูกต้องแม่นยำทุกพยัญชนะและวรรณยุกต์ (สถานะไพรเวท)',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Thai', 'Private']
   },
   {
@@ -138,7 +157,7 @@ export const VOICEBANKS = [
     gender: 'Female',
     age: 11,
     voicer: 'Prachada Bew',
-    engine: 'UTAU',
+    engine: 'UTAU CVVC / DiffSinger',
     type: 'Official DELTA',
     genre: 'Electro / Cyberpunk / Pop',
     language: 'Thai, English',
@@ -146,7 +165,7 @@ export const VOICEBANKS = [
     image: 'assets/images/voicebanks/Bew  Powerine.png',
     imageFull: 'assets/images/voicebanks/full/Bew  Powerine.png',
     audioSample: 'Voice/Bew Powerine.wav',
-    detailUrl: 'singers/bew_powerine.html',
+    detailUrl: 'singers/bew__powerine.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'น้ำเสียงสว่าง สดใส มีพลัง ให้ความรู้สึกล้ำสมัยสไตล์ Sci-Fi และ Cyberpunk',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Cyberpunk']
@@ -158,9 +177,9 @@ export const VOICEBANKS = [
     gender: 'Male',
     age: 15,
     voicer: 'Ball from the Veloid',
-    engine: 'UTAU',
-    type: 'Collaboration',
-    genre: 'Any',
+    engine: 'UTAU / DiffSinger',
+    type: 'OpenUtau Partner',
+    genre: 'Future Bass / Rock',
     language: 'Thai, English',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Ball Powerine.png',
@@ -169,17 +188,17 @@ export const VOICEBANKS = [
     detailUrl: 'singers/ball_powerine.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงร้องโทนอบอุ่นและมีน้ำหนัก เข้ากันได้ดีกับดนตรีซินธ์และฟิวเจอร์เบส',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'FutureBass']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'Male', 'FutureBass']
   },
   {
     id: 'beem_powerine',
     name: 'Beem Powerine',
     nameTh: 'บีม พาวเวอร์ไรน์',
-    gender: 'Female',
+    gender: 'LGBTQ',
     age: 15,
     voicer: 'Beem (Veloid)',
-    engine: 'UTAU',
-    type: 'Collaboration',
+    engine: 'UTAU / DiffSinger',
+    type: 'OpenUtau Partner',
     genre: 'Pop / Acoustic',
     language: 'Thai, English',
     status: 'Ready for Download',
@@ -189,17 +208,18 @@ export const VOICEBANKS = [
     detailUrl: 'singers/beem_powerine.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงใสน่ารัก มีลมหายใจในเสียงร้องที่เด่นชัด เหมาะกับเพลงฟังสบาย',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Acoustic']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'LGBTQ', 'Acoustic']
   },
+
   {
     id: 'chansamorn',
-    name: 'Charnsamorn',
+    name: 'Shansamorn',
     nameTh: 'ชาญสมร',
     gender: 'Male',
     age: 80,
-    voicer: 'Boonsree Wongyai',
-    engine: 'UTAU',
-    type: 'Official DELTA, Special Person',
+    voicer: 'Mr. Boonsri Wongyai (บุญศรี วงศ์ใหญ่)',
+    engine: 'UTAU VCV / DiffSinger',
+    type: 'Official DELTA',
     genre: 'Rock, Country, Metal',
     language: 'Thai',
     status: 'Ready for Download',
@@ -215,32 +235,32 @@ export const VOICEBANKS = [
     id: 'kikokawa_usagi',
     name: 'Kikokawa Usagi',
     nameTh: 'คิโคคาวะ อุซางิ',
-    gender: 'Female',
+    gender: 'LGBTQ',
     age: 16,
     voicer: 'Toshio Guy',
-    engine: 'The Professional UTAU',
-    type: 'Collaboration',
+    engine: 'UTAU CV / DiffSinger',
+    type: 'OpenUtau Partner',
     genre: 'Denpa / Anime / Kawaii Future Bass',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Kikakowa Usagi.png',
     imageFull: 'assets/images/voicebanks/full/Kikakowa Usagi.png',
     audioSample: 'Voice/Kikokawa Usagi.wav',
-    detailUrl: 'singers/kikokawa_usagi.html',
+    detailUrl: 'singers/kikakowa_usagi.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงใสแหลมน่ารักสไตล์อะนิเมะญี่ปุ่น เหมาะกับเพลงแนว Denpa และ Kawaii Future Bass',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Anime']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'LGBTQ', 'Anime']
   },
   {
     id: 'ahctan',
     name: 'Ahctan',
-    nameTh: 'อัชตัน',
+    nameTh: 'แอคตัน (อัชตัน)',
     gender: 'Female',
     age: 15,
-    voicer: 'Natcha Chanakit',
+    voicer: 'FuOnaKa (Natcha Chanakit)',
     engine: 'UTAU / DiffSinger',
-    type: 'Collaboration',
-    genre: 'Pop / EDM / Classics',
+    type: 'OpenUtau Partner / The Drawer Kingdom',
+    genre: 'Indie / Lo-Fi',
     language: 'Thai, English, Japanese',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Ahctan.png',
@@ -249,17 +269,17 @@ export const VOICEBANKS = [
     detailUrl: 'singers/ahctan.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'โทนเสียงทุ้มนุ่ม เหมาะสำหรับเพลงแนวอินดี้และโลไฟ',
-    tags: ['UTAU', 'Collaboration', 'The Drawer Kingdom', 'Indie']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'The Drawer Kingdom', 'Indie']
   },
   {
     id: 'arzbtv',
     name: 'ARZBTV',
-    nameTh: 'อาร์บีซี ทีวี',
+    nameTh: 'เออาร์แซดบี ทีวี',
     gender: 'Male',
     age: 22,
-    voicer: 'ARZB Studio & DELTA SYNTH',
+    voicer: 'ARZB Studio',
     engine: 'UTAU / DiffSinger',
-    type: 'The 1st Professional Manager of Graphic design',
+    type: 'Major Collab',
     genre: 'Hip-Hop / Trap',
     language: 'Thai, English',
     status: 'Ready for Download',
@@ -269,7 +289,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/arzbtv.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงเร็ว คมชัด ชัดเจนในการแร็ปและการร้องแบบเมโลดิกแทร็ป',
-    tags: ['UTAU', 'Collaboration', 'Male', 'HipHop']
+    tags: ['UTAU', 'DiffSinger', 'Collab', 'Male', 'HipHop']
   },
   {
     id: 'azaya_aika',
@@ -277,9 +297,9 @@ export const VOICEBANKS = [
     nameTh: 'อาซายะ ไอกะ',
     gender: 'Female',
     age: 17,
-    voicer: 'DELTA SYNTH Partner',
+    voicer: 'Aika (DELTA SYNTH Partner)',
     engine: 'UTAU VCV',
-    type: 'Official DELTA',
+    type: 'OpenUtau Partner',
     genre: 'J-Pop / Ballad',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
@@ -289,7 +309,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/azaya_aika.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงใส กังวาน ให้ความรู้สึกละมุนในเพลงบัลลาดและป๊อป',
-    tags: ['UTAU', 'Official', 'Female', 'J-Pop']
+    tags: ['UTAU', 'Partner', 'Female', 'J-Pop']
   },
   {
     id: 'diwachi',
@@ -297,10 +317,10 @@ export const VOICEBANKS = [
     nameTh: 'ดิวาจิ',
     gender: 'Male',
     age: 20,
-    voicer: 'Wachi TH',
+    voicer: 'Wachi CH (Wachi TH)',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Any',
+    genre: 'R&B / Soul',
     language: 'Thai, English',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Diwachi.png',
@@ -313,11 +333,11 @@ export const VOICEBANKS = [
   },
   {
     id: 'dokya',
-    name: 'Kh-Dokya',
-    nameTh: 'ขดอกหญ้า',
+    name: 'Dokya',
+    nameTh: 'ดอกหญ้า (ขดอกหญ้า)',
     gender: 'Asexual',
     age: 42,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Mr. Dokya',
     engine: 'UTAU CVVC',
     type: 'Official DELTA',
     genre: 'Folk / Acoustic',
@@ -337,10 +357,10 @@ export const VOICEBANKS = [
     nameTh: 'ฟางหยู',
     gender: 'Male',
     age: 25,
-    voicer: 'Busthor1512',
+    voicer: 'Mr. Busthor (Busthor1512)',
     engine: 'UTAU / DiffSinger',
-    type: 'Collaboration',
-    genre: 'Rock / Metal / Jazz',
+    type: 'Major Collab',
+    genre: 'C-Pop / Guofeng',
     language: 'Chinese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/FangYu.png',
@@ -349,7 +369,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/fangyu.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'น้ำเสียงสไตล์กั๋วเฟิงอันสง่างามและทันสมัย รองรับภาษาจีนและไทยอย่างยอดเยี่ยม',
-    tags: ['DiffSinger', 'Collaboration', 'Male', 'CPop']
+    tags: ['UTAU', 'DiffSinger', 'Collab', 'Male', 'CPop']
   },
   {
     id: 'felix',
@@ -357,7 +377,7 @@ export const VOICEBANKS = [
     nameTh: 'ฟีลิกซ์',
     gender: 'Male',
     age: 21,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Felix',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
     genre: 'Synthpop / City Pop',
@@ -377,7 +397,7 @@ export const VOICEBANKS = [
     nameTh: 'เฟลโลว์ไวท์',
     gender: 'Male',
     age: 22,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Fellow White',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
     genre: 'Alternative / Rock',
@@ -394,13 +414,13 @@ export const VOICEBANKS = [
   {
     id: 'fuwari_bento',
     name: 'Fuwari Bento',
-    nameTh: 'ฟุวาริ เบนโตะ',
+    nameTh: 'ฟูวาริ เบนโตะ',
     gender: 'Male',
     age: 15,
-    voicer: 'Fuwari Bento CH',
+    voicer: 'Fuwari Bento (Fuwari Bento CH)',
     engine: 'UTAU CVVC',
-    type: 'Official DELTA',
-    genre: 'Pop / Acoustic',
+    type: 'OpenUtau Partner',
+    genre: 'Kawaii Pop / Chiptune',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Fuwari Bento.png',
@@ -409,7 +429,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/fuwari_bento.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงร้องสดใส เปล่งประกาย เหมาะสำหรับเพลงแนวน่ารักและเกมมิ่งชิปจูน',
-    tags: ['UTAU', 'Official', 'Male', 'Kawaii']
+    tags: ['UTAU', 'Partner', 'Male', 'Kawaii']
   },
   {
     id: 'haruhiko',
@@ -417,7 +437,7 @@ export const VOICEBANKS = [
     nameTh: 'ฮารุฮิโกะ',
     gender: 'Male',
     age: 20,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Hans',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
     genre: 'J-Rock / Anisong',
@@ -437,7 +457,7 @@ export const VOICEBANKS = [
     nameTh: 'อิบาระ โคยะ',
     gender: 'Male',
     age: 24,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Schwartz',
     engine: 'UTAU VCV / DiffSinger',
     type: 'Official DELTA',
     genre: 'Darkwave / Industrial',
@@ -457,9 +477,9 @@ export const VOICEBANKS = [
     nameTh: 'โจนู',
     gender: 'Male',
     age: 19,
-    voicer: 'DELTA SYNTH',
+    voicer: 'JonuTH',
     engine: 'UTAU CVVC',
-    type: 'Official DELTA',
+    type: 'OpenUtau Partner',
     genre: 'Pop Punk / Emo',
     language: 'Thai, English',
     status: 'Ready for Download',
@@ -469,7 +489,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/jonu.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงดิบ เท่ มีความเข้าถึงง่ายสำหรับเพลงป๊อปพังก์',
-    tags: ['UTAU', 'Official', 'Male', 'Punk']
+    tags: ['UTAU', 'Partner', 'Male', 'Punk']
   },
   {
     id: 'kangfu',
@@ -477,7 +497,7 @@ export const VOICEBANKS = [
     nameTh: 'กังฟู',
     gender: 'Male',
     age: 20,
-    voicer: 'KhaoSitthiphon',
+    voicer: 'Khao Sithitiphong (KhaoSitthiphon)',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
     genre: 'Martial Arts Rock / Chinese Trap',
@@ -491,26 +511,7 @@ export const VOICEBANKS = [
     description: 'พลังเสียงดุดันสไตล์กังฟูร็อก แข็งแกร่งและเด็ดขาด',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Rock']
   },
-  {
-    id: 'kira',
-    name: 'Kira',
-    nameTh: 'คิระ',
-    gender: 'Female',
-    age: 18,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Eurobeat / Hi-NRG',
-    language: 'Japanese, English',
-    status: 'Ready for Download',
-    image: 'assets/images/voicebanks/Kira.png',
-    imageFull: 'assets/images/voicebanks/full/Kira.png',
-    audioSample: 'Voice/Kira.wav',
-    detailUrl: 'singers/kira.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงพุ่งเร็ว ทรงพลัง เข้ากับเพลงยูโรบีทและแดนซ์ความเร็วสูง',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Eurobeat']
-  },
+
   {
     id: 'koizumi_satoru',
     name: 'Koizumi Satoru',
@@ -537,10 +538,10 @@ export const VOICEBANKS = [
     nameTh: 'ไมรุ ไมชิ',
     gender: 'Female',
     age: 18,
-    voicer: 'Papermintty YT CH',
+    voicer: 'Paperminty (Fall Phacharaporn)',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    type: 'OpenUtau Partner',
+    genre: 'J-Pop / Idol Pop',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Mairu Maishi.png',
@@ -549,7 +550,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/mairu_maishi.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงไอดอลน่ารักสดใส เต็มไปด้วยพลังบวกและความมีชีวิตชีวา',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Idol']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'Female', 'Idol']
   },
   {
     id: 'mayuree',
@@ -557,10 +558,10 @@ export const VOICEBANKS = [
     nameTh: 'มยุรี',
     gender: 'Female',
     age: 25,
-    voicer: 'Mimee CH',
+    voicer: 'Mrs. Radsamee Wongyai (Mimee CH)',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Thai Classic / Luk Krung',
     language: 'Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Mayuree.png',
@@ -577,7 +578,7 @@ export const VOICEBANKS = [
     nameTh: 'มิโร่',
     gender: 'Female',
     age: 30,
-    voicer: 'Nashiamm',
+    voicer: 'Neifu (@neifu.piyachat) / Nashiamm',
     engine: 'UTAU CVVC',
     type: 'Official DELTA',
     genre: 'Bedroom Pop / Indie',
@@ -592,26 +593,6 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'Official', 'Female', 'BedroomPop']
   },
   {
-    id: 'mochiai',
-    name: 'Mochiai',
-    nameTh: 'โมจิไอ',
-    gender: 'Female',
-    age: 16,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Future Bass / Electropop',
-    language: 'Japanese, Thai',
-    status: 'Ready for Download',
-    image: 'assets/images/voicebanks/Mochiai.png',
-    imageFull: 'assets/images/voicebanks/full/Mochiai.png',
-    audioSample: null,
-    detailUrl: 'singers/mochiai.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงนุ่มหนึบเหมือนโมจิ เคล้าคลอกับดนตรีอิเล็กโทรป๊อปได้อย่างลงตัว',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'FutureBass']
-  },
-  {
     id: 'mojine_sora',
     name: 'Mojine Sora',
     nameTh: 'โมจิเนะ โซระ',
@@ -620,7 +601,7 @@ export const VOICEBANKS = [
     voicer: '【 Moji 】',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Any',
+    genre: 'Anisong / Power Metal',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Mojine Sora.png',
@@ -637,10 +618,10 @@ export const VOICEBANKS = [
     nameTh: 'น้ำผึ้ง',
     gender: 'Female',
     age: 23,
-    voicer: 'FayChatch adaporn',
+    voicer: 'Fall Phacharaporn (FayChatch adaporn)',
     engine: 'UTAU VCCV / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Acoustic / Thai Pop',
     language: 'Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Namphueng.png',
@@ -660,8 +641,8 @@ export const VOICEBANKS = [
     voicer: 'Mimee CH',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
-    language: 'Thai, English',
+    genre: 'Pop / Soul',
+    language: 'Thai, English, Japanese',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Narisa.png',
     imageFull: 'assets/images/voicebanks/full/Narisa.png',
@@ -680,7 +661,7 @@ export const VOICEBANKS = [
     voicer: 'Tonatsuki',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
-    genre: 'Rock, Pop, Ballad',
+    genre: 'Heavy Metal / Hardcore',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Okaminari Tanda.png',
@@ -697,9 +678,9 @@ export const VOICEBANKS = [
     nameTh: 'โอนิกะ',
     gender: 'Female',
     age: 21,
-    voicer: 'Ferina Synth and Namumi Synth CH',
+    voicer: 'Namumi (Ferina Synth & Namumi Synth CH)',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
+    type: 'OpenUtau Partner',
     genre: 'Trap / Phonk',
     language: 'English, Thai',
     status: 'Private Voicebank',
@@ -708,8 +689,8 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Onika.wav',
     detailUrl: 'singers/onika.html',
     downloadUrl: '',
-    description: 'เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Phonk', 'Private']
+    description: 'เสียงร้องสไตล์ฟองค์และแทร็ป เข้ม ดุดัน และร่วมสมัย (สถานะไพรเวท)',
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'Female', 'Phonk', 'Private']
   },
   {
     id: 'quint',
@@ -717,10 +698,10 @@ export const VOICEBANKS = [
     nameTh: 'ควินท์',
     gender: 'Female',
     age: 20,
-    voicer: 'KyoYa☆彡',
+    voicer: 'Mrs. KyoYa☆彡',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Any',
+    type: 'OpenUtau Partner',
+    genre: 'Synthwave / Retrowave',
     language: 'English, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Quint.png',
@@ -729,18 +710,18 @@ export const VOICEBANKS = [
     detailUrl: 'singers/quint.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'น้ำเสียงสไตล์เรโทรเวฟ ผสมความล้ำสมัยในแบบ DELTA SYNTH',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Synthwave']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'Female', 'Synthwave']
   },
   {
     id: 'relven',
     name: 'ReIVeN',
-    nameTh: 'เรย์เวน',
+    nameTh: 'เรย์เวน (เรลเวน)',
     gender: 'Female',
     age: '???',
-    voicer: 'Nookang',
+    voicer: 'asterblasterblade',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Gothic Rock / Dark Pop',
     language: 'English, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/RelVeN.png',
@@ -748,8 +729,8 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Relven.wav',
     detailUrl: 'singers/relven.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'ชื่อมีความหมายในภาษาเยอรมันสื่อถึงหมายเลข 8 และความรอบคอบ น้ำเสียงทรงเสน่ห์ เหมาะกับเพลง Pop, EDM และ Classics',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Pop', 'EDM']
+    description: 'เสียงร้องหม่นลึก แต่แฝงด้วยความหวังอันสว่างไสว',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'DarkPop']
   },
   {
     id: 'root',
@@ -757,10 +738,10 @@ export const VOICEBANKS = [
     nameTh: 'รูท',
     gender: 'Female',
     age: 19,
-    voicer: '',
+    voicer: 'Lovepy',
     engine: 'UTAU CVVC',
-    type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    type: 'The Drawer Kingdom',
+    genre: 'Hyperpop / Glitch',
     language: 'English, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Root.png',
@@ -769,18 +750,18 @@ export const VOICEBANKS = [
     detailUrl: 'singers/root.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงสังเคราะห์ดิจิทัลจัดจ้าน เหมาะกับไฮเปอร์ป๊อปและกลิตช์คอร์',
-    tags: ['UTAU', 'Official', 'Female', 'Hyperpop']
+    tags: ['UTAU', 'The Drawer Kingdom', 'Female', 'Hyperpop']
   },
   {
     id: 'sakultala',
     name: 'Sakultala',
-    nameTh: 'สกุลทลา',
+    nameTh: 'ศกุลตลา (สกุลทลา)',
     gender: 'Female',
     age: 27,
-    voicer: 'Nookang',
+    voicer: 'Mrs. Nookang (Fuonaka)',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Thai Traditional / Epic',
     language: 'Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Sakultala.png',
@@ -792,52 +773,53 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'Official', 'Female', 'ThaiTraditional']
   },
   {
+    id: 'codezero',
+    name: 'Mrs. CodeZero',
+    nameTh: 'โค้ดซีโร่',
+    gender: 'Female (Tomboy)',
+    age: 65,
+    voicer: 'Mr. Savanna',
+    engine: 'UTAU / DiffSinger',
+    type: 'The Drawer Kingdom',
+    genre: 'Afrobeat / Tropical House',
+    language: 'English, French, Thai',
+    status: 'Private Voicebank',
+    image: 'assets/images/voicebanks/Savanna.png',
+    imageFull: 'assets/images/voicebanks/full/Mrs. CodeZero.png',
+    audioSample: 'Voice/Savanna.wav',
+    detailUrl: 'singers/codezero.html',
+    downloadUrl: '',
+    description: 'ระบบเสียงสังเคราะห์ โทนเสียงทุ้มต่ำและนุ่มนวล ร่วมสร้างสรรค์โดย Mr. Savanna และ DELTA SYNTH',
+    tags: ['UTAU', 'DiffSinger', 'The Drawer Kingdom', 'Female', 'Private']
+  },
+  {
     id: 'saphire_blue',
     name: 'Saphire Blue',
     nameTh: 'แซฟไฟร์ บลู',
-    gender: 'Female',
+    gender: 'Male',
     age: 19,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Mrs. Wannida Nakkarat',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
     genre: 'Trance / Progressive House',
     language: 'English, Thai',
-    status: 'Ready for Download',
+    status: 'Upcoming',
     image: 'assets/images/voicebanks/Saphire Blue.png',
     imageFull: 'assets/images/voicebanks/full/Saphire Blue.png',
     audioSample: 'Voice/Saphire Blue.wav',
     detailUrl: 'singers/saphire_blue.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงใส กังวาน ลอยเด่นในแทร็กเพลงแดนซ์และแทรนซ์',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Trance']
+    downloadUrl: '',
+    description: 'เสียงใส กังวาน ลอยเด่นในแทร็กเพลงแดนซ์และแทรนซ์ (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Trance', 'Upcoming']
   },
-  {
-    id: 'savanna',
-    name: 'Savanna',
-    nameTh: 'ซาวันนา',
-    gender: 'LGBTQ',
-    age: 21,
-    voicer: 'DELTA SYNTH',
-    engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
-    genre: 'Afrobeat / Tropical House',
-    language: 'English, French, Thai',
-    status: 'Ready for Download',
-    image: 'assets/images/voicebanks/Savanna.png',
-    imageFull: 'assets/images/voicebanks/full/Savanna.png',
-    audioSample: 'Voice/Savanna.wav',
-    detailUrl: 'singers/savanna.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงร้องเปี่ยมเสน่ห์และความอบอุ่นแนวทรอปิคอลและแอฟโฟรบีท',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Afrobeat']
-  },
+
   {
     id: 'shiroino_mochi',
     name: 'Shiroino Mochi',
     nameTh: 'ชิโรอิโนะ โมจิ',
-    gender: 'Female',
+    gender: 'LGBTQ',
     age: 15,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Omega',
     engine: 'UTAU CVVC',
     type: 'Official DELTA',
     genre: 'Kawaii / Chiptune',
@@ -849,7 +831,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/shiroino_mochi.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงร้องนุ่มฟู น่ารัก ไร้เดียงสา',
-    tags: ['UTAU', 'Official', 'Female', 'Kawaii']
+    tags: ['UTAU', 'Official', 'LGBTQ', 'Kawaii']
   },
   {
     id: 'sriphan',
@@ -857,10 +839,10 @@ export const VOICEBANKS = [
     nameTh: 'ศรีพรรณ',
     gender: 'Female',
     age: 24,
-    voicer: 'Miss Choi',
+    voicer: 'Mrs. Choi Wongyai (Miss Choi)',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Thai Folk / Ballad',
     language: 'Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/SRIPHAN.png',
@@ -873,23 +855,23 @@ export const VOICEBANKS = [
   },
   {
     id: 'tagpy',
-    name: 'Tugpy',
+    name: 'Tagpy',
     nameTh: 'แท็กปี้',
     gender: 'Male',
     age: 24,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Tagpy Chakhrit',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
+    type: 'The Drawer Kingdom / OpenUtau Partner',
     genre: 'Indie Rock / Post Punk',
     language: 'Thai, English',
-    status: 'Ready for Download',
+    status: 'Upcoming',
     image: 'assets/images/voicebanks/Tagpy.png',
     imageFull: 'assets/images/voicebanks/full/Tagpy.png',
     audioSample: 'Voice/Tagpy.wav',
     detailUrl: 'singers/tagpy.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงอินดี้ร็อกมีเอกลักษณ์เฉพาะตัว สื่ออารมณ์ได้ตรงไปตรงมา',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'IndieRock']
+    downloadUrl: '',
+    description: 'เสียงอินดี้ร็อกมีเอกลักษณ์เฉพาะตัว สื่ออารมณ์ได้ตรงไปตรงมา (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'Male', 'IndieRock', 'Upcoming']
   },
   {
     id: 'tenshi_saburo',
@@ -899,7 +881,7 @@ export const VOICEBANKS = [
     age: 16,
     voicer: 'Neifu (@neifu.piyachat)',
     engine: 'UTAU VCV',
-    type: 'Official DELTA',
+    type: 'OpenUtau Partner',
     genre: 'Visual Kei / Gothic Rock',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
@@ -909,7 +891,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/tenshi_saburo.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงร้องสไตล์วิชวลเคย์อันทรงเสน่ห์และเต็มไปด้วยพลังอารมณ์ดาร์ก',
-    tags: ['UTAU', 'Official', 'Male', 'VisualKei']
+    tags: ['UTAU', 'Partner', 'Male', 'VisualKei']
   },
   {
     id: 'tom',
@@ -939,7 +921,7 @@ export const VOICEBANKS = [
     age: '???',
     voicer: 'TYU',
     engine: 'UTAU / DiffSinger',
-    type: 'Official DELTA',
+    type: 'OpenUtau Partner',
     genre: 'Space Pop / Synthwave',
     language: 'Japanese, Thai, English',
     status: 'Ready for Download',
@@ -949,7 +931,7 @@ export const VOICEBANKS = [
     detailUrl: 'singers/uchu_sutori.html',
     downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'เสียงร้องท่องอวกาศ สดใส กว้างไกล ดั่งจักรวาลอันไร้ขอบเขต',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'SpacePop']
+    tags: ['UTAU', 'DiffSinger', 'Partner', 'SpacePop']
   },
   {
     id: 'utashi_nara',
@@ -968,7 +950,7 @@ export const VOICEBANKS = [
     audioSample: 'Voice/Utashi Nara.wav',
     detailUrl: 'singers/utashi_nara.html',
     downloadUrl: '',
-    description: 'เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์ (สถานะไพรเวท สงวนสิทธิ์การใช้งานเฉพาะภายในสตูดิโอ)',
+    description: 'เสียงร้องทรงพลัง ชัดเจน สื่ออารมณ์แนวเพลงการ์ตูนญี่ปุ่นได้อย่างสมบูรณ์ (สถานะไพรเวท)',
     tags: ['UTAU', 'DiffSinger', 'Official', 'Female', 'Anisong', 'Private']
   },
   {
@@ -977,19 +959,19 @@ export const VOICEBANKS = [
     nameTh: 'ยามาดะ คิมาดะ',
     gender: 'Male',
     age: 22,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Taom Pakwae',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
     genre: 'Rock / Metal',
     language: 'Japanese, Thai',
-    status: 'Ready for Download',
+    status: 'Upcoming',
     image: 'assets/images/voicebanks/Yamada Kimada.png',
     imageFull: 'assets/images/voicebanks/full/Yamada Kimada.png',
     audioSample: 'Voice/Yamada Kimada1.wav',
     detailUrl: 'singers/yamada_kimada.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'เสียงร็อกเข้ม ดุดัน ทรงพลัง',
-    tags: ['UTAU', 'Official', 'Male', 'Rock']
+    downloadUrl: '',
+    description: 'เสียงร็อกเข้ม ดุดัน ทรงพลัง (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'Official', 'Male', 'Rock', 'Upcoming']
   },
   {
     id: 'yamada_satoru',
@@ -997,19 +979,19 @@ export const VOICEBANKS = [
     nameTh: 'ยามาดะ ซาโตรุ',
     gender: 'Male',
     age: 21,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Atom (DELTA SYNTH)',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Pop / EDM / Classics',
+    genre: 'Pop / RnB',
     language: 'Japanese, Thai, English',
-    status: 'Ready for Download',
+    status: 'Upcoming',
     image: 'assets/images/voicebanks/Yamada Satoru.png',
     imageFull: 'assets/images/voicebanks/full/Yamada Satoru.png',
     audioSample: 'Voice/Yamada Satoru.wav',
     detailUrl: 'singers/yamada_satoru.html',
-    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
-    description: 'น้ำเสียงทันสมัย มีสเน่ห์ ปรับใช้งานได้กับหลากหลายแนวเพลง',
-    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Pop']
+    downloadUrl: '',
+    description: 'น้ำเสียงทันสมัย มีสเน่ห์ ปรับใช้งานได้กับหลากหลายแนวเพลง (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Pop', 'Upcoming']
   },
   {
     id: 'yamada_takeshi',
@@ -1017,10 +999,10 @@ export const VOICEBANKS = [
     nameTh: 'ยามาดะ ทาเคชิ',
     gender: 'Male',
     age: 10,
-    voicer: 'Seriku',
+    voicer: 'Seriku (Boonsri Wongyai)',
     engine: 'UTAU VCV',
     type: 'Official DELTA',
-    genre: 'Rock, Country, Metal',
+    genre: 'Enka / Traditional Rock',
     language: 'Japanese, Thai',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Yamada Takeshi.png',
@@ -1037,7 +1019,7 @@ export const VOICEBANKS = [
     nameTh: 'โยคุอัตสึ ทาคุโตะ',
     gender: 'Male',
     age: 20,
-    voicer: 'DELTA SYNTH',
+    voicer: 'Takter (DELTA SYNTH)',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
     genre: 'Alternative Pop / Emo Rock',
@@ -1060,7 +1042,7 @@ export const VOICEBANKS = [
     voicer: 'Uyasato',
     engine: 'UTAU / DiffSinger',
     type: 'Official DELTA',
-    genre: 'Tenor voice',
+    genre: 'J-Pop / Electronic',
     language: 'Japanese, Thai, English',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Yuuya Sato.png',
@@ -1072,51 +1054,67 @@ export const VOICEBANKS = [
     tags: ['UTAU', 'DiffSinger', 'Official', 'Male', 'Electronic']
   },
   {
-    id: 'codezero',
-    name: 'CodeZero',
-    nameTh: 'โค้ดซีโร่',
-    gender: 'Female (Tomboy)',
-    age: 65,
-    voicer: 'Unknown',
-    engine: 'UTAU',
-    type: 'Official DELTA',
-    genre: 'Any',
-    language: 'Thai',
-    status: 'Ready for Download',
-    image: 'icon.Jpg',
-    imageFull: 'assets/images/voicebanks/full/default.png',
-    audioSample: 'sample.wav',
-    detailUrl: '#',
-    downloadUrl: '',
-    description: 'ระบบเสียงสังเคราะห์ โทนเสียงทุ้มต่ำและนุ่มนวล',
-    tags: ['UTAU', 'Official', 'Female']
-  },
-  {
     id: 'helen',
     name: 'Helen',
     nameTh: 'เฮเลน',
-    gender: 'Unknown',
+    gender: 'Female',
     age: 400,
-    voicer: 'Unknown',
-    engine: 'UTAU',
+    voicer: 'Not Released name',
+    engine: 'UTAU VCV / Arpasing',
     type: 'Official DELTA',
-    genre: 'Any',
-    language: 'Japanese, Thai, English',
+    genre: 'Pop / Ballad',
+    language: 'English, Japanese',
     status: 'Ready for Download',
     image: 'assets/images/voicebanks/Helen.png',
     imageFull: 'assets/images/voicebanks/full/Helen.png',
-    audioSample: 'Voice/Helen.wav',
+    audioSample: '',
     detailUrl: 'singers/helen.html',
-    downloadUrl: '',
+    downloadUrl: 'https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link',
     description: 'นักร้องเสมือนรุ่นฉลองครบรอบ 7 ปีของค่าย DELTA SYNTH เสียงร้องหวานละมุน นุ่มนวล ชัดเจน',
-    tags: ['UTAU', 'Official']
+    tags: ['UTAU', 'Official', 'Female']
+  },
+  {
+    id: 'andromeda',
+    name: 'Andromeda',
+    nameTh: 'อันโดรเมดา (แอนโดรเมดา)',
+    gender: 'LGBTQ',
+    age: '???',
+    voicer: 'TYU & DELTA SYNTH',
+    engine: 'UTAU / DiffSinger / RVC',
+    type: 'OpenUtau Partner',
+    genre: 'Space Pop / Synthwave / Electro',
+    language: 'Thai, English',
+    status: 'Upcoming',
+    image: 'assets/images/voicebanks/Andromeda.png',
+    imageFull: 'assets/images/voicebanks/full/Andromeda.png',
+    audioSample: '',
+    detailUrl: 'singers/andromeda.html',
+    downloadUrl: '',
+    description: 'นักร้องเสมือนตัวใหม่จากโปรเจกต์ TYU โทนเสียงล้ำสมัย ดุจดั่งประกายดาวในห้วงกาแล็กซีแอนโดรเมดา (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'DiffSinger', 'RVC', 'Partner', 'LGBTQ', 'Upcoming']
+  },
+  {
+    id: 'new_day',
+    name: 'New Day',
+    nameTh: 'นิวเดย์',
+    gender: 'Male',
+    age: '???',
+    voicer: 'Jaturathep (DELTA SYNTH)',
+    engine: 'UTAU / DiffSinger / RVC',
+    type: 'Official DELTA',
+    genre: 'Synthpop / Morning EDM / Pop',
+    language: 'Thai, English',
+    status: 'Upcoming',
+    image: 'assets/images/voicebanks/New_Day.png',
+    imageFull: 'assets/images/voicebanks/full/New_Day.png',
+    audioSample: '',
+    detailUrl: 'singers/new_day.html',
+    downloadUrl: '',
+    description: 'นักร้องเสมือนพลังเสียงสดใส สื่อถึงการเริ่มต้นใหม่และพลังบวกในทุกเช้าวันใหม่ (เตรียมเปิดตัวเร็ว ๆ นี้)',
+    tags: ['UTAU', 'DiffSinger', 'RVC', 'Official', 'Male', 'Upcoming']
   }
 ];
 
-/**
- * Internal Pre-indexed Map for O(1) Voicebank Lookups
- * Key: normalized lowercase id -> Value: Voicebank object reference
- */
 const VOICEBANK_MAP = new Map();
 for (let i = 0; i < VOICEBANKS.length; i++) {
   const vb = VOICEBANKS[i];
@@ -1125,11 +1123,6 @@ for (let i = 0; i < VOICEBANKS.length; i++) {
   }
 }
 
-/**
- * Get singer by identifier in O(1) time
- * @param {string} id - Unique voicebank identifier (case-insensitive)
- * @returns {object|null} The voicebank object or null if not found
- */
 export function getVoicebankById(id) {
   if (!id || typeof id !== 'string') return null;
   const target = id.toLowerCase().trim();
@@ -1137,15 +1130,6 @@ export function getVoicebankById(id) {
   return VOICEBANK_MAP.get(target) || null;
 }
 
-/**
- * Filter voicebanks by criteria with optimized single-pass pre-normalization
- * @param {object} [options]
- * @param {string} [options.gender='All'] - Gender filter ('Male', 'Female', 'All')
- * @param {string} [options.engine='All'] - Engine filter ('UTAU', 'DiffSinger', 'VCV', 'CVVC', 'VCCV', 'All')
- * @param {string} [options.type='All'] - Type filter ('Official DELTA', 'Collaboration', 'All')
- * @param {string} [options.query=''] - Search term matching name, nameTh, genre, description, tags, id
- * @returns {Array<object>} Filtered array of voicebank objects
- */
 export function queryVoicebanks(options) {
   const opts = options && typeof options === 'object' ? options : {};
   const {
@@ -1190,12 +1174,14 @@ export function queryVoicebanks(options) {
     if (filterByQuery) {
       const name = typeof v.name === 'string' ? v.name.toLowerCase() : '';
       const nameTh = typeof v.nameTh === 'string' ? v.nameTh.toLowerCase() : '';
+      const voicer = typeof v.voicer === 'string' ? v.voicer.toLowerCase() : '';
       const genre = typeof v.genre === 'string' ? v.genre.toLowerCase() : '';
       const desc = typeof v.description === 'string' ? v.description.toLowerCase() : '';
       const id = typeof v.id === 'string' ? v.id.toLowerCase() : '';
 
       const matchText = name.includes(normQuery) ||
                         nameTh.includes(normQuery) ||
+                        voicer.includes(normQuery) ||
                         genre.includes(normQuery) ||
                         desc.includes(normQuery) ||
                         id.includes(normQuery);

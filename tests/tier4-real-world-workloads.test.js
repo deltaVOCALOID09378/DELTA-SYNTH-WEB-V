@@ -44,7 +44,7 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
     const { globalAudioPlayer } = audioMod;
 
     // 1. Initial catalog check
-    assert.strictEqual(VOICEBANKS.length, 55);
+    assert.strictEqual(VOICEBANKS.length, 56);
 
     // 2. User searches for DiffSinger male voicebanks
     const searchResults = queryVoicebanks({ gender: 'Male', engine: 'DiffSinger' });
@@ -249,7 +249,7 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
     assert.ok(results.every(r => r.success === true));
   });
 
-  it('TC-T4-09: Repeater 54-Singer Data Binding & Scoped Item Interaction Simulation', async () => {
+  it('TC-T4-09: Repeater 56-Singer Data Binding & Scoped Item Interaction Simulation', async () => {
     const vbMod = await loadPublicModule('voicebankData');
     const { VOICEBANKS } = vbMod;
 
@@ -264,7 +264,7 @@ describe('Tier 4: Real-World Workloads & High Concurrency', () => {
 
     repeater.data = VOICEBANKS;
 
-    assert.strictEqual(boundSingerNames.length, 55);
+    assert.strictEqual(boundSingerNames.length, 56);
     assert.strictEqual(boundSingerNames[0], 'Ayanami Hikaru');
     assert.strictEqual(boundSingerNames[boundSingerNames.length - 1], 'Helen');
   });

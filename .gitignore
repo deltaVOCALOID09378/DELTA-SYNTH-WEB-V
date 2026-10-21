@@ -10,6 +10,7 @@ jsconfig.json
 *.zip
 .snapshots/
 Chat History/
+history/
 Export The Project/
 Export_For_Web/
 delta-synth-web-/
@@ -28,5 +29,7 @@ src/pages/Voice/
 scratch/
 *.gdoc
 
+refs/*
 .vercel
 .env*
+refs/desktop.ini

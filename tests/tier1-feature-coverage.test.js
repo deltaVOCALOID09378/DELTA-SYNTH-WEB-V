@@ -380,8 +380,8 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
     const vbMod = await loadPublicModule('voicebankData');
     const { VOICEBANKS, getVoicebankById, queryVoicebanks } = vbMod;
 
-    it('TC-T1-VBK-01: VOICEBANKS catalog contains exactly 55 singers', () => {
-      assert.strictEqual(VOICEBANKS.length, 55);
+    it('TC-T1-VBK-01: VOICEBANKS catalog contains exactly 56 singers', () => {
+      assert.strictEqual(VOICEBANKS.length, 56);
       assert.ok(Array.isArray(VOICEBANKS));
     });
 
@@ -404,10 +404,10 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
       });
     });
 
-    it('TC-T1-VBK-03: All 55 singer IDs are unique without collisions', () => {
+    it('TC-T1-VBK-03: All 56 singer IDs are unique without collisions', () => {
       const ids = VOICEBANKS.map(v => v.id.toLowerCase().trim());
       const uniqueIds = new Set(ids);
-      assert.strictEqual(uniqueIds.size, 55);
+      assert.strictEqual(uniqueIds.size, 56);
     });
 
     it('TC-T1-VBK-04: getVoicebankById retrieves singer with case-insensitivity and trim', () => {
@@ -432,7 +432,7 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
       assert.ok(females.length > 0);
       assert.ok(females.every(v => v.gender === 'Female'));
       const otherGenders = queryVoicebanks().filter(v => v.gender !== 'Male' && v.gender !== 'Female');
-      assert.strictEqual(males.length + females.length + otherGenders.length, 55);
+      assert.strictEqual(males.length + females.length + otherGenders.length, 56);
 
       const diffsingers = queryVoicebanks({ engine: 'DiffSinger' });
       assert.ok(diffsingers.length > 0);
@@ -621,9 +621,9 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
     const vbService = await loadBackendModule('voicebankService.jsw');
     const { getVoicebanksList, getSingerDetails, getVoicebankStats } = vbService;
 
-    it('TC-T1-VBS-01: getVoicebanksList returns paginated list of 55 singers', async () => {
+    it('TC-T1-VBS-01: getVoicebanksList returns paginated list of 56 singers', async () => {
       const res = await getVoicebanksList({ page: 1, pageSize: 12 });
-      assert.strictEqual(res.total, 55);
+      assert.strictEqual(res.total, 56);
       assert.strictEqual(res.items.length, 12);
       assert.strictEqual(res.page, 1);
       assert.strictEqual(res.pageSize, 12);
@@ -657,9 +657,9 @@ describe('Tier 1: Feature Coverage (Category-Partition)', () => {
 
     it('TC-T1-VBS-05: getVoicebankStats returns aggregated catalog statistics', async () => {
       const stats = await getVoicebankStats();
-      assert.strictEqual(stats.totalSingers, 55);
+      assert.strictEqual(stats.totalSingers, 56);
       assert.strictEqual(stats.supportedLanguages, 7);
-      assert.strictEqual(stats.genders.Male + stats.genders.Female + stats.genders.Other, 55);
+      assert.strictEqual(stats.genders.Male + stats.genders.Female + stats.genders.Other, 56);
       assert.ok(typeof stats.engines === 'object');
     });
   });
