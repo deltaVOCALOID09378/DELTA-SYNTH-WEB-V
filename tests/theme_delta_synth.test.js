@@ -247,4 +247,50 @@ describe('Tier 5: DELTA SYNTH Theme Verification & Integrity', () => {
       assert.ok(elapsed < 2000, `100 concurrent token reads completed in ${elapsed.toFixed(2)}ms`);
     });
   });
+
+  it('TC-TH-17: starfield.js exports complete Meteor Shower Engine API', () => {
+    const starfieldContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/js/starfield.js'), 'utf8');
+    assert.ok(starfieldContent.includes('seedInitialMeteors'), 'seedInitialMeteors must be present');
+    assert.ok(starfieldContent.includes('spawnMeteor'), 'spawnMeteor must be present');
+    assert.ok(starfieldContent.includes('spawnFlare'), 'spawnFlare must be present');
+    assert.ok(starfieldContent.includes('ensureCanvas'), 'ensureCanvas must be present');
+    assert.ok(starfieldContent.includes('static init('), 'static init must be exported');
+    assert.ok(starfieldContent.includes('destroy()'), 'destroy must be exported');
+  });
+
+  it('TC-TH-18: starfield.js strictly enforces zero shadowBlur and zero canvas filters in code', () => {
+    const starfieldContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/js/starfield.js'), 'utf8');
+    assert.strictEqual(/ctx\.shadowBlur\s*=/g.test(starfieldContent), false, 'ctx.shadowBlur assignment must not be used');
+    assert.strictEqual(/ctx\.filter\s*=/g.test(starfieldContent), false, 'ctx.filter assignment must not be used');
+  });
+
+  it('TC-TH-19: style.css enforces backdrop-filter none and disables blur globally', () => {
+    const styleContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/style.css'), 'utf8');
+    assert.ok(styleContent.includes('backdrop-filter: none !important'), 'Global backdrop-filter none required');
+    assert.ok(styleContent.includes('-webkit-backdrop-filter: none !important'), 'Global -webkit-backdrop-filter none required');
+    assert.ok(styleContent.includes('#space-bg'), '#space-bg rule required');
+    assert.ok(styleContent.includes('filter: none !important;'), 'filter none required for background');
+  });
+
+  it('TC-TH-20: index.html contains verified New Works showcase sections and links', () => {
+    const indexContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/index.html'), 'utf8');
+    assert.ok(indexContent.includes('id="new-works"'), 'New works section must exist');
+    assert.ok(indexContent.includes('id="thai-rvc-webui"'), 'Thai RVC Web UI card must exist');
+    assert.ok(indexContent.includes('id="the-darkside-ui"'), 'The Darkside UI card must exist');
+    assert.ok(indexContent.includes('https://github.com/deltaVOCALOID09378/Thai_RVC_WebUI'), 'Valid Thai RVC repo link');
+    assert.ok(indexContent.includes('https://github.com/deltaVOCALOID09378'), 'Valid The Darkside repo link');
+  });
+
+  it('TC-TH-21: i18n.js contains complete translation keys for new works across all 9 languages', () => {
+    const i18nContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/js/i18n.js'), 'utf8');
+    const languages = ['th', 'en', 'fr', 'es', 'es-cl', 'zh', 'ja', 'ru', 'ko'];
+    for (const lang of languages) {
+      assert.ok(i18nContent.includes(`'${lang}':`) || i18nContent.includes(`${lang}:`), `Language ${lang} block missing`);
+    }
+    assert.ok(i18nContent.includes('nav_new_works'), 'nav_new_works missing');
+    assert.ok(i18nContent.includes('nw_title'), 'nw_title missing');
+    assert.ok(i18nContent.includes('nw_rvc_desc'), 'nw_rvc_desc missing');
+    assert.ok(i18nContent.includes('nw_dark_desc'), 'nw_dark_desc missing');
+  });
+
 });

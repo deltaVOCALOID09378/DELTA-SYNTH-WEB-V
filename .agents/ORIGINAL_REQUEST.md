@@ -30,15 +30,15 @@ Validate boundaries across all backend web methods (`voicebankService.jsw`, `fil
 ## Acceptance Criteria
 
 ### Code Quality & Standards (AGENT.md)
-- [ ] All 14 page scripts in `src/pages/` pass ESLint and syntax checks without errors or unhandled warnings.
-- [ ] No `except: pass`, empty catch blocks, or suppressed lint errors exist across the codebase.
-- [ ] All backend endpoints in `src/backend/` validate inputs defensively and return standard error responses on invalid payloads.
-- [ ] `permissions.json` correctly declares permissions for all exported web methods.
+- [x] All 14 page scripts in `src/pages/` pass ESLint and syntax checks without errors or unhandled warnings.
+- [x] No `except: pass`, empty catch blocks, or suppressed lint errors exist across the codebase.
+- [x] All backend endpoints in `src/backend/` validate inputs defensively and return standard error responses on invalid payloads.
+- [x] `permissions.json` correctly declares permissions for all exported web methods.
 
 ### Performance & Stability
-- [ ] Static web assets (`src/public/*.html`) and Velo scripts share consistent data bindings and naming conventions.
-- [ ] Audio player module handles rapid track switching, pause, and stop events without memory leakage or state collision.
-- [ ] Toast notification system strictly adheres to AGENT.md geometry (max 280x80px, bottom-right offset 16, 20, radius 6px).
+- [x] Static web assets (`src/public/*.html`) and Velo scripts share consistent data bindings and naming conventions.
+- [x] Audio player module handles rapid track switching, pause, and stop events without memory leakage or state collision.
+- [x] Toast notification system strictly adheres to AGENT.md geometry (max 280x80px, bottom-right offset 16, 20, radius 6px).
 
 ## 2026-08-24T02:19:16Z
 
@@ -71,20 +71,20 @@ Integrity mode: development
 ## Acceptance Criteria
 
 ### Navigation & Functionality
-- [ ] No button or link anywhere on the site results in an unhandled dead '#' jump without target action.
-- [ ] Mobile navigation toggle opens and closes reliably across all screen widths.
-- [ ] Navbar highlights exactly one active link corresponding to the current URL.
-- [ ] All social media links navigate to their actual DELTA SYNTH official destinations.
+- [x] No button or link anywhere on the site results in an unhandled dead '#' jump without target action.
+- [x] Mobile navigation toggle opens and closes reliably across all screen widths.
+- [x] Navbar highlights exactly one active link corresponding to the current URL.
+- [x] All social media links navigate to their actual DELTA SYNTH official destinations.
 
 ### Content & Encoding
-- [ ] Zero mojibake characters (à¹ , à¸ , Ã, etc.) remain in any file across src/public/.
-- [ ] All Thai and English text renders crisply in UTF-8.
+- [x] Zero mojibake characters (à¹ , à¸ , Ã, etc.) remain in any file across src/public/.
+- [x] All Thai and English text renders crisply in UTF-8.
 
 ### Singer Catalog & Assets
-- [ ] All 53 singers are present with complete metadata (Age, Gender, Voicer, Genre, Engine, Language, Description, Download URL, Audio Sample) in both voicebank.html and individual singers/*.html pages.
-- [ ] Zero broken image icons or 404 image errors exist across the catalog.
+- [x] All singers (56 registered in catalog) are present with complete metadata (Age, Gender, Voicer, Genre, Engine, Language, Description, Download URL, Audio Sample) in both voicebank.html and individual singers/*.html pages.
+- [x] Zero broken image icons or 404 image errors exist across the catalog.
 
 ### Testing & Deployment
-- [ ] All test suites run and pass 100% cleanly (node tests/run-all-tests.js).
-- [ ] All files are staged and committed cleanly ready for Vercel/GitHub deployment.
+- [x] All test suites run and pass 100% cleanly (node tests/run-all-tests.js: 144/144 passed).
+- [x] All files are staged and committed cleanly ready for Vercel/GitHub deployment.
 

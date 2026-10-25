@@ -47,6 +47,32 @@ export const PROJECTS = [
     singers: ['All DELTA SYNTH Singers'],
     collaborators: ['DELTA SYNTH & Gemini AI'],
     link: 'index.html'
+  },
+  {
+    id: 'thai_rvc_webui',
+    title: 'Thai RVC Web UI',
+    titleTh: 'Thai RVC Web UI — WebUI แปลงเสียง RVC เวอร์ชันภาษาไทย',
+    category: 'AI Tool',
+    status: 'In Progress',
+    date: '2026-10-25',
+    description: 'WebUI สำหรับ Retrieval-based Voice Conversion ที่รวมการอนุมานเสียง เตรียมข้อมูล ฝึกโมเดล สร้าง Index และแยกเสียง (UVR5) พร้อมคู่มือไทย/อังกฤษ รองรับ NVIDIA, AMD, Intel (DirectML) และ CPU',
+    languages: ['Thai', 'English'],
+    singers: ['DELTA SYNTH Voice Conversion Workflow'],
+    collaborators: ['DELTA SYNTH & Gemini AI', 'RVC Project (MIT)'],
+    link: 'index.html#thai-rvc-webui'
+  },
+  {
+    id: 'the_darkside_ui_agent',
+    title: 'The Darkside UI — AI Agent',
+    titleTh: 'The Darkside UI — AI Agent เดสก์ท็อปที่ทำงานบนเครื่องผ่าน Ollama',
+    category: 'AI Agent',
+    status: 'In Progress',
+    date: '2026-10-25',
+    description: 'แอป Windows (Avalonia/.NET + FastAPI + Node.js) สำหรับ Agentic AI ที่รันโมเดลผ่าน Ollama จำกัดการเข้าถึงไฟล์เฉพาะ Workspace ผูกบริการกับ 127.0.0.1 และไม่ต้องใช้ Cloud API Key',
+    languages: ['Thai', 'English'],
+    singers: [],
+    collaborators: ['DELTA SYNTH & Gemini AI'],
+    link: 'index.html#the-darkside-ui'
   }
 ];
 
@@ -181,6 +207,13 @@ export const BETA_VOICEBANKS = [
 ];
 
 export const CHANGELOGS = [
+  {
+    date: '2026-10-25',
+    version: 'v2.5.0',
+    title: 'Night Meteor Shower Theme & New Works (Thai RVC Web UI, The Darkside UI)',
+    category: 'Theme & New Works',
+    details: 'เปลี่ยนพื้นหลังเป็นท้องฟ้าฝนดาวตกยามค่ำคืนที่เคลื่อนไหวเองและคมชัดไม่เบลอ, เพิ่มผลงานใหม่ Thai RVC Web UI และ The Darkside UI AI Agent ลงบนหน้าเว็บค่าย'
+  },
   {
     date: '2026-08-13',
     version: 'v2.4.0',

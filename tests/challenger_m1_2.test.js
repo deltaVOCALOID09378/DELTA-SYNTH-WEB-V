@@ -31,8 +31,8 @@ test.describe('Challenger 2 Empirical Verification: Milestone M1 Public Core', (
   // Suite 1: Voicebank Catalog Invariants & O(1) Indexing
   // ==========================================================================
   test.describe('1. Voicebank Catalog & O(1) Indexing Verification', () => {
-    test('Catalog contains exactly 54 unique voicebank items', () => {
-      assert.strictEqual(VOICEBANKS.length, 54, `Expected 54 voicebanks, got ${VOICEBANKS.length}`);
+    test('Catalog contains exactly 55 unique voicebank items', () => {
+      assert.strictEqual(VOICEBANKS.length, 55, `Expected 55 voicebanks, got ${VOICEBANKS.length}`);
       
       const idSet = new Set();
       for (const vb of VOICEBANKS) {
@@ -49,17 +49,17 @@ test.describe('Challenger 2 Empirical Verification: Milestone M1 Public Core', (
         assert.ok(vb.engine, `Voicebank ${vb.id} must have an engine`);
         assert.ok(vb.type, `Voicebank ${vb.id} must have a type`);
       }
-      assert.strictEqual(idSet.size, 54, 'Set of normalized IDs must equal 54');
+      assert.strictEqual(idSet.size, 55, 'Set of normalized IDs must equal 55');
     });
 
-    test('All 54 voicebanks are retrievable by exact ID', () => {
+    test('All 55 voicebanks are retrievable by exact ID', () => {
       for (const vb of VOICEBANKS) {
         const result = getVoicebankById(vb.id);
         assert.strictEqual(result, vb, `Failed to retrieve ${vb.id} by exact ID`);
       }
     });
 
-    test('All 54 voicebanks are retrievable by uppercase and mixed-case ID', () => {
+    test('All 55 voicebanks are retrievable by uppercase and mixed-case ID', () => {
       for (const vb of VOICEBANKS) {
         const upperResult = getVoicebankById(vb.id.toUpperCase());
         assert.strictEqual(upperResult, vb, `Failed to retrieve ${vb.id} by uppercase ID`);
@@ -70,7 +70,7 @@ test.describe('Challenger 2 Empirical Verification: Milestone M1 Public Core', (
       }
     });
 
-    test('All 54 voicebanks are retrievable with surrounding whitespace', () => {
+    test('All 55 voicebanks are retrievable with surrounding whitespace', () => {
       for (const vb of VOICEBANKS) {
         const paddedId = `   \t\n ${vb.id} \r\n  `;
         const result = getVoicebankById(paddedId);

@@ -33,3 +33,11 @@ refs/*
 .vercel
 .env*
 refs/desktop.ini
+# Portable Git tools
+tools/git/
+*.bak
+
+# Unused historical archives and dumps (prevents exceeding GitHub 100MB file limit)
+AI_Agent_Commands_And_Archive/Unused_Files/
+*.zip
+**/node_modules/

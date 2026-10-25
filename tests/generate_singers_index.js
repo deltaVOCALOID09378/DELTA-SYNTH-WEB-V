@@ -88,8 +88,8 @@ async function generateIndex() {
 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Singer Profiles Directory (54 นักร้อง) · DELTA SYNTH Official</title>
-<meta name="description" content="ทำเนียบและสารบัญนักร้องเสมือนทั้งหมด 54 เสียงของ DELTA SYNTH พร้อมรูปเต็มตัว ข้อมูลเสียง และลิงก์ดาวน์โหลดคลังเสียง UTAU / DiffSinger">
+<title>Singer Profiles Directory (55 นักร้อง) · DELTA SYNTH Official</title>
+<meta name="description" content="ทำเนียบและสารบัญนักร้องเสมือนทั้งหมด 55 เสียงของ DELTA SYNTH พร้อมรูปเต็มตัว ข้อมูลเสียง และลิงก์ดาวน์โหลดคลังเสียง UTAU / DiffSinger">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230d0d0d%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23cc2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
 <link rel="stylesheet" href="${cssPath}">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -369,16 +369,16 @@ async function generateIndex() {
     <!-- Header Section -->
     <div style="border-bottom: 1px solid rgba(204, 34, 0, 0.25); padding-bottom: 24px; margin-bottom: 16px;">
       <span class="eyebrow">DELTA SYNTH · Complete Character Catalog</span>
-      <h1 style="margin: 8px 0; font-size: clamp(28px, 4vw, 44px);">ทำเนียบนักร้องเสมือนทั้งหมด <span style="color:#ff4422;">(54 เสียง)</span></h1>
+      <h1 style="margin: 8px 0; font-size: clamp(28px, 4vw, 44px);">ทำเนียบนักร้องเสมือนทั้งหมด <span style="color:#ff4422;">(55 เสียง)</span></h1>
       <p style="margin:0; font-size: 15px; color: #a0a0a0; max-width: 820px;">
-        รวบรวมประวัติ ข้อมูลสเปกทางเทคนิค ภาพคาแรกเตอร์เต็มตัว และแพ็กเกจคลังเสียงพร้อมดาวน์โหลดครบทั้ง 54 นักร้องเสมือน สำหรับ OpenUtau, UTAU และ DiffSinger AI
+        รวบรวมประวัติ ข้อมูลสเปกทางเทคนิค ภาพคาแรกเตอร์เต็มตัว และแพ็กเกจคลังเสียงพร้อมดาวน์โหลดครบทั้ง 55 นักร้องเสมือน สำหรับ OpenUtau, UTAU และ DiffSinger AI
       </p>
     </div>
 
     <!-- Search and Filters -->
     <div class="filter-bar">
       <input type="text" id="searchInput" class="search-input" placeholder="🔍 ค้นหาชื่อนักร้อง, ภาษา, แนวเพลง หรือเอนจิน..." />
-      <button class="filter-btn active" data-filter="all">ทั้งหมด (54)</button>
+      <button class="filter-btn active" data-filter="all">ทั้งหมด (55)</button>
       <button class="filter-btn" data-filter="official">Official DELTA</button>
       <button class="filter-btn" data-filter="collaboration">Collaboration</button>
       <button class="filter-btn" data-filter="diffsinger">DiffSinger AI</button>
@@ -386,7 +386,7 @@ async function generateIndex() {
       <button class="filter-btn" data-filter="female">หญิง (Female)</button>
     </div>
 
-    <!-- 54 Singer Profile Grid -->
+    <!-- 55 Singer Profile Grid -->
     <div class="cyber-grid" id="singersGrid">
 ${cardsHtml}
     </div>
@@ -463,18 +463,18 @@ ${cardsHtml}
   // 1. Write src/public/singers/index.html
   const srcHtml = buildHtml(false);
   fs.writeFileSync('src/public/singers/index.html', srcHtml, 'utf8');
-  console.log('Successfully created src/public/singers/index.html with all 54 singers!');
+  console.log('Successfully created src/public/singers/index.html with all 55 singers!');
 
   // 2. Write src/pages/singers/index.html
   if (fs.existsSync('src/pages/singers')) {
     fs.writeFileSync('src/pages/singers/index.html', srcHtml, 'utf8');
-    console.log('Successfully created src/pages/singers/index.html with all 54 singers!');
+    console.log('Successfully created src/pages/singers/index.html with all 55 singers!');
   }
 
   // 3. Write Singer Profile/singers/index.html
   const rootHtml = buildHtml(true);
   fs.writeFileSync('Singer Profile/singers/index.html', rootHtml, 'utf8');
-  console.log('Successfully updated Singer Profile/singers/index.html with all 54 singers!');
+  console.log('Successfully updated Singer Profile/singers/index.html with all 55 singers!');
 }
 
 generateIndex().catch(err => console.error(err));

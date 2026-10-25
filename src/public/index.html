@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+<!-- 
+  Made And Checked By DELTA SYNTH & All Agentic AI
+  Original by Patiphat Wongyai (DELTA SYNTH)
+  Version: 1.1 (UI Alignment & Asset Path Hotfix)
+  Directory: D:\Program Developing\DELTA_SYNTH-main\src\index.html
+-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Main · DELTA SYNTH | Thai Vocal Synthesis Studio</title>
 <meta name="description" content="DELTA SYNTH — ค่ายพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ก่อตั้งปี 2019 แจกจ่ายคลังเสียง 57+ เสียง และไฟล์เพลงฟรี">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231A1A1A%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23CC2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* บังคับใช้ฟอนต์ Leelawadee UI ตามมาตรฐานของค่าย และจัดการโทนสีพื้นฐาน */
+  body {
+    font-family: 'Leelawadee UI', sans-serif;
+    background-color: #1A1A1A;
+    color: #F0F0F0;
+  }
+  /* ปรับปรุงโครงสร้าง Navigation Bar ให้รองรับปุ่ม Language และเว้นระยะให้สมดุล */
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(204, 34, 0, 0.6);
+    color: #F0F0F0;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: 'Leelawadee UI', sans-serif;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-btn:hover {
+    background: rgba(204, 34, 0, 0.1);
+    border-color: #CC2200;
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
-  <div class="nav">
+  <div class="nav nav-wrapper">
     <a href="index.html" class="brand" aria-label="DELTA SYNTH หน้าแรก">
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
-      <a href="index.html" class="active">Main</a>
-      <a href="about.html">About Us</a>
-      <a href="voicebank.html">All Voicebank</a>
-      <a href="files.html">USTX / MIDI / SVP / VSQX</a>
-      <a href="collab.html">Collaboration</a>
-      <a href="events.html">Events</a>
-      <a href="#thai-openutau" style="color: var(--primary-hover, #ff4422); font-weight: 600;">Thai OpenUtau</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
+        <a href="index.html" class="active">Main</a>
+        <a href="about.html">About Us</a>
+        <a href="voicebank.html">All Voicebank</a>
+        <a href="files.html">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html">Collaboration</a>
+        <a href="events.html">Events</a>
+        <a href="#new-works" style="color: var(--primary-hover, #ff4422); font-weight: 600;" data-i18n="nav_new_works">New Works</a>
+        <a href="#thai-openutau" style="color: var(--primary-hover, #ff4422); font-weight: 600;">Thai OpenUtau</a>
+      </nav>
+      <!-- เพิ่มปุ่ม Language Toggle ที่จัดเรียงอย่างถูกต้องตามสกรีนช็อต -->
+      <button class="lang-btn" id="lang-toggle-btn" aria-label="เปลี่ยนภาษา">Language</button>
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -134,7 +176,7 @@
       <!-- Ayanami Hikaru -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <img src="assets/images/voicebanks/profile/ayanami-hikaru.webp" alt="Ayanami Hikaru" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <img src="assets/voicebanks/profile/ayanami-hikaru.webp" alt="Ayanami Hikaru" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">OFFICIAL #01</div>
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -151,7 +193,7 @@
       <!-- SUN -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <img src="assets/images/voicebanks/profile/sun.webp" alt="SUN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <img src="assets/voicebanks/profile/sun.webp" alt="SUN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">OFFICIAL #02</div>
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -168,7 +210,8 @@
       <!-- RelVeN -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <img src="assets/images/voicebanks/RelVeN.png" alt="RelVeN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <!-- แก้ไขบั๊กพาธภาพแตก โดยเติมโฟลเดอร์ full/ และสร้างระบบ Fallback Image -->
+          <img src="assets/images/voicebanks/full/RelVeN.png" alt="RelVeN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/RelVeN.png'">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">POWER ROCK</div>
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -182,10 +225,11 @@
         </div>
       </article>
 
-      <!-- Andromeda -->
+      <!-- Andromeda (Uchu Sutori) -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <img src="assets/images/voicebanks/Andromeda.png" alt="Andromeda" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <!-- แก้ไขบั๊กพาธภาพแตก โดยเติมโฟลเดอร์ full/ และสร้างระบบ Fallback Image -->
+          <img src="assets/images/voicebanks/full/Uchu Sutori.png" alt="Andromeda" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/Uchu Sutori.png'">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(245, 158, 11, 0.9); color: #000; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">TYU PROJECT</div>
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -196,6 +240,63 @@
             <a href="singers/andromeda.html" class="btn btn-ghost btn-sm" style="flex: 1; justify-content: center;">โปรไฟล์</a>
             <span class="btn btn-ghost btn-sm is-locked" style="flex: 1; justify-content: center; border-color: rgba(245, 158, 11, 0.4); color: #f59e0b;">รอเปิดตัว</span>
           </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- New Works: Thai RVC Web UI & The Darkside UI AI Agent -->
+<section id="new-works" style="background: rgba(10, 12, 24, 0.24); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="nw_eyebrow">NEW WORKS · AI TOOLS BY DELTA SYNTH</span>
+      <h2 data-i18n="nw_title">ผลงานใหม่ล่าสุดจากห้องพัฒนา DELTA SYNTH</h2>
+      <p data-i18n="nw_desc">เครื่องมือ AI ที่ทีมพัฒนาขึ้นเองเพื่อสนับสนุนงานสร้างเสียงร้องเสมือน — ทั้งการแปลงเสียงด้วย Tone-Preserving Thai RVC ผ่านหน้าเว็บภาษาไทย และผู้ช่วย Local AI Agent บนเครื่องของคุณเอง</p>
+    </div>
+
+    <div class="works-grid">
+      <!-- Thai RVC Web UI -->
+      <article class="work-card" id="thai-rvc-webui">
+        <div class="work-head">
+          <span class="work-badge is-new" data-i18n="nw_rvc_badge">NEW WORK · ACTIVE DEVELOPMENT</span>
+          <span class="work-meta">Python · Gradio · PyTorch · RMVPE</span>
+        </div>
+        <h3>Thai RVC Web UI</h3>
+        <p class="work-sub" data-i18n="nw_rvc_sub">Tone-Preserving Thai RVC System · ระบบแปลงเสียงวรรณยุกต์ไทยแท้</p>
+        <p data-i18n="nw_rvc_desc">WebUI แปลงเสียงด้วย Retrieval-based Voice Conversion (RVC) ที่ปรับแต่งสถาปัตยกรรมเพื่อรักษาวรรณยุกต์ไทย 5 เสียงครบถ้วน ด้วย RMVPE F0 contour และ Thai ContentVec/HuBERT (ความแม่นยำวรรณยุกต์ ≥ 95%, MOS ≥ 4.0, RTF ≤ 0.3) พร้อมคู่มือสองภาษาไทย/อังกฤษ</p>
+        <ul class="work-list">
+          <li data-i18n="nw_rvc_li1">ครบวงจรในหน้าเดียว: แปลงเสียง (Inference), จัดการ Dataset, ฝึกโมเดล (Train), สร้าง Index (FAISS) และแยกเสียงร้อง/ดนตรีด้วย UVR5</li>
+          <li data-i18n="nw_rvc_li2">รองรับฮาร์ดแวร์หลากหลาย: NVIDIA CUDA, AMD / Intel (DirectML) และ CPU เปิดรันผ่าน <code>Program.py</code> (พอร์ต 9378) หรือ <code>go-web.bat</code> (พอร์ต 7897)</li>
+          <li data-i18n="nw_rvc_li3">โหมดเสียงสด &amp; ปลั๊กอิน DAW: รองรับ <code>realtime_gui.py</code> แปลงเสียงสดความหน่วงต่ำ และรองรับ <code>RVCRealtimeVST</code> สำหรับโปรแกรมทำเพลง</li>
+          <li data-i18n="nw_rvc_li4">ระบบประมวลผล Batch ปลอดภัย: แยก subprocess ลดปัญหา VRAM รั่ว มี <code>clear_vram_safe()</code> พร้อมระบบตรวจซ่อม dependency อัตโนมัติ</li>
+        </ul>
+        <div class="work-tags"><span>Thai RVC</span><span>Tone-Preserving</span><span>RMVPE</span><span>DirectML</span><span>UVR5</span><span>VST</span></div>
+        <div class="work-actions">
+          <a href="https://github.com/deltaVOCALOID09378/Thai_RVC_WebUI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="nw_rvc_btn_gh">Source Code บน GitHub</a>
+          <a href="about.html" class="btn btn-ghost btn-sm" data-i18n="nw_rvc_btn_contact">ติดต่อร่วมทดสอบ</a>
+        </div>
+      </article>
+
+      <!-- The Darkside UI AI Agent -->
+      <article class="work-card" id="the-darkside-ui">
+        <div class="work-head">
+          <span class="work-badge is-new" data-i18n="nw_dark_badge">NEW WORK · ACTIVE DEVELOPMENT</span>
+          <span class="work-meta">C# Avalonia · FastAPI · Node.js · Ollama</span>
+        </div>
+        <h3>The Darkside UI — AI Agent</h3>
+        <p class="work-sub" data-i18n="nw_dark_sub">Local Agentic AI Desktop · Made by DELTA SYNTH</p>
+        <p data-i18n="nw_dark_desc">แอปเดสก์ท็อป Windows สำหรับสั่งงาน AI Agent บนเครื่องของคุณเองผ่าน Ollama 100% ไม่ต้องใช้ API Key ภายนอก และจำกัดสิทธิ์การเข้าถึงไฟล์เฉพาะ Workspace ที่กำหนดเท่านั้น</p>
+        <ul class="work-list">
+          <li data-i18n="nw_dark_li1">หน้าจอ Avalonia / .NET สไตล์โมเดิร์น: เลือกโมเดล สตรีมความคิดและสถานะการทำงานของ Agent แบบสดด้วย NDJSON พร้อมปุ่มยกเลิกทันที</li>
+          <li data-i18n="nw_dark_li2">เครื่องมือไฟล์ความปลอดภัยสูง: <code>read_file</code>, <code>write_file</code>, <code>list_directory</code> ป้องกัน Path Traversal เขียนไฟล์แบบ Atomic และจำกัดขนาด</li>
+          <li data-i18n="nw_dark_li3">ความปลอดภัยแบบปิด: Backend และ Gateway ผูกที่ <code>127.0.0.1</code> เท่านั้น ควบคุม Concurrency และจำกัดจำนวนเซสชันพร้อมกัน</li>
+          <li data-i18n="nw_dark_li4">ระบบ Supervisor และการควบคุม: ตรวจสุขภาพโปรเซสอัตโนมัติ มีสคริปต์ <code>setup</code>, <code>start</code>, <code>stop</code>, <code>verify</code> พร้อมใช้งานสมบูรณ์</li>
+        </ul>
+        <div class="work-tags"><span>AI Agent</span><span>Ollama</span><span>Local-first</span><span>Avalonia .NET</span><span>FastAPI</span><span>Sandboxed</span></div>
+        <div class="work-actions">
+          <a href="https://github.com/deltaVOCALOID09378" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="nw_dark_btn_gh">ติดตามบน GitHub</a>
+          <a href="about.html" class="btn btn-ghost btn-sm" data-i18n="nw_dark_btn_contact">ติดต่อร่วมทดสอบ</a>
         </div>
       </article>
     </div>
@@ -307,6 +408,13 @@
     </div>
     <div class="feed">
       <div class="feed-item">
+        <div class="date">ต.ค. 2026</div>
+        <div>
+          <h4>ผลงานใหม่: Thai RVC Web UI และ The Darkside UI AI Agent</h4>
+          <p>เพิ่มเครื่องมือ AI ที่พัฒนาโดย DELTA SYNTH 2 รายการ — WebUI แปลงเสียง RVC ภาษาไทย และ AI Agent เดสก์ท็อปที่ทำงานบนเครื่องผ่าน Ollama ดูรายละเอียดได้ที่ส่วน <a href="#new-works" style="color: var(--primary-hover);">New Works</a></p>
+        </div>
+      </div>
+      <div class="feed-item">
         <div class="date">2026</div>
         <div>
           <h4>ระบบความร่วมมือและคลังเสียงเจเนอเรชันใหม่</h4>
@@ -376,6 +484,7 @@
         <a href="files.html">USTX / MIDI / SVP / VSQX</a>
         <a href="collab.html">Collaboration Voicebank</a>
         <a href="events.html">Events</a>
+        <a href="#new-works">New Works: Thai RVC Web UI &amp; The Darkside UI</a>
         <a href="#thai-openutau">Thai OpenUtau Project</a>
       </div>
       <div class="footer-links">
@@ -394,6 +503,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="js/starfield.js"></script>
 <script src="js/i18n.js"></script>
 </body>
 </html>

@@ -1,31 +1,23 @@
 {
-  "name": "delta-synth",
-  "version": "2.4.0",
+  "name": "delta-synth-web-v",
+  "version": "2.5.0",
+  "description": "DELTA SYNTH — Official Virtual Singer Portal & Thai Vocal Synthesizer Platform",
   "type": "module",
-  "imports": {
-    "public/*": "./src/public/*",
-    "backend/*": "./src/backend/*"
-  },
-  "devDependencies": {
-    "@wix/cli": "^1.0.0",
-    "@wix/eslint-plugin-cli": "^1.0.0",
-    "eslint": "^8.25.0",
-    "react": "16.14.0"
-  },
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "portal": "node tools/static-server.mjs",
-    "wix:dev": "wix dev",
-    "wix:sync": "wix sync-types",
-    "build": "node --check server.js && node --check tools/static-server.mjs",
-    "lint": "eslint .",
     "test": "node tests/run-all-tests.js"
   },
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "multer": "^2.3.0"
-  }
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "DELTA SYNTH",
+  "license": "MIT"
 }
