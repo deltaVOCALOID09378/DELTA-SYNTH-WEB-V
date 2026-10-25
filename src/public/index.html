@@ -1,58 +1,22 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<!-- 
-  Made And Checked By DELTA SYNTH & All Agentic AI
-  Original by Patiphat Wongyai (DELTA SYNTH)
-  Version: 1.1 (UI Alignment & Asset Path Hotfix)
-  Directory: D:\Program Developing\DELTA_SYNTH-main\src\index.html
--->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Main · DELTA SYNTH | Thai Vocal Synthesis Studio</title>
 <meta name="description" content="DELTA SYNTH — ค่ายพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ก่อตั้งปี 2019 แจกจ่ายคลังเสียง 57+ เสียง และไฟล์เพลงฟรี">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231A1A1A%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23CC2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
 <link rel="stylesheet" href="style.css">
-<style>
-  /* บังคับใช้ฟอนต์ Leelawadee UI ตามมาตรฐานของค่าย และจัดการโทนสีพื้นฐาน */
-  body {
-    font-family: 'Leelawadee UI', sans-serif;
-    background-color: #1A1A1A;
-    color: #F0F0F0;
-  }
-  /* ปรับปรุงโครงสร้าง Navigation Bar ให้รองรับปุ่ม Language และเว้นระยะให้สมดุล */
-  .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 16px;
-  }
-  .lang-btn {
-    background: transparent;
-    border: 1px solid rgba(204, 34, 0, 0.6);
-    color: #F0F0F0;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-family: 'Leelawadee UI', sans-serif;
-    font-size: 13.5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .lang-btn:hover {
-    background: rgba(204, 34, 0, 0.1);
-    border-color: #CC2200;
-  }
-</style>
 </head>
 <body>
 <header class="site-header">
-  <div class="nav nav-wrapper">
+  <div class="nav" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <a href="index.html" class="brand" aria-label="DELTA SYNTH หน้าแรก">
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <div style="display: flex; align-items: center; gap: 24px;">
+    
+    <div style="display: flex; align-items: center; gap: 16px;">
       <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
         <a href="index.html" class="active">Main</a>
         <a href="about.html">About Us</a>
@@ -63,8 +27,14 @@
         <a href="#new-works" style="color: var(--primary-hover, #ff4422); font-weight: 600;" data-i18n="nav_new_works">New Works</a>
         <a href="#thai-openutau" style="color: var(--primary-hover, #ff4422); font-weight: 600;">Thai OpenUtau</a>
       </nav>
-      <!-- เพิ่มปุ่ม Language Toggle ที่จัดเรียงอย่างถูกต้องตามสกรีนช็อต -->
-      <button class="lang-btn" id="lang-toggle-btn" aria-label="เปลี่ยนภาษา">Language</button>
+
+      <!-- Language Switcher Component -->
+      <div class="lang-switcher">
+        <button class="lang-btn" id="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="เปลี่ยนภาษา">
+          <span class="lang-current">Language</span>
+        </button>
+      </div>
+
       <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
@@ -210,7 +180,6 @@
       <!-- RelVeN -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <!-- แก้ไขบั๊กพาธภาพแตก โดยเติมโฟลเดอร์ full/ และสร้างระบบ Fallback Image -->
           <img src="assets/images/voicebanks/full/RelVeN.png" alt="RelVeN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/RelVeN.png'">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">POWER ROCK</div>
         </div>
@@ -228,7 +197,6 @@
       <!-- Andromeda (Uchu Sutori) -->
       <article class="vcard">
         <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
-          <!-- แก้ไขบั๊กพาธภาพแตก โดยเติมโฟลเดอร์ full/ และสร้างระบบ Fallback Image -->
           <img src="assets/images/voicebanks/full/Uchu Sutori.png" alt="Andromeda" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/Uchu Sutori.png'">
           <div style="position: absolute; top: 12px; left: 12px; background: rgba(245, 158, 11, 0.9); color: #000; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">TYU PROJECT</div>
         </div>
