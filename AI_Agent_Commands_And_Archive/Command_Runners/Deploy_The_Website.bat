@@ -8,9 +8,17 @@
 :: ============================================================================
 setlocal EnableDelayedExpansion
 
-set "TARGET_DIR=%~dp0"
+set "SCRIPT_DIR=%~dp0"
 if not "%~1"=="" (
     set "TARGET_DIR=%~1"
+) else if exist "%SCRIPT_DIR%.git" (
+    set "TARGET_DIR=%SCRIPT_DIR%"
+) else if exist "%SCRIPT_DIR%..\..\.git" (
+    pushd "%SCRIPT_DIR%..\.."
+    set "TARGET_DIR=!CD!\"
+    popd
+) else (
+    set "TARGET_DIR=%SCRIPT_DIR%"
 )
 
 :MENU
@@ -58,6 +66,15 @@ pause
 goto MENU
 
 :DEPLOY_GITHUB
+:: Locate Git binary
+where "%GIT_CMD%" >nul 2>&1
+if !errorlevel! equ 0 (
+    set "GIT_CMD=git"
+) else if exist "%TARGET_DIR%tools\git\cmd\git.exe" (
+    set "GIT_CMD=%TARGET_DIR%tools\git\cmd\git.exe"
+) else (
+    set "GIT_CMD=git"
+)
 echo.
 echo ============================================================================
 echo [DELTA SYNTH] Deploying to GitHub Pages...
@@ -70,11 +87,11 @@ if errorlevel 1 (
 )
 echo.
 echo [1/3] Adding changes to Git...
-git -C "%TARGET_DIR%" add -A
+"%GIT_CMD%" -C "%TARGET_DIR%" add -A
 echo [2/3] Committing deployment bundle...
-git -C "%TARGET_DIR%" commit -m "deploy: update dual-release for GitHub Pages and Cloudflare Pages"
+"%GIT_CMD%" -C "%TARGET_DIR%" commit -m "deploy: update dual-release for GitHub Pages and Cloudflare Pages"
 echo [3/3] Pushing to GitHub main branch...
-git -C "%TARGET_DIR%" push origin main
+"%GIT_CMD%" -C "%TARGET_DIR%" push origin main
 if errorlevel 1 (
     echo [ERROR] Git push failed. Please check network connection or remote status.
 ) else (
@@ -134,9 +151,9 @@ if errorlevel 1 (
 )
 echo.
 echo [Stage 1] Pushing to GitHub Pages...
-git -C "%TARGET_DIR%" add -A
-git -C "%TARGET_DIR%" commit -m "deploy: dual hosting release on GitHub Pages and Cloudflare Pages"
-git -C "%TARGET_DIR%" push origin main
+"%GIT_CMD%" -C "%TARGET_DIR%" add -A
+"%GIT_CMD%" -C "%TARGET_DIR%" commit -m "deploy: dual hosting release on GitHub Pages and Cloudflare Pages"
+"%GIT_CMD%" -C "%TARGET_DIR%" push origin main
 
 echo.
 echo [Stage 2] Deploying to Cloudflare Pages...

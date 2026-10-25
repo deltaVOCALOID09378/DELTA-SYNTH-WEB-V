@@ -17,24 +17,45 @@ echo        DELTA SYNTH - GITHUB ONE-CLICK REPOSITORY SYNCHRONIZER
 echo ====================================================================
 echo.
 
-set "REPO_DIR=%~dp0"
-cd /d "%REPO_DIR%"
+set "SCRIPT_DIR=%~dp0"
+cd /d "%SCRIPT_DIR%"
 
-echo [1/4] Checking Git repository status...
+:: Locate project root directory (checks current folder and two levels up)
+if exist ".git" (
+    set "REPO_DIR=%SCRIPT_DIR%"
+) else if exist "..\..\.git" (
+    cd /d "..\.."
+    set "REPO_DIR=!CD!"
+) else (
+    set "REPO_DIR=%SCRIPT_DIR%"
+)
+
+:: Locate Git binary (system git or project tools/git)
+where git >nul 2>&1
+if !errorlevel! equ 0 (
+    set "GIT_CMD=git"
+) else if exist "%REPO_DIR%\tools\git\cmd\git.exe" (
+    set "GIT_CMD=%REPO_DIR%\tools\git\cmd\git.exe"
+) else (
+    set "GIT_CMD=git"
+)
+
+echo [1/4] Checking Git repository status in %REPO_DIR%...
 if not exist ".git" (
     echo [ERROR] Git repository not found in %REPO_DIR%
     pause
     exit /b 1
 )
 
-echo [2/4] Staging all updated files for 55 singers roster...
-git add -A
+echo [2/4] Staging all updated files...
+"%GIT_CMD%" add -A
 
-echo [3/4] Creating commit with official roster metadata...
-git commit -m "feat(roster): update official 55-singer roster, voicers, Mrs. CodeZero, Andromeda, New Day and test suite"
+echo [3/4] Checking commit status...
+"%GIT_CMD%" status --porcelain >nul 2>&1
+"%GIT_CMD%" commit -m "feat(theme): implement Night Meteor Shower Sky v3.1, showcase Thai RVC WebUI and The Darkside UI AI Agent, clean GitHub workflows, and apply workspace archive protocol" >nul 2>&1
 
 echo [4/4] Pushing changes to origin/main on GitHub...
-git push origin main
+"%GIT_CMD%" push origin main
 
 if errorlevel 1 (
     echo.
