@@ -1929,8 +1929,26 @@
   }
 
   function createLanguageSwitcher() {
-    let switcher = document.getElementById('lang-switcher');
-    
+    // Deduplicate any multiple switchers if present
+    const existingSwitchers = document.querySelectorAll('.lang-switcher');
+    if (existingSwitchers.length > 1) {
+      for (let i = 1; i < existingSwitchers.length; i++) {
+        existingSwitchers[i].remove();
+      }
+    }
+
+    let switcher = document.getElementById('lang-switcher') || document.querySelector('.lang-switcher');
+    const currentLang = getCurrentLang();
+    const curLangObj = LANGUAGES.find(l => l.code === currentLang) || LANGUAGES[0];
+
+    const langItemsHtml = LANGUAGES.map(l => 
+      '<button type="button" role="menuitem" data-lang="' + l.code + '" class="' + (currentLang === l.code ? 'active' : '') + '">' +
+        '<span class="lang-flag">' + l.flag + '</span>' +
+        '<span class="lang-name">' + l.label + '</span>' +
+        '<span class="lang-code-tag">' + l.short + '</span>' +
+      '</button>'
+    ).join('');
+
     // If not existing in HTML, create dynamically
     if (!switcher) {
       const navLinks = document.querySelector('.site-header .nav-links') || document.querySelector('#site-navigation') || document.querySelector('.nav-links');
@@ -1941,17 +1959,6 @@
       switcher = document.createElement('div');
       switcher.className = 'lang-switcher';
       switcher.id = 'lang-switcher';
-
-      const currentLang = getCurrentLang();
-      const curLangObj = LANGUAGES.find(l => l.code === currentLang) || LANGUAGES[0];
-
-      const langItemsHtml = LANGUAGES.map(l => 
-        '<button type="button" role="menuitem" data-lang="' + l.code + '" class="' + (currentLang === l.code ? 'active' : '') + '">' +
-          '<span class="lang-flag">' + l.flag + '</span>' +
-          '<span class="lang-name">' + l.label + '</span>' +
-          '<span class="lang-code-tag">' + l.short + '</span>' +
-        '</button>'
-      ).join('');
 
       switcher.innerHTML = 
         '<button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">' +
@@ -1964,13 +1971,39 @@
         '</div>';
 
       container.appendChild(switcher);
+    } else {
+      switcher.id = 'lang-switcher';
+      let btn = switcher.querySelector('#lang-btn') || switcher.querySelector('.lang-btn');
+      if (btn) {
+        btn.id = 'lang-btn';
+        if (!btn.querySelector('#lang-flag')) {
+          btn.innerHTML = 
+            '<span class="lang-flag" id="lang-flag">' + curLangObj.flag + '</span>' +
+            '<span class="lang-current" id="lang-current">' + curLangObj.label + '</span>' +
+            '<span class="lang-code-tag" id="lang-code-tag">' + curLangObj.short + '</span>';
+        }
+      }
+      let dropdown = switcher.querySelector('#lang-dropdown') || switcher.querySelector('.lang-dropdown');
+      if (!dropdown) {
+        dropdown = document.createElement('div');
+        dropdown.className = 'lang-dropdown';
+        dropdown.id = 'lang-dropdown';
+        dropdown.setAttribute('role', 'menu');
+        dropdown.setAttribute('aria-label', 'Language selection');
+        dropdown.style.setProperty('display', 'none', 'important');
+        dropdown.style.setProperty('backdrop-filter', 'none', 'important');
+        dropdown.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
+        switcher.appendChild(dropdown);
+      }
+      if (!dropdown.querySelector('button[data-lang]')) {
+        dropdown.innerHTML = langItemsHtml;
+      }
     }
 
     const btn = switcher.querySelector('#lang-btn') || switcher.querySelector('.lang-btn');
     const dropdown = switcher.querySelector('#lang-dropdown') || switcher.querySelector('.lang-dropdown');
     if (!btn || !dropdown) return;
 
-    // Ensure Zero-Blur style inline as safety guarantee
     dropdown.style.setProperty('backdrop-filter', 'none', 'important');
     dropdown.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
 
@@ -1988,7 +2021,6 @@
       }
     };
 
-    // Remove old listener clones to avoid duplicates if re-invoked
     const newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
 

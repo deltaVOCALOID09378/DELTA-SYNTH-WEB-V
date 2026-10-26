@@ -29,10 +29,13 @@
       </nav>
 
       <!-- Language Switcher Component -->
-      <div class="lang-switcher">
-        <button class="lang-btn" id="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="เปลี่ยนภาษา">
-          <span class="lang-current">Language</span>
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+          <span class="lang-flag" id="lang-flag">🇹🇭</span>
+          <span class="lang-current" id="lang-current">ภาษาไทย</span>
+          <span class="lang-code-tag" id="lang-code-tag">TH</span>
         </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
       </div>
 
       <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง" data-i18n-aria="nav_toggle_open">
