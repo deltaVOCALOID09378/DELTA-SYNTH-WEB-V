@@ -20,7 +20,7 @@ jobs:
     name: Deploy to Cloudflare Pages
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
