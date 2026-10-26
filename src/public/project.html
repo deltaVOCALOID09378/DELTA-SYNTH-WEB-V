@@ -35,18 +35,30 @@
       <span class="brand-mark">&#916;</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <nav class="nav-links" id="site-navigation">
-      <a href="index.html">หน้าหลัก (Main)</a>
-      <a href="about.html">เกี่ยวกับเรา (About Us)</a>
-      <a href="voicebank.html">คลังเสียงทั้งหมด (All Voicebank)</a>
-      <a href="files.html">ไฟล์โปรเจกต์ (USTX / MIDI / SVP / VSQX)</a>
-      <a href="collab.html">คอลแลปส์ (Collaboration)</a>
-      <a href="events.html">กิจกรรม (Events)</a>
-      <a href="project.html" class="active">โปรเจกต์ (Projects)</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+        <div style="display: flex; align-items: center; gap: 16px;">
+      <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
+        <a href="index.html" data-i18n="nav_main">Main</a>
+        <a href="about.html" data-i18n="nav_about">About Us</a>
+        <a href="voicebank.html" data-i18n="nav_voicebank">All Voicebank</a>
+        <a href="files.html" data-i18n="nav_files">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html" data-i18n="nav_collab">Collaboration</a>
+        <a href="events.html" data-i18n="nav_events">Events</a>
+      </nav>
+
+      <!-- Language Switcher Component -->
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+          <span class="lang-flag" id="lang-flag">🇹🇭</span>
+          <span class="lang-current" id="lang-current">ภาษาไทย</span>
+          <span class="lang-code-tag" id="lang-code-tag">TH</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง" data-i18n-aria="nav_toggle_open">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -1361,7 +1373,7 @@
         <a href="files.html">ไฟล์โปรเจกต์ (USTX / MIDI / SVP / VSQX)</a>
         <a href="collab.html">คอลแลปส์ (Collaboration)</a>
         <a href="events.html">กิจกรรม (Events)</a>
-        <a href="project.html">โปรเจกต์ (Projects)</a>
+        <a href="project.html" class="active">โปรเจกต์ (Projects)</a>
       </div>
       <div class="footer-links">
         <h4>ช่องทางติดต่อ (Contact)</h4>

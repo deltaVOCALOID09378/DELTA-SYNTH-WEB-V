@@ -3,76 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Main · DELTA SYNTH</title>
-<meta name="description" content="DELTA SYNTH — ค่ายพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ตั้งแต่ปี 2019">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0b16%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%234fe3d0%22 stroke-width=%228%22 fill=%22none%22/></svg>">
+<title>Main · DELTA SYNTH | Thai Vocal Synthesis Studio</title>
+<meta name="description" content="DELTA SYNTH — ค่ายพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ก่อตั้งปี 2019 แจกจ่ายคลังเสียง 57+ เสียง และไฟล์เพลงฟรี">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231A1A1A%22/><path d=%22M15 55 Q30 25 40 55 T65 55 T90 45%22 stroke=%22%23CC2200%22 stroke-width=%228%22 fill=%22none%22/></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
-  <div class="nav">
-    <a href="index.html" class="brand">
+  <div class="nav" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <a href="index.html" class="brand" aria-label="DELTA SYNTH หน้าแรก">
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Main</a>
-<a href="about.html">About Us</a>
-<a href="voicebank.html">All Voicebank</a>
-<a href="files.html">USTX / MIDI / SVP / VSQX</a>
-<a href="collab.html">Collaboration</a>
-<a href="events.html">Events</a>
-    </nav>
-    <button class="nav-toggle" aria-label="เปิดเมนู">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+    
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
+        <a href="index.html" class="active" data-i18n="nav_main">Main</a>
+        <a href="about.html" data-i18n="nav_about">About Us</a>
+        <a href="voicebank.html" data-i18n="nav_voicebank">All Voicebank</a>
+        <a href="files.html" data-i18n="nav_files">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html" data-i18n="nav_collab">Collaboration</a>
+        <a href="events.html" data-i18n="nav_events">Events</a>
+        <a href="#new-works" style="color: var(--primary-hover, #ff4422); font-weight: 600;" data-i18n="nav_new_works">New Works</a>
+        <a href="#thai-openutau" style="color: var(--primary-hover, #ff4422); font-weight: 600;" data-i18n="nav_thai_openutau">Thai OpenUtau</a>
+      </nav>
+
+      <!-- Language Switcher Component -->
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+          <span class="lang-flag" id="lang-flag">🇹🇭</span>
+          <span class="lang-current" id="lang-current">ภาษาไทย</span>
+          <span class="lang-code-tag" id="lang-code-tag">TH</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง" data-i18n-aria="nav_toggle_open">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
+
 <main id="main-content">
+<!-- Hero Section -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Thai Vocal Synthesis Studio — Since 2019</span>
-        <h1>เสียงร้องเสมือน<br>ที่เริ่มต้นจาก<span class="accent">ความตั้งใจของคนไทย</span></h1>
-        <p class="lead">DELTA SYNTH คือค่ายพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ผลิตและดูแลนักร้องเสมือนกว่า 54 เสียง พร้อมคลังเสียงดาวน์โหลด 167 แพ็กเกจ รองรับการร้องได้หลายภาษา พร้อมส่งต่อคลังเสียงและไฟล์เพลงให้ทุกคนใช้งานฟรี</p>
+        <span class="eyebrow" data-i18n="hero_eyebrow">Thai Vocal Synthesis Studio — Since 2019</span>
+        <h1 data-i18n="hero_title">เสียงร้องเสมือน<br>ที่เริ่มต้นจาก<span class="accent">ความตั้งใจของคนไทย</span></h1>
+        <p class="lead" data-i18n="hero_desc">DELTA SYNTH คือค่ายพัฒนาคลังเสียงร้องเสมือน (UTAU / DiffSinger AI) สัญชาติไทย ผลิตและดูแลนักร้องเสมือนกว่า 57 เสียง พร้อมคลังเสียงดาวน์โหลด 167+ แพ็กเกจ รองรับการร้องได้ 7 ภาษา พร้อมส่งต่อคลังเสียงและไฟล์เพลงให้ทุกคนใช้งานฟรี</p>
         <div class="hero-actions">
-          <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#cc2200; border-color:#cc2200;"><span>ดาวน์โหลดคลังเสียง (Google Drive)</span><span style="font-size:11px; opacity:0.85;">/ Master Drive</span></a>
-          <a href="voicebank.html" class="btn btn-primary">สำรวจคลังเสียงทั้งหมด</a>
-          <a href="about.html" class="btn btn-ghost">รู้จักค่ายของเรา</a>
+          <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#cc2200; border-color:#cc2200; box-shadow: 0 0 20px rgba(204, 34, 0, 0.6);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            <span data-i18n="hero_btn_drive">ดาวน์โหลดคลังเสียง (Google Drive Master)</span>
+          </a>
+          <a href="voicebank.html" class="btn btn-primary" data-i18n="hero_btn_explore">สำรวจคลังเสียงทั้งหมด (57 เสียง)</a>
+          <a href="about.html" class="btn btn-ghost" data-i18n="hero_btn_about">รู้จักค่ายของเรา</a>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="mono-row"><span>ENGINE</span><span>DIFFSINGER · UTAU</span></div>
-        <div class="mono-row"><span>LANGUAGES</span><span>TH · JP · EN · CN · KR · FR · ES</span></div>
-        <div class="mono-row"><span>STATUS</span><span>LIVE</span></div>
+        <div class="mono-row"><span data-i18n="spec_core_engines_title">CORE ENGINES</span><span data-i18n="spec_core_engines_val">DIFFSINGER AI · UTAU RESAMPLER</span></div>
+        <div class="mono-row"><span data-i18n="spec_repertoire_title">REPERTOIRE</span><span data-i18n="spec_repertoire_val">TH · JP · EN · CN · KR · FR · ES (7 LINGUAL)</span></div>
+        <div class="mono-row"><span data-i18n="spec_status_title">SYSTEM STATUS</span><span data-i18n="spec_status_val">LIVE &amp; SYNTHESIZING</span></div>
         
-<svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#CC2200"/>
-      <stop offset="50%" stop-color="#FF4422"/>
-      <stop offset="100%" stop-color="#991100"/>
-    </linearGradient>
-  </defs>
-  <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
-           C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
-           C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
-</svg>
+        <svg class="curve-rule" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#CC2200"/>
+              <stop offset="50%" stop-color="#FF4422"/>
+              <stop offset="100%" stop-color="#991100"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,32 C60,4 100,60 160,32 C220,4 260,60 320,32 C380,4 420,60 480,32
+                   C540,4 580,60 640,32 C700,4 740,60 800,32 C860,4 900,60 960,32
+                   C1020,4 1060,60 1120,32 C1150,18 1180,32 1200,32"/>
+        </svg>
 
-        <div class="mono-row" style="margin-top:6px;"><span>PARTNER</span><span>PRINTMOV — DIFFSINGER AI</span></div>
-        <div class="mono-row"><span>FOUNDED</span><span>2019 · BANGKOK, TH</span></div>
+        <div class="mono-row" style="margin-top:6px;"><span data-i18n="spec_partner_title">TECH PARTNER</span><span data-i18n="spec_partner_val">PRINTMOV — DIFFSINGER NEURAL AI</span></div>
+        <div class="mono-row"><span data-i18n="spec_rd_title">OPEN SOURCE R&amp;D</span><span data-i18n="spec_rd_val">THAI OPENUTAU PHONEMIZER</span></div>
+        <div class="mono-row"><span data-i18n="spec_founded_title">FOUNDED</span><span data-i18n="spec_founded_val">2019 · BANGKOK, THAILAND</span></div>
       </div>
     </div>
 
+    <!-- Metrics -->
     <div class="stat-strip">
-      <div><div class="n">54<span>+</span></div><div class="l">นักร้องเสมือนในเครือ</div></div>
-      <div><div class="n">167<span>+</span></div><div class="l">คลังเสียงพร้อมดาวน์โหลด</div></div>
-      <div><div class="n">7<span>+</span></div><div class="l">ภาษาที่รองรับการร้อง</div></div>
+      <div>
+        <div class="n">57<span>+</span></div>
+        <div class="l">นักร้องเสมือนในเครือ</div>
+      </div>
+      <div>
+        <div class="n">167<span>+</span></div>
+        <div class="l">คลังเสียงพร้อมดาวน์โหลด</div>
+      </div>
+      <div>
+        <div class="n">7<span>+</span></div>
+        <div class="l">ภาษาที่รองรับการร้อง</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Identity Pillars -->
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -89,7 +122,7 @@
       <div class="pillar">
         <span class="tag">วิสัยทัศน์</span>
         <h3>ค่ายเสียงเสมือนไทยที่ยืนระดับสากล</h3>
-        <p>มุ่งพัฒนาคลังเสียงร้องภาษาไทยให้ก้าวทันมาตรฐานเทคโนโลยี AI เสียงร้องระดับโลก ผ่านความร่วมมือกับทีมพัฒนา Diffsinger และเครือข่ายผู้สร้างนักร้องเสมือนทั้งไทยและต่างประเทศ</p>
+        <p>มุ่งพัฒนาคลังเสียงร้องภาษาไทยให้ก้าวทันมาตรฐานเทคโนโลยี AI เสียงร้องระดับโลก ผ่านความร่วมมือกับทีมพัฒนา DiffSinger และเครือข่ายผู้สร้างนักร้องเสมือนทั้งไทยและต่างประเทศ</p>
       </div>
       <div class="pillar">
         <span class="tag">เอกลักษณ์</span>
@@ -100,18 +133,270 @@
   </div>
 </section>
 
+<!-- Flagship Singers Showcase -->
+<section style="background: rgba(13, 13, 13, 0.4); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <span class="eyebrow">VIRTUAL SINGERS SHOWCASE</span>
+        <h2>นักร้องเสมือนไฮไลต์ประจำค่าย</h2>
+        <p>สัมผัสน้ำเสียงระดับพรีเมียมจากคลังเสียงยอดนิยม ทั้ง UTAU และ DiffSinger AI พร้อมดาวน์โหลดทันที</p>
+      </div>
+      <a href="voicebank.html" class="btn btn-ghost" data-i18n="showcase_btn_all">ดูนักร้องทั้งหมด 57 เสียง →</a>
+    </div>
+
+    <div class="roster" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+      <!-- Ayanami Hikaru -->
+      <article class="vcard">
+        <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
+          <img src="assets/voicebanks/profile/ayanami-hikaru.webp" alt="Ayanami Hikaru" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">OFFICIAL #01</div>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+          <h3 style="margin: 0 0 4px; font-size: 20px; color: #fff;">Ayanami Hikaru</h3>
+          <div style="font-size: 13px; color: var(--primary-hover); margin-bottom: 10px; font-family: var(--font-mono);" data-i18n="showcase_hikaru_sub">อายานามิ ฮิคารุ · Pop / Ballad</div>
+          <p style="font-size: 13.5px; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.5;" data-i18n="showcase_hikaru_desc">เสียงหลักอันเป็นเอกลักษณ์ของ DELTA SYNTH ให้โทนเสียงอบอุ่น ทรงพลัง และยืดหยุ่นสูงในทุกย่านเสียง</p>
+          <div style="display: flex; gap: 8px;">
+            <a href="singers/ayanami_hikaru.html" class="btn btn-ghost btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_profile">โปรไฟล์</a>
+            <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_download">ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- SUN -->
+      <article class="vcard">
+        <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
+          <img src="assets/voicebanks/profile/sun.webp" alt="SUN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;">
+          <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">OFFICIAL #02</div>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+          <h3 style="margin: 0 0 4px; font-size: 20px; color: #fff;">SUN</h3>
+          <div style="font-size: 13px; color: var(--primary-hover); margin-bottom: 10px; font-family: var(--font-mono);" data-i18n="showcase_sun_sub">ซัน · Rock / Modern</div>
+          <p style="font-size: 13.5px; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.5;" data-i18n="showcase_sun_desc">เสียงใส คมชัด พุ่งตรง เหมาะกับแนวเพลงเร็วและท่อนฮุคที่ต้องการพลังเสียงหนักแน่น</p>
+          <div style="display: flex; gap: 8px;">
+            <a href="singers/sun.html" class="btn btn-ghost btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_profile">โปรไฟล์</a>
+            <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_download">ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- RelVeN -->
+      <article class="vcard">
+        <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
+          <img src="assets/images/voicebanks/full/RelVeN.png" alt="RelVeN" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/RelVeN.png'">
+          <div style="position: absolute; top: 12px; left: 12px; background: rgba(204, 34, 0, 0.9); color: #fff; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">POWER ROCK</div>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+          <h3 style="margin: 0 0 4px; font-size: 20px; color: #fff;">RelVeN</h3>
+          <div style="font-size: 13px; color: var(--primary-hover); margin-bottom: 10px; font-family: var(--font-mono);" data-i18n="showcase_relven_sub">เรลเวน · Alternative / Rock</div>
+          <p style="font-size: 13.5px; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.5;" data-i18n="showcase_relven_desc">เสียงทรงพลัง ดุดัน สไตล์ร็อกแอนด์อัลเทอร์เนทีฟ รองรับการร้องทั้งภาษาไทย ญี่ปุ่น และอังกฤษ</p>
+          <div style="display: flex; gap: 8px;">
+            <a href="singers/relven.html" class="btn btn-ghost btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_profile">โปรไฟล์</a>
+            <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_download">ดาวน์โหลด</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Andromeda (Uchu Sutori) -->
+      <article class="vcard">
+        <div style="height: 220px; overflow: hidden; background: #141414; position: relative;">
+          <img src="assets/images/voicebanks/full/Uchu Sutori.png" alt="Andromeda" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease;" onerror="this.src='assets/images/voicebanks/Uchu Sutori.png'">
+          <div style="position: absolute; top: 12px; left: 12px; background: rgba(245, 158, 11, 0.9); color: #000; font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">TYU PROJECT</div>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+          <h3 style="margin: 0 0 4px; font-size: 20px; color: #fff;">Andromeda</h3>
+          <div style="font-size: 13px; color: var(--primary-hover); margin-bottom: 10px; font-family: var(--font-mono);" data-i18n="showcase_andromeda_sub">แอนโดรเมดา · Space Pop / Electro</div>
+          <p style="font-size: 13.5px; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.5;" data-i18n="showcase_andromeda_desc">โปรเจกต์พิเศษร่วมกับ TYU โทนเสียงสังเคราะห์ล้ำยุค ดุจดั่งประกายดาวในห้วงกาแล็กซี</p>
+          <div style="display: flex; gap: 8px;">
+            <a href="singers/andromeda.html" class="btn btn-ghost btn-sm" style="flex: 1; justify-content: center;" data-i18n="btn_profile">โปรไฟล์</a>
+            <span class="btn btn-ghost btn-sm is-locked" style="flex: 1; justify-content: center; border-color: rgba(245, 158, 11, 0.4); color: #f59e0b;" data-i18n="badge_coming_soon">รอเปิดตัว</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- New Works: Thai RVC Web UI & The Darkside UI AI Agent -->
+<section id="new-works" style="background: rgba(10, 12, 24, 0.24); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="nw_eyebrow">NEW WORKS · AI TOOLS BY DELTA SYNTH</span>
+      <h2 data-i18n="nw_title">ผลงานใหม่ล่าสุดจากห้องพัฒนา DELTA SYNTH</h2>
+      <p data-i18n="nw_desc">เครื่องมือ AI ที่ทีมพัฒนาขึ้นเองเพื่อสนับสนุนงานสร้างเสียงร้องเสมือน — ทั้งการแปลงเสียงด้วย Tone-Preserving Thai RVC ผ่านหน้าเว็บภาษาไทย และผู้ช่วย Local AI Agent บนเครื่องของคุณเอง</p>
+    </div>
+
+    <div class="works-grid">
+      <!-- Thai RVC Web UI -->
+      <article class="work-card" id="thai-rvc-webui">
+        <div class="work-head">
+          <span class="work-badge is-new" data-i18n="nw_rvc_badge">NEW WORK · ACTIVE DEVELOPMENT</span>
+          <span class="work-meta">Python · Gradio · PyTorch · RMVPE</span>
+        </div>
+        <h3>Thai RVC Web UI</h3>
+        <p class="work-sub" data-i18n="nw_rvc_sub">Tone-Preserving Thai RVC System · ระบบแปลงเสียงวรรณยุกต์ไทยแท้</p>
+        <p data-i18n="nw_rvc_desc">WebUI แปลงเสียงด้วย Retrieval-based Voice Conversion (RVC) ที่ปรับแต่งสถาปัตยกรรมเพื่อรักษาวรรณยุกต์ไทย 5 เสียงครบถ้วน ด้วย RMVPE F0 contour และ Thai ContentVec/HuBERT (ความแม่นยำวรรณยุกต์ ≥ 95%, MOS ≥ 4.0, RTF ≤ 0.3) พร้อมคู่มือสองภาษาไทย/อังกฤษ</p>
+        <ul class="work-list">
+          <li data-i18n="nw_rvc_li1">ครบวงจรในหน้าเดียว: แปลงเสียง (Inference), จัดการ Dataset, ฝึกโมเดล (Train), สร้าง Index (FAISS) และแยกเสียงร้อง/ดนตรีด้วย UVR5</li>
+          <li data-i18n="nw_rvc_li2">รองรับฮาร์ดแวร์หลากหลาย: NVIDIA CUDA, AMD / Intel (DirectML) และ CPU เปิดรันผ่าน <code>Program.py</code> (พอร์ต 9378) หรือ <code>go-web.bat</code> (พอร์ต 7897)</li>
+          <li data-i18n="nw_rvc_li3">โหมดเสียงสด &amp; ปลั๊กอิน DAW: รองรับ <code>realtime_gui.py</code> แปลงเสียงสดความหน่วงต่ำ และรองรับ <code>RVCRealtimeVST</code> สำหรับโปรแกรมทำเพลง</li>
+          <li data-i18n="nw_rvc_li4">ระบบประมวลผล Batch ปลอดภัย: แยก subprocess ลดปัญหา VRAM รั่ว มี <code>clear_vram_safe()</code> พร้อมระบบตรวจซ่อม dependency อัตโนมัติ</li>
+        </ul>
+        <div class="work-tags"><span>Thai RVC</span><span>Tone-Preserving</span><span>RMVPE</span><span>DirectML</span><span>UVR5</span><span>VST</span></div>
+        <div class="work-actions">
+          <a href="https://github.com/deltaVOCALOID09378/Thai_RVC_WebUI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="nw_rvc_btn_gh">Source Code บน GitHub</a>
+          <a href="about.html" class="btn btn-ghost btn-sm" data-i18n="nw_rvc_btn_contact">ติดต่อร่วมทดสอบ</a>
+        </div>
+      </article>
+
+      <!-- The Darkside UI AI Agent -->
+      <article class="work-card" id="the-darkside-ui">
+        <div class="work-head">
+          <span class="work-badge is-new" data-i18n="nw_dark_badge">NEW WORK · ACTIVE DEVELOPMENT</span>
+          <span class="work-meta">C# Avalonia · FastAPI · Node.js · Ollama</span>
+        </div>
+        <h3>The Darkside UI — AI Agent</h3>
+        <p class="work-sub" data-i18n="nw_dark_sub">Local Agentic AI Desktop · Made by DELTA SYNTH</p>
+        <p data-i18n="nw_dark_desc">แอปเดสก์ท็อป Windows สำหรับสั่งงาน AI Agent บนเครื่องของคุณเองผ่าน Ollama 100% ไม่ต้องใช้ API Key ภายนอก และจำกัดสิทธิ์การเข้าถึงไฟล์เฉพาะ Workspace ที่กำหนดเท่านั้น</p>
+        <ul class="work-list">
+          <li data-i18n="nw_dark_li1">หน้าจอ Avalonia / .NET สไตล์โมเดิร์น: เลือกโมเดล สตรีมความคิดและสถานะการทำงานของ Agent แบบสดด้วย NDJSON พร้อมปุ่มยกเลิกทันที</li>
+          <li data-i18n="nw_dark_li2">เครื่องมือไฟล์ความปลอดภัยสูง: <code>read_file</code>, <code>write_file</code>, <code>list_directory</code> ป้องกัน Path Traversal เขียนไฟล์แบบ Atomic และจำกัดขนาด</li>
+          <li data-i18n="nw_dark_li3">ความปลอดภัยแบบปิด: Backend และ Gateway ผูกที่ <code>127.0.0.1</code> เท่านั้น ควบคุม Concurrency และจำกัดจำนวนเซสชันพร้อมกัน</li>
+          <li data-i18n="nw_dark_li4">ระบบ Supervisor และการควบคุม: ตรวจสุขภาพโปรเซสอัตโนมัติ มีสคริปต์ <code>setup</code>, <code>start</code>, <code>stop</code>, <code>verify</code> พร้อมใช้งานสมบูรณ์</li>
+        </ul>
+        <div class="work-tags"><span>AI Agent</span><span>Ollama</span><span>Local-first</span><span>Avalonia .NET</span><span>FastAPI</span><span>Sandboxed</span></div>
+        <div class="work-actions">
+          <a href="https://github.com/deltaVOCALOID09378" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="nw_dark_btn_gh">ติดตามบน GitHub</a>
+          <a href="about.html" class="btn btn-ghost btn-sm" data-i18n="nw_dark_btn_contact">ติดต่อร่วมทดสอบ</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Thai OpenUtau R&D Section -->
+<section id="thai-openutau" class="openutau-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color: var(--primary-hover, #ff4422); font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: 0.08em;">COMMUNITY PROJECT · OPEN SOURCE R&amp;D</span>
+      <h2>ศูนย์พัฒนา Thai OpenUtau · ยกระดับเสียงร้องเสมือนภาษาไทย</h2>
+      <p>โครงการพัฒนาส่วนขยายและระบบรองรับภาษาไทยสำหรับ OpenUtau เพื่อสร้างมาตรฐานใหม่ที่ใช้งานง่าย ครบถ้วน พร้อมเปิดให้ติดตามและร่วมทดสอบกับคอมมูนิตี้</p>
+    </div>
+
+    <div class="openutau-card" style="background: rgba(26, 26, 26, 0.85); border: 1px solid rgba(204, 34, 0, 0.35); border-radius: 18px; padding: 32px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); backdrop-filter: none !important; -webkit-backdrop-filter: none !important; position: relative; overflow: hidden; margin-bottom: 24px;">
+      <div style="position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(204, 34, 0, 0.25) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+      
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 18px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="display: inline-block; background: #CC2200; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase;" data-i18n="openutau_badge">ACTIVE DEVELOPMENT</span>
+          <span style="color: #A0A0A0; font-size: 13px; font-family: 'JetBrains Mono', monospace;" data-i18n="openutau_core">Core Engine: OpenUtau · C# / .NET 8</span>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--coral, #ff7a6b);">
+          Repo: deltaVOCALOID09378 / Thai_OpenUtau
+        </div>
+      </div>
+
+      <div class="openutau-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px;">
+        <div style="background: rgba(13, 13, 13, 0.7); border: 1px solid rgba(204, 34, 0, 0.2); border-radius: 12px; padding: 20px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #FF4422; margin-bottom: 8px;">01 / G2P &amp; PHONEMIZER</div>
+          <h3 style="font-size: 17px; margin: 0 0 8px 0; color: #fff;">ระบบแปลงเนื้อร้องไทยอัตโนมัติ</h3>
+          <p style="font-size: 13.5px; color: #bbb; line-height: 1.6; margin: 0;">
+            พัฒนาโมดูล Thai Phonemizer และ G2P (Grapheme-to-Phoneme) อัจฉริยะ รองรับระบบ VCCV / CVVC ช่วยให้ป้อนเนื้อเพลงภาษาไทยได้ทันทีโดยไม่ต้องถอดรหัสโฟเนมด้วยตนเอง
+          </p>
+        </div>
+
+        <div style="background: rgba(13, 13, 13, 0.7); border: 1px solid rgba(204, 34, 0, 0.2); border-radius: 12px; padding: 20px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #FF4422; margin-bottom: 8px;">02 / THAI LOCALIZATION</div>
+          <h3 style="font-size: 17px; margin: 0 0 8px 0; color: #fff;">อินเทอร์เฟซภาษาไทยสมบูรณ์แบบ</h3>
+          <p style="font-size: 13.5px; color: #bbb; line-height: 1.6; margin: 0;">
+            แพ็กเกจแปลเมนู การตั้งค่าแทร็ก หน้าต่างเปียโนโรล และคำอธิบายเอ็นจินสังเคราะห์เสียงเป็นภาษาไทย 100% ตามมาตรฐานเสียงสากล เพื่อให้ทุกคนเข้าถึงการทำเพลงได้อย่างราบรื่น
+          </p>
+        </div>
+
+        <div style="background: rgba(13, 13, 13, 0.7); border: 1px solid rgba(204, 34, 0, 0.2); border-radius: 12px; padding: 20px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #FF4422; margin-bottom: 8px;">03 / ECOSYSTEM &amp; TESTING</div>
+          <h3 style="font-size: 17px; margin: 0 0 8px 0; color: #fff;">การเชื่อมต่อคลังเสียงและเทมเพลต</h3>
+          <p style="font-size: 13.5px; color: #bbb; line-height: 1.6; margin: 0;">
+            ทดสอบร่วมกับคลังเสียง DELTA SYNTH กว่า 57 เสียง และ UTAU / DiffSinger AI สัญชาติไทย พร้อมแจกจ่ายไฟล์เทมเพลต USTX ตัวอย่างการจูน และคู่มือการติดตั้งที่อัปเดตสม่ำเสมอ
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Channels & Links -->
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: flex-start; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <a href="https://github.com/deltaVOCALOID09378/Thai_OpenUtau" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #CC2200; border-color: #CC2200; display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="openutau_btn_gh">ติดตาม Source Code บน GitHub</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border-color: rgba(204, 34, 0, 0.45); color: #fff;">
+          <span data-i18n="openutau_btn_tools">ดาวน์โหลด Release &amp; Tools ทดสอบ</span>
+        </a>
+        <a href="about.html" class="btn btn-ghost" style="color: #A0A0A0; border-color: rgba(255, 255, 255, 0.15);">
+          <span data-i18n="openutau_btn_contact">ติดต่อร่วมทดสอบ / ติดตามความคืบหน้า</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Audio Projects & Files Showcase -->
 <section>
   <div class="wrap">
     <div class="section-head">
+      <span class="eyebrow">CREATOR TOOLKIT</span>
+      <h2>ไฟล์เพลงสำเร็จรูปสำหรับนักสร้างสรรค์</h2>
+      <p>คลังไฟล์ USTX, MIDI, SVP และ VSQX ที่พร้อมให้นักแต่งเพลงและโปรดิวเซอร์นำไปใช้ต่อยอดงานเพลงได้ทันที</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="tag">OPENUTAU</span>
+        <h3>USTX Project Templates</h3>
+        <p>ไฟล์โปรเจกต์พร้อมการปรับตั้งค่าพิทช์ เสียงเอฟเฟกต์ และโฟเนมภาษาไทยที่แม่นยำ พร้อมเปิดรันใน OpenUtau ได้ทันที</p>
+        <div style="margin-top: 16px;"><a href="files.html" class="btn btn-ghost btn-sm">ดาวน์โหลด USTX →</a></div>
+      </div>
+      <div class="pillar">
+        <span class="tag">SYNTHESIZER V</span>
+        <h3>SVP Score Files</h3>
+        <p>ไฟล์สเกลและเนื้อร้องสังเคราะห์คุณภาพสูงสำหรับซอฟต์แวร์ Synthesizer V รองรับการขับร้องหลากหลายภาษา</p>
+        <div style="margin-top: 16px;"><a href="files.html" class="btn btn-ghost btn-sm">ดาวน์โหลด SVP →</a></div>
+      </div>
+      <div class="pillar">
+        <span class="tag">DAW / VOCALOID</span>
+        <h3>MIDI &amp; VSQX Archives</h3>
+        <p>แทร็กโน้ตดนตรีและไฟล์โปรเจกต์มาตรฐานสากล สำหรับเปิดใน DAW ชั้นนำ หรือโปรแกรมตระกูล VOCALOID</p>
+        <div style="margin-top: 16px;"><a href="files.html" class="btn btn-ghost btn-sm">ดาวน์โหลด MIDI/VSQX →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline / Movements -->
+<section style="background: rgba(13, 13, 13, 0.4); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
       <span class="eyebrow">ความเคลื่อนไหวล่าสุด</span>
-      <h2>สรุปกิจกรรมของค่าย</h2>
+      <h2>สรุปกิจกรรมและพัฒนาการของค่าย</h2>
     </div>
     <div class="feed">
       <div class="feed-item">
+        <div class="date">ต.ค. 2026</div>
+        <div>
+          <h4>ผลงานใหม่: Thai RVC Web UI และ The Darkside UI AI Agent</h4>
+          <p>เพิ่มเครื่องมือ AI ที่พัฒนาโดย DELTA SYNTH 2 รายการ — WebUI แปลงเสียง RVC ภาษาไทย และ AI Agent เดสก์ท็อปที่ทำงานบนเครื่องผ่าน Ollama ดูรายละเอียดได้ที่ส่วน <a href="#new-works" style="color: var(--primary-hover);">New Works</a></p>
+        </div>
+      </div>
+      <div class="feed-item">
+        <div class="date">2026</div>
+        <div>
+          <h4>ระบบความร่วมมือและคลังเสียงเจเนอเรชันใหม่</h4>
+          <p>เปิดตัวโปรเจกต์ความร่วมมือระดับสากล TYU Project และพัฒนาคลังเสียง Andromeda, RelVeN 2026 พร้อมชุดทดสอบระบบ 5 ระดับ Zero Defects</p>
+        </div>
+      </div>
+      <div class="feed-item">
         <div class="date">2025</div>
         <div>
-          <h4>ความร่วมมือกับทีม Printmov — อัปเกรดสู่ Diffsinger AI</h4>
-          <p>DELTA SYNTH เข้าร่วมเป็นพาร์ทเนอร์ทดสอบของทีม Printmov เพื่อยกระดับคลังเสียงหลักของค่ายสู่ Diffsinger AI Engine คุณภาพสูง ต่อยอดจากคลังเสียง UTAU เดิม</p>
+          <h4>ความร่วมมือกับทีม Printmov — อัปเกรดสู่ DiffSinger AI</h4>
+          <p>DELTA SYNTH เข้าร่วมเป็นพาร์ทเนอร์ทดสอบของทีม Printmov เพื่อยกระดับคลังเสียงหลักของค่ายสู่ DiffSinger AI Engine คุณภาพสูง ต่อยอดจากคลังเสียง UTAU เดิม</p>
         </div>
       </div>
       <div class="feed-item">
@@ -125,25 +410,33 @@
         <div class="date">ต่อเนื่อง</div>
         <div>
           <h4>รองรับการร้องได้ 7 ภาษา</h4>
-          <p>ไทย · อังกฤษ · ญี่ปุ่น · จีน · เกาหลี · ฝรั่งเศส · สเปน ผ่านฟีเจอร์ Cross-Lingual Synthesis ของ Diffsinger</p>
+          <p>ไทย · อังกฤษ · ญี่ปุ่น · จีน · เกาหลี · ฝรั่งเศส · สเปน ผ่านฟีเจอร์ Cross-Lingual Synthesis ของ DiffSinger และ UTAU</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Call to Action Band -->
 <section>
   <div class="wrap">
     <div class="cta-band">
       <div>
         <h2>ดาวน์โหลดคลังเสียงและไฟล์เพลงได้แล้ววันนี้</h2>
-        <p>ไม่ต้องหาจากเว็บอื่นอีกต่อไป — คลังเสียงและไฟล์ USTX / MIDI / SVP / VSQX ของ DELTA SYNTH อยู่ในเว็บไซต์เดียวครบจบ</p>
+        <p>ไม่ต้องหาจากเว็บอื่นอีกต่อไป — คลังเสียงและไฟล์ USTX / MIDI / SVP / VSQX ของ DELTA SYNTH อยู่ในเว็บไซต์เดียวครบจบ 100% ฟรี</p>
       </div>
-      <a href="voicebank.html" class="btn btn-primary">ไปที่คลังเสียงทั้งหมด</a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="voicebank.html" class="btn btn-primary">ไปที่คลังเสียงทั้งหมด (57 เสียง)</a>
+        <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border-color: #CC2200; color: #fff;">
+          <span>Google Drive รวมคลังเสียง</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 </main>
+
+<!-- Unified Site Footer -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -152,32 +445,36 @@
           <span class="brand-mark">Δ</span>
           <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
         </div>
-        <p style="max-width:340px; font-size:13.5px;">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งปี 2019 ผลิตคลังเสียง UTAU และ Diffsinger AI มาแล้วกว่า 30 ตัวละคร</p>
+        <p style="max-width:340px; font-size:13.5px; line-height: 1.6;" data-i18n="footer_desc">สตูดิโอพัฒนาคลังเสียงร้องเสมือนสัญชาติไทย ก่อตั้งปี 2019 ผลิตคลังเสียง UTAU และ DiffSinger AI มาแล้วกว่า 57 ตัวละคร พร้อมไฟล์เพลงและเทมเพลตสำหรับคอมมูนิตี้</p>
       </div>
       <div class="footer-links">
-        <h4>Sitemap</h4>
+        <h4 data-i18n="footer_sitemap">Sitemap</h4>
         <a href="index.html">Main</a>
         <a href="about.html">About Us</a>
         <a href="voicebank.html">All Voicebank</a>
         <a href="files.html">USTX / MIDI / SVP / VSQX</a>
         <a href="collab.html">Collaboration Voicebank</a>
         <a href="events.html">Events</a>
+        <a href="#new-works">New Works: Thai RVC Web UI &amp; The Darkside UI</a>
+        <a href="#thai-openutau">Thai OpenUtau Project</a>
       </div>
       <div class="footer-links">
-        <h4>Contact</h4>
-        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail (Public)</a>
-        <a href="#">YouTube — DELTA SYNTH Official</a>
-        <a href="#">TikTok — DELTA SYNTH</a>
-        <a href="#">X — DELTA SYNTH</a>
+        <h4 data-i18n="footer_contact">Contact &amp; Social</h4>
+        <a href="mailto:delta.vocaloid09378@gmail.com">Gmail: delta.vocaloid09378@gmail.com</a>
+        <a href="https://github.com/deltaVOCALOID09378" target="_blank" rel="noopener noreferrer">GitHub — deltaVOCALOID09378</a>
+        <a href="https://www.youtube.com/@DELTASYNTH" target="_blank" rel="noopener noreferrer">YouTube — DELTA SYNTH Official</a>
+        <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" data-i18n="footer_drive">Google Drive Master Archive</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© Since 2019 — DELTA SYNTH's Team</span>
-      <span>Made in Thailand</span>
+      <span data-i18n="footer_rights">© Since 2019 — DELTA SYNTH's Team. Made with pride in Thailand.</span>
+      <span data-i18n="footer_made_by">Designed with DELTA SYNTH Design System</span>
     </div>
   </div>
 </footer>
+
 <script src="script.js"></script>
-  <script src="js/i18n.js"></script>
+<script src="js/starfield.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

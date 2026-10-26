@@ -217,7 +217,38 @@
       collab_desc: "คลังเสียงและโปรเจกต์ที่ร่วมสร้างสรรค์กับศิลปินและพันธมิตรทั้งในและต่างประเทศ",
       project_h1: "ทำเนียบ 9 กลุ่มโปรเจกต์ DELTA SYNTH",
       project_desc: "รวมรายชื่อ 9 กลุ่มโปรเจกต์และศิลปินเสียงร้องเสมือนทั้งหมดในเครือ DELTA SYNTH",
-      upload_h1: "ศูนย์อัปโหลดไฟล์ (File Upload Center)"
+      upload_h1: "ศูนย์อัปโหลดไฟล์ (File Upload Center)",
+      vb_label_status: "สถานะ:",
+      vb_label_affil: "สังกัด:",
+      vb_label_category: "หมวดหมู่:",
+      vb_chip_all: "ทั้งหมด (55)",
+      vb_chip_official: "✓ เป็นทางการ (Active)",
+      vb_chip_upcoming: "⏳ รอเปิดตัว (Upcoming)",
+      vb_chip_private: "🔒 ไพรเวท (Private)",
+      vb_chip_female: "หญิง (Female · 16)",
+      vb_chip_male: "ชาย (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ เป็นทางการ",
+      badge_private: "🔒 ไพรเวท",
+      badge_upcoming: "⏳ รอเปิดตัว",
+      about_eyebrow: "ก่อตั้งปี 2019 · The 1st Project — B.L. Student",
+      about_lead: "ค่ายเพลงมือใหม่สัญชาติไทย ก่อตั้งขึ้นในปี พ.ศ. 2562 ปัจจุบันดำเนินหลากหลายโปรเจกต์ผ่านการจับมือร่วมงานกับครีเอเตอร์ทั้งไทยและต่างชาติอย่างต่อเนื่อง",
+      about_story_eyebrow: "Our Story",
+      about_story_title: "จุดเริ่มต้นของค่าย",
+      about_story_desc: "ก่อตั้งโดยสมาชิก 4 คนแรก ร่วมกับผู้สนับสนุนอีก 3 ท่าน — คุณ SUN, Kochujang (Shu-chan) และ Guren Kani — ที่ร่วมสร้างและสนับสนุนค่ายมาโดยตลอด ผลงานส่วนใหญ่เผยแพร่ผ่านช่อง YouTube ของค่ายจนถึงปัจจุบัน",
+      about_contact_eyebrow: "ติดต่อเรา",
+      files_th_name: "ชื่อไฟล์",
+      files_th_desc: "รายละเอียด",
+      files_th_format: "รูปแบบ",
+      events_empty_title: "ยังไม่มีอีเวนต์ที่กำหนดไว้ในขณะนี้",
+      events_empty_desc: "ทีมงานกำลังจัดสรรเวลาสำหรับโปรเจกต์เพลงและการพัฒนาคลังเสียงเป็นหลัก ติดตามช่องทางของเราไว้เพื่อไม่พลาดประกาศกิจกรรมครั้งถัดไป",
+      events_empty_btn: "ติดตามช่องทางของเรา",
+      collab_eyebrow: "PARTNERSHIPS & SPECIAL PROJECTS",
+      collab_sub_title: "Featured Collaboration Artists",
+      collab_sub_desc: "ศิลปินและคลังเสียงไฮไลต์จากโปรเจกต์ความร่วมมือพิเศษ",
+      collab_btn_roster: "ดูทำเนียบ 9 กลุ่มโปรเจกต์ทั้งหมด →",
+      collab_btn_drive: "📂 คลังไดรฟ์รวม All Voicebanks",
+      collab_btn_card: "เข้าสู่โปรไฟล์ & ดาวน์โหลด →"
     },
 
     en: {
@@ -406,7 +437,38 @@
       collab_desc: "Special voicebanks and joint projects co-created with domestic and international creators.",
       project_h1: "DELTA SYNTH 9 Project Groups Roster",
       project_desc: "Comprehensive directory of all 9 project teams and affiliated virtual singing artists.",
-      upload_h1: "File Upload Center"
+      upload_h1: "File Upload Center",
+      vb_label_status: "Status:",
+      vb_label_affil: "Affiliation:",
+      vb_label_category: "Category:",
+      vb_chip_all: "All (55)",
+      vb_chip_official: "✓ Official (Active)",
+      vb_chip_upcoming: "⏳ Upcoming",
+      vb_chip_private: "🔒 Private",
+      vb_chip_female: "Female (16)",
+      vb_chip_male: "Male",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ Official",
+      badge_private: "🔒 Private",
+      badge_upcoming: "⏳ Upcoming",
+      about_eyebrow: "Founded in 2019 · The 1st Project — B.L. Student",
+      about_lead: "A Thai vocal synthesis studio founded in 2019, actively operating diverse creative projects in continuous collaboration with Thai and international creators.",
+      about_story_eyebrow: "Our Story",
+      about_story_title: "The Origin of the Studio",
+      about_story_desc: "Founded by the original 4 members together with 3 supporters — SUN, Kochujang (Shu-chan), and Guren Kani — who have continuously co-created and supported the studio. Most productions are published on the official YouTube channel.",
+      about_contact_eyebrow: "Get in Touch",
+      files_th_name: "File Name",
+      files_th_desc: "Description",
+      files_th_format: "Format",
+      events_empty_title: "No Scheduled Events at This Time",
+      events_empty_desc: "The team is primarily focusing on music projects and voicebank development. Follow our official channels so you don't miss future event announcements.",
+      events_empty_btn: "Follow Our Channels",
+      collab_eyebrow: "PARTNERSHIPS & SPECIAL PROJECTS",
+      collab_sub_title: "Featured Collaboration Artists",
+      collab_sub_desc: "Featured artists and highlight voicebanks from special collaborative projects.",
+      collab_btn_roster: "View All 9 Project Groups →",
+      collab_btn_drive: "📂 Master Drive: All Voicebanks",
+      collab_btn_card: "View Profile & Download →"
     },
 
     fr: {
@@ -595,7 +657,38 @@
       collab_desc: "Nous accueillons avec enthousiasme les propositions des compositeurs, illustrateurs, mixeurs et chercheurs en IA vocale.",
       project_h1: "Projets musicaux & technologiques",
       project_desc: "Explorez nos albums originaux, concerts virtuels et projets logiciels d'intelligence artificielle en cours.",
-      upload_h1: "Soumettre et partager vos créations"
+      upload_h1: "Soumettre et partager vos créations",
+      vb_label_status: "Statut :",
+      vb_label_affil: "Affiliation :",
+      vb_label_category: "Catégorie :",
+      vb_chip_all: "Tous (55)",
+      vb_chip_official: "✓ Officiel (Actif)",
+      vb_chip_upcoming: "⏳ À venir (Upcoming)",
+      vb_chip_private: "🔒 Privé (Private)",
+      vb_chip_female: "Femme (16)",
+      vb_chip_male: "Homme (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ Officiel",
+      badge_private: "🔒 Privé",
+      badge_upcoming: "⏳ À venir",
+      about_eyebrow: "Fondé en 2019 · 1er Projet — B.L. Student",
+      about_lead: "Studio de synthèse vocale thaïlandaise fondé en 2019, menant de multiples projets créatifs en collaboration continue avec des artistes locaux et internationaux.",
+      about_story_eyebrow: "Notre histoire",
+      about_story_title: "Les origines du studio",
+      about_story_desc: "Fondé par les 4 membres initiaux avec le soutien constant de SUN, Kochujang (Shu-chan) et Guren Kani. La majorité des créations est diffusée sur la chaîne YouTube officielle du studio.",
+      about_contact_eyebrow: "Contactez-nous",
+      files_th_name: "Nom du fichier",
+      files_th_desc: "Description",
+      files_th_format: "Format",
+      events_empty_title: "Aucun événement prévu pour le moment",
+      events_empty_desc: "L'équipe consacre actuellement son temps aux projets musicaux et au développement des banques vocales. Suivez nos réseaux officiels pour ne manquer aucune future annonce.",
+      events_empty_btn: "Suivre nos réseaux",
+      collab_eyebrow: "PARTENARIATS ET PROJETS SPÉCIAUX",
+      collab_sub_title: "Artistes partenaires mis en avant",
+      collab_sub_desc: "Artistes et banques vocales emblématiques issus de nos projets de collaboration spéciale.",
+      collab_btn_roster: "Voir les 9 groupes de projets →",
+      collab_btn_drive: "📂 Drive principal All Voicebanks",
+      collab_btn_card: "Accéder au profil et télécharger →"
     },
 
     es: {
@@ -784,7 +877,38 @@
       collab_desc: "Estamos abiertos a colaborar con productores musicales, ilustradores, afinadores de voz e investigadores de IA vocal.",
       project_h1: "Proyectos musicales y tecnológicos",
       project_desc: "Conoce nuestros álbumes originales, eventos virtuales y proyectos de desarrollo de herramientas de inteligencia artificial.",
-      upload_h1: "Enviar y compartir tus obras"
+      upload_h1: "Enviar y compartir tus obras",
+      vb_label_status: "Estado:",
+      vb_label_affil: "Afiliación:",
+      vb_label_category: "Categoría:",
+      vb_chip_all: "Todos (55)",
+      vb_chip_official: "✓ Oficial (Activo)",
+      vb_chip_upcoming: "⏳ Próximamente (Upcoming)",
+      vb_chip_private: "🔒 Privado (Private)",
+      vb_chip_female: "Femenino (16)",
+      vb_chip_male: "Masculino (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ Oficial",
+      badge_private: "🔒 Privado",
+      badge_upcoming: "⏳ Próximamente",
+      about_eyebrow: "Fundado en 2019 · 1er Proyecto — B.L. Student",
+      about_lead: "Estudio de síntesis vocal tailandés fundado en 2019, que desarrolla diversos proyectos creativos en colaboración continua con artistas de Tailandia y de todo el mundo.",
+      about_story_eyebrow: "Nuestra historia",
+      about_story_title: "El origen del estudio",
+      about_story_desc: "Fundado por los primeros 4 miembros junto a 3 colaboradores clave — SUN, Kochujang (Shu-chan) y Guren Kani — quienes han co-creado y apoyado al estudio permanentemente. La mayoría de las producciones se publican en el canal oficial de YouTube.",
+      about_contact_eyebrow: "Contáctanos",
+      files_th_name: "Nombre del archivo",
+      files_th_desc: "Descripción",
+      files_th_format: "Formato",
+      events_empty_title: "No hay eventos programados en este momento",
+      events_empty_desc: "El equipo se encuentra enfocado principalmente en la producción musical y el desarrollo de bancos de voz. Sigue nuestros canales oficiales para no perderte futuros eventos.",
+      events_empty_btn: "Seguir nuestros canales",
+      collab_eyebrow: "COLABORACIONES Y PROYECTOS ESPECIALES",
+      collab_sub_title: "Artistas colaboradores destacados",
+      collab_sub_desc: "Artistas y bancos de voz destacados nacidos de proyectos especiales de colaboración.",
+      collab_btn_roster: "Ver los 9 grupos de proyectos →",
+      collab_btn_drive: "📂 Drive maestro: Todos los bancos",
+      collab_btn_card: "Ver perfil y descargar →"
     },
 
     'es-cl': {
@@ -973,7 +1097,38 @@
       collab_desc: "Siempre nos motiva colaborar con productores musicales, dibujantes, afinadores e investigadores de IA vocal.",
       project_h1: "Proyectos musicales y tecnológicos",
       project_desc: "Revisa nuestros álbumes originales, conciertos virtuales y proyectos de software con inteligencia artificial.",
-      upload_h1: "Enviar y compartir tus creaciones"
+      upload_h1: "Enviar y compartir tus creaciones",
+      vb_label_status: "Estado:",
+      vb_label_affil: "Afiliación:",
+      vb_label_category: "Categoría:",
+      vb_chip_all: "Todos (55)",
+      vb_chip_official: "✓ Oficial (Activo)",
+      vb_chip_upcoming: "⏳ Próximamente (Upcoming)",
+      vb_chip_private: "🔒 Privado (Private)",
+      vb_chip_female: "Femenino (16)",
+      vb_chip_male: "Masculino (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ Oficial",
+      badge_private: "🔒 Privado",
+      badge_upcoming: "⏳ Próximamente",
+      about_eyebrow: "Fundado en 2019 · 1er Proyecto — B.L. Student",
+      about_lead: "Estudio de síntesis vocal tailandés fundado en 2019, desarrollando diversos proyectos creativos en colaboración permanente con artistas de Chile, Tailandia y el mundo.",
+      about_story_eyebrow: "Nuestra historia",
+      about_story_title: "El origen del estudio",
+      about_story_desc: "Fundado por los primeros 4 miembros junto al apoyo constante de SUN, Kochujang (Shu-chan) y Guren Kani. La mayoría de las obras se comparten a través del canal oficial de YouTube del estudio.",
+      about_contact_eyebrow: "Contacto",
+      files_th_name: "Nombre del archivo",
+      files_th_desc: "Descripción",
+      files_th_format: "Formato",
+      events_empty_title: "No hay eventos agendados en este momento",
+      events_empty_desc: "El equipo está concentrado en la producción musical y en el desarrollo de voces. Sigue nuestras redes oficiales para estar al tanto de los próximos eventos.",
+      events_empty_btn: "Seguir nuestros canales",
+      collab_eyebrow: "COLABORACIONES Y PROYECTOS ESPECIALES",
+      collab_sub_title: "Artistas colaboradores destacados",
+      collab_sub_desc: "Artistas y bancos de voz destacados nacidos de proyectos especiales de colaboración.",
+      collab_btn_roster: "Ver los 9 grupos de proyectos →",
+      collab_btn_drive: "📂 Drive maestro: Todos los bancos",
+      collab_btn_card: "Ver perfil y descargar →"
     },
 
     zh: {
@@ -1162,7 +1317,38 @@
       collab_desc: "期待与音乐制作人、插画师、调音师及 AI 音频研究者携手合作，共同探索虚拟歌声无限可能。",
       project_h1: "音乐与技术项目",
       project_desc: "查看 DELTA SYNTH 参与的原创音乐专辑、虚拟演唱会以及 AI 工具开发项目。",
-      upload_h1: "作品提交与分享"
+      upload_h1: "作品提交与分享",
+      vb_label_status: "状态:",
+      vb_label_affil: "所属:",
+      vb_label_category: "分类:",
+      vb_chip_all: "全部 (55)",
+      vb_chip_official: "✓ 官方 (Active)",
+      vb_chip_upcoming: "⏳ 即将推出 (Upcoming)",
+      vb_chip_private: "🔒 专属私有 (Private)",
+      vb_chip_female: "女性 (Female · 16)",
+      vb_chip_male: "男性 (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ 官方",
+      badge_private: "🔒 专属私有",
+      badge_upcoming: "⏳ 即将推出",
+      about_eyebrow: "始于 2019 年 · 首个项目 — B.L. Student",
+      about_lead: "创立于 2019 年的泰国虚拟歌声合成工作室，通过与泰国本土及国际创作者的持续合作，稳步推进多元音乐与声学项目。",
+      about_story_eyebrow: "创办历程",
+      about_story_title: "工作室的诞生与起点",
+      about_story_desc: "由最初的 4 位核心成员及 3 位重要支持者——SUN、Kochujang（Shu-chan）与 Guren Kani 共同创立并持续建设。绝大多数音乐成果至今皆发布于官方 YouTube 频道。",
+      about_contact_eyebrow: "联系我们",
+      files_th_name: "文件名",
+      files_th_desc: "描述 / 曲目详情",
+      files_th_format: "格式",
+      events_empty_title: "当前暂无计划中的公开活动",
+      events_empty_desc: "团队目前正将精力专注于原创音乐企划与声学库开发。欢迎关注我们的官方社媒频道，以便第一时间获取后续活动动态。",
+      events_empty_btn: "关注官方动态",
+      collab_eyebrow: "合作企划与特别项目",
+      collab_sub_title: "精选合作艺术家",
+      collab_sub_desc: "来自特别合作项目的精选虚拟歌手与代表性歌声库。",
+      collab_btn_roster: "查看全部 9 大项目组作品 →",
+      collab_btn_drive: "📂 官方云端总盘 All Voicebanks",
+      collab_btn_card: "进入档案并下载 →"
     },
 
     ja: {
@@ -1351,7 +1537,38 @@
       collab_desc: "国内外のアーティストや制作チームと共に創り上げた特別コラボレーション音源。",
       project_h1: "DELTA SYNTH 9大プロジェクト名鑑",
       project_desc: "全9つのプロジェクトチームと所属バーチャルシンガーの総合名簿。",
-      upload_h1: "ファイル提出センター"
+      upload_h1: "ファイル提出センター",
+      vb_label_status: "ステータス:",
+      vb_label_affil: "所属:",
+      vb_label_category: "カテゴリー:",
+      vb_chip_all: "すべて (55)",
+      vb_chip_official: "✓ 公式 (Active)",
+      vb_chip_upcoming: "⏳ 近日公開 (Upcoming)",
+      vb_chip_private: "🔒 非公開 (Private)",
+      vb_chip_female: "女性 (Female · 16)",
+      vb_chip_male: "男性 (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ 公式",
+      badge_private: "🔒 非公開",
+      badge_upcoming: "⏳ 近日公開",
+      about_eyebrow: "2019年設立 · 第1弾プロジェクト — B.L. Student",
+      about_lead: "2019年に設立されたタイ発の音声合成スタジオ。タイ国内外のクリエイターと継続的に提携し、多彩なプロジェクトを展開しています。",
+      about_story_eyebrow: "スタジオの歩み",
+      about_story_title: "スタジオの原点と始まり",
+      about_story_desc: "初期メンバー4名と、スタジオを支え続けてきたSUN、コチュジャン（シューちゃん）、紅蓮カニの3名のサポーターにより設立。多くの作品は公式YouTubeチャンネルを通じて現在も発信されています。",
+      about_contact_eyebrow: "お問い合わせ",
+      files_th_name: "ファイル名",
+      files_th_desc: "説明 / 楽曲詳細",
+      files_th_format: "形式",
+      events_empty_title: "現在予定されているイベントはありません",
+      events_empty_desc: "チームは現在、音楽制作および音源ライブラリ開発に注力しています。今後のイベント告知を見逃さないよう、公式チャンネルをぜひフォローしてください。",
+      events_empty_btn: "公式チャンネルをフォロー",
+      collab_eyebrow: "パートナーシップ & 特別企画",
+      collab_sub_title: "注目のコラボレーションアーティスト",
+      collab_sub_desc: "特別コラボレーション企画による注目のアーティストと音源ライブラリ。",
+      collab_btn_roster: "全9大プロジェクトグループを見る →",
+      collab_btn_drive: "📂 公式マスタードライブ All Voicebanks",
+      collab_btn_card: "プロフィール＆ダウンロードへ →"
     },
 
     ru: {
@@ -1540,7 +1757,38 @@
       collab_desc: "Мы всегда рады совместной работе с композиторами, художниками, настройщиками вокала и исследователями голосового ИИ.",
       project_h1: "Музыкальные и технические проекты",
       project_desc: "Ознакомьтесь с нашими оригинальными альбомами, виртуальными концертами и проектами программного обеспечения на базе ИИ.",
-      upload_h1: "Отправить и поделиться своей работой"
+      upload_h1: "Отправить и поделиться своей работой",
+      vb_label_status: "Статус:",
+      vb_label_affil: "Принадлежность:",
+      vb_label_category: "Категория:",
+      vb_chip_all: "Все (55)",
+      vb_chip_official: "✓ Официальный (Активен)",
+      vb_chip_upcoming: "⏳ Скоро (Upcoming)",
+      vb_chip_private: "🔒 Приватный (Private)",
+      vb_chip_female: "Женский (16)",
+      vb_chip_male: "Мужской (Male)",
+      vb_chip_lgbtq: "ЛГБТК+ (5)",
+      badge_active: "✓ Официальный",
+      badge_private: "🔒 Приватный",
+      badge_upcoming: "⏳ Скоро",
+      about_eyebrow: "Основан в 2019 г. · Первый проект — B.L. Student",
+      about_lead: "Тайская студия синтеза вокала, основанная в 2019 году, непрерывно реализует музыкальные и технологические проекты в сотрудничестве с авторами со всего мира.",
+      about_story_eyebrow: "Наша история",
+      about_story_title: "Истоки создания студии",
+      about_story_desc: "Основан первыми 4 участниками при активной поддержке SUN, Кочуджана (Шу-чан) и Гурэн Кани, которые непрерывно развивали студию. Большинство произведений публикуется на официальном YouTube-канале.",
+      about_contact_eyebrow: "Связаться с нами",
+      files_th_name: "Имя файла",
+      files_th_desc: "Описание",
+      files_th_format: "Формат",
+      events_empty_title: "В настоящее время запланированных событий нет",
+      events_empty_desc: "Команда в настоящее время сосредоточена на музыкальных проектах и разработке голосовых библиотек. Подписывайтесь на наши каналы, чтобы не пропустить будущие анонсы.",
+      events_empty_btn: "Следить за новостями",
+      collab_eyebrow: "ПАРТНЕРСТВО И СПЕЦИАЛЬНЫЕ ПРОЕКТЫ",
+      collab_sub_title: "Избранные артисты сотрудничества",
+      collab_sub_desc: "Избранные артисты и ключевые голосовые библиотеки совместных специальных проектов.",
+      collab_btn_roster: "Все 9 групп проектов →",
+      collab_btn_drive: "📂 Главный диск All Voicebanks",
+      collab_btn_card: "Перейти в профиль и скачать →"
     },
 
     ko: {
@@ -1729,7 +1977,38 @@
       collab_desc: "음악 프로듀서, 일러스트레이터, 조교사, 음성 AI 연구자와의 창의적인 협업을 언제나 환영합니다.",
       project_h1: "음악 및 기술 프로젝트",
       project_desc: "오리지널 앨범, 가상 콘서트, 그리고 자체 개발 중인 오디오 AI 소프트웨어 프로젝트를 확인하세요.",
-      upload_h1: "작품 제출 및 공유"
+      upload_h1: "작품 제출 및 공유",
+      vb_label_status: "상태:",
+      vb_label_affil: "소속:",
+      vb_label_category: "카테고리:",
+      vb_chip_all: "전체 (55)",
+      vb_chip_official: "✓ 공식 (Active)",
+      vb_chip_upcoming: "⏳ 출시 예정 (Upcoming)",
+      vb_chip_private: "🔒 비공개 (Private)",
+      vb_chip_female: "여성 (Female · 16)",
+      vb_chip_male: "남성 (Male)",
+      vb_chip_lgbtq: "LGBTQ (5)",
+      badge_active: "✓ 공식",
+      badge_private: "🔒 비공개",
+      badge_upcoming: "⏳ 출시 예정",
+      about_eyebrow: "2019년 설립 · 첫 프로젝트 — B.L. Student",
+      about_lead: "2019년 설립된 태국 가상 보컬 합성 스튜디오로, 국내외 창작자들과의 지속적인 협업을 통해 다채로운 프로젝트를 활발히 전개하고 있습니다.",
+      about_story_eyebrow: "스튜디오 스토리",
+      about_story_title: "스튜디오의 출발점",
+      about_story_desc: "초기 4명의 멤버와 스튜디오를 함께 일구고 지원해 준 SUN, 고추장(슈짱), 구렌 카니 등 3명의 서포터와 함께 출범했습니다. 대부분의 작품은 공식 유튜브 채널을 통해 꾸준히 공개되고 있습니다.",
+      about_contact_eyebrow: "문의하기",
+      files_th_name: "파일명",
+      files_th_desc: "상세 설명",
+      files_th_format: "형식",
+      events_empty_title: "현재 예정된 이벤트가 없습니다",
+      events_empty_desc: "스튜디오 팀은 현재 음악 프로젝트와 보이스뱅크 개발에 집중하고 있습니다. 다음 이벤트 공지를 놓치지 않도록 공식 채널을 구독해 주세요.",
+      events_empty_btn: "공식 채널 팔로우",
+      collab_eyebrow: "파트너십 및 스페셜 프로젝트",
+      collab_sub_title: "대표 협업 아티스트",
+      collab_sub_desc: "특별 협업 프로젝트를 통해 탄생한 대표 아티스트와 하이라이트 음원입니다.",
+      collab_btn_roster: "전체 9개 프로젝트 그룹 보기 →",
+      collab_btn_drive: "📂 마스터 드라이브 All Voicebanks",
+      collab_btn_card: "프로필 및 다운로드 바로가기 →"
     }
   };
 
@@ -1812,14 +2091,15 @@
       }
     });
 
-    // 4. Navigation Links
+    // 4. Navigation Links Across All Pages
     const navMapping = {
       'index.html': t.nav_main,
       'about.html': t.nav_about,
       'voicebank.html': t.nav_voicebank,
       'files.html': t.nav_files,
       'collab.html': t.nav_collab,
-      'events.html': t.nav_events
+      'events.html': t.nav_events,
+      'project.html': t.project_h1 ? t.nav_collab : 'Projects'
     };
     document.querySelectorAll('.site-header .nav-links a, #site-navigation a, #mobile-menu a').forEach(a => {
       const href = a.getAttribute('href') || '';
@@ -1843,7 +2123,7 @@
       }
     });
 
-    // 6. Voicebank Page Banner & Search
+    // 6. Voicebank Page Banner, Search & Filters
     const bannerDrive = document.querySelector('.banner-drive');
     if (bannerDrive) {
       const h3 = bannerDrive.querySelector('h3');
@@ -1857,11 +2137,120 @@
       searchInput.setAttribute('placeholder', t.vb_search_placeholder);
     }
 
-    // Filter tags in voicebank.html
-    const filterAll = document.querySelector('[data-filter="all"]');
-    if (filterAll) filterAll.textContent = t.vb_filter_all;
+    // Filter sub-labels (Status, Affiliation, Category)
+    document.querySelectorAll('.filter-sub-label').forEach(el => {
+      const txt = el.textContent.trim();
+      if (txt.includes('สถานะ') || txt.includes('Status')) el.textContent = t.vb_label_status;
+      else if (txt.includes('สังกัด') || txt.includes('Affiliation')) el.textContent = t.vb_label_affil;
+      else if (txt.includes('หมวดหมู่') || txt.includes('Category')) el.textContent = t.vb_label_category;
+    });
 
-    // 7. Singer profile pages: specs, bio and audio labels
+    // Filter chips in voicebank.html
+    const chipMap = {
+      'all': t.vb_chip_all,
+      'active': t.vb_chip_official,
+      'upcoming': t.vb_chip_upcoming,
+      'private': t.vb_chip_private,
+      'female': t.vb_chip_female,
+      'male': t.vb_chip_male,
+      'lgbtq': t.vb_chip_lgbtq
+    };
+    for (const [filterVal, chipText] of Object.entries(chipMap)) {
+      document.querySelectorAll('.filter-chip[data-filter="' + filterVal + '"]').forEach(chip => {
+        chip.textContent = chipText;
+      });
+    }
+
+    // Status badges on voicebank cards
+    document.querySelectorAll('.status-badge').forEach(badge => {
+      if (badge.classList.contains('status-active')) badge.textContent = t.badge_active;
+      else if (badge.classList.contains('status-private')) badge.textContent = t.badge_private;
+      else if (badge.classList.contains('status-upcoming')) badge.textContent = t.badge_upcoming;
+    });
+
+    // VCard stats labels on voicebank cards (อายุ, เพศ, ผู้ให้เสียง)
+    document.querySelectorAll('.vcard-stats b, .vcard-specs b').forEach(b => {
+      const txt = b.textContent.trim();
+      if (txt.includes('อายุ') || txt.includes('Age')) b.textContent = t.profile_age + ':';
+      else if (txt.includes('เพศ') || txt.includes('Gender')) b.textContent = t.profile_gender + ':';
+      else if (txt.includes('ผู้ให้เสียง') || txt.includes('Voicer')) b.textContent = t.profile_voicer + ':';
+    });
+
+    // 7. Files Page Table Headers
+    const fileTableHeaders = document.querySelectorAll('.file-table th, table.file-list th, #file-table th');
+    if (fileTableHeaders.length >= 3) {
+      fileTableHeaders[0].textContent = t.files_th_name;
+      fileTableHeaders[1].textContent = t.files_th_desc;
+      fileTableHeaders[2].textContent = t.files_th_format;
+    }
+
+    // 8. Events Page Empty State
+    const emptyState = document.querySelector('.empty-state') || document.querySelector('.events-empty');
+    if (emptyState) {
+      const h3 = emptyState.querySelector('h3, h2');
+      const p = emptyState.querySelector('p');
+      const btn = emptyState.querySelector('a.btn, button.btn');
+      if (h3) h3.textContent = t.events_empty_title;
+      if (p) p.textContent = t.events_empty_desc;
+      if (btn) btn.textContent = t.events_empty_btn;
+    }
+
+    // 9. Collab Page Elements
+    const collabEyebrow = document.querySelector('.collab-eyebrow') || document.querySelector('.page-hero .eyebrow');
+    if (collabEyebrow && (window.location.pathname.includes('collab') || document.title.includes('Collaboration'))) {
+      collabEyebrow.textContent = t.collab_eyebrow;
+    }
+    const collabSubTitle = document.querySelector('.collab-sub-title');
+    if (collabSubTitle) collabSubTitle.textContent = t.collab_sub_title;
+    const collabSubDesc = document.querySelector('.collab-sub-desc');
+    if (collabSubDesc) collabSubDesc.textContent = t.collab_sub_desc;
+    const collabBtnRoster = document.querySelector('.collab-btn-roster');
+    if (collabBtnRoster) collabBtnRoster.textContent = t.collab_btn_roster;
+    const collabBtnDrive = document.querySelector('.collab-btn-drive');
+    if (collabBtnDrive) collabBtnDrive.textContent = t.collab_btn_drive;
+    document.querySelectorAll('.collab-card .btn, .collab-btn-card').forEach(b => {
+      b.textContent = t.collab_btn_card;
+    });
+
+    // 10. About Page Elements
+    if (window.location.pathname.includes('about') || document.title.includes('About Us')) {
+      const pageHero = document.querySelector('.page-hero');
+      if (pageHero) {
+        const eyebrow = pageHero.querySelector('.eyebrow');
+        const p = pageHero.querySelector('p.lead');
+        if (eyebrow) eyebrow.textContent = t.about_eyebrow;
+        if (p) p.textContent = t.about_lead;
+      }
+      const sectionHead = document.querySelector('.section-head');
+      if (sectionHead) {
+        const eyebrow = sectionHead.querySelector('.eyebrow');
+        const h2 = sectionHead.querySelector('h2');
+        const p = sectionHead.querySelector('p');
+        if (eyebrow) eyebrow.textContent = t.about_story_eyebrow;
+        if (h2) h2.textContent = t.about_story_title;
+        if (p) p.textContent = t.about_story_desc;
+      }
+      const contactHeads = document.querySelectorAll('.section-head');
+      if (contactHeads.length > 1) {
+        const eyebrow = contactHeads[1].querySelector('.eyebrow');
+        if (eyebrow) eyebrow.textContent = t.about_contact_eyebrow;
+      }
+      document.querySelectorAll('.founder .role').forEach(r => {
+        const txt = r.textContent;
+        if (txt.includes('ผู้ให้เสียง:') || txt.includes('Voicer:')) {
+          const voicerName = txt.split(':')[1] ? txt.split(':')[1].trim() : '';
+          r.textContent = t.profile_voicer + ': ' + voicerName;
+        }
+      });
+      document.querySelectorAll('.founder a.btn').forEach(btn => {
+        const txt = btn.textContent;
+        const match = txt.match(/\((\d+.*?)\)/);
+        const count = match ? ' ' + match[0] : '';
+        btn.textContent = t.profile_download_title + count + ' →';
+      });
+    }
+
+    // 11. Singer Profile Pages: Specs, Bio and Audio Labels
     document.querySelectorAll('.grid > div').forEach(div => {
       const pLabel = div.querySelector('p:first-child');
       if (pLabel) {
@@ -1917,7 +2306,7 @@
       s.textContent = t.profile_btn_download;
     });
 
-    // 8. Footer copyright & made by
+    // 12. Footer copyright & made by
     const footerBottom = document.querySelector('.footer-bottom') || document.querySelector('.site-footer div[style*="border-top"]');
     if (footerBottom) {
       const spans = footerBottom.querySelectorAll('span');

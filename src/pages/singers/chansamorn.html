@@ -30,7 +30,7 @@
 <!-- Top Site Header & Navigation -->
 <header class="site-header" style="position: sticky; top:0; z-index: 50; background: rgba(10, 11, 22, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(204,34,0,0.22);">
   <div class="nav" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;">
-    <a href="../index.html" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;">
+    <a href="../index.html" data-i18n="nav_main" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;">
       <span class="brand-mark" style="color: #cc2200; font-size: 26px; font-weight: 900; text-shadow: 0 0 14px rgba(204,34,0,0.8);">Δ</span>
       <div>
         <div style="font-weight: 700; font-size: 17px; letter-spacing: 0.05em;">DELTA SYNTH</div>
@@ -39,12 +39,21 @@
     </a>
     <nav class="nav-links" id="site-navigation" style="display: flex; gap: 20px; font-size: 14px;">
       <a href="../index.html" style="color: #f4f2fb; text-decoration: none;">Main</a>
-      <a href="../about.html" style="color: #f4f2fb; text-decoration: none;">About Us</a>
-      <a href="../voicebank.html" style="color: #ff4422; font-weight: 600; text-decoration: none;">All Voicebank</a>
-      <a href="../files.html" style="color: #f4f2fb; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
-      <a href="../collab.html" style="color: #f4f2fb; text-decoration: none;">Collaboration</a>
-      <a href="../events.html" style="color: #f4f2fb; text-decoration: none;">Events</a>
+      <a href="../about.html" data-i18n="nav_about" style="color: #f4f2fb; text-decoration: none;">About Us</a>
+      <a href="../voicebank.html" data-i18n="nav_voicebank" style="color: #ff4422; font-weight: 600; text-decoration: none;">All Voicebank</a>
+      <a href="../files.html" data-i18n="nav_files" style="color: #f4f2fb; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
+      <a href="../collab.html" data-i18n="nav_collab" style="color: #f4f2fb; text-decoration: none;">Collaboration</a>
+      <a href="../events.html" data-i18n="nav_events" style="color: #f4f2fb; text-decoration: none;">Events</a>
     </nav>
+    <!-- Language Switcher Component -->
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+        <span class="lang-flag" id="lang-flag">🇹🇭</span>
+        <span class="lang-current" id="lang-current">ภาษาไทย</span>
+        <span class="lang-code-tag" id="lang-code-tag">TH</span>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+    </div>
   </div>
 </header>
 

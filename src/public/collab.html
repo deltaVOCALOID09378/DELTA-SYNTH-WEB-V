@@ -54,13 +54,22 @@
       </div>
     </a>
     <nav class="nav-links" id="site-navigation" style="display: flex; gap: 20px; font-size: 14px;">
-      <a href="index.html" style="color: #f4f2fb; text-decoration: none;">Main</a>
-      <a href="about.html" style="color: #f4f2fb; text-decoration: none;">About Us</a>
-      <a href="voicebank.html" style="color: #f4f2fb; text-decoration: none;">All Voicebank</a>
-      <a href="files.html" style="color: #f4f2fb; text-decoration: none;">USTX / MIDI / SVP / VSQX</a>
-      <a href="collab.html" style="color: #ff4422; font-weight: 600; text-decoration: none;">Collaboration</a>
-      <a href="events.html" style="color: #f4f2fb; text-decoration: none;">Events</a>
+      <a href="index.html" style="color: #f4f2fb; text-decoration: none;" data-i18n="nav_main">Main</a>
+      <a href="about.html" style="color: #f4f2fb; text-decoration: none;" data-i18n="nav_about">About Us</a>
+      <a href="voicebank.html" style="color: #f4f2fb; text-decoration: none;" data-i18n="nav_voicebank">All Voicebank</a>
+      <a href="files.html" style="color: #f4f2fb; text-decoration: none;" data-i18n="nav_files">USTX / MIDI / SVP / VSQX</a>
+      <a href="collab.html" style="color: #ff4422; font-weight: 600; text-decoration: none;" data-i18n="nav_collab">Collaboration</a>
+      <a href="events.html" style="color: #f4f2fb; text-decoration: none;" data-i18n="nav_events">Events</a>
     </nav>
+    <!-- Language Switcher Component -->
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+        <span class="lang-flag" id="lang-flag">🇹🇭</span>
+        <span class="lang-current" id="lang-current">ภาษาไทย</span>
+        <span class="lang-code-tag" id="lang-code-tag">TH</span>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+    </div>
   </div>
 </header>
 
@@ -70,7 +79,7 @@
     <!-- Hero Header -->
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-950/40 text-red-300 text-xs font-mono uppercase tracking-widest mb-4">
-        <span>PARTNERSHIPS & SPECIAL PROJECTS</span>
+        <span data-i18n="collab_eyebrow">PARTNERSHIPS & SPECIAL PROJECTS</span>
       </div>
       <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight glow-red mb-4" data-i18n="collab_h1">
         COLLABORATION VOICEBANKS
@@ -81,10 +90,10 @@
       
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="project.html" class="btn btn-primary" style="background:#cc2200; border-color:#cc2200;">
-          <span>ดูทำเนียบ 9 กลุ่มโปรเจกต์ทั้งหมด →</span>
+          <span data-i18n="collab_btn_roster">ดูทำเนียบ 9 กลุ่มโปรเจกต์ทั้งหมด →</span>
         </a>
         <a href="https://drive.google.com/drive/folders/1tboFHk0sj2Util_1CGBvqEPfV-qqCvMx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-          <span>📂 คลังไดรฟ์รวม All Voicebanks</span>
+          <span data-i18n="collab_btn_drive">📂 คลังไดรฟ์รวม All Voicebanks</span>
         </a>
       </div>
     </div>
@@ -93,8 +102,8 @@
     <div class="mb-16">
       <div class="border-b border-red-900/40 pb-4 mb-8 flex justify-between items-end flex-wrap gap-4">
         <div>
-          <h2 class="text-2xl font-bold text-white tracking-wide">Featured Collaboration Artists</h2>
-          <p class="text-sm text-gray-400">ศิลปินและคลังเสียงไฮไลต์จากโปรเจกต์ความร่วมมือพิเศษ</p>
+          <h2 class="text-2xl font-bold text-white tracking-wide" data-i18n="collab_sub_title">Featured Collaboration Artists</h2>
+          <p class="text-sm text-gray-400" data-i18n="collab_sub_desc">ศิลปินและคลังเสียงไฮไลต์จากโปรเจกต์ความร่วมมือพิเศษ</p>
         </div>
         <span class="text-xs font-mono text-red-400/80">DELTA CO-OP ROSTER</span>
       </div>

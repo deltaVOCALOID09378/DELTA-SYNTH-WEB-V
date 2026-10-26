@@ -15,25 +15,38 @@
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="index.html">Main</a>
-<a href="about.html">About Us</a>
-<a href="voicebank.html">All Voicebank</a>
-<a href="files.html" class="active">USTX / MIDI / SVP / VSQX</a>
-<a href="collab.html">Collaboration</a>
-<a href="events.html">Events</a>
-    </nav>
-    <button class="nav-toggle" aria-label="เปิดเมนู">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+        <div style="display: flex; align-items: center; gap: 16px;">
+      <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
+        <a href="index.html" data-i18n="nav_main">Main</a>
+        <a href="about.html" data-i18n="nav_about">About Us</a>
+        <a href="voicebank.html" data-i18n="nav_voicebank">All Voicebank</a>
+        <a href="files.html" class="active" data-i18n="nav_files">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html" data-i18n="nav_collab">Collaboration</a>
+        <a href="events.html" data-i18n="nav_events">Events</a>
+      </nav>
+
+      <!-- Language Switcher Component -->
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+          <span class="lang-flag" id="lang-flag">🇹🇭</span>
+          <span class="lang-current" id="lang-current">ภาษาไทย</span>
+          <span class="lang-code-tag" id="lang-code-tag">TH</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง" data-i18n-aria="nav_toggle_open">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 <main id="main-content">
 <section class="page-hero">
   <div class="wrap">
     <span class="crumb">DELTA SYNTH / USTX · MIDI · SVP · VSQX</span>
-    <h1>ไฟล์เพลง<br>USTX · MIDI · SVP · VSQX</h1>
-    <p class="lead" style="max-width:640px;">ไฟล์โปรเจกต์เพลงที่ใช้กับคลังเสียงของ DELTA SYNTH เปิดให้ดาวน์โหลดและใช้งานร่วมกับ OpenUTAU, Synthesizer V และโปรแกรมที่รองรับได้ทันที</p>
+    <h1 data-i18n="files_h1">ไฟล์เพลง<br>USTX · MIDI · SVP · VSQX</h1>
+    <p class="lead" data-i18n="files_desc">ไฟล์โปรเจกต์เพลงที่ใช้กับคลังเสียงของ DELTA SYNTH เปิดให้ดาวน์โหลดและใช้งานร่วมกับ OpenUTAU, Synthesizer V และโปรแกรมที่รองรับได้ทันที</p>
   </div>
 </section>
 
@@ -49,7 +62,7 @@
       </a>
     </div>
     <table class="file-table">
-      <thead><tr><th>ชื่อไฟล์</th><th>รายละเอียด</th><th>รูปแบบ</th></tr></thead>
+      <thead><tr><th data-i18n="files_th_name">ชื่อไฟล์</th><th data-i18n="files_th_desc">รายละเอียด</th><th data-i18n="files_th_format">รูปแบบ</th></tr></thead>
       <tbody>
         <tr>
       <td><div class="file-name"><span class="file-ext">UST</span>ban saen sok.ustx</div></td>
@@ -127,6 +140,7 @@
   </div>
 </footer>
 <script src="script.js"></script>
+  <script src="js/starfield.js"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>

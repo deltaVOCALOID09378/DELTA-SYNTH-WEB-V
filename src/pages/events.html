@@ -15,34 +15,47 @@
       <span class="brand-mark">Δ</span>
       <span>DELTA SYNTH<small>VOCAL SYNTHESIS STUDIO</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="index.html">Main</a>
-<a href="about.html">About Us</a>
-<a href="voicebank.html">All Voicebank</a>
-<a href="files.html">USTX / MIDI / SVP / VSQX</a>
-<a href="collab.html">Collaboration</a>
-<a href="events.html" class="active">Events</a>
-    </nav>
-    <button class="nav-toggle" aria-label="เปิดเมนู">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+        <div style="display: flex; align-items: center; gap: 16px;">
+      <nav class="nav-links" id="site-navigation" aria-label="เมนูหลัก">
+        <a href="index.html" data-i18n="nav_main">Main</a>
+        <a href="about.html" data-i18n="nav_about">About Us</a>
+        <a href="voicebank.html" data-i18n="nav_voicebank">All Voicebank</a>
+        <a href="files.html" data-i18n="nav_files">USTX / MIDI / SVP / VSQX</a>
+        <a href="collab.html" data-i18n="nav_collab">Collaboration</a>
+        <a href="events.html" class="active" data-i18n="nav_events">Events</a>
+      </nav>
+
+      <!-- Language Switcher Component -->
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Select Language">
+          <span class="lang-flag" id="lang-flag">🇹🇭</span>
+          <span class="lang-current" id="lang-current">ภาษาไทย</span>
+          <span class="lang-code-tag" id="lang-code-tag">TH</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;" role="menu" aria-label="Language selection"></div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-label="เปิดเมนูนำทาง" data-i18n-aria="nav_toggle_open">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4H17M1 9H17M1 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 <main id="main-content">
 <section class="page-hero">
   <div class="wrap">
     <span class="crumb">DELTA SYNTH / Events</span>
-    <h1>อีเวนต์<br>และกิจกรรม</h1>
-    <p class="lead" style="max-width:640px;">ข่าวสารการปรากฏตัว ไลฟ์สตรีม และกิจกรรมพิเศษของ DELTA SYNTH จะประกาศในหน้านี้เมื่อมีกำหนดการที่ชัดเจน</p>
+    <h1 data-i18n="events_h1">อีเวนต์<br>และกิจกรรม</h1>
+    <p class="lead" data-i18n="events_desc">ข่าวสารการปรากฏตัว ไลฟ์สตรีม และกิจกรรมพิเศษของ DELTA SYNTH จะประกาศในหน้านี้เมื่อมีกำหนดการที่ชัดเจน</p>
   </div>
 </section>
 
 <section style="padding-top:0;">
   <div class="wrap">
     <div class="empty-state">
-      <h3>ยังไม่มีอีเวนต์ที่กำหนดไว้ในขณะนี้</h3>
-      <p style="max-width:480px; margin:0 auto 22px;">ทีมงานกำลังจัดสรรเวลาสำหรับโปรเจกต์เพลงและการพัฒนาคลังเสียงเป็นหลัก ติดตามช่องทางของเราไว้เพื่อไม่พลาดประกาศกิจกรรมครั้งถัดไป</p>
-      <a href="about.html#contact" class="btn btn-primary btn-sm">ติดตามช่องทางของเรา</a>
+      <h3 data-i18n="events_empty_title">ยังไม่มีอีเวนต์ที่กำหนดไว้ในขณะนี้</h3>
+      <p style="max-width:480px; margin:0 auto 22px;" data-i18n="events_empty_desc">ทีมงานกำลังจัดสรรเวลาสำหรับโปรเจกต์เพลงและการพัฒนาคลังเสียงเป็นหลัก ติดตามช่องทางของเราไว้เพื่อไม่พลาดประกาศกิจกรรมครั้งถัดไป</p>
+      <a href="about.html#contact" class="btn btn-primary btn-sm" data-i18n="events_empty_btn">ติดตามช่องทางของเรา</a>
     </div>
   </div>
 </section>
@@ -81,6 +94,7 @@
   </div>
 </footer>
 <script src="script.js"></script>
+  <script src="js/starfield.js"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>
