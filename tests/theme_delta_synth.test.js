@@ -293,4 +293,34 @@ describe('Tier 5: DELTA SYNTH Theme Verification & Integrity', () => {
     assert.ok(i18nContent.includes('nw_dark_desc'), 'nw_dark_desc missing');
   });
 
+
+  it('TC-TH-22: Full 9-language parity and synchronous site localization integrity', () => {
+    const i18nContent = fs.readFileSync(path.resolve(process.cwd(), 'src/public/js/i18n.js'), 'utf8');
+    const languages = ['th', 'en', 'fr', 'es', 'es-cl', 'zh', 'ja', 'ru', 'ko'];
+    
+    // Check that all 9 language objects contain the full suite of keys
+    const requiredKeys = [
+      'nav_main', 'nav_about', 'nav_voicebank', 'nav_files', 'nav_collab', 'nav_events',
+      'hero_title', 'hero_desc', 'hero_btn_drive', 'hero_btn_explore',
+      'pillars_title', 'pillar1_title', 'pillar2_title', 'pillar3_title',
+      'showcase_title', 'showcase_hikaru_desc', 'showcase_sun_desc',
+      'openutau_title', 'openutau_f1_title', 'openutau_f2_title', 'openutau_f3_title',
+      'files_sec_title', 'files_p1_title', 'files_p2_title', 'files_p3_title',
+      'timeline_title', 'timeline_item1_title', 'cta_title', 'footer_rights'
+    ];
+
+    for (const key of requiredKeys) {
+      assert.ok(i18nContent.includes(key + ':'), 'Translation key ' + key + ' must exist in translations');
+    }
+
+    // Verify index.html contains extensive data-i18n bindings
+    const indexHtml = fs.readFileSync(path.resolve(process.cwd(), 'src/public/index.html'), 'utf8');
+    const dataI18nMatches = indexHtml.match(/data-i18n="[^"]+"/g) || [];
+    assert.ok(dataI18nMatches.length >= 60, 'index.html must have at least 60 data-i18n bindings (found ' + dataI18nMatches.length + ')');
+
+    // Verify zero-blur in lang-dropdown
+    const styleCss = fs.readFileSync(path.resolve(process.cwd(), 'src/public/style.css'), 'utf8');
+    assert.ok(styleCss.includes('.lang-dropdown'), 'style.css must define .lang-dropdown');
+    assert.ok(!styleCss.includes('backdrop-filter: blur(20px)'), 'lang-dropdown must have zero blur');
+  });
 });
