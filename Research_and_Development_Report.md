@@ -28,3 +28,19 @@
 - ปรับปรุงและติดตั้งไอคอนโปรไฟล์เฉพาะตัว (Square Avatar Profile ในรูปแบบ WebP และ PNG) ครบถ้วนทุกเลเยอร์ของระบบ ทั้ง `src/pages`, `src/public`, และ `src/backend`
 - ปลดระวางการใช้ภาพชั่วคราว (Placeholders) คงไว้ซึ่งอัตลักษณ์เฉพาะตัวของตัวละครครบทุกมิติ
 - ตรวจสอบผ่านเกณฑ์ 100% Zero Defects ด้วยชุดทดสอบ E2E Test Runner 171 ข้อ พร้อมผลักดันขึ้นสู่ GitHub Main Repository เรียบร้อยแล้ว
+
+
+## Phase 6: การระงับข้อบกพร่องด้านความปลอดภัยและการผสานระบบ Dependabot Pull Requests (Security & Dependency Modernization)
+*(อ้างอิง: 03.11.2026)*
+- ดำเนินการผสาน (Merge) และแก้ไขปัญหาการขัดแย้งของ Pull Requests ทั้งหมด 9 รายการจาก Dependabot บน GitHub สู่กิ่ง `main` สำเร็จเสร็จสิ้น 100%
+- ปรับปรุงและกำจัดช่องโหว่ความปลอดภัยของแพ็กเกจ (Vulnerabilities = 0):
+  - อัปเกรด `express` จาก v4.22.3 สู่ `v5.3.0` (PR #38)
+  - อัปเกรด `dotenv` จาก v16.6.1 สู่ `v18.0.9` (PR #39)
+  - อัปเกรด `multer` จาก v1.4.5-lts.2 สู่ `v2.5.0` (PR #40 และแทนที่ PR #29)
+- ปรับปรุงเวิร์กโฟลว์ GitHub Actions สู่เวอร์ชันล่าสุด:
+  - `cloudflare/wrangler-action` สู่ `v4` (PR #45)
+  - `actions/checkout` สู่ `v7` (PR #44)
+  - `actions/upload-pages-artifact` สู่ `v5` (PR #43)
+  - `actions/deploy-pages` สู่ `v5` (PR #42)
+  - `actions/configure-pages` สู่ `v6` (PR #41)
+- ตรวจสอบผ่านเกณฑ์ 100% Zero Defects ด้วยชุดทดสอบ E2E Automated Verification ครบทั้ง 171 ข้อ ปราศจากข้อผิดพลาดและคำเตือนด้านความปลอดภัยใดๆ ทั้งสิ้น
