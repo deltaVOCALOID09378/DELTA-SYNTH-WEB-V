@@ -1,29 +1,44 @@
-# 🌌 DELTA SYNTH — Official Virtual Singer Ecosystem & Creative Hub
+<div align="center">
 
-**DELTA SYNTH** คือศูนย์กลางระบบนิเวศเสียงสังเคราะห์เสมือนจริง (Virtual Singer Ecosystem & Creative Hub) ของประเทศไทย พัฒนาขึ้นเพื่อเป็นแพลตฟอร์มนำเสนอคลังเสียงนักร้องสังเคราะห์ (Voicebanks) ทั้งรูปแบบ **UTAU (VCV, CVVC, VCCV, Arpasing)** และ **DiffSinger AI (Deep Learning Vocal Synthesis)** รวมถึงเป็นศูนย์กลางแจกจ่ายไฟล์ทรัพยากรดนตรีระดับมืออาชีพ ได้แก่ **USTX, MIDI, SVP และ VSQX**[cite: 1]
+# DELTA SYNTH — Official Web Portal 🎙️
+### Independent Vocal Synthesis Studio & Thai Vocal Synth Ecosystem
 
----
+[![Live Portal](https://img.shields.io/badge/Live_Website-Visit_Portal-CC2200?style=for-the-badge&logo=githubpages&logoColor=white)](https://deltavocaloid09378.github.io/DELTA-SYNTH-WEB-V)
+[![Thai OpenUtau](https://img.shields.io/badge/Engine-Thai_OpenUtau-1A1A1A?style=for-the-badge&logo=github&logoColor=CC2200)](https://github.com/deltaVOCALOID09378/Thai_OpenUtau)
+[![YouTube](https://img.shields.io/badge/YouTube-@deltaSYNTH0320-1A1A1A?style=for-the-badge&logo=youtube&logoColor=CC2200)](https://www.youtube.com/@deltaSYNTH0320)
 
-## ✨ คุณสมบัติเด่นของระบบ (Key Features)
-
-* **🎙️ คลังเสียงนักร้องเสมือน (Virtual Singer Catalog):** รองรับข้อมูลนักร้องเสมือนในสังกัดและการร่วมมือ (Collaborations) ครบทุกมิติ ทั้งภาษาไทย ญี่ปุ่น อังกฤษ จีน เกาหลี และฝรั่งเศส พร้อมระบบค้นหาและตัวกรองหลายเงื่อนไข (Multi-Filter)[cite: 1]
-* **🎧 ระบบเล่นเสียงตัวอย่างอัจฉริยะ (Singleton Audio Preview Engine):** เล่นเสียงตัวอย่าง `.wav` ของนักร้องแต่ละคนได้ทันที พร้อมกลไกป้องกันเสียงซ้อนทับ (Audio Overlap Prevention)
-* **📦 คลังดาวน์โหลดไฟล์ดนตรีและโปรเจกต์ (Music & Project Resources):** รวบรวมไฟล์ `USTX`, `MIDI`, `SVP`, `VSQX` และเชื่อมต่อกับ **Master Google Drive Hub (167+ Voicebank Archives)**[cite: 1]
-* **🎨 ดีไซน์เอกลักษณ์ Cyberpunk Space Theme:** ออกแบบส่วนติดต่อผู้ใช้สไตล์ห้องนักบินอวกาศ (Cosmic Cockpit / Glassmorphism) ผสานชุดสีประจำค่าย (`#CC2200`, `#1A1A1A`, `#F0F0F0`) และฟอนต์ `Leelawadee UI`[cite: 1]
-* **🛡️ สถาปัตยกรรม 3 ชั้น & ความปลอดภัยสูงสุด (3-Layer Architecture & Security):** แยกส่วน Presentation (`src/public/`), Wix Velo Pages (`src/pages/`) และ Backend Web Modules (`src/backend/`) ออกจากกันอย่างชัดเจน พร้อมผ่านการอุดช่องโหว่ความปลอดภัย (0 Vulnerabilities)[cite: 1, 4]
-* **✅ ระบบทดสอบอัตโนมัติระดับองค์กร (Automated E2E Verification):** ตรวจสอบความถูกต้องครบทุกมิติ (171/171 Test Suites Passed — Zero Known Defects)[cite: 4, 5]
+</div>
 
 ---
 
-## 🏗️ โครงสร้างสถาปัตยกรรมโปรเจกต์ (Project Architecture)
+### 🌐 Overview | ภาพรวมโปรเจกต์
+**DELTA-SYNTH-WEB-V** is the consolidated official web portal for **DELTA SYNTH**, developed and maintained by **Delta (Patiphat Wongyai)**. This platform serves as the central hub for showcasing Thai and bilingual virtual singers, interactive voicebank audio demos, software releases, and verified partner collaborations.
+
+**DELTA-SYNTH-WEB-V** คือเว็บไซต์หลักอย่างเป็นทางการของสตูดิโอ **DELTA SYNTH** รวบรวมฐานข้อมูลนักร้องเสียงสังเคราะห์ (Voicebanks) ตัวอย่างเสียงร้องจริง ซอฟต์แวร์เครื่องมือพัฒนาเสียง และรายชื่อพาร์ทเนอร์ที่ได้รับการยืนยันอย่างเป็นทางการ
+
+---
+
+### ✨ Key Features | ฟีเจอร์หลักของเว็บไซต์
+
+- **🎤 Complete Voicebank Directory (`voicebank.html`):**
+  - Catalogs 55+ virtual singers and partner characters, systematically organized by collaborative project groups and sorted chronologically from debut date.
+  - Dedicated individual singer profile pages (e.g., `singers/mairu_maishi.html`) featuring verified voice provider credits, official artwork attributions, and platform links.
+- **🔊 Integrated Audio Sample Player (`src/public/Voice`):**
+  - Direct web-based playback of curated vocal samples, allowing creators and listeners to preview each voicebank's vocal tone and articulation directly on their profile page.
+- **🛠️ Software & Engine Hub:**
+  - Direct access and documentation links for flagship studio tools, including **Thai OpenUtau Engine** and **Thai RVC WebUI**.
+- **🎨 Signature Studio Design & Bilingual UI:**
+  - Built with a responsive layout supporting **Thai & English** localization, styled in the signature **DELTA SYNTH** dark cosmic aesthetic (`#1A1A1A` Dark Base, `#CC2200` Accent Red, `#F0F0F0` Crisp Typography, and `Leelawadee UI`).
+
+---
+
+### 📂 Repository Structure | โครงสร้างไฟล์หลัก
 
 ```text
-DELTA_SYNTH-main/
-├── src/
-│   ├── public/          # Static Web Portal, Client Scripts, Single Source of Truth Data & 55+ Singer Profiles
-│   ├── pages/           # Wix Velo Frontend Page Scripts (14 Pages)
-│   └── backend/         # Wix Velo Backend Services (.jsw), REST API (http-functions.js) & Permissions
-├── tests/               # Native Node.js Automated E2E Test Suite (Zero External Dependencies)
-├── .github/workflows/   # CI/CD Pipelines (GitHub Pages, Cloudflare Pages, CodeQL Security Scan)
-├── AGENT.md             # มาตรฐานการพัฒนาและกฎข้อบังคับสูงสุดของ DELTA SYNTH
-└── server.js            # Standalone Express.js REST API Server
+DELTA-SYNTH-WEB-V/
+├── index.html               # Main studio landing page & featured releases
+├── voicebank.html           # Chronological & group-sorted voicebank directory
+├── singers/                 # Individual character profiles, lore & voice provider credits
+└── src/
+    └── public/
+        └── Voice/           # Hosted vocal sample audio assets (.wav / .mp3)
